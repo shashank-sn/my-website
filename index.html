@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shashank's ghostwriter — a claude skill</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f6f2;
+      --text: #1a1a18;
+      --muted: #999892;
+      --accent: #c8a96e;
+      --border: #e5e1d8;
+      --col: 580px;
+      --gap: clamp(24px, 6vw, 64px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Google Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── single column ── */
+    .col {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 var(--gap);
+    }
+
+    /* ── nav ── */
+    nav {
+      padding: 28px var(--gap);
+      max-width: var(--col);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-buy {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    .nav-buy:hover { color: var(--accent); }
+
+    /* ── letter ── */
+    .letter {
+      padding: clamp(40px, 7vw, 80px) var(--gap);
+      padding-bottom: 0;
+    }
+
+    .from {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 40px;
+      text-transform: lowercase;
+    }
+
+    .letter p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .letter p:last-child { margin-bottom: 0; }
+
+    .bold { font-weight: 500; }
+
+    .link {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      transition: color 0.15s;
+    }
+    .link:hover { color: var(--accent); }
+
+    .letter-cta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .letter-cta .cta-note {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    .sig {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 36px !important;
+    }
+
+    /* ── newsletter tooltip ── */
+    .nl-trigger {
+      position: relative;
+      display: inline;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+      font-weight: 500;
+    }
+
+    .nl-popup {
+      display: block;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px 14px;
+      width: 300px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.06);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+      /* chat bubble tail */
+    }
+
+    .nl-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #fff;
+      filter: drop-shadow(0 1px 0 var(--border));
+    }
+
+    .nl-trigger:hover .nl-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .nl-row {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .nl-stat {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 4px;
+    }
+
+    .nl-stat:last-child {
+      padding-left: 20px;
+    }
+
+    .nl-divider {
+      width: 1px;
+      background: var(--border);
+      margin: 0 4px;
+      flex-shrink: 0;
+    }
+
+    .nl-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      color: #2a7a4b;
+      background: #e6f6ed;
+      border-radius: 6px;
+      padding: 2px 7px;
+      letter-spacing: 0.02em;
+      width: fit-content;
+    }
+
+    .nl-label {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+
+    .nl-num {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── general tip tooltip ── */
+    .tip-trigger {
+      position: relative;
+      display: inline;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+    }
+
+    .tip-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #1c1c1a;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 4px rgba(0,0,0,0.08);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+      width: 230px;
+    }
+
+    .tip-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #1c1c1a;
+    }
+
+    .tip-trigger:hover .tip-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    /* meme variant */
+    .tip-meme {
+      width: 210px;
+      text-align: center;
+      gap: 4px;
+    }
+
+    .meme-top {
+      font-size: 13px;
+      font-weight: 300;
+      color: #aaa;
+      letter-spacing: 0.01em;
+    }
+
+    .meme-bottom {
+      font-size: 16px;
+      font-weight: 500;
+      color: #f0ede8;
+      letter-spacing: 0.01em;
+    }
+
+    .meme-bottom em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    /* em-dash & prove shared */
+    .tip-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .tip-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: #d0cdc8;
+      line-height: 1.6;
+    }
+
+    /* prove variant — tighter */
+    .tip-prove {
+      width: 210px;
+    }
+
+    /* ── ghost tooltip ── */
+    .ghost-trigger {
+      position: relative;
+      display: inline;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+    }
+
+    .ghost-popup {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-size: 24px;
+      line-height: 1;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09), 0 1.5px 4px rgba(0,0,0,0.05);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+      white-space: nowrap;
+    }
+
+    .ghost-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #fff;
+      filter: drop-shadow(0 1px 0 var(--border));
+    }
+
+    .ghost-trigger:hover .ghost-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    /* ── testimonial tooltip ── */
+    .quote-trigger {
+      position: relative;
+      display: inline;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+    }
+
+    .quote-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      width: 220px;
+      background: #1c1c1a;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 4px rgba(0,0,0,0.08);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+    }
+
+    .quote-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #1c1c1a;
+    }
+
+    .quote-trigger:hover .quote-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .quote-mark {
+      font-size: 28px;
+      line-height: 1;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: -4px;
+    }
+
+    .quote-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: #f0ede8;
+      line-height: 1.6;
+    }
+
+    .quote-attr {
+      font-size: 10px;
+      font-weight: 400;
+      color: #666660;
+      letter-spacing: 0.03em;
+      margin-top: 4px;
+    }
+
+    /* ── linkedin tooltip ── */
+    .li-trigger {
+      position: relative;
+      display: inline;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+      font-weight: 500;
+    }
+
+    .li-popup {
+      display: block;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+    }
+
+    .li-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #dce6f2;
+    }
+
+    .li-trigger:hover .li-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .li-top {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      background: #f3f2f0;
+      height: 64px;
+      position: relative;
+    }
+
+    .li-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #0a66c2;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid #fff;
+      position: absolute;
+      bottom: -22px;
+      left: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .li-bottom {
+      background: #1a1a1a;
+      padding: 32px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .li-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      line-height: 1.2;
+    }
+
+    .li-bio {
+      font-size: 12px;
+      font-weight: 300;
+      color: #b0b0b0;
+      line-height: 1.4;
+    }
+
+    .li-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #dce6f2;
+      border-radius: 100px;
+      padding: 7px 18px 7px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #2d64bc;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 16px rgba(45,100,188,0.15), 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .li-stats {
+      font-size: 11px;
+      font-weight: 400;
+      color: #0a66c2;
+      margin-top: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── rule ── */
+    .rule {
+      max-width: var(--col);
+      margin: clamp(40px, 6vw, 64px) auto 0;
+      padding: 0 var(--gap);
+    }
+    .rule hr {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── steps grid ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 4vw, 40px);
+    }
+
+    /* ── sections ── */
+    .section {
+      padding: clamp(40px, 6vw, 64px) var(--gap);
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    /* ── get list ── */
+    .get-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .get-list li {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .get-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 300;
+    }
+
+    /* ── for / not for ── */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .split-col .split-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .check-list li {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+      color: var(--text);
+    }
+
+    .check-list.yes li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 11px;
+      top: 3px;
+    }
+
+    .check-list.no li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+      font-size: 11px;
+      top: 3px;
+    }
+
+    /* ── steps ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .step-n {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      padding-top: 3px;
+    }
+
+    .step p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .step p strong { font-weight: 500; }
+
+    /* ── cta ── */
+    .cta-wrap {
+      text-align: center;
+    }
+
+    .cta-line {
+      display: block;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--bg);
+      text-decoration: none;
+      background: var(--text);
+      padding: 14px 36px;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .cta-note {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── postscripts ── */
+    .ps-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-bottom: clamp(60px, 10vw, 100px);
+    }
+
+    .ps-item {}
+
+    .ps-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+      text-transform: lowercase;
+    }
+
+    .ps-item p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    /* ── footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 24px var(--gap);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .footer-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: var(--accent); }
+
+    /* ── animations ── */
+    .fade {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── responsive: tablet ── */
+    @media (max-width: 768px) {
+      :root { --gap: clamp(20px, 5vw, 40px); }
+
+      nav { padding: 20px var(--gap); }
+
+      .letter { padding: clamp(32px, 6vw, 56px) var(--gap); padding-bottom: 0; }
+
+      .section { padding: clamp(32px, 5vw, 48px) var(--gap); }
+
+      .rule { margin-top: clamp(32px, 5vw, 48px); }
+
+      /* constrain all popups to viewport */
+      .nl-popup, .quote-popup, .tip-popup, .ghost-popup {
+        left: 0;
+        right: auto;
+        transform: translateY(6px);
+        max-width: calc(100vw - 40px);
+      }
+      .nl-trigger:hover .nl-popup,
+      .quote-trigger:hover .quote-popup,
+      .tip-trigger:hover .tip-popup,
+      .ghost-trigger:hover .ghost-popup {
+        transform: translateY(0);
+      }
+      .nl-popup::after, .quote-popup::after,
+      .tip-popup::after, .ghost-popup::after {
+        left: 24px;
+        transform: none;
+      }
+
+      .li-popup {
+        left: 0;
+        transform: translateY(6px);
+      }
+      .li-trigger:hover .li-popup { transform: translateY(0); }
+      .li-popup::after { left: 20px; transform: none; }
+    }
+
+    /* ── responsive: mobile ── */
+    @media (max-width: 520px) {
+      :root { --gap: 20px; }
+
+      nav { padding: 18px var(--gap); }
+
+      .nav-brand, .nav-buy { font-size: 12px; }
+
+      .letter p { font-size: 15px; line-height: 1.75; }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .letter-cta { margin-top: 32px; }
+
+      .cta-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 16px 24px;
+      }
+
+      .cta-wrap .cta-btn { display: inline-block; width: auto; }
+
+      .ghost-popup { white-space: normal; }
+
+      .nl-popup { width: calc(100vw - 40px); }
+
+      footer { padding: 20px var(--gap); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html" class="nav-brand">shashank's ghostwriter</a>
+    <a href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" class="nav-buy" target="_blank" rel="noopener">get the skill →</a>
+  </nav>
+
+  <!-- letter -->
+  <div class="col letter">
+    <p class="fade">most people who buy writing tools get better tools.</p>
+
+    <p class="fade">but to be frank, they don't get better writing.</p>
+
+    <p class="fade">if you look at it, that's the hard part. and this is exactly the gap between having something to say and actually saying it in a way that makes people stop scrolling, forward it to three people, and quietly resent you for being that good.</p>
+
+    <p class="fade">i have over 20,000 subscribers on the <span class="nl-trigger">stupidpreneur newsletter<span class="nl-popup">
+        <span class="nl-row">
+          <span class="nl-stat">
+            <span class="nl-badge">↗ 716.5%</span>
+            <span class="nl-label">active subscribers</span>
+            <span class="nl-num">22,961</span>
+          </span>
+          <span class="nl-divider"></span>
+          <span class="nl-stat">
+            <span class="nl-badge">↗ 13.9%</span>
+            <span class="nl-label">open rate</span>
+            <span class="nl-num">42.38%</span>
+          </span>
+        </span>
+      </span></span>. i'm a <span class="li-trigger">linkedin top voice<span class="li-popup">
+          <span class="li-badge">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="26" height="26" rx="5" fill="#2d64bc"/>
+              <path d="M7 10.5H9.5V19H7V10.5ZM8.25 9.25C7.42 9.25 6.75 8.58 6.75 7.75C6.75 6.92 7.42 6.25 8.25 6.25C9.08 6.25 9.75 6.92 9.75 7.75C9.75 8.58 9.08 9.25 8.25 9.25ZM11.5 10.5H13.9V11.6H13.93C14.27 10.96 15.09 10.28 16.31 10.28C18.84 10.28 19.3 11.97 19.3 14.13V19H16.8V14.63C16.8 13.68 16.78 12.46 15.47 12.46C14.14 12.46 13.94 13.5 13.94 14.56V19H11.44V10.5H11.5Z" fill="#dce6f2"/>
+            </svg>
+            Top Voice
+          </span>
+      </span></span>. i'm the kind of writer where people finish a post and think — why does this feel so obvious now when it didn't five minutes ago?</p>
+
+    <p class="fade">the only reason why people follow me and listen to me is because of my <span class="quote-trigger">personality<span class="quote-popup">
+        <span class="quote-mark">"</span>
+        <span class="quote-text">shashank might be an asshole. but i damn sure listen to him.</span>
+        <span class="quote-attr">— agnel john, ceo error makes clever</span>
+      </span></span> and <span class="quote-trigger">perspective<span class="quote-popup">
+        <span class="quote-mark">"</span>
+        <span class="quote-text">very few people have your worldview on such normal things.</span>
+        <span class="quote-attr">— hameed, fractional cto</span>
+      </span></span>. and if you think this claude skill will replace it, you are a fool.</p>
+
+    <p class="fade">this skill is my <span class="ghost-trigger">ghost<span class="ghost-popup">👻</span></span>. trained on the way i actually think — not the surface stuff, not the cadence tricks, but the underlying logic. why you open a piece a certain way. why you crash two unrelated domains together and let the reader feel the collision. why brevity without density is just emptiness with good posture.</p>
+
+    <p class="fade">you come with a rough idea. a half-formed thought. a thing that happened that bothered you. and the <span class="ghost-trigger">skill writes it<span class="ghost-popup">😵‍💫</span></span> the way i would — unhurried, slightly cynical, always earning the ending.</p>
+
+    <p class="fade">i spent years figuring out one specific thing — <span class="tip-trigger">words aren't decoration on top of a brand. words are the brand<span class="tip-popup tip-meme">
+        <span class="meme-top">i'm not in danger.</span>
+        <span class="meme-bottom">i <em>am</em> the danger.</span>
+      </span></span> (and yes, i know why and when to use an <span class="tip-trigger">em-dash<span class="tip-popup tip-emdash">
+        <span class="tip-title">the em-dash —</span>
+        <span class="tip-body">use it when a comma is too weak and a period is too final. it creates a pause that leans forward, not back. use it once per sentence, max.</span>
+      </span></span>). most people get this backwards and wonder why their content gets polite engagement from their mom.</p>
+
+    <p class="fade">this ain't a template. this is a way of thinking about what you're actually trying to say, and then saying it cleanly.</p>
+
+    <p class="fade">one idea in. writing that sounds like it came from someone who has <span class="tip-trigger">nothing left to prove<span class="tip-popup tip-prove">
+        <span class="tip-title">why he means it</span>
+        <span class="tip-body">3x exits. used to be india's youngest head of brand.</span>
+      </span></span>.</p>
+
+    <p class="fade">out.</p>
+
+    <p class="fade" style="margin-top:32px;">i built this because i believe words build brands and most people have them in their head and they just can't get them out.</p>
+
+    <p class="fade">this is the closest thing to hiring me to write for you.</p>
+
+    <p class="fade sig">— shashank</p>
+
+    <div class="fade letter-cta">
+      <a href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" class="cta-btn" target="_blank" rel="noopener">get the ghostwriter skill</a>
+      <p class="cta-note">one-time purchase · instant access · works with claude</p>
+    </div>
+  </div>
+
+  <!-- rule -->
+  <div class="rule"><hr /></div>
+
+  <!-- what you get -->
+  <div class="col section fade">
+    <span class="section-tag">what you're actually getting</span>
+    <ul class="get-list">
+      <li>a claude skill trained on shashank's actual thinking — not tone mimicry, but structural logic</li>
+      <li>the ability to turn a half-formed idea into a piece that earns its ending</li>
+      <li>writing that opens unusually, earns trust fast, and lands without announcing itself</li>
+      <li>the framework for colliding two unrelated domains and making the reader feel it</li>
+      <li>output that sounds like a person who has nothing left to prove — because that's the only voice worth reading</li>
+    </ul>
+  </div>
+
+  <div class="rule"><hr /></div>
+
+  <!-- for / not for -->
+  <div class="col section fade">
+    <div class="split">
+      <div class="split-col">
+        <span class="split-label">this is for you if —</span>
+        <ul class="check-list yes">
+          <li>you have ideas but they come out flat on the page</li>
+          <li>you write something, read it back, and it sounds like a linkedin template</li>
+          <li>you understand your industry but can't explain why anyone should care</li>
+          <li>you want to sound like a specific human, not a general "thought leader"</li>
+          <li>you're willing to do the last 5% yourself</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <span class="split-label">this is not for you if —</span>
+        <ul class="check-list no">
+          <li>you want a content machine that outputs volume</li>
+          <li>you're looking for seo-stuffed blog posts</li>
+          <li>you think personality is optional in writing</li>
+          <li>you want to press one button and disappear</li>
+          <li>you're not willing to bring an actual idea to the table</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"><hr /></div>
+
+  <!-- how it works -->
+  <div class="col section fade">
+    <span class="section-tag">how it works</span>
+    <div class="steps">
+      <div class="step">
+        <span class="step-n">01</span>
+        <p><strong>bring a thought</strong> — a rough idea, a thing that happened, an observation you can't quite articulate yet</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <p><strong>the skill writes it</strong> — the way shashank would: unhurried, slightly cynical, always earning the ending</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <p><strong>you make it yours</strong> — change the one line only you know is wrong. that 5% is still yours. it should be.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"><hr /></div>
+
+  <!-- cta -->
+  <div class="col section cta-wrap fade">
+    <span class="cta-line">"the closest thing to hiring me to write for you."</span>
+    <a href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" class="cta-btn" target="_blank" rel="noopener">get the ghostwriter skill</a>
+    <p class="cta-note">one-time purchase · instant access · works with claude</p>
+  </div>
+
+  <div class="rule"><hr /></div>
+
+  <!-- postscripts -->
+  <div class="col section ps-wrap">
+    <div class="ps-item fade">
+      <span class="ps-tag">p.s.</span>
+      <p>this isn't a replacement for thinking or writing. it's a better way to articulate thoughts you already have. it'll get you 95% there — the rhythm, the structure, the voice. the last 5% still needs you. a human edit. a line you change because only you know what you actually meant. that part can't be automated. it shouldn't be.</p>
+    </div>
+    <div class="ps-item fade">
+      <span class="ps-tag">p.p.s.</span>
+      <p>once you buy it you'll see both the first version of this product copy that claude spit out and what i did to actually sound like me. <a href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" class="link" target="_blank" rel="noopener">worth seeing.</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-text">written by <a href="https://x.com/istupidpreneur" class="footer-link" target="_blank" rel="noopener">shashank</a></span>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

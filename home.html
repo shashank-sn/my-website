@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shashank sn — positioning strategist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f6f2;
+      --text: #1a1a18;
+      --muted: #999892;
+      --accent: #c8a96e;
+      --border: #e5e1d8;
+      --col: 580px;
+      --gap: clamp(20px, 5vw, 64px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Google Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── nav ── */
+    nav {
+      padding: 24px var(--gap);
+      max-width: var(--col);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    .nav-cta:hover { color: var(--accent); }
+
+    /* ── letter ── */
+    .letter {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: clamp(40px, 7vw, 80px) var(--gap) clamp(60px, 10vw, 100px);
+    }
+
+    .letter p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .letter p:last-child { margin-bottom: 0; }
+
+    .bold { font-weight: 500; }
+
+    .sig {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 36px !important;
+    }
+
+    .link {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      transition: color 0.15s;
+    }
+    .link:hover { color: var(--accent); }
+
+    /* ── cta block ── */
+    .letter-cta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--bg);
+      text-decoration: none;
+      background: var(--text);
+      padding: 14px 36px;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .cta-note {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 24px var(--gap);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .footer-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: var(--accent); }
+
+    /* ── animations ── */
+    .fade {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 768px) {
+      :root { --gap: clamp(20px, 5vw, 40px); }
+      nav { padding: 20px var(--gap); }
+    }
+
+    @media (max-width: 520px) {
+      :root { --gap: 20px; }
+      nav { padding: 18px var(--gap); }
+      .nav-brand, .nav-cta { font-size: 12px; }
+      .cta-btn { display: block; width: 100%; text-align: center; padding: 16px 24px; }
+      footer { padding: 20px var(--gap); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="home.html" class="nav-brand">shashank sn</a>
+    <a href="index.html" class="nav-cta">ghostwriter skill →</a>
+  </nav>
+
+  <div class="letter">
+
+    <p class="fade">i fix positioning problems that cost companies revenue.</p>
+
+    <p class="fade">over 7 years, i've built and sold <span class="bold">el mejor coffee</span> — india's first specialty coffee e-commerce — led brand strategy at <span class="bold">hcl guvi</span> where my team set a guinness world record, and advised <span class="bold">150+ companies</span> on turning unclear market positioning into defensible competitive advantage.</p>
+
+    <p class="fade">if you are looking for someone to just fix your brand aesthetics, i'm not the guy.</p>
+
+    <p class="fade">i'm the guy who helps you build a brand flywheel that makes sales easier.</p>
+
+    <p class="fade">what that actually looks like: i diagnose why your market doesn't understand what you sell or why it matters. i build positioning frameworks that sales, product, and marketing can all execute against. i audit and rebuild brand architecture when you've outgrown your original positioning. and i train internal teams to think strategically about brand decisions — not just tactically.</p>
+
+    <p class="fade">in case you're wondering if any of this is real — i grew <span class="bold">the stupidpreneur newsletter</span> to 20,000+ subscribers with 15–20% reply rates. i'm a <span class="bold">linkedin top voice</span> in branding. i've delivered 100+ talks on brand strategy and entrepreneurship. and i'm currently scaling <span class="bold">happy beginnings</span>, india's first wedding invites e-commerce.</p>
+
+    <p class="fade">the way i work: monthly retainer, fixed scope, strategic oversight — not execution. i work with 3 to 5 companies at a time. post-pmf startups, scaling d2c brands, and b2b companies stuck in commoditized markets.</p>
+
+    <p class="fade">if your leadership team can't articulate what makes you different in one sentence — or if your marketing team is working hard but nothing's sticking — that's a positioning problem. and i can help you fix that.</p>
+
+    <p class="fade sig">— shashank</p>
+
+    <div class="letter-cta fade">
+      <a href="mailto:shashank@stupidpreneur.com" class="cta-btn">schedule a free discovery call</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-text">written by <a href="https://x.com/istupidpreneur" class="footer-link" target="_blank" rel="noopener">shashank</a></span>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
