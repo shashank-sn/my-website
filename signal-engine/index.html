@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Signal Engine — High-Leverage Writing for the Modern Internet</title>
+  <meta name="description" content="A 6-step writing framework to stop being noise and start being the destination. For creators done waiting to be discovered. $497, one-time." />
+  <meta property="og:title" content="The Signal Engine — High-Leverage Writing for the Modern Internet" />
+  <meta property="og:description" content="Stop sounding like everyone else. Start building signal." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css" />
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --bg-void:        #ffffff;
+      --bg-surface:     #f7f6f3;
+      --bg-raised:      #eeecea;
+      --border:         #e2deda;
+      --text-primary:   #111111;
+      --text-muted:     #666666;
+      --text-faint:     #aaaaaa;
+      --accent:         #d4820f;
+      --accent-glow:    rgba(212, 130, 15, 0.12);
+      --accent-dark:    #b56d0c;
+      --white:          #ffffff;
+
+      --font-display: 'Google Sans', 'Product Sans', sans-serif;
+      --font-body:    'Space Grotesk', sans-serif;
+
+      --nav-h: 64px;
+      --section-pad: clamp(80px, 10vw, 140px);
+      --container: 1120px;
+      --container-narrow: 720px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-void);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 48px);
+    }
+
+    .container--narrow {
+      max-width: var(--container-narrow);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 48px);
+    }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .section-headline--xl {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    .section-headline--lg {
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+    }
+
+    .lead {
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.5); }
+      70%  { box-shadow: 0 0 0 14px rgba(245, 166, 35, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0); }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 16px 36px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      animation: pulse-ring 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      animation: none;
+      transform: translateY(-2px);
+      background: #f7b444;
+      box-shadow: 0 8px 32px rgba(245, 166, 35, 0.35);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    .btn-primary--full {
+      width: 100%;
+      justify-content: center;
+      padding: 18px 36px;
+      font-size: 1rem;
+    }
+
+    /* ============================================================
+       NAV
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      z-index: 900;
+      background: transparent;
+      backdrop-filter: blur(0px);
+      transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom-color: var(--border);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .nav__wordmark {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+    }
+    .nav__wordmark span {
+      color: var(--accent);
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-h);
+      overflow: hidden;
+    }
+
+    /* Radial amber glow */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 45%, rgba(212, 130, 15, 0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      padding: clamp(60px, 10vh, 120px) 0;
+      width: 100%;
+    }
+
+    .hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .hero__eyebrow-line {
+      width: 32px;
+      height: 2px;
+      background: var(--accent);
+    }
+    .hero__eyebrow-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .hero__headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      color: var(--text-primary);
+      margin-bottom: 36px;
+      max-width: 14ch;
+    }
+    .hero__headline .accent { color: var(--accent); }
+
+    .hero__sub {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 52ch;
+      margin-bottom: 20px;
+    }
+
+    .hero__body {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--text-faint);
+      line-height: 1.7;
+      max-width: 52ch;
+      margin-bottom: 48px;
+    }
+
+    .hero__cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .hero__micro {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      letter-spacing: 0.02em;
+    }
+
+    .hero__scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeInBounce 1s ease 2s forwards;
+      color: var(--text-faint);
+      font-size: 1.4rem;
+    }
+
+    @keyframes fadeInBounce {
+      0%   { opacity: 0; transform: translateX(-50%) translateY(0); }
+      50%  { opacity: 0.5; }
+      70%  { transform: translateX(-50%) translateY(-6px); }
+      85%  { transform: translateX(-50%) translateY(0); }
+      100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* ============================================================
+       SECTION DIVIDER
+    ============================================================ */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+      position: relative;
+    }
+    .divider::after {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(212,130,15,0.1) 30%, rgba(212,130,15,0.1) 70%, transparent);
+      filter: blur(4px);
+    }
+
+    /* ============================================================
+       PROBLEM SECTION
+    ============================================================ */
+    .problem {
+      padding: var(--section-pad) 0;
+    }
+    .problem__content {
+      text-align: center;
+    }
+    .problem__paragraphs {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .problem__p {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .problem__p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       PILLARS SECTION
+    ============================================================ */
+    .pillars {
+      padding: var(--section-pad) 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(212,130,15,0.03) 50%, transparent 100%);
+    }
+    .pillars__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+    .pillars__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pillar-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: clamp(28px, 3vw, 40px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(212,130,15,0.12);
+    }
+    .pillar-card__icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .pillar-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .pillar-card__body {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       FRAMEWORK SECTION
+    ============================================================ */
+    .framework {
+      padding: var(--section-pad) 0;
+    }
+    .framework__header {
+      margin-bottom: clamp(60px, 8vw, 100px);
+    }
+    .framework__header .section-headline--xl {
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+    .framework__subhead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 52ch;
+      line-height: 1.7;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 40px;
+      padding: clamp(32px, 4vw, 52px) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+
+    .step__number-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+    .step__ghost {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(5rem, 10vw, 8rem);
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.06;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .step__num {
+      position: relative;
+      z-index: 1;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--accent);
+      opacity: 0.5;
+    }
+    .step__connector {
+      position: absolute;
+      top: 52px;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: var(--border);
+    }
+    .step:last-child .step__connector { display: none; }
+
+    .step__content { padding-top: 4px; }
+    .step__label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .step__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .step__body {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 64ch;
+      margin-bottom: 20px;
+    }
+    .step__pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: rgba(212, 130, 15, 0.08);
+      border: 1px solid rgba(212, 130, 15, 0.25);
+      padding: 5px 12px;
+      border-radius: 3px;
+    }
+
+    /* ============================================================
+       WHAT'S INSIDE
+    ============================================================ */
+    .inside {
+      padding: var(--section-pad) 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(212,130,15,0.025) 50%, transparent 100%);
+    }
+    .inside__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+    .inside__left { padding-top: 8px; }
+    .inside__left .section-headline--lg {
+      margin-top: 16px;
+      margin-bottom: 24px;
+    }
+    .inside__copy {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .inside__copy strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .inside__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .inside-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: clamp(20px, 2.5vw, 28px);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .inside-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212,130,15,0.35);
+    }
+    .inside-card__icon {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .inside-card__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .inside-card__body {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ============================================================
+       PRICING
+    ============================================================ */
+    .pricing {
+      padding: var(--section-pad) 0;
+    }
+    .pricing__header {
+      text-align: center;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+    .pricing__header .section-headline--lg {
+      margin-top: 16px;
+    }
+    .pricing-card {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border: 1px solid rgba(212, 130, 15, 0.3);
+      border-radius: 8px;
+      padding: clamp(36px, 5vw, 56px);
+      box-shadow:
+        0 0 0 1px rgba(212, 130, 15, 0.04),
+        0 8px 48px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(212, 130, 15, 0.06);
+    }
+    .pricing-card__product {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .pricing-card__price {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(4rem, 10vw, 6rem);
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+    .pricing-card__period {
+      font-size: 0.85rem;
+      color: var(--text-faint);
+      margin-bottom: 32px;
+    }
+    .pricing-card__divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 28px;
+    }
+    .pricing-card__checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+    .check-item i {
+      color: var(--accent);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing__guarantee {
+      text-align: center;
+      margin-top: 28px;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pricing__guarantee p {
+      font-size: 0.875rem;
+      color: var(--text-faint);
+      line-height: 1.7;
+      font-style: normal;
+    }
+
+    /* ============================================================
+       FINAL CTA
+    ============================================================ */
+    .final-cta {
+      padding: var(--section-pad) 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212, 130, 15, 0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .final-cta__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .final-cta__headline {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+    .final-cta__headline .accent { color: var(--accent); }
+    .final-cta__body {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .final-cta__cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .final-cta__proof {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+      letter-spacing: 0.04em;
+    }
+    .final-cta__proof strong {
+      color: var(--accent);
+    }
+
+    .final-cta__ps {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .final-cta__ps strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer__copy {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+    .footer__contact {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+    .footer__contact a {
+      color: var(--accent);
+      transition: opacity 0.2s;
+    }
+    .footer__contact a:hover { opacity: 0.7; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+
+    /* Tablet (600px–900px): 2-col pillars, stacked inside layout with 2-col cards */
+    @media (max-width: 900px) {
+      .pillars__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .inside__layout {
+        grid-template-columns: 1fr;
+      }
+      .inside__grid {
+        /* Keep 2-col cards when the outer layout stacks — they have full width now */
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .step {
+        grid-template-columns: 52px 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* Mobile (≤600px): everything single column */
+    @media (max-width: 600px) {
+      :root { --nav-h: 56px; }
+
+      /* Nav: tighten wordmark + button so they don't overflow */
+      .nav__wordmark { font-size: 0.82rem; letter-spacing: 0.03em; }
+      .nav .btn-primary { padding: 10px 18px; font-size: 0.8rem; }
+
+      /* General buttons */
+      .btn-primary { font-size: 0.875rem; padding: 14px 24px; }
+
+      /* Hero */
+      .hero__headline { font-size: clamp(2.4rem, 11vw, 4rem); }
+      /* Let the sub-headline reflow naturally — the forced <br> looks bad on mobile */
+      .hero__sub br { display: none; }
+
+      /* Pillars: collapse to single column */
+      .pillars__grid { grid-template-columns: 1fr; }
+
+      /* Framework steps */
+      .step {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .step__number-wrap {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding-top: 0;
+      }
+      .step__ghost { display: none; }
+      .step__connector { display: none; }
+
+      /* Inside cards: single column on mobile */
+      .inside__grid { grid-template-columns: 1fr; }
+
+      /* Footer */
+      .footer__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* Very small phones (≤380px): extra safety for nav overflow */
+    @media (max-width: 380px) {
+      .nav__wordmark { font-size: 0.75rem; }
+      .nav .btn-primary { padding: 9px 14px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <div class="nav__inner">
+        <span class="nav__wordmark">THE <span>SIGNAL</span> ENGINE</span>
+        <a href="#pricing" class="btn-primary">Buy Now — $497</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__eyebrow reveal">
+          <span class="hero__eyebrow-line"></span>
+          <span class="hero__eyebrow-text">High-Leverage Writing for the Modern Internet</span>
+        </div>
+
+        <h1 class="hero__headline reveal" style="transition-delay:0.1s">
+          THE INTERNET IS<br>A <span class="accent">SHITSHOW.</span>
+        </h1>
+
+        <p class="hero__sub reveal" style="transition-delay:0.2s">
+          But I'll give it to you. You may have good ideas, but you are invisible because you sound like everyone else.
+        </p>
+
+        <p class="hero__body reveal" style="transition-delay:0.3s">
+          And that's exactly why I built the Signal Engine, which is a 6-step writing framework that transforms your prose from background noise into the destination. Made for creators who are done waiting to be discovered.
+        </p>
+
+        <div class="hero__cta-group reveal" style="transition-delay:0.4s">
+          <a href="#pricing" class="btn-primary">
+            Get Instant Access — $497
+            <i class="ph-arrow-right"></i>
+          </a>
+          <span class="hero__micro">One-time payment &nbsp;·&nbsp; Instant access &nbsp;·&nbsp; No subscription</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <i class="ph-caret-double-down"></i>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       PROBLEM
+  ============================================================ -->
+  <section class="problem" id="problem">
+    <div class="container--narrow">
+      <div class="problem__content">
+
+        <span class="section-label reveal">The Problem</span>
+        <h2 class="section-headline section-headline--xl reveal" style="transition-delay:0.1s">
+          You're writing<br>into a void.
+        </h2>
+
+        <div class="problem__paragraphs">
+          <p class="problem__p reveal" style="transition-delay:0.15s">
+            The feed is infinite. Attention spans are not. Every day, <strong>ten thousand people post something that sounds almost exactly like what you just wrote.</strong> And nobody — not even the algorithm — can tell the difference.
+          </p>
+          <p class="problem__p reveal" style="transition-delay:0.2s">
+            It's not a talent problem. It's not an ideas problem. <strong>It's a signal problem.</strong> Your writing doesn't fail because it's bad. It fails because it's forgettable. Because it blends. Because it doesn't grab. You're on the social media treadmill — pumping out generic content, chasing vanity metrics, begging for a crumb of attention.
+          </p>
+          <p class="problem__p reveal" style="transition-delay:0.25s">
+            The writers who win aren't necessarily smarter. They're not working harder. They've just learned how to <strong>engineer signal</strong> — and we're about to show you exactly how.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       PILLARS
+  ============================================================ -->
+  <section class="pillars" id="pillars">
+    <div class="container">
+
+      <div class="pillars__header">
+        <span class="section-label reveal">The Outcome</span>
+        <h2 class="section-headline section-headline--xl reveal" style="transition-delay:0.1s">
+          Three things change<br>when you master signal.
+        </h2>
+      </div>
+
+      <div class="pillars__grid">
+
+        <div class="pillar-card reveal" style="transition-delay:0.1s">
+          <i class="ph-broadcast ph-duotone pillar-card__icon"></i>
+          <h3 class="pillar-card__title">Reach</h3>
+          <p class="pillar-card__body">Slice through the noise and land in front of the exact people who need what you do. Not more posts. <strong>Better</strong> posts. The kind that get shared, saved, and forwarded at 11pm.</p>
+        </div>
+
+        <div class="pillar-card reveal" style="transition-delay:0.2s">
+          <i class="ph-users-three ph-duotone pillar-card__icon"></i>
+          <h3 class="pillar-card__title">Relationships</h3>
+          <p class="pillar-card__body">Turn anonymous scroll-bys into a "One True Fan" army — readers who open every email, share every post, and become buyers before you ever make an offer.</p>
+        </div>
+
+        <div class="pillar-card reveal" style="transition-delay:0.3s">
+          <i class="ph-trend-up ph-duotone pillar-card__icon"></i>
+          <h3 class="pillar-card__title">Revenue</h3>
+          <p class="pillar-card__body">Connect your ideas directly to income. The Signal Engine teaches you to embed invitations without ever feeling like a pitch — so buying feels like the obvious next move.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       FRAMEWORK
+  ============================================================ -->
+  <section class="framework" id="framework">
+    <div class="container">
+
+      <div class="framework__header">
+        <span class="section-label reveal">The System</span>
+        <h2 class="section-headline section-headline--xl reveal" style="transition-delay:0.1s">
+          Six moves. One engine.<br>From "yeah yeah" to <span style="color:var(--accent)">Hell Yeah.</span>
+        </h2>
+        <p class="framework__subhead reveal" style="transition-delay:0.2s">
+          This isn't a list of tips. It's a sequence — a repeatable system for writing that actually works on the modern internet, whether you're writing a 15-word hook or a 1,500-word deep dive.
+        </p>
+      </div>
+
+      <div class="steps">
+
+        <!-- Step 1 -->
+        <div class="step reveal">
+          <div class="step__number-wrap">
+            <span class="step__ghost" aria-hidden="true">01</span>
+            <span class="step__num">01</span>
+            <span class="step__connector" aria-hidden="true"></span>
+          </div>
+          <div class="step__content">
+            <p class="step__label">The Scene-Set</p>
+            <h3 class="step__title">Teleport them in. Don't ease them in.</h3>
+            <p class="step__body">The first sentence is a trapdoor. The Scene-Set has two modes: the <strong style="color:var(--text-primary)">Snapshot</strong>, which freezes a single cinematic moment so vivid the reader forgets they're reading, and the <strong style="color:var(--text-primary)">Snipershot</strong>, which drops them directly into conflict. Both achieve the same result — the reader is <strong>somewhere</strong> before they've consciously decided to read.</p>
+            <div class="step__pills">
+              <span class="pill">Snapshot</span>
+              <span class="pill">Snipershot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step reveal">
+          <div class="step__number-wrap">
+            <span class="step__ghost" aria-hidden="true">02</span>
+            <span class="step__num">02</span>
+            <span class="step__connector" aria-hidden="true"></span>
+          </div>
+          <div class="step__content">
+            <p class="step__label">The Aiism Eliminator</p>
+            <h3 class="step__title">Sound like a human. Not a job listing.</h3>
+            <p class="step__body">AI prose has a fingerprint. So does corporate writing. So does every templated LinkedIn post that starts with "In today's fast-paced world." The Aiism Eliminator is a surgical process for stripping your writing of passive voice, hedge words, and false formality — leaving something that actually sounds like a person with opinions wrote it at a specific time for a specific reason.</p>
+            <div class="step__pills">
+              <span class="pill">Anti-AI Prose</span>
+              <span class="pill">Direct Voice</span>
+              <span class="pill">Human Fingerprint</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step reveal">
+          <div class="step__number-wrap">
+            <span class="step__ghost" aria-hidden="true">03</span>
+            <span class="step__num">03</span>
+            <span class="step__connector" aria-hidden="true"></span>
+          </div>
+          <div class="step__content">
+            <p class="step__label">The 7 Tools of Trust</p>
+            <h3 class="step__title">Kill skepticism before it starts.</h3>
+            <p class="step__body">Readers don't distrust you because you're dishonest. They distrust you because you're <strong>vague</strong>. The 7 Tools — including precision metaphors, analogies with texture, and specific named results — replace vague claims with believable specificity. When you say "I helped a client triple their revenue," no one believes you. When you describe exactly how, they can't help it.</p>
+            <div class="step__pills">
+              <span class="pill">Metaphors</span>
+              <span class="pill">Analogies</span>
+              <span class="pill">Specific Results</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step reveal">
+          <div class="step__number-wrap">
+            <span class="step__ghost" aria-hidden="true">04</span>
+            <span class="step__num">04</span>
+            <span class="step__connector" aria-hidden="true"></span>
+          </div>
+          <div class="step__content">
+            <p class="step__label">The Pivot</p>
+            <h3 class="step__title">From story into sale. Without the lurch.</h3>
+            <p class="step__body">Most writers hit a wall when it's time to make an offer. The tone shifts. The energy drops. The reader feels the gear change. The Pivot is a single transition architecture that makes the move from narrative to invitation feel like the <strong>next natural sentence</strong> — not like a sudden commercial break in an otherwise good conversation.</p>
+            <div class="step__pills">
+              <span class="pill">Soft Pitch</span>
+              <span class="pill">Transition Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step reveal">
+          <div class="step__number-wrap">
+            <span class="step__ghost" aria-hidden="true">05</span>
+            <span class="step__num">05</span>
+            <span class="step__connector" aria-hidden="true"></span>
+          </div>
+          <div class="step__content">
+            <p class="step__label">The Loop Strategy</p>
+            <h3 class="step__title">The reason they don't stop reading.</h3>
+            <p class="step__body">Information gaps are the oldest trick in storytelling — and they're still the most powerful. The Loop Strategy teaches you to open multiple narrative threads simultaneously: questions the reader has to answer, patterns they need to see resolved. Leaving feels worse than staying. This is not manipulation. It's the difference between a page-turner and a pamphlet.</p>
+            <div class="step__pills">
+              <span class="pill">Open Loops</span>
+              <span class="pill">Information Gaps</span>
+              <span class="pill">Retention</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step reveal">
+          <div class="step__number-wrap">
+            <span class="step__ghost" aria-hidden="true">06</span>
+            <span class="step__num">06</span>
+          </div>
+          <div class="step__content">
+            <p class="step__label">The 10 Angles of Attraction</p>
+            <h3 class="step__title">Never stare at a blank page again.</h3>
+            <p class="step__body">The 10 Angles are a content operating system. Opinions, Observations, Predictions, Contrarian Takes, Authority-by-Association, and five more. Each angle is a library of prompts that generates 90 days of content ideas before lunch — and positions you as the only authority in your niche worth listening to.</p>
+            <div class="step__pills">
+              <span class="pill">Opinions</span>
+              <span class="pill">Observations</span>
+              <span class="pill">Predictions</span>
+              <span class="pill">Contrarian Takes</span>
+              <span class="pill">Authority Posts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       WHAT'S INSIDE
+  ============================================================ -->
+  <section class="inside" id="inside">
+    <div class="container">
+      <div class="inside__layout">
+
+        <div class="inside__left">
+          <span class="section-label reveal">What You Get</span>
+          <h2 class="section-headline section-headline--lg reveal" style="transition-delay:0.1s">
+            Everything you need.<br>Nothing you don't.
+          </h2>
+          <p class="inside__copy reveal" style="transition-delay:0.2s">
+            <strong>No fluff modules.</strong> No filler videos. No "mindset work" before you're allowed to learn the craft. The Signal Engine is a complete written system — designed for people who prefer to learn by reading, not watching.
+          </p>
+          <p class="inside__copy reveal" style="transition-delay:0.25s">
+            If you try to write to everyone, you write to no one. Every piece inside this engine is built to help you go deeper, not wider — to find your voice, sharpen your edge, and build something that lasts longer than the next algorithm update.
+          </p>
+          <a href="#pricing" class="btn-primary reveal" style="transition-delay:0.3s">
+            Get the Engine — $497
+          </a>
+        </div>
+
+        <div class="inside__grid">
+
+          <div class="inside-card reveal" style="transition-delay:0.1s">
+            <i class="ph-book-open ph-duotone inside-card__icon"></i>
+            <h3 class="inside-card__title">The Full Written System</h3>
+            <p class="inside-card__body">Deconstructions of high-performing digital prose, annotated with exactly what works and why. Not theory. Pattern recognition at the sentence level.</p>
+          </div>
+
+          <div class="inside-card reveal" style="transition-delay:0.2s">
+            <i class="ph-target ph-duotone inside-card__icon"></i>
+            <h3 class="inside-card__title">"One True Fan" Workbook</h3>
+            <p class="inside-card__body">A psychological deep-dive to define your ideal reader with surgical precision. Who they are, what they fear, what language they use at midnight.</p>
+          </div>
+
+          <div class="inside-card reveal" style="transition-delay:0.3s">
+            <i class="ph-lightning ph-duotone inside-card__icon"></i>
+            <h3 class="inside-card__title">Template Vault</h3>
+            <p class="inside-card__body">Plug-and-play structures for Contrarian Opinion posts, Authority-by-Association pieces, and the High-Ticket Soft Pitch. Fill the blanks. Publish.</p>
+          </div>
+
+          <div class="inside-card reveal" style="transition-delay:0.4s">
+            <i class="ph-timer ph-duotone inside-card__icon"></i>
+            <h3 class="inside-card__title">Deep Work Protocol</h3>
+            <p class="inside-card__body">A minimalist system for batching your creative output in focused blocks. Stop writing when inspiration hits. Start writing on a schedule that ships.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       PRICING
+  ============================================================ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+
+      <div class="pricing__header">
+        <span class="section-label reveal">The Investment</span>
+        <h2 class="section-headline section-headline--lg reveal" style="transition-delay:0.1s">
+          One price.<br>Everything inside.
+        </h2>
+      </div>
+
+      <div class="pricing-card reveal">
+        <p class="pricing-card__product">The Signal Engine</p>
+        <p class="pricing-card__price">$497</p>
+        <p class="pricing-card__period">One-time investment &nbsp;·&nbsp; Lifetime access</p>
+        <div class="pricing-card__divider"></div>
+        <ul class="pricing-card__checklist">
+          <li class="check-item"><i class="ph-check-circle-fill"></i>The Complete 6-Step Signal Engine Framework</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>The Full Written System + Deconstructions</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>"One True Fan" Workbook</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>Template Vault (Contrarian, Authority, Soft Pitch)</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>Deep Work Protocol</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>Lifetime access — yours forever</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>All future updates included</li>
+          <li class="check-item"><i class="ph-check-circle-fill"></i>Start writing better today</li>
+        </ul>
+        <a href="#" class="btn-primary btn-primary--full" onclick="return false;">
+          Get Instant Access — $497
+          <i class="ph-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="pricing__guarantee reveal">
+        <p>If you go through the full framework and decide it wasn't worth $497, email me. I'll refund every cent. No forms. No questions. Just a reply. That's how confident I am you'll use this.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       FINAL CTA
+  ============================================================ -->
+  <section class="final-cta" id="cta">
+    <div class="container">
+      <div class="final-cta__inner">
+
+        <h2 class="final-cta__headline reveal">
+          The noise isn't<br>going away.<br><span class="accent">Your signal is.</span>
+        </h2>
+
+        <p class="final-cta__body reveal" style="transition-delay:0.1s">
+          Every day you write the same way is another day you're invisible. The Signal Engine changes that — not with hacks, not with templates alone, but with a genuine craft upgrade that compounds the longer you use it.
+        </p>
+
+        <div class="final-cta__cta-wrap reveal" style="transition-delay:0.2s">
+          <a href="#pricing" class="btn-primary">
+            Join the Signal Engine — $497
+            <i class="ph-arrow-right"></i>
+          </a>
+          <p class="final-cta__proof">Alongside <strong>hundreds of writers</strong> building signal right now.</p>
+        </div>
+
+        <div class="final-cta__ps reveal" style="transition-delay:0.3s">
+          <p><strong>P.S.</strong> The world is sleeping on the power of clear, direct writing. While everyone else is using AI to generate more noise, you'll be using this system to generate more signal. Choose the harder path. It's much less crowded.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 The Signal Engine. All rights reserved.</p>
+        <p class="footer__contact"><a href="https://twitter.com/istupidpreneur" target="_blank" rel="noopener">@istupidpreneur</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ── 1. Nav scroll state ──────────────────────────────────────
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // ── 2. Scroll reveal (Intersection Observer) ─────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ── 3. Smooth scroll for anchor links ────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      });
+    });
+
+    // ── 4. Hero parallax ─────────────────────────────────────────
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      const heroInner = document.querySelector('.hero__inner');
+      let rafId;
+      window.addEventListener('scroll', () => {
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+          const y = window.scrollY;
+          const vh = window.innerHeight;
+          if (y < vh) {
+            const progress = y / vh;
+            heroInner.style.transform = `translateY(${y * 0.12}px)`;
+            heroInner.style.opacity = 1 - progress * 1.4;
+          }
+          rafId = null;
+        });
+      }, { passive: true });
+    }
+
+    // ── 5. CTA click tracking (swap href with real checkout URL) ──
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Replace with GTM event, Plausible goal, or checkout URL
+        console.log('[Signal Engine] CTA clicked:', btn.textContent.trim());
+      });
+    });
+  </script>
+
+</body>
+</html>
