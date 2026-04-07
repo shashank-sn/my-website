@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Course 3: The Competitor Audit You've Never Done — Brand Arsenal</title>
+  <link rel="canonical" href="https://shashanksn.xyz/brand-arsenal/free-3.html">
+  <meta name="description" content="A 30-minute competitor audit that reveals the white space in your market — and shows you exactly where to plant your positioning flag.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 58' fill='none'><path d='M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z' fill='%231D1D1F'/><path d='M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z' stroke='%231D1D1F' stroke-width='2.5' stroke-linejoin='round'/><line x1='13' y1='21' x2='39' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/><line x1='39' y1='21' x2='13' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white:#FFFFFF; --ink:#1D1D1F; --gray:#6E6E73; --light:#F5F5F7; --rule:#D2D2D7; --hh:60px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--ink); font-family: 'DM Sans', -apple-system, sans-serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    header { position: fixed; top:0; left:0; right:0; height:var(--hh); z-index:100; background: rgba(255,255,255,0.88); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .hd { max-width:1080px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:9px; text-decoration:none; color:var(--ink); }
+    .logo-name { font-family:'Caveat',cursive; font-weight:700; font-size:1.35rem; letter-spacing:0.01em; line-height:1; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:10px 24px; border-radius:980px; font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:500; text-decoration:none; border:none; cursor:pointer; transition:opacity 0.2s, transform 0.2s; white-space:nowrap; }
+    .btn:hover { opacity:0.82; }
+    .btn:active { transform:scale(0.97); }
+    .btn-dark { background:var(--ink); color:var(--white); }
+    .btn-outline { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--ink); }
+    .btn-lg { padding:15px 36px; font-size:1rem; }
+
+    main { padding-top: var(--hh); }
+
+    .course-hero { padding: 72px 24px 64px; text-align: center; border-bottom: 1px solid var(--rule); }
+    .eyebrow { display:block; font-size:0.8125rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
+    .course-hero h1 { font-family:'Caveat',cursive; font-size:clamp(2.4rem,6vw,4rem); font-weight:700; line-height:1.08; letter-spacing:0.01em; margin-bottom:20px; max-width:720px; margin-left:auto; margin-right:auto; }
+    .course-hero .sub { font-size:1.0625rem; color:var(--gray); max-width:520px; margin:0 auto 32px; line-height:1.75; }
+    .course-meta { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; font-size:0.8125rem; font-weight:500; color:var(--gray); letter-spacing:0.05em; text-transform:uppercase; }
+
+    .course-body { max-width:680px; margin:0 auto; padding:64px 24px 80px; }
+    .course-body h2 { font-family:'Caveat',cursive; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; line-height:1.15; letter-spacing:0.01em; margin:56px 0 20px; color:var(--ink); }
+    .course-body h2:first-child { margin-top:0; }
+    .course-body p { font-size:1.0625rem; line-height:1.78; color:var(--ink); }
+    .course-body p + p { margin-top:20px; }
+    .course-body .pull { font-family:'Caveat',cursive; font-size:1.85rem; font-weight:600; line-height:1.3; color:var(--ink); margin:44px 0; text-align:center; display:block; }
+    .course-body strong { font-weight:600; }
+    .course-body em { font-style:italic; }
+
+    .callout { background:var(--light); border-left:3px solid var(--ink); padding:24px 28px; margin:36px 0; border-radius:0 8px 8px 0; }
+    .callout p { font-size:1rem; }
+    .callout .callout-label { font-size:0.75rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); margin-bottom:10px; display:block; }
+
+    .step-list { list-style:none; margin:36px 0; }
+    .step-list li { display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--rule); }
+    .step-list li:first-child { border-top:1px solid var(--rule); }
+    .step-num { font-family:'Caveat',cursive; font-size:1.5rem; font-weight:700; color:var(--gray); min-width:32px; line-height:1.2; flex-shrink:0; padding-top:2px; }
+    .step-content { flex:1; }
+    .step-title { font-weight:600; font-size:1rem; margin-bottom:6px; }
+    .step-desc { font-size:0.9375rem; color:var(--gray); line-height:1.65; }
+
+    .exercise { background:var(--ink); color:var(--white); padding:36px 40px; border-radius:12px; margin:44px 0; }
+    .exercise .ex-label { font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:12px; display:block; }
+    .exercise p { color:rgba(255,255,255,0.85); font-size:1rem; }
+    .exercise p + p { margin-top:14px; }
+    .exercise strong { color:var(--white); }
+    .exercise ol { color:rgba(255,255,255,0.85); font-size:1rem; padding-left:20px; margin-top:14px; }
+    .exercise ol li { margin-bottom:10px; line-height:1.6; }
+
+    .divider { border:none; border-top:1px solid var(--rule); margin:56px 0; }
+
+    .course-nav { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding-top:48px; border-top:1px solid var(--rule); margin-top:64px; }
+    .course-nav a { font-size:0.9375rem; font-weight:500; color:var(--ink); text-decoration:none; }
+    .course-nav a:hover { opacity:0.65; }
+    .nav-prev::before { content:'← '; }
+    .nav-next::after { content:' →'; }
+
+    .upsell { background:var(--light); padding:64px 24px; text-align:center; border-top:1px solid var(--rule); }
+    .upsell h2 { font-family:'Caveat',cursive; font-size:clamp(2rem,4.5vw,3rem); font-weight:700; letter-spacing:0.01em; margin-bottom:16px; }
+    .upsell p { color:var(--gray); max-width:420px; margin:0 auto 36px; font-size:1rem; }
+    .upsell-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+    footer { padding:44px 24px; border-top:1px solid var(--rule); text-align:center; }
+    footer p { font-size:0.875rem; color:var(--gray); line-height:2; }
+    footer a { color:var(--gray); text-decoration:underline; text-underline-offset:3px; }
+    footer a:hover { color:var(--ink); }
+
+    @media (max-width: 600px) {
+      :root { --hh: 54px; }
+      .hd { padding: 0 18px; }
+      .course-hero { padding: 56px 20px 48px; }
+      .course-body { padding: 48px 20px 64px; }
+      .exercise { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      <svg width="26" height="32" viewBox="0 0 52 58" fill="none" aria-hidden="true">
+        <path d="M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z" fill="#1D1D1F"/>
+        <path d="M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z" stroke="#1D1D1F" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+        <line x1="13" y1="21" x2="39" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="39" y1="21" x2="13" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M21,44 L26,39 L31,44" stroke="#1D1D1F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="26" y1="39" x2="26" y2="49" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-name">Brand Arsenal</span>
+    </a>
+    <a href="index.html#final" class="btn btn-dark">Get Brand Arsenal — $39</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="course-hero">
+    <span class="eyebrow">Free Course 03 of 05</span>
+    <h1>The Competitor Audit You've Never Done (30-Minute Exercise)</h1>
+    <p class="sub">Most competitor research tells you what everyone is saying. This audit tells you what no one is saying — and that gap is where your positioning lives.</p>
+    <div class="course-meta">
+      <span>20 min read</span>
+      <span>30 min exercise</span>
+      <span>Free — no email required</span>
+    </div>
+  </div>
+
+  <div class="course-body">
+
+    <h2>Why standard competitor research is useless for positioning</h2>
+
+    <p>When founders do competitive research, they usually build a feature comparison matrix. Product A has feature X, product B doesn't, we have both. They map pricing tiers. They note which companies are funded. They screenshot landing pages.</p>
+
+    <p>None of that is useful for positioning. A feature matrix tells you what products do. It doesn't tell you what territory in a customer's mind is already occupied — and more importantly, what territory is empty.</p>
+
+    <p>Positioning is about perception, not product. Two companies can have nearly identical products and radically different positions in the market. Positioning audit work has to happen at the level of messaging, not features.</p>
+
+    <span class="pull">You're not looking for what competitors built. You're looking for what they've claimed — because whatever they haven't claimed is yours to take.</span>
+
+    <p>This audit takes 30 minutes. You need a spreadsheet, your five closest competitors, and a willingness to read their websites like a strategist instead of a user.</p>
+
+    <h2>The 5-step audit</h2>
+
+    <ul class="step-list">
+      <li>
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <div class="step-title">Collect the hero headline of every competitor</div>
+          <div class="step-desc">Go to the homepage of your top five competitors. Write down the exact H1 headline — the biggest text on the page. Don't summarize. Copy it verbatim. You're looking at the single most distilled version of how they want to be perceived.</div>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <div class="step-title">Identify the claim each one is making</div>
+          <div class="step-desc">For each headline, answer: what is the primary claim? Is it speed? Simplicity? Power? Integration? Specific customer type? Price? AI? Write the core claim in two or three words beside each competitor's name. You'll start to see clustering fast.</div>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <div class="step-title">Map the emotional register</div>
+          <div class="step-desc">Now look at tone. Is the copy aspirational ("transform your business") or practical ("process invoices in 30 seconds")? Fear-based ("stop losing deals") or excitement-based ("the growth platform you've been waiting for")? Note this for each competitor. Markets often cluster emotionally — which means the opposite emotional register is unoccupied territory.</div>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <div class="step-title">Find the customer they're all targeting</div>
+          <div class="step-desc">Look at who each competitor is addressing in their hero section — explicitly or implicitly. "For growing teams" vs "for solo operators" vs "enterprise-grade." Mark the customer segment each one is speaking to. Usually you'll find three to four competitors all chasing the same segment, leaving adjacent segments completely unaddressed.</div>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">05</span>
+        <div class="step-content">
+          <div class="step-title">Spot the white space</div>
+          <div class="step-desc">Look at your completed grid. What claim is nobody making? What customer segment is nobody speaking to? What emotional register is unused? What problem has every competitor sidestepped in their headline? That combination of unclaimed territory is your positioning opportunity.</div>
+        </div>
+      </li>
+    </ul>
+
+    <h2>What white space actually looks like</h2>
+
+    <p>White space isn't always obvious. It rarely presents itself as a glaring empty box on a matrix. More often it shows up as a pattern of avoidance — something the whole market seems to agree not to talk about directly.</p>
+
+    <p>In the project management software space, for years, every player talked about productivity, team collaboration, and "getting work done." Nobody talked about the chaos of onboarding. Nobody said "your team will actually use this." Then one product made that its entire positioning — and it stood out dramatically not because the product was radically different but because the positioning was addressing something everyone had been too polished to mention.</p>
+
+    <p>Look for the thing competitors seem embarrassed to acknowledge about their category. Look for the frustration every customer in your space has but that no brand is voicing. Look for the promise that's so obvious it feels risky to make. That discomfort is a reliable signal you've found real white space.</p>
+
+    <div class="callout">
+      <span class="callout-label">The review mine</span>
+      <p>After you complete the audit, spend 10 minutes on G2 or Capterra reading one-star reviews of your top two competitors. Pay attention to language, not just complaints. The exact phrases reviewers use to describe what's broken are the phrases your positioning should speak to — because those are the words already living in your potential customers' heads.</p>
+    </div>
+
+    <h2>Turning the audit into a positioning direction</h2>
+
+    <p>Once you have your white space mapped, you need to make a decision — not just an observation. White space is only useful if you commit to owning it. A lot of founders do this audit, identify the gap, and then hedge. They say "we'll address that audience but we won't alienate the mainstream audience either." That hedge is how you end up with positioning that says nothing to anyone.</p>
+
+    <p>Pick one white space angle. Make it your primary positioning direction. You can address secondary audiences in sub-pages, in sales conversations, in targeted ads — but your homepage hero, your one-sentence positioning test answer from Course 1, and your UVP from Course 2 all need to point at that one angle with full commitment.</p>
+
+    <p>The founders who resist this usually come around after watching a competitor with a worse product own the white space they identified and hesitated on. Don't be that founder.</p>
+
+    <div class="exercise">
+      <span class="ex-label">Your 30-minute exercise</span>
+      <p>Open a spreadsheet with these columns: Competitor Name / Hero Headline / Primary Claim (2–3 words) / Emotional Register / Customer Segment Targeted.</p>
+      <p>Fill it in for your five closest competitors. Then answer these three questions in writing:</p>
+      <ol>
+        <li>What claim is no competitor in my market making?</li>
+        <li>What customer segment is everyone ignoring or underserving in their messaging?</li>
+        <li>What is the one frustration every customer in this category has that no brand is directly addressing?</li>
+      </ol>
+      <p><strong>Your positioning direction lives in the intersection of those three answers.</strong> Write one sentence that plants your flag there.</p>
+    </div>
+
+    <hr class="divider">
+
+    <p>Free Course 4 takes everything from the first three courses and applies it to the most expensive positioning failure most founders are living with right now — the brand mistakes that are actively suppressing your conversion rate.</p>
+
+    <div class="course-nav">
+      <a href="free-2.html" class="nav-prev">Free Course 2: Why Your UVP Sounds Generic</a>
+      <a href="free-4.html" class="nav-next">Free Course 4: Three Brand Mistakes Killing Your Conversion Rate</a>
+    </div>
+
+  </div>
+
+  <div class="upsell">
+    <span class="eyebrow">Want to go deeper?</span>
+    <h2>10+ full courses inside Brand Arsenal.</h2>
+    <p>The free courses are the diagnosis. The paid library is the full treatment — positioning, pricing, landing pages, investor messaging, and more.</p>
+    <div class="upsell-row">
+      <a href="index.html#final" class="btn btn-dark btn-lg">Get Brand Arsenal — $39</a>
+      <a href="free-4.html" class="btn btn-outline btn-lg">Next free course →</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Brand Arsenal by Shashank SN</p>
+  <p>Questions? <a href="mailto:emailshashanksn@gmail.com">emailshashanksn@gmail.com</a></p>
+  <p>Built with stubbornness and too much coffee.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Brand Arsenal</title>
+  <link rel="canonical" href="https://shashanksn.xyz/brand-arsenal/blog.html">
+  <meta name="description" content="Brand strategy essays for founders. No fluff. Just frameworks that fix real positioning problems.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 58' fill='none'><path d='M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z' fill='%231D1D1F'/><path d='M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z' stroke='%231D1D1F' stroke-width='2.5' stroke-linejoin='round'/><line x1='13' y1='21' x2='39' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/><line x1='39' y1='21' x2='13' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white:#FFFFFF; --ink:#1D1D1F; --gray:#6E6E73; --light:#F5F5F7; --rule:#D2D2D7; --hh:60px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--ink); font-family: 'DM Sans', -apple-system, sans-serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    header { position: fixed; top:0; left:0; right:0; height:var(--hh); z-index:100; transition: background 0.3s, box-shadow 0.3s; }
+    header.on { background: rgba(255,255,255,0.88); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .hd { max-width:1080px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:9px; text-decoration:none; color:var(--ink); }
+    .logo-name { font-family:'Caveat',cursive; font-weight:700; font-size:1.35rem; letter-spacing:0.01em; line-height:1; }
+    .hd-nav { display:flex; align-items:center; gap:20px; }
+    .nav-link { font-size:0.875rem; font-weight:500; color:var(--gray); text-decoration:none; transition:color 0.15s; }
+    .nav-link:hover, .nav-link.active { color:var(--ink); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:10px 24px; border-radius:980px; font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:500; text-decoration:none; cursor:pointer; transition:opacity 0.2s, transform 0.2s; white-space:nowrap; }
+    .btn:hover { opacity:0.82; }
+    .btn-dark { background:var(--ink); color:var(--white); }
+    .btn-outline { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--ink); }
+    .btn-lg { padding:15px 36px; font-size:1rem; }
+
+    .wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+
+    /* Page head */
+    .page-head {
+      padding-top: calc(var(--hh) + 72px);
+      padding-bottom: 64px;
+      text-align: center;
+    }
+    .page-head h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+    }
+    .page-head p { color: var(--gray); max-width: 420px; margin: 0 auto; font-size: 1rem; }
+    .eyebrow { display:block; font-size:0.8125rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
+
+    /* Post list */
+    .post-list { list-style: none; border-top: 1px solid var(--rule); }
+    .post-item {
+      padding: 44px 0;
+      border-bottom: 1px solid var(--rule);
+      text-align: left;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .post-item.vis { opacity: 1; transform: none; }
+    .post-date { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); margin-bottom: 12px; }
+    .post-title {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      margin-bottom: 10px;
+    }
+    .post-title a { color: var(--ink); text-decoration: none; }
+    .post-title a:hover { opacity: 0.65; }
+    .post-desc { font-size: 0.9375rem; color: var(--gray); line-height: 1.65; margin-bottom: 18px; max-width: 560px; }
+    .read-more { font-size: 0.875rem; font-weight: 500; color: var(--ink); text-decoration: none; border-bottom: 1.5px solid var(--rule); padding-bottom: 1px; transition: border-color 0.15s; }
+    .read-more:hover { border-color: var(--ink); }
+
+    /* Bottom CTA */
+    .blog-cta {
+      padding: 80px 0 96px;
+      text-align: center;
+    }
+    .blog-cta h2 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+    }
+    .blog-cta p { color: var(--gray); max-width: 400px; margin: 0 auto 36px; font-size: 1rem; }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    footer { padding:44px 24px; border-top:1px solid var(--rule); text-align:center; }
+    footer p { font-size:0.875rem; color:var(--gray); line-height:2; }
+    footer a { color:var(--gray); text-decoration:underline; text-underline-offset:3px; }
+    footer a:hover { color:var(--ink); }
+
+    @media (max-width: 600px) {
+      :root { --hh: 54px; }
+      .hd { padding: 0 18px; }
+      .hd-nav { gap: 14px; }
+      .page-head { padding-bottom: 48px; }
+      .post-item { padding: 32px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="hd">
+    <a href="index.html" class="logo">
+      <svg width="26" height="32" viewBox="0 0 52 58" fill="none" aria-hidden="true">
+        <path d="M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z" fill="#1D1D1F"/>
+        <path d="M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z" stroke="#1D1D1F" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+        <line x1="13" y1="21" x2="39" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="39" y1="21" x2="13" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M21,44 L26,39 L31,44" stroke="#1D1D1F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="26" y1="39" x2="26" y2="49" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-name">Brand Arsenal</span>
+    </a>
+    <div class="hd-nav">
+      <a href="blog.html" class="nav-link active">Blog</a>
+      <a href="index.html#final" class="btn btn-dark">Get Brand Arsenal</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Essays on brand strategy</span>
+      <h1>No fluff. Just frameworks.</h1>
+      <p>Brand strategy for founders who'd rather fix the problem than read another think-piece about it.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="post-list">
+
+      <li class="post-item">
+        <div class="post-date">March 2025</div>
+        <h2 class="post-title"><a href="blog-1.html">How to Write a Positioning Statement for Your Startup (That Actually Works)</a></h2>
+        <p class="post-desc">Most startup positioning statements are either too vague to mean anything or too specific to scale. Here's a proven framework that gets it right — with examples.</p>
+        <a href="blog-1.html" class="read-more">Read article →</a>
+      </li>
+
+      <li class="post-item">
+        <div class="post-date">March 2025</div>
+        <h2 class="post-title"><a href="blog-2.html">Why Your Landing Page Isn't Converting (A Brand Strategy Diagnosis)</a></h2>
+        <p class="post-desc">Traffic isn't the problem. Your messaging is. Here's a step-by-step brand strategy diagnosis that reveals exactly why visitors leave without converting.</p>
+        <a href="blog-2.html" class="read-more">Read article →</a>
+      </li>
+
+      <li class="post-item">
+        <div class="post-date">February 2025</div>
+        <h2 class="post-title"><a href="blog-3.html">Brand Strategy vs. Marketing Strategy: What Founders Get Wrong</a></h2>
+        <p class="post-desc">Founders keep investing in the wrong thing and wondering why it doesn't work. The difference between brand and marketing strategy is the difference between building something durable and renting attention.</p>
+        <a href="blog-3.html" class="read-more">Read article →</a>
+      </li>
+
+      <li class="post-item">
+        <div class="post-date">February 2025</div>
+        <h2 class="post-title"><a href="blog-4.html">How to Position Your SaaS Against Bigger Competitors</a></h2>
+        <p class="post-desc">You can't out-spend them. You can't out-feature them. But you can own a specific position in the market they can't follow you into — and this is how you find it.</p>
+        <a href="blog-4.html" class="read-more">Read article →</a>
+      </li>
+
+      <li class="post-item">
+        <div class="post-date">January 2025</div>
+        <h2 class="post-title"><a href="blog-5.html">The Brand Messaging Framework Every B2B Startup Needs</a></h2>
+        <p class="post-desc">Most B2B startups have a features list, not a messaging framework. Here's the structure that turns confusing product descriptions into clear, compelling copy that converts.</p>
+        <a href="blog-5.html" class="read-more">Read article →</a>
+      </li>
+
+    </ul>
+
+    <div class="blog-cta">
+      <span class="eyebrow">Want more than essays?</span>
+      <h2>10+ micro-courses that go deeper.</h2>
+      <p>Each course is a framework you can use this week. Under 45 minutes. $39 one time.</p>
+      <div class="cta-row">
+        <a href="index.html#final" class="btn btn-dark btn-lg">Get Brand Arsenal — $39</a>
+        <a href="index.html#free" class="btn btn-outline btn-lg">5 free courses first</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Brand Arsenal by Shashank SN</p>
+  <p>Questions? <a href="mailto:emailshashanksn@gmail.com">emailshashanksn@gmail.com</a></p>
+  <p>Built with stubbornness and too much coffee.</p>
+</footer>
+
+<script>
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => hdr.classList.toggle('on', window.scrollY > 16), { passive: true });
+
+  const posts = document.querySelectorAll('.post-item');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => { e.target.classList.add('vis'); io.unobserve(e.target); }, i * 70);
+      }
+    });
+  }, { threshold: 0.1 });
+  posts.forEach(p => io.observe(p));
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Course 1: The One-Sentence Positioning Test — Brand Arsenal</title>
+  <link rel="canonical" href="https://shashanksn.xyz/brand-arsenal/free-1.html">
+  <meta name="description" content="Most founders can't pass this one test. Learn the single-sentence positioning framework that instantly reveals whether your brand messaging is clear or broken.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 58' fill='none'><path d='M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z' fill='%231D1D1F'/><path d='M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z' stroke='%231D1D1F' stroke-width='2.5' stroke-linejoin='round'/><line x1='13' y1='21' x2='39' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/><line x1='39' y1='21' x2='13' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white:#FFFFFF; --ink:#1D1D1F; --gray:#6E6E73; --light:#F5F5F7; --rule:#D2D2D7; --hh:60px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--white); color: var(--ink); font-family: 'DM Sans', -apple-system, sans-serif; font-size: 17px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+    header { position: fixed; top:0; left:0; right:0; height:var(--hh); z-index:100; background: rgba(255,255,255,0.88); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .hd { max-width:1080px; margin:0 auto; padding:0 28px; height:100%; display:flex; align-items:center; justify-content:space-between; }
+    .logo { display:flex; align-items:center; gap:9px; text-decoration:none; color:var(--ink); }
+    .logo-name { font-family:'Caveat',cursive; font-weight:700; font-size:1.35rem; letter-spacing:0.01em; line-height:1; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:10px 24px; border-radius:980px; font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:500; text-decoration:none; border:none; cursor:pointer; transition:opacity 0.2s, transform 0.2s; white-space:nowrap; }
+    .btn:hover { opacity:0.82; }
+    .btn:active { transform:scale(0.97); }
+    .btn-dark { background:var(--ink); color:var(--white); }
+    .btn-outline { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--ink); }
+    .btn-lg { padding:15px 36px; font-size:1rem; }
+
+    main { padding-top: var(--hh); }
+
+    .course-hero {
+      padding: 72px 24px 64px;
+      text-align: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .eyebrow { display:block; font-size:0.8125rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
+    .course-hero h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+      margin-bottom: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .course-hero .sub {
+      font-size: 1.0625rem;
+      color: var(--gray);
+      max-width: 520px;
+      margin: 0 auto 32px;
+      line-height: 1.75;
+    }
+    .course-meta {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .course-body {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    .course-body h2 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      margin: 56px 0 20px;
+      color: var(--ink);
+    }
+    .course-body h2:first-child { margin-top: 0; }
+
+    .course-body p { font-size: 1.0625rem; line-height: 1.78; color: var(--ink); }
+    .course-body p + p { margin-top: 20px; }
+
+    .course-body .pull {
+      font-family: 'Caveat', cursive;
+      font-size: 1.85rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 44px 0;
+      text-align: center;
+      display: block;
+    }
+
+    .course-body strong { font-weight: 600; }
+    .course-body em { font-style: italic; }
+
+    .callout {
+      background: var(--light);
+      border-left: 3px solid var(--ink);
+      padding: 24px 28px;
+      margin: 36px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout p { font-size: 1rem; }
+    .callout .callout-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .exercise {
+      background: var(--ink);
+      color: var(--white);
+      padding: 36px 40px;
+      border-radius: 12px;
+      margin: 44px 0;
+    }
+    .exercise .ex-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .exercise p { color: rgba(255,255,255,0.85); font-size: 1rem; }
+    .exercise p + p { margin-top: 14px; }
+    .exercise strong { color: var(--white); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 56px 0;
+    }
+
+    .course-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 48px;
+      border-top: 1px solid var(--rule);
+      margin-top: 64px;
+    }
+    .course-nav a { font-size: 0.9375rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+    .course-nav a:hover { opacity: 0.65; }
+    .nav-prev::before { content: '← '; }
+    .nav-next::after { content: ' →'; }
+
+    .upsell {
+      background: var(--light);
+      padding: 64px 24px;
+      text-align: center;
+      border-top: 1px solid var(--rule);
+    }
+    .upsell h2 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+    }
+    .upsell p { color: var(--gray); max-width: 420px; margin: 0 auto 36px; font-size: 1rem; }
+    .upsell-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    footer { padding:44px 24px; border-top:1px solid var(--rule); text-align:center; }
+    footer p { font-size:0.875rem; color:var(--gray); line-height:2; }
+    footer a { color:var(--gray); text-decoration:underline; text-underline-offset:3px; }
+    footer a:hover { color:var(--ink); }
+
+    @media (max-width: 600px) {
+      :root { --hh: 54px; }
+      .hd { padding: 0 18px; }
+      .course-hero { padding: 56px 20px 48px; }
+      .course-body { padding: 48px 20px 64px; }
+      .exercise { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hd">
+    <a href="index.html" class="logo">
+      <svg width="26" height="32" viewBox="0 0 52 58" fill="none" aria-hidden="true">
+        <path d="M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z" fill="#1D1D1F"/>
+        <path d="M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z" stroke="#1D1D1F" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+        <line x1="13" y1="21" x2="39" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="39" y1="21" x2="13" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M21,44 L26,39 L31,44" stroke="#1D1D1F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="26" y1="39" x2="26" y2="49" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-name">Brand Arsenal</span>
+    </a>
+    <a href="index.html#final" class="btn btn-dark">Get Brand Arsenal — $39</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="course-hero">
+    <span class="eyebrow">Free Course 01 of 05</span>
+    <h1>The One-Sentence Positioning Test (Most Founders Fail This)</h1>
+    <p class="sub">If you can't explain what you do in one clear sentence — not a tagline, not a mission statement, one sentence — your brand has a positioning problem. Let's fix it.</p>
+    <div class="course-meta">
+      <span>15 min read</span>
+      <span>1 exercise</span>
+      <span>Free — no email required</span>
+    </div>
+  </div>
+
+  <div class="course-body">
+
+    <h2>Why one sentence is harder than a paragraph</h2>
+
+    <p>Here is a thing that happens at almost every brand audit I run. I ask a founder: "What does your company do?" They take a breath. Then they give me two minutes of product features, a market trend, a mention of their tech stack, a story about their first customer, and something about disrupting an industry.</p>
+
+    <p>None of that is positioning. It's product knowledge. There's a difference.</p>
+
+    <p>Positioning is not about explaining everything you do. It is about owning a specific, understood place in a person's mind. The second someone hears what you do, they need to file you somewhere — and that filing needs to happen fast, or they bounce.</p>
+
+    <span class="pull">Positioning is a filing system inside your customer's brain. You don't control the brain. You only control the label.</span>
+
+    <p>When founders struggle to give me a one-sentence answer, it usually means one of three things: they're trying to serve too many customers at once, they haven't decided what makes them different from alternatives, or they've been writing about their product so long they've lost the ability to see it from the outside.</p>
+
+    <p>All three are fixable. But you have to diagnose which one you have first.</p>
+
+    <h2>The test itself</h2>
+
+    <p>This is the test. Write one sentence that completes this structure:</p>
+
+    <div class="callout">
+      <span class="callout-label">The Positioning Sentence Formula</span>
+      <p><strong>[Your product] helps [specific customer] [do/achieve/avoid specific thing] [without/unlike/so that — the key differentiator].</strong></p>
+    </div>
+
+    <p>That's it. Four parts. Let's go through each one.</p>
+
+    <p><strong>Your product.</strong> Name it. Just the name. Not the category, not the vision. The thing.</p>
+
+    <p><strong>Specific customer.</strong> Not "businesses" or "people who want to grow." The more specific you get here, the better the sentence performs. "Early-stage SaaS founders with a product team of one" beats "software companies" every time. Specificity signals you understand someone. Generality signals you're afraid of excluding someone.</p>
+
+    <p><strong>Specific outcome.</strong> What does the customer actually walk away with? Not a feature — an outcome. "Reduce churn" is an outcome. "Analytics dashboard" is a feature. Outcomes are what people pay for. Features are how you deliver them.</p>
+
+    <p><strong>The differentiator.</strong> This is the part most founders either skip or get wrong. The differentiator is not "we're better" — everyone says that. It's a specific contrast: without needing a developer, unlike spreadsheets, so that you don't need to hire a consultant, in under 30 minutes. It should make someone think "oh, that's actually different from what I currently use."</p>
+
+    <h2>What failing the test looks like</h2>
+
+    <p>Most failed attempts fall into recognizable patterns. Here are three you've probably written before.</p>
+
+    <p><strong>"We help businesses grow with data-driven insights."</strong> This fails on customer (too broad), outcome (growth is not an outcome, it's a desire), and differentiator (data-driven insights is the promise of every SaaS product built since 2010). Replace every word with a more specific word and this sentence transforms.</p>
+
+    <p><strong>"The all-in-one platform for modern teams."</strong> All-in-one means nothing. Modern means nothing. Teams means nothing. This sentence is not positioning — it's a mood board in sentence form.</p>
+
+    <p><strong>"We're like Slack but for [insert niche]."</strong> Comparative positioning built on someone else's brand is fragile. What happens when Slack adds a feature for your niche? Your positioning dissolves overnight. Anchor to your own specific value, not a competitor's category.</p>
+
+    <div class="callout">
+      <span class="callout-label">Quick diagnostic</span>
+      <p>Read your sentence, then ask: could a direct competitor paste their logo onto this sentence and have it still be true? If yes, your differentiator isn't specific enough. Keep going until the answer is no.</p>
+    </div>
+
+    <h2>Passing the test — and what to do with it</h2>
+
+    <p>A sentence that passes the test feels slightly uncomfortable to write. That's a feature, not a bug. Narrow positioning feels like you're leaving people out. You are. That's the whole point.</p>
+
+    <p>The founders I've worked with who resist specificity almost always give me the same reason: "I don't want to exclude potential customers." But vague positioning doesn't attract more customers — it attracts no customers, because no one identifies with it strongly enough to act.</p>
+
+    <p>Narrow positioning converts better. Specific people read it and think "this is for me." That's the only thought you need to trigger on a landing page. Everyone else was never your customer anyway.</p>
+
+    <p>Once you have a sentence that passes the test, it becomes your messaging anchor. Every headline, every email subject line, every sales call opener should be derivable from that one sentence. If someone asks your SDR what the company does, the answer should rhyme with your positioning sentence. If it doesn't, you have a messaging consistency problem — which is a separate but related issue we get into in course four.</p>
+
+    <div class="exercise">
+      <span class="ex-label">Your exercise</span>
+      <p>Write your positioning sentence right now using the formula above. Don't spend more than five minutes on a first draft. Then apply the competitor paste test — could a competitor use this sentence with their logo? If yes, sharpen the differentiator.</p>
+      <p>Do it three times. The first version is what you think your positioning is. The second version is usually more honest. The third version is the one you'll actually use.</p>
+      <p><strong>Target: a sentence under 25 words that a stranger could repeat back to you after reading it once.</strong></p>
+    </div>
+
+    <hr class="divider">
+
+    <p>That's Free Course 1. The remaining four free courses build directly on this — course 2 is about why your unique value proposition sounds like everyone else's even when you <em>think</em> you've differentiated, and course 3 is the 30-minute competitor audit that gives you real differentiation ammunition.</p>
+
+    <div class="course-nav">
+      <span style="color:var(--gray); font-size:0.9rem;">← You're at the start</span>
+      <a href="free-2.html" class="nav-next">Free Course 2: Why Your UVP Sounds Like Everyone Else's</a>
+    </div>
+
+  </div>
+
+  <div class="upsell">
+    <span class="eyebrow">Want to go deeper?</span>
+    <h2>10+ full courses inside Brand Arsenal.</h2>
+    <p>The free courses are the diagnosis. The paid library is the full treatment — positioning, pricing, landing pages, investor messaging, and more.</p>
+    <div class="upsell-row">
+      <a href="index.html#final" class="btn btn-dark btn-lg">Get Brand Arsenal — $39</a>
+      <a href="free-2.html" class="btn btn-outline btn-lg">Next free course →</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Brand Arsenal by Shashank SN</p>
+  <p>Questions? <a href="mailto:emailshashanksn@gmail.com">emailshashanksn@gmail.com</a></p>
+  <p>Built with stubbornness and too much coffee.</p>
+</footer>
+
+</body>
+</html>

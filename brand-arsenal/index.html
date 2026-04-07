@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Arsenal — Brand Strategy Micro-Courses for Founders</title>
+  <link rel="canonical" href="https://shashanksn.xyz/brand-arsenal/">
+  <meta name="description" content="A growing library of brand strategy micro-courses for founders who are done guessing. $39. One time. Yours forever.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 58' fill='none'><path d='M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z' fill='%231D1D1F'/><path d='M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z' stroke='%231D1D1F' stroke-width='2.5' stroke-linejoin='round'/><line x1='13' y1='21' x2='39' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/><line x1='39' y1='21' x2='13' y2='46' stroke='%231D1D1F' stroke-width='2' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:   #FFFFFF;
+      --ink:     #1D1D1F;
+      --gray:    #6E6E73;
+      --light:   #F5F5F7;
+      --rule:    #D2D2D7;
+      --hh:      60px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--hh);
+      z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    header.on {
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    }
+    .hd {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .logo-name {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: 980px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .btn:hover { opacity: 0.82; }
+    .btn:active { transform: scale(0.97); }
+    .btn-dark { background: var(--ink); color: var(--white); }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      box-shadow: inset 0 0 0 1.5px var(--ink);
+    }
+    .btn-lg { padding: 15px 36px; font-size: 1rem; }
+    .btn-inv { background: var(--white); color: var(--ink); }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .wrap-sm { max-width: 600px; margin: 0 auto; padding: 0 24px; }
+
+    main { padding-top: var(--hh); }
+
+    section {
+      padding: 104px 0;
+      text-align: center;
+    }
+    section.alt { background: var(--light); }
+
+    section.reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    section.reveal.vis { opacity: 1; transform: none; }
+
+    /* ── TYPE ── */
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(3rem, 8vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: 0.01em;
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+    p { color: var(--ink); }
+    p + p { margin-top: 16px; }
+
+    /* ── HERO ── */
+    #hero {
+      padding-top: 80px;
+      padding-bottom: 104px;
+      background: var(--white);
+    }
+    .hero-lead {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: var(--gray);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .price-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gray);
+      margin-top: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── PROSE SECTION ── */
+    .prose-body {
+      text-align: left;
+      font-size: 1.0625rem;
+      line-height: 1.78;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .prose-body p + p { margin-top: 20px; }
+    .prose-body .big {
+      font-family: 'Caveat', cursive;
+      font-size: 1.9rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 32px 0;
+      display: block;
+      text-align: center;
+    }
+    .prose-body .shout {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    /* ── COURSE LIST ── */
+    .course-grid {
+      list-style: none;
+      max-width: 580px;
+      margin: 40px auto 0;
+      text-align: left;
+    }
+    .course-grid li {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .course-grid li:first-child { border-top: 1px solid var(--rule); }
+    .cnum {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+      min-width: 26px;
+      flex-shrink: 0;
+    }
+    .ctitle { font-size: 0.9375rem; font-weight: 400; }
+    .course-note {
+      font-size: 0.9rem;
+      color: var(--gray);
+      font-style: italic;
+      margin-top: 14px;
+      padding-left: 44px;
+      text-align: left;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── FREE COURSES ── */
+    .free-grid {
+      list-style: none;
+      max-width: 580px;
+      margin: 40px auto 0;
+      text-align: left;
+    }
+    .free-grid li {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+    .free-grid li:first-child { border-top: 1px solid var(--rule); }
+    .free-grid a { color: var(--ink); text-decoration: none; }
+    .free-grid a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .flabel {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray);
+      min-width: 68px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .ftitle { font-size: 0.9375rem; }
+
+    /* ── BENEFITS ── */
+    .benefit-list {
+      list-style: none;
+      max-width: 500px;
+      margin: 36px auto 0;
+      text-align: left;
+    }
+    .benefit-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.9375rem;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .benefit-list li:first-child { border-top: 1px solid var(--rule); }
+    .bdash { color: var(--gray); flex-shrink: 0; margin-top: 3px; }
+
+    /* ── PRICE ── */
+    .price-display {
+      margin: 32px 0 40px;
+    }
+    .price-big {
+      font-family: 'Caveat', cursive;
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+    .price-sub {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+    .footnote {
+      font-size: 0.9rem;
+      color: var(--gray);
+      font-style: italic;
+      max-width: 420px;
+      margin: 24px auto 0;
+      line-height: 1.6;
+    }
+
+    /* ── FINAL CTA ── */
+    #final {
+      background: var(--ink);
+      color: var(--white);
+      padding: 112px 24px;
+    }
+    #final h2 { color: var(--white); }
+    #final .eyebrow { color: rgba(255,255,255,0.45); }
+    #final p { color: rgba(255,255,255,0.6); max-width: 420px; margin: 0 auto 40px; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 44px 24px;
+      border-top: 1px solid var(--rule);
+      text-align: center;
+    }
+    footer p { font-size: 0.875rem; color: var(--gray); line-height: 2; }
+    footer a { color: var(--gray); text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: var(--ink); }
+
+    /* ── DOODLES ── */
+    .doodle { display: inline-block; vertical-align: middle; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      :root { --hh: 54px; }
+      .hd { padding: 0 18px; }
+      section { padding: 72px 0; }
+      #hero { padding-top: 56px; }
+      .btn-lg { padding: 13px 28px; font-size: 0.9375rem; }
+      .hero-cta { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header id="hdr">
+  <div class="hd">
+    <a href="index.html" class="logo">
+      <!-- Shield logo: clean geometric -->
+      <svg width="26" height="32" viewBox="0 0 52 58" fill="none" aria-hidden="true">
+        <path d="M26,0 L28,5.5 L33.5,4.5 L29.5,8.5 L31.5,14 L26,10.5 L20.5,14 L22.5,8.5 L18.5,4.5 L24,5.5 Z" fill="#1D1D1F"/>
+        <path d="M4,15 L26,11 L48,15 L48,37 L26,53 L4,37 Z" stroke="#1D1D1F" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
+        <line x1="13" y1="21" x2="39" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="39" y1="21" x2="13" y2="46" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+        <path d="M21,44 L26,39 L31,44" stroke="#1D1D1F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="26" y1="39" x2="26" y2="49" stroke="#1D1D1F" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-name">Brand Arsenal</span>
+    </a>
+    <a href="#final" class="btn btn-dark">Get Brand Arsenal</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="wrap">
+    <span class="eyebrow">Brand strategy micro-courses for founders</span>
+    <h1>Your competitor's product is worse than yours.<br>They're still winning.</h1>
+    <p class="hero-lead">You've watched companies with half your features eat your lunch. Not because they're better. Because their positioning is. Brand Arsenal fixes that — $39, one time, yours forever.</p>
+    <div class="hero-cta">
+      <a href="#final" class="btn btn-dark btn-lg">Get Brand Arsenal — $39</a>
+      <a href="#free" class="btn btn-outline btn-lg">5 free courses →</a>
+    </div>
+    <span class="price-badge">One-time payment &nbsp;·&nbsp; 10+ courses &nbsp;·&nbsp; New courses added regularly</span>
+  </div>
+</section>
+
+<!-- ══ MANIFESTO ══ -->
+<section class="reveal" id="manifesto">
+  <div class="wrap">
+    <span class="eyebrow">The honest diagnosis</span>
+    <h2>I've watched this movie 150 times.<br>The ending never changes.</h2>
+    <div class="prose-body">
+      <p>I've sat across from founders who built genuinely great products. The kind of product where you use it once and think, "why doesn't everyone know about this?" Clean UI. Real problem solved. Happy users who found them by accident.</p>
+      <p>And then you look at their revenue and it's... fine. Not dead. Not thriving. Just fine.</p>
+      <p>Meanwhile, some clown with a worse product, a Fiverr logo, and a landing page that reads like a chatbot wrote it (because it did) is closing deals left and right.</p>
+      <span class="big">People don't buy the best product.<br>They buy the product they understand fastest.</span>
+      <p>That's positioning. That's messaging. That's brand strategy. And most founders treat it like decoration — something you do after product-market fit, after revenue, after you "have time."</p>
+      <p class="shout">Bullshit.</p>
+      <p>You're bleeding revenue right now because some visitor landed on your site, read your hero section, thought "I don't get what this does," and bounced to your competitor whose site said it in eight words.</p>
+      <p>I've spent 7+ years fixing this exact problem. I've worked with 150+ companies. Nobody sits founders down and says "here's exactly how to figure out your positioning." So I built that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COURSES ══ -->
+<section class="alt reveal" id="courses">
+  <div class="wrap">
+    <span class="eyebrow">What's inside</span>
+    <h2>10+ micro-courses.<br>Nothing over 45 minutes.</h2>
+    <p style="color:var(--gray); max-width:500px; margin:0 auto;">Not theory. Not "brand purpose" woo-woo. Actual frameworks you use in your business this week. Pay once, get everything — including every course added in the future.</p>
+    <ul class="course-grid">
+      <li><span class="cnum">01</span><span class="ctitle">Why your brand isn't converting (the diagnosis framework)</span></li>
+      <li><span class="cnum">02</span><span class="ctitle">Fix your positioning in 60 minutes</span></li>
+      <li><span class="cnum">03</span><span class="ctitle">Make your pricing feel like a no-brainer</span></li>
+      <li><span class="cnum">04</span><span class="ctitle">The landing page messaging formula</span></li>
+      <li><span class="cnum">05</span><span class="ctitle">Building a brand story that actually sells</span></li>
+      <li><span class="cnum">06</span><span class="ctitle">Positioning against a bigger competitor</span></li>
+      <li><span class="cnum">07</span><span class="ctitle">Brand strategy for fundraising and investor pitches</span></li>
+      <li><span class="cnum">08</span><span class="ctitle">How to write a brand brief your designer won't ignore</span></li>
+      <li><span class="cnum">09</span><span class="ctitle">Pricing psychology and brand perception</span></li>
+      <li><span class="cnum">10</span><span class="ctitle">Brand strategy for product launches</span></li>
+    </ul>
+    <p class="course-note">And more added every week.</p>
+    <div style="margin-top:40px;">
+      <a href="#final" class="btn btn-dark btn-lg">Get Brand Arsenal — $39</a>
+    </div>
+    <p style="font-size:0.85rem; color:var(--gray); margin-top:14px;">Each course includes a worksheet or template. Not homework — tools.</p>
+  </div>
+</section>
+
+<!-- ══ FREE COURSES ══ -->
+<section class="reveal" id="free">
+  <div class="wrap">
+    <span class="eyebrow">No strings attached</span>
+    <h2>Not sure yet? Take 5 courses.<br>
+      <!-- tiny gift doodle -->
+      <svg class="doodle" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true" style="margin-bottom:-4px;">
+        <rect x="4" y="14" width="28" height="5" rx="1" stroke="#1D1D1F" stroke-width="1.6"/>
+        <rect x="7" y="19" width="22" height="14" rx="1" stroke="#1D1D1F" stroke-width="1.6"/>
+        <line x1="18" y1="14" x2="18" y2="33" stroke="#1D1D1F" stroke-width="1.6"/>
+        <path d="M18,14 C18,14 13,11 11,8 C9,5 12,3 14,6 C15.5,8 18,14 18,14" stroke="#1D1D1F" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <path d="M18,14 C18,14 23,11 25,8 C27,5 24,3 22,6 C20.5,8 18,14 18,14" stroke="#1D1D1F" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      </svg>
+      Free.
+    </h2>
+    <p style="color:var(--gray); max-width:480px; margin:0 auto 8px;">No email required. No drip sequence. No "trust me first." Just the courses. Go through them — if they're useful, Brand Arsenal has 10+ more.</p>
+    <ul class="free-grid">
+      <li><span class="flabel">Free 01</span><a href="free-1.html" class="ftitle">The one-sentence positioning test (most founders fail this)</a></li>
+      <li><span class="flabel">Free 02</span><a href="free-2.html" class="ftitle">Why your "unique value proposition" sounds like everyone else's</a></li>
+      <li><span class="flabel">Free 03</span><a href="free-3.html" class="ftitle">The competitor audit you've never done (30-minute exercise)</a></li>
+      <li><span class="flabel">Free 04</span><a href="free-4.html" class="ftitle">Three brand mistakes killing your conversion rate</a></li>
+      <li><span class="flabel">Free 05</span><a href="free-5.html" class="ftitle">How to make people remember what you do</a></li>
+    </ul>
+    <div style="margin-top:40px;">
+      <a href="free-1.html" class="btn btn-outline btn-lg">Start with Free Course 1</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FRACTIONAL CBO ══ -->
+<section class="alt reveal" id="cbo">
+  <div class="wrap">
+    <span class="eyebrow">Done for you</span>
+    <h2>Want me to just<br>do it for you?</h2>
+    <p style="max-width:500px; margin:0 auto; color:var(--gray);">Some founders don't want to learn brand strategy. They want someone to fix their positioning, rebuild their messaging, and hand them a playbook. That's what I do as a Fractional Chief Brand Officer.</p>
+    <ul class="benefit-list">
+      <li><span class="bdash">—</span><span>Monthly strategic oversight of your brand and positioning</span></li>
+      <li><span class="bdash">—</span><span>Messaging architecture for your website, pitch deck, and sales collateral</span></li>
+      <li><span class="bdash">—</span><span>Direct access to me — not a junior, not an AI, me</span></li>
+      <li><span class="bdash">—</span><span>90-day positioning roadmap delivered in week one</span></li>
+    </ul>
+    <p style="font-size:0.9rem; color:var(--gray); max-width:440px; margin:16px auto 0;">For post-PMF startups, scaling D2C brands, and B2B companies stuck in commoditized markets. I work with 3–5 companies at a time.</p>
+    <div class="price-display">
+      <div class="price-big">$399/month</div>
+      <div class="price-sub">Cancel anytime.</div>
+    </div>
+    <a href="#" class="btn btn-dark btn-lg">Apply for Fractional CBO</a>
+    <p class="footnote">(Yes, this costs 10x more than Brand Arsenal. Because I'm doing the thinking for you. If you want to learn it yourself — the $39 library is the better fit.)</p>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="reveal" id="about">
+  <div class="wrap-sm">
+    <span class="eyebrow">The human behind this</span>
+    <h2>Who the hell<br>is Shashank SN?</h2>
+    <div class="prose-body" style="text-align:left; margin:0 auto;">
+      <p>Short version: I fix positioning problems that cost companies revenue.</p>
+      <p>Longer version: 7+ years in brand strategy. One of the youngest Heads of Brand in India. Led brand at GUVI HCL where my team set a Guinness World Record. Built and sold a coffee brand (El Mejor Coffee). Co-founded a wedding invitation e-commerce company with my dad. Grew a newsletter to 20,000+ subscribers. Given 100+ talks on branding and entrepreneurship.</p>
+      <p>I'm not a designer. I'm not a marketer. I'm the person who figures out why the market doesn't understand what you sell — and fixes the story so they do.</p>
+      <p>Right now I run SayAbout.Us and serve as fractional Chief Brand Officer for a few companies. I live in Chennai. I follow basketball, cricket, and films too closely. I'm getting married soon.</p>
+      <p style="color:var(--gray);">That's probably more than you needed to know.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section id="final">
+  <span class="eyebrow">Stop overthinking it</span>
+  <h2>$39. One time.<br>Every course. Forever.</h2>
+  <p>The library keeps growing. The price won't stay this low. You know your positioning needs work.</p>
+  <a href="#" class="btn btn-inv btn-lg">Get Brand Arsenal</a>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>Brand Arsenal by Shashank SN</p>
+  <p>Questions? <a href="mailto:emailshashanksn@gmail.com">emailshashanksn@gmail.com</a></p>
+  <p>Built with stubbornness and too much coffee.</p>
+</footer>
+
+<script>
+  // Sticky header
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('on', window.scrollY > 16);
+  }, { passive: true });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
