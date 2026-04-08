@@ -96,6 +96,213 @@
     }
     .link:hover { color: var(--accent); }
 
+    /* ── general tip tooltip ── */
+    .tip-trigger {
+      position: relative;
+      display: inline;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+    }
+
+    .tip-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #1c1c1a;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 4px rgba(0,0,0,0.08);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+      width: 250px;
+    }
+
+    .tip-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #1c1c1a;
+    }
+
+    .tip-trigger:hover .tip-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .tip-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .tip-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: #d0cdc8;
+      line-height: 1.6;
+    }
+
+    /* ── newsletter tooltip ── */
+    .nl-trigger {
+      position: relative;
+      display: inline;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+      font-weight: 500;
+    }
+
+    .nl-popup {
+      display: block;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px 14px;
+      width: 300px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.06);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+    }
+
+    .nl-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #fff;
+      filter: drop-shadow(0 1px 0 var(--border));
+    }
+
+    .nl-trigger:hover .nl-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .nl-row {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .nl-stat {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 4px;
+    }
+
+    .nl-stat:last-child {
+      padding-left: 20px;
+    }
+
+    .nl-divider {
+      width: 1px;
+      background: var(--border);
+      margin: 0 4px;
+      flex-shrink: 0;
+    }
+
+    .nl-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      color: #2a7a4b;
+      background: #e6f6ed;
+      border-radius: 6px;
+      padding: 2px 7px;
+      letter-spacing: 0.02em;
+      width: fit-content;
+    }
+
+    .nl-label {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+
+    .nl-num {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── linkedin tooltip ── */
+    .li-trigger {
+      position: relative;
+      display: inline;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+      font-weight: 500;
+    }
+
+    .li-popup {
+      display: block;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+    }
+
+    .li-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #dce6f2;
+    }
+
+    .li-trigger:hover .li-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .li-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #dce6f2;
+      border-radius: 100px;
+      padding: 7px 18px 7px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #2d64bc;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 16px rgba(45,100,188,0.15), 0 1px 4px rgba(0,0,0,0.06);
+    }
+
     /* ── connect ── */
     .connect {
       margin-top: 40px;
@@ -159,16 +366,40 @@
       .fade { opacity: 1; transform: none; transition: none; }
     }
 
-    /* ── responsive ── */
+    /* ── responsive: tablet ── */
     @media (max-width: 768px) {
       :root { --gap: clamp(20px, 5vw, 40px); }
       nav { padding: 20px var(--gap); }
+
+      .nl-popup, .tip-popup {
+        left: 0;
+        right: auto;
+        transform: translateY(6px);
+        max-width: calc(100vw - 40px);
+      }
+      .nl-trigger:hover .nl-popup,
+      .tip-trigger:hover .tip-popup {
+        transform: translateY(0);
+      }
+      .nl-popup::after, .tip-popup::after {
+        left: 24px;
+        transform: none;
+      }
+
+      .li-popup {
+        left: 0;
+        transform: translateY(6px);
+      }
+      .li-trigger:hover .li-popup { transform: translateY(0); }
+      .li-popup::after { left: 20px; transform: none; }
     }
 
+    /* ── responsive: mobile ── */
     @media (max-width: 520px) {
       :root { --gap: 20px; }
       nav { padding: 18px var(--gap); }
       .nav-brand, .nav-cta { font-size: 12px; }
+      .nl-popup { width: calc(100vw - 40px); }
       footer { padding: 20px var(--gap); }
     }
   </style>
@@ -186,13 +417,13 @@
 
     <p class="fade">i know that sounds like a contradiction. it's not. it's the most honest thing i can say about myself.</p>
 
-    <p class="fade">i've built companies, sold one, co-founded a few more, delivered 100+ talks, won a guinness world record, become one of the youngest heads of brand in india, and still after all of it — the clearest thing i know about myself is that i don't fully know what i'm doing. i'm just genuinely, almost embarrassingly, curious about everything.</p>
+    <p class="fade">i've built companies, <span class="tip-trigger">sold one<span class="tip-popup"><span class="tip-title">el mejor coffee</span><span class="tip-body">india's first speciality coffee e-commerce brand.</span></span></span>, co-founded a few more, delivered 100+ talks, won a <span class="tip-trigger">guinness world record<span class="tip-popup"><span class="tip-title">guvi</span><span class="tip-body">took guvi, an ed-tech company to the guinness world record.</span></span></span>, become one of the youngest heads of brand in india, and still after all of it — the clearest thing i know about myself is that i don't fully know what i'm doing. i'm just genuinely, almost embarrassingly, curious about everything.</p>
 
-    <p class="fade">most people spend their careers collecting certainties. i seem to collect questions instead. somewhere in that loop — the curiosity, the building, the breaking, the studying — a point of view formed. <span class="bold">brand isn't aesthetics. it's a compounding commercial system.</span> positioning, pricing, trust, values — they're not separate decisions. they're one decision, made many times, badly or well.</p>
+    <p class="fade">most people spend their careers collecting certainties. i seem to collect questions instead. somewhere in that loop — the curiosity, the building, the breaking, the studying — a point of view formed. <span class="tip-trigger">brand isn't aesthetics. it's a compounding commercial system.<span class="tip-popup"><span class="tip-title">why people hire me</span><span class="tip-body">this is the one thing i know how to fix — and it's the thing most companies get wrong.</span></span></span> positioning, pricing, trust, values — they're not separate decisions. they're one decision, made many times, badly or well.</p>
 
-    <p class="fade">that's what i work on. for my own ventures and for a handful of companies where i work as a <a href="/cbo" class="link">fractional cbo</a> — close enough to matter, senior enough to actually move things. and combined, this has made me a <span class="bold">linkedin top voice</span> in the branding space.</p>
+    <p class="fade">that's what i work on. for my own ventures and for a handful of companies where i work as a <a href="/cbo" class="link">fractional cbo</a> — close enough to matter, senior enough to actually move things. and combined, this has made me a <span class="li-trigger">linkedin top voice<span class="li-popup"><span class="li-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="5" fill="#2d64bc"/><path d="M7 10.5H9.5V19H7V10.5ZM8.25 9.25C7.42 9.25 6.75 8.58 6.75 7.75C6.75 6.92 7.42 6.25 8.25 6.25C9.08 6.25 9.75 6.92 9.75 7.75C9.75 8.58 9.08 9.25 8.25 9.25ZM11.5 10.5H13.9V11.6H13.93C14.27 10.96 15.09 10.28 16.31 10.28C18.84 10.28 19.3 11.97 19.3 14.13V19H16.8V14.63C16.8 13.68 16.78 12.46 15.47 12.46C14.14 12.46 13.94 13.5 13.94 14.56V19H11.44V10.5H11.5Z" fill="#dce6f2"/></svg>Top Voice</span></span></span> in the branding space.</p>
 
-    <p class="fade">i co-founded <a href="https://sayabout.us" class="link" target="_blank" rel="noopener">sayabout.us</a> (testimonial infrastructure for the internet), i'm building <span class="bold">hold your voice</span> (brand consistency for teams who keep going off-script), and i'm still figuring out three other things i probably shouldn't be doing simultaneously.</p>
+    <p class="fade">i got mainstream fame when the <span class="nl-trigger">stupidpreneur newsletter<span class="nl-popup"><span class="nl-row"><span class="nl-stat"><span class="nl-badge">↗ 716.5%</span><span class="nl-label">active subscribers</span><span class="nl-num">22,961</span></span><span class="nl-divider"></span><span class="nl-stat"><span class="nl-badge">↗ 13.9%</span><span class="nl-label">open rate</span><span class="nl-num">42.38%</span></span></span></span></span> became the world's biggest newsletter in the brand space and it led me to co-found <a href="https://sayabout.us" class="link" target="_blank" rel="noopener">sayabout.us</a> (testimonial infrastructure for the internet). i'm building <a href="https://holdyourvoice.com" class="link" target="_blank" rel="noopener">hold your voice</a> (brand consistency for teams who keep going off-script), and i'm still figuring out three other things i probably shouldn't be doing simultaneously.</p>
 
     <p class="fade">the idiot part is real. so is the savant part. most days i can't tell which one is running the show.</p>
 
