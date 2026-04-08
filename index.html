@@ -303,6 +303,29 @@
       box-shadow: 0 4px 16px rgba(45,100,188,0.15), 0 1px 4px rgba(0,0,0,0.06);
     }
 
+    /* ── link + tooltip combo ── */
+    .link-trigger {
+      position: relative;
+      display: inline;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--muted);
+      cursor: pointer;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .link-trigger:hover { color: var(--accent); }
+
+    .link-trigger .tip-popup {
+      cursor: default;
+    }
+
+    .link-trigger:hover .tip-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
     /* ── connect ── */
     .connect {
       margin-top: 40px;
@@ -371,14 +394,15 @@
       :root { --gap: clamp(20px, 5vw, 40px); }
       nav { padding: 20px var(--gap); }
 
-      .nl-popup, .tip-popup {
+      .nl-popup, .tip-popup, .link-trigger .tip-popup {
         left: 0;
         right: auto;
         transform: translateY(6px);
         max-width: calc(100vw - 40px);
       }
       .nl-trigger:hover .nl-popup,
-      .tip-trigger:hover .tip-popup {
+      .tip-trigger:hover .tip-popup,
+      .link-trigger:hover .tip-popup {
         transform: translateY(0);
       }
       .nl-popup::after, .tip-popup::after {
@@ -413,7 +437,7 @@
 
   <div class="letter">
 
-    <p class="fade">i'm shashank. i'm an idiot savant.</p>
+    <p class="fade">i'm shashank. i'm an <span class="tip-trigger">idiot savant<span class="tip-popup"><span class="tip-title">idiot savant</span><span class="tip-body">a person who is extremely unworldly but displays natural wisdom and insight.</span></span></span>.</p>
 
     <p class="fade">i know that sounds like a contradiction. it's not. it's the most honest thing i can say about myself.</p>
 
@@ -421,9 +445,9 @@
 
     <p class="fade">most people spend their careers collecting certainties. i seem to collect questions instead. somewhere in that loop — the curiosity, the building, the breaking, the studying — a point of view formed. <span class="tip-trigger">brand isn't aesthetics. it's a compounding commercial system.<span class="tip-popup"><span class="tip-title">why people hire me</span><span class="tip-body">this is the one thing i know how to fix — and it's the thing most companies get wrong.</span></span></span> positioning, pricing, trust, values — they're not separate decisions. they're one decision, made many times, badly or well.</p>
 
-    <p class="fade">that's what i work on. for my own ventures and for a handful of companies where i work as a <a href="/cbo" class="link">fractional cbo</a> — close enough to matter, senior enough to actually move things. and combined, this has made me a <span class="li-trigger">linkedin top voice<span class="li-popup"><span class="li-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="5" fill="#2d64bc"/><path d="M7 10.5H9.5V19H7V10.5ZM8.25 9.25C7.42 9.25 6.75 8.58 6.75 7.75C6.75 6.92 7.42 6.25 8.25 6.25C9.08 6.25 9.75 6.92 9.75 7.75C9.75 8.58 9.08 9.25 8.25 9.25ZM11.5 10.5H13.9V11.6H13.93C14.27 10.96 15.09 10.28 16.31 10.28C18.84 10.28 19.3 11.97 19.3 14.13V19H16.8V14.63C16.8 13.68 16.78 12.46 15.47 12.46C14.14 12.46 13.94 13.5 13.94 14.56V19H11.44V10.5H11.5Z" fill="#dce6f2"/></svg>Top Voice</span></span></span> in the branding space.</p>
+    <p class="fade">that's what i work on. for my own ventures and for a handful of companies where i work as a <a href="/cbo" class="link-trigger">fractional cbo<span class="tip-popup"><span class="tip-title">fractional cbo</span><span class="tip-body">part-time chief brand officer. i work with 3–5 companies at a time — strategic oversight, not execution.</span></span></a> — close enough to matter, senior enough to actually move things. and combined, this has made me a <span class="li-trigger">linkedin top voice<span class="li-popup"><span class="li-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="5" fill="#2d64bc"/><path d="M7 10.5H9.5V19H7V10.5ZM8.25 9.25C7.42 9.25 6.75 8.58 6.75 7.75C6.75 6.92 7.42 6.25 8.25 6.25C9.08 6.25 9.75 6.92 9.75 7.75C9.75 8.58 9.08 9.25 8.25 9.25ZM11.5 10.5H13.9V11.6H13.93C14.27 10.96 15.09 10.28 16.31 10.28C18.84 10.28 19.3 11.97 19.3 14.13V19H16.8V14.63C16.8 13.68 16.78 12.46 15.47 12.46C14.14 12.46 13.94 13.5 13.94 14.56V19H11.44V10.5H11.5Z" fill="#dce6f2"/></svg>Top Voice</span></span></span> in the branding space.</p>
 
-    <p class="fade">i got mainstream fame when the <span class="nl-trigger">stupidpreneur newsletter<span class="nl-popup"><span class="nl-row"><span class="nl-stat"><span class="nl-badge">↗ 716.5%</span><span class="nl-label">active subscribers</span><span class="nl-num">22,961</span></span><span class="nl-divider"></span><span class="nl-stat"><span class="nl-badge">↗ 13.9%</span><span class="nl-label">open rate</span><span class="nl-num">42.38%</span></span></span></span></span> became the world's biggest newsletter in the brand space and it led me to co-found <a href="https://sayabout.us" class="link" target="_blank" rel="noopener">sayabout.us</a> (testimonial infrastructure for the internet). i'm building <a href="https://holdyourvoice.com" class="link" target="_blank" rel="noopener">hold your voice</a> (brand consistency for teams who keep going off-script), and i'm still figuring out three other things i probably shouldn't be doing simultaneously.</p>
+    <p class="fade">i got mainstream fame when the <span class="nl-trigger">stupidpreneur newsletter<span class="nl-popup"><span class="nl-row"><span class="nl-stat"><span class="nl-badge">↗ 716.5%</span><span class="nl-label">active subscribers</span><span class="nl-num">22,961</span></span><span class="nl-divider"></span><span class="nl-stat"><span class="nl-badge">↗ 13.9%</span><span class="nl-label">open rate</span><span class="nl-num">42.38%</span></span></span></span></span> became the world's biggest newsletter in the brand space and it led me to co-found <a href="https://sayabout.us" class="link-trigger" target="_blank" rel="noopener">sayabout.us<span class="tip-popup"><span class="tip-title">sayabout.us</span><span class="tip-body">testimonial infrastructure for the internet. collect, manage, and display social proof — automatically.</span></span></a>. i'm building <a href="https://holdyourvoice.com" class="link-trigger" target="_blank" rel="noopener">hold your voice<span class="tip-popup"><span class="tip-title">holdyourvoice.com</span><span class="tip-body">brand consistency for teams who keep going off-script. making sure everyone sounds like the same company.</span></span></a>, and i'm still figuring out three other things i probably shouldn't be doing simultaneously.</p>
 
     <p class="fade">the idiot part is real. so is the savant part. most days i can't tell which one is running the show.</p>
 
