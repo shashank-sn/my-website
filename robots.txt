@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /home.html
+
+Sitemap: https://shashanksn.xyz/sitemap.xml
