@@ -109,6 +109,65 @@
 
     .bold { font-weight: 500; }
 
+    /* ── tip tooltip ── */
+    .tip-trigger {
+      position: relative;
+      display: inline;
+      font-weight: 500;
+      border-bottom: 1px dashed var(--muted);
+      cursor: default;
+    }
+
+    .tip-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      background: #1c1c1a;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 4px rgba(0,0,0,0.08);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+      z-index: 100;
+      width: 250px;
+    }
+
+    .tip-popup::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 7px solid transparent;
+      border-top-color: #1c1c1a;
+    }
+
+    .tip-trigger:hover .tip-popup {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .tip-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .tip-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: #d0cdc8;
+      line-height: 1.6;
+    }
+
     .sig {
       color: var(--muted);
       font-size: 14px;
@@ -197,12 +256,27 @@
       .fade { opacity: 1; transform: none; transition: none; }
     }
 
-    /* ── responsive ── */
+    /* ── responsive: tablet ── */
     @media (max-width: 768px) {
       :root { --gap: clamp(20px, 5vw, 40px); }
       nav { padding: 20px var(--gap); }
+
+      .tip-popup {
+        left: 0;
+        right: auto;
+        transform: translateY(6px);
+        max-width: calc(100vw - 40px);
+      }
+      .tip-trigger:hover .tip-popup {
+        transform: translateY(0);
+      }
+      .tip-popup::after {
+        left: 24px;
+        transform: none;
+      }
     }
 
+    /* ── responsive: mobile ── */
     @media (max-width: 520px) {
       :root { --gap: 20px; }
       nav { padding: 18px var(--gap); }
@@ -221,27 +295,27 @@
 
   <div class="letter">
 
-    <p class="fade">i fix <span class="bold">positioning problems</span> that cost companies revenue.</p>
+    <p class="fade">i fix <span class="tip-trigger">positioning problems<span class="tip-popup"><span class="tip-title">positioning</span><span class="tip-body">the gap between what you sell and what your market thinks you sell. it's the most expensive problem most companies don't know they have.</span></span></span> that cost companies revenue.</p>
 
-    <p class="fade">over 7 years, i've built and sold <span class="bold">el mejor coffee</span> — india's first specialty coffee e-commerce — led brand at <span class="bold">guvi hcl</span> where my team set a <span class="bold">guinness world record</span>, and advised <span class="bold">150+ companies</span> on turning fuzzy market positioning into something that actually compounds.</p>
+    <p class="fade">over 7 years, i've built and sold <span class="tip-trigger">el mejor coffee<span class="tip-popup"><span class="tip-title">el mejor coffee</span><span class="tip-body">india's first specialty coffee e-commerce brand. built it, scaled it, sold it.</span></span></span> — india's first specialty coffee e-commerce — led brand at <span class="tip-trigger">guvi hcl<span class="tip-popup"><span class="tip-title">guvi hcl</span><span class="tip-body">led brand strategy for one of india's largest ed-tech companies. hcl acquired guvi during my time there.</span></span></span> where my team set a <span class="tip-trigger">guinness world record<span class="tip-popup"><span class="tip-title">guinness world record</span><span class="tip-body">largest programming lesson ever conducted. 5,000+ participants. the kind of thing that happens when brand and product actually align.</span></span></span>, and advised <span class="tip-trigger">150+ companies<span class="tip-popup"><span class="tip-title">150+ companies</span><span class="tip-body">startups, d2c brands, b2b saas, service businesses — across industries, one positioning problem at a time.</span></span></span> on turning fuzzy market positioning into something that actually compounds.</p>
 
     <p class="fade">if you're looking for someone to clean up your brand aesthetics, i'm not the guy.</p>
 
-    <p class="fade">i'm the guy who fixes the reason your <span class="bold">sales team keeps losing deals they shouldn't lose</span>.</p>
+    <p class="fade">i'm the guy who fixes the reason your <span class="tip-trigger">sales team keeps losing deals they shouldn't lose<span class="tip-popup"><span class="tip-title">the real cost</span><span class="tip-body">bad positioning doesn't show up as a "branding problem." it shows up as longer sales cycles, confused prospects, and discounting to close.</span></span></span>.</p>
 
-    <p class="fade">what that actually looks like: i diagnose why your market doesn't understand what you sell or why it matters. i build <span class="bold">positioning frameworks</span> that sales, product, and marketing can all execute against without needing a translator. i audit and rebuild <span class="bold">brand architecture</span> when you've outgrown your original story. and i train internal teams to <span class="bold">think in systems</span>, not just campaigns.</p>
+    <p class="fade">what that actually looks like: i diagnose why your market doesn't understand what you sell or why it matters. i build <span class="tip-trigger">positioning frameworks<span class="tip-popup"><span class="tip-title">positioning frameworks</span><span class="tip-body">not a tagline exercise. a strategic document that sales, product, and marketing can all execute against — without a translator.</span></span></span> that sales, product, and marketing can all execute against without needing a translator. i audit and rebuild <span class="tip-trigger">brand architecture<span class="tip-popup"><span class="tip-title">brand architecture</span><span class="tip-body">how your brand, sub-brands, and products relate to each other. most companies outgrow their original structure and never fix it.</span></span></span> when you've outgrown your original story. and i train internal teams to <span class="tip-trigger">think in systems<span class="tip-popup"><span class="tip-title">systems thinking</span><span class="tip-body">brand decisions aren't isolated. pricing affects positioning. positioning affects messaging. messaging affects sales. one decision, made many times.</span></span></span>, not just campaigns.</p>
 
-    <p class="fade">this isn't theory. i grew <span class="bold">stupidpreneur</span> to 20,000+ subscribers with <span class="bold">15–20% reply rates</span> — not open rates, reply rates. i'm a <span class="bold">linkedin top voice</span> in branding. i've delivered <span class="bold">100+ talks</span>. and i'm currently scaling <span class="bold">happy beginnings</span>, india's first digital wedding invite e-commerce.</p>
+    <p class="fade">this isn't theory. i grew <span class="tip-trigger">stupidpreneur<span class="tip-popup"><span class="tip-title">stupidpreneur</span><span class="tip-body">the world's biggest newsletter in the brand strategy space. 22,000+ subscribers and growing.</span></span></span> to 20,000+ subscribers with <span class="tip-trigger">15–20% reply rates<span class="tip-popup"><span class="tip-title">reply rates, not open rates</span><span class="tip-body">open rates measure curiosity. reply rates measure resonance. most newsletters get 1–2%. stupidpreneur gets 15–20%.</span></span></span> — not open rates, reply rates. i'm a <span class="tip-trigger">linkedin top voice<span class="tip-popup"><span class="tip-title">linkedin top voice</span><span class="tip-body">recognised by linkedin as a top voice in the branding and brand strategy space.</span></span></span> in branding. i've delivered <span class="tip-trigger">100+ talks<span class="tip-popup"><span class="tip-title">100+ talks</span><span class="tip-body">on brand strategy, positioning, and entrepreneurship. colleges, conferences, corporate stages, and podcasts.</span></span></span>. and i'm currently scaling <span class="tip-trigger">happy beginnings<span class="tip-popup"><span class="tip-title">happy beginnings</span><span class="tip-body">india's first digital wedding invite e-commerce. because even wedding invites have a positioning problem.</span></span></span>, india's first digital wedding invite e-commerce.</p>
 
-    <p class="fade">the way i work is deliberately limited. <span class="bold">monthly retainer, fixed scope, strategic oversight</span> — not execution. three to five companies at a time. post-pmf startups, scaling d2c brands, b2b companies stuck in markets where everything looks like everything else.</p>
+    <p class="fade">the way i work is deliberately limited. <span class="tip-trigger">monthly retainer, fixed scope, strategic oversight<span class="tip-popup"><span class="tip-title">how it works</span><span class="tip-body">no hourly billing. no scope creep. you get a senior brand strategist embedded in your leadership team — not an agency that sends juniors.</span></span></span> — not execution. three to five companies at a time. post-pmf startups, scaling d2c brands, b2b companies stuck in markets where everything looks like everything else.</p>
 
-    <p class="fade">here's the test: can your leadership team say what makes you different in one sentence — <span class="bold">without a debate breaking out?</span> can your marketing team point to something that's actually working?</p>
+    <p class="fade">here's the test: can your leadership team say what makes you different in one sentence — <span class="tip-trigger">without a debate breaking out?<span class="tip-popup"><span class="tip-title">the one-sentence test</span><span class="tip-body">if your leadership team can't agree on what makes you different, your market definitely can't either. that's where the revenue leak starts.</span></span></span> can your marketing team point to something that's actually working?</p>
 
-    <p class="fade">if the answer to either is no, that's a <span class="bold">positioning problem</span>.</p>
+    <p class="fade">if the answer to either is no, that's a <span class="tip-trigger">positioning problem<span class="tip-popup"><span class="tip-title">positioning problem</span><span class="tip-body">it doesn't announce itself. it just makes everything else — sales, marketing, hiring, pricing — harder than it should be.</span></span></span>.</p>
 
     <p class="fade">positioning problems don't fix themselves. they just quietly drain revenue until someone names them.</p>
 
-    <p class="fade"><span class="bold">that's what i do.</span></p>
+    <p class="fade"><span class="tip-trigger">that's what i do.<span class="tip-popup"><span class="tip-title">book a call</span><span class="tip-body">free discovery call. 30 minutes. i'll tell you if you actually have a positioning problem — and if i can fix it.</span></span></span></p>
 
     <p class="fade sig">— shashank</p>
 
