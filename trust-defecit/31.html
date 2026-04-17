@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>slide 29 / 31 — the trust deficit</title>
+<title>slide 31 / 31 — the trust deficit</title>
 <meta name="description" content="a session on trust architecture. why clients don't pay you what you're worth — by shashank sn." />
 <meta property="og:title" content="the trust deficit — shashank sn" />
 <meta property="og:description" content="a session on trust architecture. why clients don't pay you what you're worth." />
@@ -976,43 +976,163 @@
   /* Dark slide override */
   .dark .pager, section.dark ~ * .pager { background: rgba(20,20,20,0.92); border-color: #2a2a2a; }
 
+
+  /* Single-page overrides */
+  body { overflow: hidden; }
+  .slide { border-right: none !important; }
+
+  /* Navigation bar */
+  .pager {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .pager a {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 40px;
+    text-decoration: none; color: #0a0a0a;
+    font-size: 16px; transition: background 0.15s;
+  }
+  .pager a:hover { background: #f0f0f0; }
+  .pager a.disabled { opacity: 0.2; pointer-events: none; }
+  .pager .sep { width: 1px; height: 20px; background: #e0e0e0; }
+  .pager .num {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 11px; letter-spacing: 0.18em;
+    color: #0a0a0a; padding: 0 16px;
+    line-height: 40px; font-weight: 500;
+  }
+
+  /* Solo product layout */
+  .pitch-solo {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: clamp(40px, 5vw, 80px);
+    align-items: center;
+    padding: clamp(40px, 5vw, 80px) !important;
+    justify-content: unset;
+  }
+  .pitch-solo .ps-text { display: flex; flex-direction: column; justify-content: center; }
+  .pitch-solo .ps-shot {
+    border: 1px solid var(--hair);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.10);
+    background: #fafafa;
+  }
+  .pitch-solo .ps-shot .chrome {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 12px;
+    background: #f0f0f0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .pitch-solo .ps-shot .dot { width: 10px; height: 10px; border-radius: 50%; background: #d0d0d0; }
+  .pitch-solo .ps-shot .url { margin-left: 8px; font-size: 11px; color: var(--mute); letter-spacing: 0.04em; }
+  .pitch-solo .ps-shot img { display: block; width: 100%; height: auto; }
+  .pitch-solo .brand {
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--mute); display: flex; align-items: center; gap: 10px;
+    margin-bottom: 24px;
+  }
+  .pitch-solo .brand::before {
+    content: ""; width: 8px; height: 8px;
+    background: var(--accent); border-radius: 50%;
+  }
+  .pitch-solo h3 {
+    font-size: clamp(32px, 3vw, 52px); font-weight: 500;
+    line-height: 1.05; letter-spacing: -0.025em;
+    margin-bottom: 18px; max-width: 520px;
+  }
+  .pitch-solo h3 em { font-style: normal; color: var(--accent); }
+  .pitch-solo .dek {
+    font-size: clamp(14px, 1.05vw, 17px); line-height: 1.6;
+    color: #333; margin-bottom: 28px; max-width: 520px;
+  }
+  .pitch-solo .bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 480px; }
+  .pitch-solo .bullets li {
+    font-size: 14px; line-height: 1.5;
+    padding-left: 22px; position: relative; color: #2a2a2a;
+  }
+  .pitch-solo .bullets li::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 10px; height: 1px; background: var(--accent);
+  }
+
+  /* dark solo variant */
+  .pitch-solo.dark-solo {
+    background: #0a0a0a; color: #f5f5f5;
+  }
+  .pitch-solo.dark-solo .brand { color: #9a9a9a; }
+  .pitch-solo.dark-solo .dek { color: #bdbdbd; }
+  .pitch-solo.dark-solo .bullets li { color: #c9c9c9; }
+  .pitch-solo.dark-solo .ps-shot {
+    border-color: #1f1f1f; background: #111;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  }
+  .pitch-solo.dark-solo .ps-shot .chrome { background: #1a1a1a; border-bottom: 1px solid #222; }
+  .pitch-solo.dark-solo .ps-shot .dot { background: #2f2f2f; }
+  .dark .pager, .dark-solo .pager { background: rgba(20,20,20,0.92) !important; border-color: #2a2a2a !important; }
+  .dark .pager .num, .dark-solo .pager .num { color: #f5f5f5 !important; }
+  .dark .pager a, .dark-solo .pager a { color: #f5f5f5 !important; }
+  .dark .pager a:hover, .dark-solo .pager a:hover { background: #1f1f1f !important; }
+
+  @media (max-width: 900px) {
+    .pitch-solo { grid-template-columns: 1fr !important; }
+  }
+
 </style>
 </head>
 <body>
-<section class="slide statement">
-    <span class="tag">the whole argument</span>
-    <span class="rule"></span>
-    <h2>five lines to take home.</h2>
-    <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:40px 60px; margin-top:36px; max-width:1300px;">
-      <p style="font-size:16px; line-height:1.55; color:#1a1a1a;">pricing is the last decision a client makes. trust is every decision before it. fix the second and the first stops being a fight.</p>
-      <p style="font-size:16px; line-height:1.55; color:#1a1a1a;">trust has a structure. documented work, published thinking, a voice that sounds the same on every surface.</p>
-      <p style="font-size:16px; line-height:1.55; color:#1a1a1a;">underpricing is not a discount. it's a declaration. every number you pick is a sentence about yourself.</p>
-      <p style="font-size:16px; line-height:1.55; color:#1a1a1a;">a negotiated deal is not a win. it's a receipt for a trust problem you didn't solve upstream.</p>
-      <p style="font-size:16px; line-height:1.55; color:#1a1a1a; grid-column: 1 / -1;">one sale means marketing works. a return means trust formed. a referral means a brand exists. most businesses optimise for the first and accidentally prevent the other two.</p>
+<section class="slide pitch-solo dark-solo">
+  <div class="ps-text">
+    <div class="brand">hold your voice</div>
+    <h3>ai writes half your content. <em>you're not supposed to be able to tell.</em></h3>
+    <p class="dek">your readers can. hold your voice finds the exact sentences where you stopped sounding like yourself — and rewrites them to sound like you again. not a vibe check. sentence by sentence.</p>
+    <ul class="bullets">
+      <li>upload 3 samples. voice profile built in 3 minutes.</li>
+      <li>sentence-level drift — not document-level warnings</li>
+      <li>one-click rewrites benchmarked to your own writing</li>
+      <li>separate profiles for every brand you run</li>
+    </ul>
+  </div>
+  <div class="ps-shot">
+    <div class="chrome">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="url">holdyourvoice.com</span>
     </div>
-    <div class="folio"><span>recap</span><span class="num">28</span></div>
-  </section>
+    <img src="holdyourvoice-hero.png" alt="hold your voice — product hero" style="width:100%; height:auto;" />
+  </div>
+  <div class="folio"><span>product</span><span class="num">31</span></div>
+</section>
 
 <nav class="pager">
-  <a href="28" class="prev" title="previous">&#8592;</a>
+  <a href="30" class="prev" title="previous">&#8592;</a>
   <span class="sep"></span>
-  <span class="num">29 / 31</span>
+  <span class="num">31 / 31</span>
   <span class="sep"></span>
-  <a href="30" class="next" title="next">&#8594;</a>
+  <a class="next disabled">&#8594;</a>
 </nav>
 
 <script>
   document.addEventListener('keydown', (e) => {
-    if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") { e.preventDefault(); window.location.href = "30"; }
-    if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); window.location.href = "28"; }
+    if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); window.location.href = "30"; }
   });
-  // touch swipe
   let tx = 0;
   document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, {passive: true});
   document.addEventListener('touchend', (e) => {
     const dx = e.changedTouches[0].clientX - tx;
-    if (dx < -50 && "29") window.location.href = "30";
-    if (dx > 50 && "27") window.location.href = "28";
+    if (dx > 50) window.location.href = "30";
   }, {passive: true});
 </script>
 </body>

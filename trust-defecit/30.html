@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>slide 30 / 30 — the trust deficit</title>
+<title>slide 30 / 31 — the trust deficit</title>
 <meta name="description" content="a session on trust architecture. why clients don't pay you what you're worth — by shashank sn." />
 <meta property="og:title" content="the trust deficit — shashank sn" />
 <meta property="og:description" content="a session on trust architecture. why clients don't pay you what you're worth." />
@@ -979,62 +979,25 @@
 </style>
 </head>
 <body>
-<section class="slide pitch">
-    <div class="pitch-grid">
-
-      <!-- LEFT: sayabout.us -->
-      <div class="pitch-col left">
-        <div class="brand">say about us</div>
-        <h3>your clients are already saying it. <em>are you showing it?</em></h3>
-        <p class="dek">five-star ratings blur together. the sentence a real client uses to describe the problem you solved — that converts. collect it, display it, and let proof do the closing.</p>
-        <ul class="bullets">
-          <li>video + text testimonials — no login needed for customers</li>
-          <li>pull reviews from twitter, linkedin, and g2</li>
-          <li>one embeddable wall of proof. works anywhere.</li>
-          <li>month-to-month. no contracts. $19/month.</li>
-        </ul>
-        <div class="shot" style="max-width:100%; margin-top:24px;">
-          <div class="chrome">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="url">sayabout.us</span>
-          </div>
-          <img src="sayabout-hero.png" alt="say about us — product hero" onerror="this.style.display='none'" style="width:100%; height:auto;" />
-        </div>
-      </div>
-
-      <!-- RIGHT: holdyourvoice.com -->
-      <div class="pitch-col right">
-        <div class="brand">hold your voice</div>
-        <h3>ai writes half your content. <em>you're not supposed to be able to tell.</em></h3>
-        <p class="dek">your readers can. hold your voice finds the exact sentences where you stopped sounding like yourself — and rewrites them to sound like you again. not a vibe check. sentence by sentence.</p>
-        <ul class="bullets">
-          <li>upload 3 samples. voice profile built in 3 minutes.</li>
-          <li>sentence-level drift — not document-level warnings</li>
-          <li>one-click rewrites benchmarked to your own writing</li>
-          <li>separate profiles for every brand you run</li>
-        </ul>
-        <div class="shot" style="max-width:100%; margin-top:24px; border:1px solid #1f1f1f; background:#111; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-          <div class="chrome" style="background:#1a1a1a; border-bottom:1px solid #222;">
-            <span class="dot" style="background:#2f2f2f;"></span><span class="dot" style="background:#2f2f2f;"></span><span class="dot" style="background:#2f2f2f;"></span>
-            <span class="url">holdyourvoice.com</span>
-          </div>
-          <img src="holdyourvoice-hero.png" alt="hold your voice — product hero" style="width:100%; height:auto;" />
-        </div>
-      </div>
-
-    </div>
+<section class="slide closing dark">
+    <span class="tag">end of talk</span>
+    <div class="end-mark">— thank you</div>
+    <h2>build the trust layer. the price stops being an argument.</h2>
+    <div class="signoff">shashank · two-hour session</div>
+    <div class="folio"><span>closing</span><span class="num">29</span></div>
   </section>
 
 <nav class="pager">
   <a href="29" class="prev" title="previous">&#8592;</a>
   <span class="sep"></span>
-  <span class="num">30 / 30</span>
+  <span class="num">30 / 31</span>
   <span class="sep"></span>
-  <a class="next disabled">&#8594;</a>
+  <a href="31" class="next" title="next">&#8594;</a>
 </nav>
 
 <script>
   document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") { e.preventDefault(); window.location.href = "31"; }
     if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); window.location.href = "29"; }
   });
   // touch swipe
@@ -1042,8 +1005,8 @@
   document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, {passive: true});
   document.addEventListener('touchend', (e) => {
     const dx = e.changedTouches[0].clientX - tx;
-    if (dx < -50 && "") window.location.href = "";
-    if (dx > 50 && "29") window.location.href = "29";
+    if (dx < -50 && "30") window.location.href = "31";
+    if (dx > 50 && "28") window.location.href = "29";
   }, {passive: true});
 </script>
 </body>
