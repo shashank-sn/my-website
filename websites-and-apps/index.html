@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>websites & apps — shashank sn</title>
+  <link rel="canonical" href="https://shashanksn.xyz/websites-and-apps/" />
+  <meta name="description" content="Websites and apps designed and built by Shashank SN — justnai.co, holdyourvoice.com, and sayabout.us." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="websites & apps — shashank sn" />
+  <meta property="og:description" content="Three products. Designed and built by Shashank SN." />
+  <meta property="og:url" content="https://shashanksn.xyz/websites-and-apps/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="shashank sn" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@istupidpreneur" />
+  <meta name="twitter:title" content="websites & apps — shashank sn" />
+  <meta name="twitter:description" content="Three products. Designed and built by Shashank SN." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f6f2;
+      --text: #1a1a18;
+      --muted: #999892;
+      --accent: #c8a96e;
+      --border: #e5e1d8;
+      --col: 580px;
+      --wide: 900px;
+      --gap: clamp(20px, 5vw, 64px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Google Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── nav ── */
+    nav {
+      padding: 24px var(--gap);
+      max-width: var(--col);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-brand:hover { color: var(--text); }
+
+    .nav-cta {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    .nav-cta:hover { color: var(--accent); }
+
+    /* ── intro ── */
+    .intro {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: clamp(40px, 7vw, 80px) var(--gap) clamp(40px, 6vw, 64px);
+    }
+
+    .intro-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .intro p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .intro p:last-child { margin-bottom: 0; }
+
+    /* ── projects ── */
+    .projects {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--gap) clamp(80px, 12vw, 140px);
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    /* ── card ── */
+    .card { display: flex; flex-direction: column; }
+
+    .card-shot {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 4px 16px rgba(0,0,0,0.06),
+        0 12px 40px rgba(0,0,0,0.04);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      text-decoration: none;
+    }
+    .card-shot:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.06),
+        0 8px 28px rgba(0,0,0,0.10),
+        0 24px 60px rgba(0,0,0,0.07);
+    }
+
+    .card-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top center;
+      background-color: var(--border);
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 22px 2px 0;
+    }
+
+    .card-num {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
+
+    .card-body { flex: 1; min-width: 0; }
+
+    .card-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+      display: inline;
+    }
+    .card-name:hover { color: var(--accent); }
+
+    .card-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.65;
+    }
+
+    .card-link {
+      flex-shrink: 0;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+    .card-link:hover { color: var(--accent); }
+
+    /* ── footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 24px var(--gap);
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .footer-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: var(--accent); }
+
+    /* ── animations ── */
+    .fade {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── responsive: tablet ── */
+    @media (max-width: 768px) {
+      :root { --gap: clamp(20px, 5vw, 40px); }
+      nav { padding: 20px var(--gap); }
+      .projects { gap: 56px; }
+    }
+
+    /* ── responsive: mobile ── */
+    @media (max-width: 520px) {
+      :root { --gap: 20px; }
+      nav { padding: 18px var(--gap); }
+      .nav-brand, .nav-cta { font-size: 12px; }
+      .card-meta { gap: 12px; flex-wrap: wrap; }
+      .card-link { margin-left: auto; }
+      .card-shot { border-radius: 8px; }
+      footer { padding: 20px var(--gap); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">shashank sn</a>
+    <a href="/cbo" class="nav-cta">hire me as fractional cbo →</a>
+  </nav>
+
+  <div class="intro fade">
+    <span class="intro-label">websites &amp; apps</span>
+    <p>i design products the same way i think about brand — everything intentional, nothing decorative.</p>
+    <p>three products. each one built to make its own argument.</p>
+  </div>
+
+  <div class="projects">
+
+    <article class="card fade">
+      <a href="https://justnai.co" target="_blank" rel="noopener" class="card-shot">
+        <img
+          src="https://image.thum.io/get/width/1280/crop/800/https://justnai.co"
+          alt="justnai.co landing page screenshot"
+          loading="lazy"
+        />
+      </a>
+      <div class="card-meta">
+        <span class="card-num">01</span>
+        <div class="card-body">
+          <a href="https://justnai.co" target="_blank" rel="noopener" class="card-name">justnai.co</a>
+          <p class="card-desc">AI that builds and manages your online presence — so you can stay focused on the actual work.</p>
+        </div>
+        <a href="https://justnai.co" target="_blank" rel="noopener" class="card-link">visit →</a>
+      </div>
+    </article>
+
+    <article class="card fade">
+      <a href="https://holdyourvoice.com" target="_blank" rel="noopener" class="card-shot">
+        <img
+          src="https://image.thum.io/get/width/1280/crop/800/https://holdyourvoice.com"
+          alt="holdyourvoice.com landing page screenshot"
+          loading="lazy"
+        />
+      </a>
+      <div class="card-meta">
+        <span class="card-num">02</span>
+        <div class="card-body">
+          <a href="https://holdyourvoice.com" target="_blank" rel="noopener" class="card-name">holdyourvoice.com</a>
+          <p class="card-desc">brand voice consistency for teams who keep going off-script. one company, one sound.</p>
+        </div>
+        <a href="https://holdyourvoice.com" target="_blank" rel="noopener" class="card-link">visit →</a>
+      </div>
+    </article>
+
+    <article class="card fade">
+      <a href="https://sayabout.us" target="_blank" rel="noopener" class="card-shot">
+        <img
+          src="https://image.thum.io/get/width/1280/crop/800/https://sayabout.us"
+          alt="sayabout.us landing page screenshot"
+          loading="lazy"
+        />
+      </a>
+      <div class="card-meta">
+        <span class="card-num">03</span>
+        <div class="card-body">
+          <a href="https://sayabout.us" target="_blank" rel="noopener" class="card-name">sayabout.us</a>
+          <p class="card-desc">testimonial infrastructure for the internet. collect, manage, and display social proof — automatically.</p>
+        </div>
+        <a href="https://sayabout.us" target="_blank" rel="noopener" class="card-link">visit →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    <span class="footer-text">designed by <a href="/" class="footer-link">shashank</a></span>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
