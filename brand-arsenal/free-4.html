@@ -218,5 +218,11 @@
   <p>Built with stubbornness and too much coffee.</p>
 </footer>
 
+  <script src="../posthog-config.js"></script>
+  <script src="../posthog-init.js"></script>
+  <script>
+    posthog.capture('free_course_viewed', { course: 'free_course_4', course_number: 4, title: 'Free Course 4: Three Brand Mistakes Killing Your Conversion Rate — Brand Arsenal' });
+  </script>
+
 </body>
 </html>

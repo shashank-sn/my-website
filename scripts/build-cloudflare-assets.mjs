@@ -13,6 +13,8 @@ const publicPaths = [
   "home.html",
   "index.html",
   "newsletter-engine",
+  "posthog-config.js",
+  "posthog-init.js",
   "robots.txt",
   "security.txt",
   "signal-engine",

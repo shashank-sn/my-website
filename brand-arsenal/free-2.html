@@ -261,5 +261,11 @@
   <p>Built with stubbornness and too much coffee.</p>
 </footer>
 
+  <script src="../posthog-config.js"></script>
+  <script src="../posthog-init.js"></script>
+  <script>
+    posthog.capture('free_course_viewed', { course: 'free_course_2', course_number: 2, title: 'Why Your UVP Sounds Generic — Brand Arsenal' });
+  </script>
+
 </body>
 </html>

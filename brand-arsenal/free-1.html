@@ -327,5 +327,11 @@
   <p>Built with stubbornness and too much coffee.</p>
 </footer>
 
+  <script src="../posthog-config.js"></script>
+  <script src="../posthog-init.js"></script>
+  <script>
+    posthog.capture('free_course_viewed', { course: 'free_course_1', course_number: 1, title: 'One-Sentence Positioning Test — Brand Arsenal' });
+  </script>
+
 </body>
 </html>

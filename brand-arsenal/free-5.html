@@ -237,5 +237,11 @@
   <p>Built with stubbornness and too much coffee.</p>
 </footer>
 
+  <script src="../posthog-config.js"></script>
+  <script src="../posthog-init.js"></script>
+  <script>
+    posthog.capture('free_course_viewed', { course: 'free_course_5', course_number: 5, title: 'Free Course 5: How to Make People Remember What You Do — Brand Arsenal' });
+  </script>
+
 </body>
 </html>

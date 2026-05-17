@@ -529,5 +529,25 @@
   }, { threshold: 0.07 });
   revealEls.forEach(el => io.observe(el));
 </script>
+
+<script src="../posthog-config.js"></script>
+<script src="../posthog-init.js"></script>
+<script>
+  // Brand Arsenal purchase CTA clicks
+  document.querySelectorAll('a.btn-dark, a.btn-inv').forEach(function(btn) {
+    if (btn.textContent.toLowerCase().includes('brand arsenal')) {
+      btn.addEventListener('click', function() {
+        posthog.capture('brand_arsenal_purchase_clicked', { product: 'brand_arsenal', price: 39, label: btn.textContent.trim() });
+      });
+    }
+  });
+
+  // Free course link clicks
+  document.querySelectorAll('a[href*="free-"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      posthog.capture('free_course_started', { course_url: link.href, label: link.textContent.trim() });
+    });
+  });
+</script>
 </body>
 </html>

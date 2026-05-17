@@ -337,5 +337,18 @@
     document.querySelectorAll('.fade').forEach(el => io.observe(el));
   </script>
 
+  <script src="../posthog-config.js"></script>
+  <script src="../posthog-init.js"></script>
+  <script>
+    posthog.capture('cbo_page_viewed');
+
+    var callBtn = document.querySelector('a.cta-btn');
+    if (callBtn) {
+      callBtn.addEventListener('click', function() {
+        posthog.capture('cbo_call_clicked', { destination: callBtn.href });
+      });
+    }
+  </script>
+
 </body>
 </html>
