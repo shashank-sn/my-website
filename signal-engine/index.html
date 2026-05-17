@@ -1347,17 +1347,5 @@
     });
   </script>
 
-  <script src="../posthog-config.js"></script>
-  <script src="../posthog-init.js"></script>
-  <script>
-    posthog.capture('product_page_viewed', { product: 'signal_engine', price: 497 });
-
-    document.querySelectorAll('.btn-primary').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        posthog.capture('signal_engine_checkout_clicked', { product: 'signal_engine', price: 497, label: btn.textContent.trim() });
-      });
-    });
-  </script>
-
 </body>
 </html>

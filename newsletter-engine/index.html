@@ -1296,17 +1296,5 @@
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
-  <script src="../posthog-config.js"></script>
-  <script src="../posthog-init.js"></script>
-  <script>
-    posthog.capture('product_page_viewed', { product: 'newsletter_engine', price: 197 });
-
-    document.querySelectorAll('a[href="#CHECKOUT_URL"], a.btn-primary').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        posthog.capture('newsletter_engine_checkout_clicked', { product: 'newsletter_engine', price: 197, label: btn.textContent.trim() });
-      });
-    });
-  </script>
-
 </body>
 </html>

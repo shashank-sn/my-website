@@ -3,352 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>shashank sn — fractional cbo</title>
+  <title>shashank sn - fractional cbo</title>
   <link rel="canonical" href="https://shashanksn.xyz/cbo/" />
-  <meta name="description" content="I fix positioning problems that cost companies revenue. Monthly retainer, fixed scope, strategic oversight. For post-PMF startups, scaling D2C brands, and B2B companies stuck in commoditized markets." />
-  <!-- Open Graph -->
-  <meta property="og:title" content="shashank sn — fractional cbo" />
-  <meta property="og:description" content="I fix positioning problems that cost companies revenue. Monthly retainer, fixed scope, strategic oversight — not execution." />
+  <meta name="description" content="Fractional Chief Brand Officer for post-PMF startups, scaling D2C brands, and B2B companies with positioning problems that cost revenue." />
+  <meta property="og:title" content="shashank sn - fractional cbo" />
+  <meta property="og:description" content="I fix positioning problems that cost companies revenue. Monthly retainer, fixed scope, strategic oversight." />
   <meta property="og:url" content="https://shashanksn.xyz/cbo/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="shashank sn" />
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@istupidpreneur" />
-  <meta name="twitter:title" content="shashank sn — fractional cbo" />
-  <meta name="twitter:description" content="I fix positioning problems that cost companies revenue. Monthly retainer, fixed scope, strategic oversight — not execution." />
-  <!-- JSON-LD Service Schema -->
+  <meta name="twitter:title" content="shashank sn - fractional cbo" />
+  <meta name="twitter:description" content="I fix positioning problems that cost companies revenue." />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Fractional CBO — Shashank SN",
-    "description": "Fractional Chief Brand Officer services. Positioning strategy, brand architecture, and competitive advantage for post-PMF startups, scaling D2C brands, and B2B companies.",
-    "provider": {
-      "@type": "Person",
-      "name": "Shashank SN",
-      "url": "https://shashanksn.xyz"
-    },
+    "name": "Fractional CBO - Shashank SN",
+    "description": "Positioning strategy, brand architecture, and commercial clarity for startups and growth-stage companies.",
+    "provider": { "@type": "Person", "name": "Shashank SN", "url": "https://shashanksn.xyz" },
     "url": "https://shashanksn.xyz/cbo/",
     "serviceType": "Brand Strategy Consulting"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f8f6f2;
-      --text: #1a1a18;
-      --muted: #999892;
-      --accent: #c8a96e;
-      --border: #e5e1d8;
-      --col: 580px;
-      --gap: clamp(20px, 5vw, 64px);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Google Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.75;
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── nav ── */
-    nav {
-      padding: 24px var(--gap);
-      max-width: var(--col);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .nav-cta {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1.5px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.15s;
-    }
-    .nav-cta:hover { color: var(--accent); }
-
-    /* ── letter ── */
-    .letter {
-      max-width: var(--col);
-      margin: 0 auto;
-      padding: clamp(40px, 7vw, 80px) var(--gap) clamp(60px, 10vw, 100px);
-    }
-
-    .letter p {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--text);
-      margin-bottom: 22px;
-    }
-
-    .letter p:last-child { margin-bottom: 0; }
-
-    .bold { font-weight: 500; }
-
-    /* ── tip tooltip ── */
-    .tip-trigger {
-      position: relative;
-      display: inline;
-      font-weight: 500;
-      border-bottom: 1px dashed var(--muted);
-      cursor: default;
-    }
-
-    .tip-popup {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      position: absolute;
-      bottom: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      background: #1c1c1a;
-      border-radius: 14px;
-      padding: 16px 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 4px rgba(0,0,0,0.08);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease;
-      z-index: 100;
-      width: 250px;
-    }
-
-    .tip-popup::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 7px solid transparent;
-      border-top-color: #1c1c1a;
-    }
-
-    .tip-trigger:hover .tip-popup {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    .tip-title {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-
-    .tip-body {
-      font-size: 13px;
-      font-weight: 300;
-      color: #d0cdc8;
-      line-height: 1.6;
-    }
-
-    .sig {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 36px !important;
-    }
-
-    .link {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      transition: color 0.15s;
-    }
-    .link:hover { color: var(--accent); }
-
-    /* ── cta block ── */
-    .letter-cta {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      color: var(--bg);
-      text-decoration: none;
-      background: var(--text);
-      padding: 14px 36px;
-      border-radius: 2px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .cta-btn:hover {
-      background: var(--accent);
-      color: #000;
-    }
-
-    .cta-note {
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--muted);
-      margin-top: 10px;
-      letter-spacing: 0.03em;
-    }
-
-    /* ── footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      max-width: var(--col);
-      margin: 0 auto;
-      padding: 24px var(--gap);
-      text-align: center;
-    }
-
-    .footer-text {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    .footer-link {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.15s;
-    }
-    .footer-link:hover { color: var(--accent); }
-
-    /* ── animations ── */
-    .fade {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .fade.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade { opacity: 1; transform: none; transition: none; }
-    }
-
-    /* ── responsive: tablet ── */
-    @media (max-width: 768px) {
-      :root { --gap: clamp(20px, 5vw, 40px); }
-      nav { padding: 20px var(--gap); }
-
-      .tip-popup {
-        left: 0;
-        right: auto;
-        transform: translateY(6px);
-        max-width: calc(100vw - 40px);
-      }
-      .tip-trigger:hover .tip-popup {
-        transform: translateY(0);
-      }
-      .tip-popup::after {
-        left: 24px;
-        transform: none;
-      }
-    }
-
-    /* ── responsive: mobile ── */
-    @media (max-width: 520px) {
-      :root { --gap: 20px; }
-      nav { padding: 18px var(--gap); }
-      .nav-brand, .nav-cta { font-size: 12px; }
-      .cta-btn { display: block; width: 100%; text-align: center; padding: 16px 24px; }
-      footer { padding: 20px var(--gap); }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../menta-site.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <header class="site-nav">
+    <a class="site-mark" href="../index.html">shashank sn</a>
+    <nav class="site-nav__links" aria-label="Primary navigation">
+      <a href="../ghost.html">Ghost</a>
+      <a href="../brand-arsenal/index.html">Arsenal</a>
+      <a href="../websites-and-apps/index.html">Work</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="/" class="nav-brand">shashank sn</a>
-  </nav>
+  <main id="main" class="page">
+    <section class="page-shell hero hero--reverse reveal">
+      <div class="visual-field visual-field--light visual-field--cbo" aria-label="Positioning diagnostic map">
+        <div class="code-field" aria-hidden="true">
+          <span>MARKET CONFUSIONC8E31FF04C1D7A8B22FF2198AC49F3B2A1C7D88E4A0B1CFF29E4418A2C8EA884D9910FF2A71C3E8B11F90C</span>
+          <span>BUYER DOUBT0AF2818C8E31FF04C1D7A8B22FF21 VALUE LEAKD88E4A0B1CFF29E4418A2C8EA884D9910FF2A71C3E8B11F90C</span>
+        </div>
+        <div class="cbo-map" aria-hidden="true">
+          <div class="cbo-map__axis cbo-map__axis--x"></div>
+          <div class="cbo-map__axis cbo-map__axis--y"></div>
+          <div class="cbo-map__core">CBO</div>
+          <div class="cbo-map__node cbo-map__node--one"><span>01</span>positioning</div>
+          <div class="cbo-map__node cbo-map__node--two"><span>02</span>trust</div>
+          <div class="cbo-map__node cbo-map__node--three"><span>03</span>pricing</div>
+          <div class="cbo-map__node cbo-map__node--four"><span>04</span>sales language</div>
+        </div>
+      </div>
 
-  <div class="letter">
+      <div class="hero__copy">
+        <p class="label">Fractional Chief Brand Officer</p>
+        <h1>Your company is harder to buy than it should be.</h1>
+        <p class="lead">I diagnose where the market gets confused, rebuild the positioning system, and give leadership language that sales, marketing, and product can all use.</p>
+        <div class="actions">
+          <a class="button button--green" href="https://calendar.app.google/c1HoAW5cNs8Ff6Ka7" target="_blank" rel="noopener">schedule a discovery call</a>
+          <a class="button" href="mailto:emailshashanksn@gmail.com">email first</a>
+        </div>
+      </div>
+    </section>
 
-    <p class="fade">i fix <span class="tip-trigger">positioning problems<span class="tip-popup"><span class="tip-title">positioning</span><span class="tip-body">the gap between what you sell and what your market thinks you sell. it's the most expensive problem most companies don't know they have.</span></span></span> that cost companies revenue.</p>
+    <section class="editorial-grid">
+      <article class="panel panel--dark reveal">
+        <p class="label">Diagnosis signals</p>
+        <ol class="numbered-list">
+          <li><span>01</span>Sales explains what the website should have made obvious</li>
+          <li><span>02</span>Pricing needs defending before value is understood</li>
+          <li><span>03</span>The team cannot agree on what makes you different</li>
+          <li><span>04</span>Weaker competitors sound easier to buy</li>
+        </ol>
+      </article>
 
-    <p class="fade">over 7 years, i've built and sold <span class="tip-trigger">el mejor coffee<span class="tip-popup"><span class="tip-title">el mejor coffee</span><span class="tip-body">india's first specialty coffee e-commerce brand. built it, scaled it, sold it.</span></span></span> — india's first specialty coffee e-commerce — led brand at <span class="tip-trigger">guvi hcl<span class="tip-popup"><span class="tip-title">guvi hcl</span><span class="tip-body">made me india's youngest head of brand in a funded startup.</span></span></span> where my team set a <span class="tip-trigger">guinness world record<span class="tip-popup"><span class="tip-title">guinness world record</span><span class="tip-body">"most users to take an online AI lesson in 24 hours." 46,045 women participated. one billion+ impressions across socials.</span></span></span>, and advised <span class="tip-trigger">150+ companies<span class="tip-popup"><span class="tip-title">150+ companies</span><span class="tip-body">startups, d2c brands, b2b saas, service businesses — across industries, one positioning problem at a time.</span></span></span> on turning fuzzy market positioning into something that actually compounds.</p>
+      <article class="panel reveal">
+        <p class="label">Operating model</p>
+        <h2><span class="script">Clarity</span> signed into the company.</h2>
+        <p>This is strategic oversight, not agency theatre. The output is a working brand system: positioning, message architecture, category logic, trust map, offer language, and a 90-day execution path.</p>
+      </article>
+    </section>
 
-    <p class="fade">if you're looking for someone to clean up your brand aesthetics, i'm not the guy.</p>
+    <section class="editorial-grid">
+      <article class="panel reveal">
+        <p class="label">Best fit</p>
+        <div class="spec-row"><strong>Stage</strong><p>Post-PMF startups, scaling D2C brands, and B2B companies in crowded markets.</p></div>
+        <div class="spec-row"><strong>Scope</strong><p>Monthly retainer, fixed strategic surface, direct access to me.</p></div>
+        <div class="spec-row"><strong>Outcome</strong><p>A company that knows what to say, why it wins, and how to make the market repeat it.</p></div>
+      </article>
+      <article class="panel panel--dark reveal">
+        <h2>Positioning is infrastructure.</h2>
+        <p>When it is weak, every team pays the tax. When it is strong, every touchpoint becomes easier to operate.</p>
+      </article>
+    </section>
 
-    <p class="fade">i'm the guy who fixes the reason your <span class="tip-trigger">sales team keeps losing deals they shouldn't lose<span class="tip-popup"><span class="tip-title">the real cost</span><span class="tip-body">bad positioning doesn't show up as a "branding problem." it shows up as longer sales cycles, confused prospects, and discounting to close.</span></span></span>.</p>
+    <section class="sales-cta reveal" aria-label="Hire Shashank as fractional CBO">
+      <div class="sales-cta__copy">
+        <p class="label">Direct engagement</p>
+        <h2>Bring me in before the market confusion gets more expensive.</h2>
+        <p class="lead">If the team is debating positioning, defending pricing, or losing deals to simpler stories, book the call. We will know quickly whether this needs a fractional CBO layer.</p>
+      </div>
+      <div class="sales-cta__action">
+        <a class="button button--green" href="https://calendar.app.google/c1HoAW5cNs8Ff6Ka7" target="_blank" rel="noopener">schedule a discovery call</a>
+        <a class="button" href="mailto:emailshashanksn@gmail.com?subject=Fractional%20CBO%20Inquiry">send context by email</a>
+        <p class="sales-note">Best for teams with traction, proof, and a story that is still too hard to buy.</p>
+      </div>
+    </section>
+  </main>
 
-    <p class="fade">what that actually looks like: i diagnose why your market doesn't understand what you sell or why it matters. i build <span class="tip-trigger">positioning frameworks<span class="tip-popup"><span class="tip-title">positioning frameworks</span><span class="tip-body">not a tagline exercise. a strategic document that sales, product, and marketing can all execute against — without a translator.</span></span></span> that sales, product, and marketing can all execute against without needing a translator. i audit and rebuild <span class="tip-trigger">brand architecture<span class="tip-popup"><span class="tip-title">brand architecture</span><span class="tip-body">how your brand, sub-brands, and products relate to each other. most companies outgrow their original structure and never fix it.</span></span></span> when you've outgrown your original story. and i train internal teams to <span class="tip-trigger">think in systems<span class="tip-popup"><span class="tip-title">systems thinking</span><span class="tip-body">brand decisions aren't isolated. pricing affects positioning. positioning affects messaging. messaging affects sales. one decision, made many times.</span></span></span>, not just campaigns.</p>
-
-    <p class="fade">this isn't theory. i grew <span class="tip-trigger">stupidpreneur<span class="tip-popup"><span class="tip-title">stupidpreneur</span><span class="tip-body">the world's biggest newsletter in the brand strategy space. 22,000+ subscribers and growing.</span></span></span> to 20,000+ subscribers with <span class="tip-trigger">15–20% reply rates<span class="tip-popup"><span class="tip-title">reply rates, not open rates</span><span class="tip-body">open rates measure curiosity. reply rates measure resonance. most newsletters get 1–2%. stupidpreneur gets 15–20%.</span></span></span> — not open rates, reply rates. i'm a <span class="tip-trigger">linkedin top voice<span class="tip-popup"><span class="tip-title">linkedin top voice</span><span class="tip-body">recognised by linkedin as a top voice in the branding and brand strategy space.</span></span></span> in branding. i've delivered <span class="tip-trigger">100+ talks<span class="tip-popup"><span class="tip-title">100+ talks</span><span class="tip-body">on brand strategy, positioning, and entrepreneurship. colleges, conferences, corporate stages, and podcasts.</span></span></span>. and i'm currently scaling <span class="tip-trigger">happy beginnings<span class="tip-popup"><span class="tip-title">happy beginnings</span><span class="tip-body">india's first digital wedding invite e-commerce. because even wedding invites have a positioning problem.</span></span></span>, india's first digital wedding invite e-commerce.</p>
-
-    <p class="fade">the way i work is deliberately limited. <span class="tip-trigger">monthly retainer, fixed scope, strategic oversight<span class="tip-popup"><span class="tip-title">how it works</span><span class="tip-body">no hourly billing. no scope creep. you get a senior brand strategist embedded in your leadership team — not an agency that sends juniors.</span></span></span> — not execution. three to five companies at a time. post-pmf startups, scaling d2c brands, b2b companies stuck in markets where everything looks like everything else.</p>
-
-    <p class="fade">here's the test: can your leadership team say what makes you different in one sentence — <span class="tip-trigger">without a debate breaking out?<span class="tip-popup"><span class="tip-title">the one-sentence test</span><span class="tip-body">if your leadership team can't agree on what makes you different, your market definitely can't either. that's where the revenue leak starts.</span></span></span> can your marketing team point to something that's actually working?</p>
-
-    <p class="fade">if the answer to either is no, that's a <span class="tip-trigger">positioning problem<span class="tip-popup"><span class="tip-title">positioning problem</span><span class="tip-body">it doesn't announce itself. it just makes everything else — sales, marketing, hiring, pricing — harder than it should be.</span></span></span>.</p>
-
-    <p class="fade">positioning problems don't fix themselves. they just quietly drain revenue until someone names them.</p>
-
-    <p class="fade"><span class="tip-trigger">that's what i do.<span class="tip-popup"><span class="tip-title">book a call</span><span class="tip-body">free discovery call. 30 minutes. i'll tell you if you actually have a positioning problem — and if i can fix it.</span></span></span></p>
-
-    <p class="fade sig">— shashank</p>
-
-    <div class="letter-cta fade">
-      <a href="https://calendar.app.google/c1HoAW5cNs8Ff6Ka7" target="_blank" rel="noopener" class="cta-btn">schedule a free discovery call</a>
-    </div>
-
-  </div>
-
-  <footer>
-    <span class="footer-text">written by <a href="https://x.com/istupidpreneur" class="footer-link" target="_blank" rel="noopener">shashank</a></span>
+  <footer class="page-footer">
+    <a href="../index.html">home</a>
+    <span>/</span>
+    <a href="https://calendar.app.google/c1HoAW5cNs8Ff6Ka7" target="_blank" rel="noopener">calendar</a>
+    <span>/</span>
+    <a href="mailto:emailshashanksn@gmail.com">email</a>
   </footer>
 
   <script>
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade').forEach(el => io.observe(el));
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      el.style.setProperty('--delay', `${Math.min(index * 90, 450)}ms`);
+      observer.observe(el);
+    });
   </script>
-
-  <script src="../posthog-config.js"></script>
-  <script src="../posthog-init.js"></script>
-  <script>
-    posthog.capture('cbo_page_viewed');
-
-    var callBtn = document.querySelector('a.cta-btn');
-    if (callBtn) {
-      callBtn.addEventListener('click', function() {
-        posthog.capture('cbo_call_clicked', { destination: callBtn.href });
-      });
-    }
-  </script>
-
 </body>
 </html>
