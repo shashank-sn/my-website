@@ -19,6 +19,7 @@ const publicPaths = [
   "robots.txt",
   "say about us.png",
   "security.txt",
+  "shashank-cutout.png",
   "signal-engine",
   "sitemap.xml",
   "websites-and-apps",

@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>shashank sn — idiot savant</title>
+  <title>shashank sn - idiot savant</title>
   <link rel="canonical" href="https://shashanksn.xyz/" />
-  <meta name="description" content="shashank sn — brand isn't aesthetics. it's a compounding commercial system. positioning, pricing, trust, values — one decision, made many times." />
-  <!-- Open Graph -->
-  <meta property="og:title" content="shashank sn — idiot savant" />
-  <meta property="og:description" content="brand isn't aesthetics. it's a compounding commercial system. positioning, pricing, trust, values — one decision, made many times." />
+  <meta name="description" content="shashank sn - brand isn't aesthetics. it's a compounding commercial system. positioning, pricing, trust, values - one decision, made many times." />
+  <meta property="og:title" content="shashank sn - idiot savant" />
+  <meta property="og:description" content="brand isn't aesthetics. it's a compounding commercial system. positioning, pricing, trust, values - one decision, made many times." />
   <meta property="og:url" content="https://shashanksn.xyz/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="shashank sn" />
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@istupidpreneur" />
-  <meta name="twitter:title" content="shashank sn — idiot savant" />
-  <meta name="twitter:description" content="brand isn't aesthetics. it's a compounding commercial system. positioning, pricing, trust, values — one decision, made many times." />
-  <!-- JSON-LD Person Schema -->
+  <meta name="twitter:title" content="shashank sn - idiot savant" />
+  <meta name="twitter:description" content="brand isn't aesthetics. it's a compounding commercial system. positioning, pricing, trust, values - one decision, made many times." />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,494 +33,243 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #f8f6f2;
-      --text: #1a1a18;
-      --muted: #999892;
-      --accent: #c8a96e;
-      --border: #e5e1d8;
-      --col: 580px;
-      --gap: clamp(20px, 5vw, 64px);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Google Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.75;
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── nav ── */
-    nav {
-      padding: 24px var(--gap);
-      max-width: var(--col);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .nav-cta {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1.5px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.15s;
-    }
-    .nav-cta:hover { color: var(--accent); }
-
-    /* ── letter ── */
-    .letter {
-      max-width: var(--col);
-      margin: 0 auto;
-      padding: clamp(40px, 7vw, 80px) var(--gap) clamp(60px, 10vw, 100px);
-    }
-
-    .letter p {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--text);
-      margin-bottom: 22px;
-    }
-
-    .letter p:last-child { margin-bottom: 0; }
-
-    .bold { font-weight: 500; }
-
-    .sig {
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 36px !important;
-    }
-
-    .link {
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      transition: color 0.15s;
-    }
-    .link:hover { color: var(--accent); }
-
-    /* ── general tip tooltip ── */
-    .tip-trigger {
-      position: relative;
-      display: inline;
-      font-weight: 500;
-      border-bottom: 1px dashed var(--muted);
-      cursor: default;
-    }
-
-    .tip-popup {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      position: absolute;
-      bottom: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      background: #1c1c1a;
-      border-radius: 14px;
-      padding: 16px 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.14), 0 1.5px 4px rgba(0,0,0,0.08);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease;
-      z-index: 100;
-      width: 250px;
-    }
-
-    .tip-popup::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 7px solid transparent;
-      border-top-color: #1c1c1a;
-    }
-
-    .tip-trigger:hover .tip-popup {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    .tip-title {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-
-    .tip-body {
-      font-size: 13px;
-      font-weight: 300;
-      color: #d0cdc8;
-      line-height: 1.6;
-    }
-
-    /* ── newsletter tooltip ── */
-    .nl-trigger {
-      position: relative;
-      display: inline;
-      border-bottom: 1px dashed var(--muted);
-      cursor: default;
-      font-weight: 500;
-    }
-
-    .nl-popup {
-      display: block;
-      position: absolute;
-      bottom: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 20px 14px;
-      width: 300px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.06);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease;
-      z-index: 100;
-    }
-
-    .nl-popup::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 7px solid transparent;
-      border-top-color: #fff;
-      filter: drop-shadow(0 1px 0 var(--border));
-    }
-
-    .nl-trigger:hover .nl-popup {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    .nl-row {
-      display: flex;
-      gap: 0;
-      align-items: stretch;
-    }
-
-    .nl-stat {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      gap: 4px;
-    }
-
-    .nl-stat:last-child {
-      padding-left: 20px;
-    }
-
-    .nl-divider {
-      width: 1px;
-      background: var(--border);
-      margin: 0 4px;
-      flex-shrink: 0;
-    }
-
-    .nl-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 500;
-      color: #2a7a4b;
-      background: #e6f6ed;
-      border-radius: 6px;
-      padding: 2px 7px;
-      letter-spacing: 0.02em;
-      width: fit-content;
-    }
-
-    .nl-label {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      margin-top: 2px;
-    }
-
-    .nl-num {
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-    }
-
-    /* ── linkedin tooltip ── */
-    .li-trigger {
-      position: relative;
-      display: inline;
-      border-bottom: 1px dashed var(--muted);
-      cursor: default;
-      font-weight: 500;
-    }
-
-    .li-popup {
-      display: block;
-      position: absolute;
-      bottom: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease;
-      z-index: 100;
-    }
-
-    .li-popup::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 6px solid transparent;
-      border-top-color: #dce6f2;
-    }
-
-    .li-trigger:hover .li-popup {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    .li-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #dce6f2;
-      border-radius: 100px;
-      padding: 7px 18px 7px 8px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #2d64bc;
-      white-space: nowrap;
-      letter-spacing: 0.01em;
-      box-shadow: 0 4px 16px rgba(45,100,188,0.15), 0 1px 4px rgba(0,0,0,0.06);
-    }
-
-    /* ── link + tooltip combo ── */
-    .link-trigger {
-      position: relative;
-      display: inline;
-      font-weight: 500;
-      border-bottom: 1px dashed var(--muted);
-      cursor: pointer;
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .link-trigger:hover { color: var(--accent); }
-
-    .link-trigger .tip-popup {
-      cursor: default;
-    }
-
-    .link-trigger:hover .tip-popup {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-      pointer-events: auto;
-    }
-
-    /* ── connect ── */
-    .connect {
-      margin-top: 40px;
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .connect a {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1.5px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.15s;
-    }
-    .connect a:hover { color: var(--accent); }
-
-    /* ── footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      max-width: var(--col);
-      margin: 0 auto;
-      padding: 24px var(--gap);
-      text-align: center;
-    }
-
-    .footer-text {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    .footer-link {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 1px;
-      transition: color 0.15s;
-    }
-    .footer-link:hover { color: var(--accent); }
-
-    /* ── animations ── */
-    .fade {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .fade.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .fade { opacity: 1; transform: none; transition: none; }
-    }
-
-    /* ── responsive: tablet ── */
-    @media (max-width: 768px) {
-      :root { --gap: clamp(20px, 5vw, 40px); }
-      nav { padding: 20px var(--gap); }
-
-      .nl-popup, .tip-popup, .link-trigger .tip-popup {
-        left: 0;
-        right: auto;
-        transform: translateY(6px);
-        max-width: calc(100vw - 40px);
-      }
-      .nl-trigger:hover .nl-popup,
-      .tip-trigger:hover .tip-popup,
-      .link-trigger:hover .tip-popup {
-        transform: translateY(0);
-      }
-      .nl-popup::after, .tip-popup::after {
-        left: 24px;
-        transform: none;
-      }
-
-      .li-popup {
-        left: 0;
-        transform: translateY(6px);
-      }
-      .li-trigger:hover .li-popup { transform: translateY(0); }
-      .li-popup::after { left: 20px; transform: none; }
-    }
-
-    /* ── responsive: mobile ── */
-    @media (max-width: 520px) {
-      :root { --gap: 20px; }
-      nav { padding: 18px var(--gap); }
-      .nav-brand, .nav-cta { font-size: 12px; }
-      .nl-popup { width: calc(100vw - 40px); }
-      footer { padding: 20px var(--gap); }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="menta-site.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <header class="site-nav">
+    <a class="site-mark" href="index.html">shashank sn</a>
+    <nav class="site-nav__links" aria-label="primary navigation">
+      <a href="cbo/index.html">cbo</a>
+      <a href="ghost.html">ghost</a>
+      <a href="brand-arsenal/index.html">arsenal</a>
+      <a href="websites-and-apps/index.html">work</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="/" class="nav-brand">shashank sn</a>
-    <a href="/cbo" class="nav-cta">hire me as fractional cbo →</a>
-  </nav>
+  <main id="main" class="page">
+    <section class="page-shell hero home-hero reveal">
+      <div class="hero__copy">
+        <p class="label">shashank sn / brand systems / founder-led</p>
+        <h1>i'm shashank. i'm an <span class="script">idiot savant</span>.</h1>
+        <p class="lead">i get paid to think about brand, build products, and occasionally explain things in a way that makes people uncomfortable because it sounds too obvious after the fact.</p>
+        <div class="actions">
+          <a class="button button--green" href="cbo/index.html">start with fractional cbo</a>
+          <a class="button" href="#context">read the context</a>
+        </div>
+      </div>
 
-  <div class="letter">
+      <div class="portrait-field" aria-label="black and white portrait of shashank sn">
+        <div class="code-field" aria-hidden="true">
+          <span>positioning9af20b8812c7d03e11fa8c2bb99 trust0ff2a71c3e8b11f90c2d4410 voicea02b4d8813e91ac0bc8e category7a8b22ff2198ac49f3b2</span>
+        </div>
+        <img src="shashank-cutout.png" alt="shashank sn" />
+        <div class="portrait-badge">sn</div>
+        <div class="portrait-petal portrait-petal--one"></div>
+        <div class="portrait-petal portrait-petal--two"></div>
+        <svg class="portrait-line" viewBox="0 0 600 360" aria-hidden="true">
+          <path d="m42 258 c126 -164 274 -152 340 -42 c48 78 104 112 174 40" />
+          <path d="m174 312 c44 -76 122 -74 176 -8" />
+        </svg>
+      </div>
+    </section>
 
-    <p class="fade">i'm shashank. i'm an <span class="tip-trigger">idiot savant<span class="tip-popup"><span class="tip-title">idiot savant</span><span class="tip-body">a person who is extremely unworldly but displays natural wisdom and insight.</span></span></span>.</p>
+    <section id="context" class="editorial-grid home-intro">
+      <article class="panel reveal">
+        <p class="label">the useful contradiction</p>
+        <h2>the idiot part is real. so is the savant part.</h2>
+        <p>i know that sounds like a contradiction. it is not. it is the most honest thing i can say about myself.</p>
+        <div class="context-ledger" aria-label="definition">
+          <div class="context-card">
+            <strong>idiot savant</strong>
+            <p>a person who is extremely unworldly but displays natural wisdom and insight.</p>
+          </div>
+        </div>
+      </article>
 
-    <p class="fade">i know that sounds like a contradiction. it's not. it's the most honest thing i can say about myself.</p>
+      <article class="panel panel--dark reveal">
+        <p class="label">operating record</p>
+        <div class="orbit-illustration" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="panel-kicker">built companies, sold one, co-founded a few more, delivered 100+ talks, won a guinness world record, became one of the youngest heads of brand in india, and still the clearest thing i know about myself is that i do not fully know what i am doing.</p>
+        <p>i am just genuinely, almost embarrassingly, curious about everything.</p>
+      </article>
+    </section>
 
-    <p class="fade">i've built companies, <span class="tip-trigger">sold one<span class="tip-popup"><span class="tip-title">el mejor coffee</span><span class="tip-body">india's first speciality coffee e-commerce brand.</span></span></span>, co-founded <span class="tip-trigger">a few more<span class="tip-popup"><span class="tip-title">a total of 13</span><span class="tip-body">but notably happy beginnings, india's first wedding invites e-commerce store.</span></span></span>, delivered 100+ talks, won a <span class="tip-trigger">guinness world record<span class="tip-popup"><span class="tip-title">guvi</span><span class="tip-body">took guvi, an ed-tech company to the guinness world record.</span></span></span>, become one of the youngest heads of brand in india, and still after all of it — the clearest thing i know about myself is that i don't fully know what i'm doing. i'm just genuinely, almost embarrassingly, curious about everything.</p>
+    <section class="proof-grid" aria-label="proof and background">
+      <article class="proof-card reveal">
+        <div class="proof-mark proof-mark--coffee" aria-hidden="true"></div>
+        <span>01</span>
+        <strong>sold one</strong>
+        <p>el mejor coffee, india's first speciality coffee e-commerce brand.</p>
+      </article>
+      <article class="proof-card reveal">
+        <div class="proof-mark proof-mark--stack" aria-hidden="true"></div>
+        <span>02</span>
+        <strong>co-founded 13</strong>
+        <p>most notably happy beginnings, india's first wedding invites e-commerce store.</p>
+      </article>
+      <article class="proof-card reveal">
+        <div class="proof-mark proof-mark--record" aria-hidden="true"></div>
+        <span>03</span>
+        <strong>guinness world record</strong>
+        <p>took guvi, an ed-tech company, to the guinness world record.</p>
+      </article>
+      <article class="proof-card reveal">
+        <div class="proof-mark proof-mark--loop" aria-hidden="true"></div>
+        <span>04</span>
+        <strong>400+ books</strong>
+        <p>the loop: curiosity, building, breaking, studying, and collecting sharper questions instead of easy certainties.</p>
+      </article>
+    </section>
 
-    <p class="fade">most people spend their careers collecting certainties. i seem to collect questions instead. and <span class="tip-trigger">somewhere in that loop<span class="tip-popup"><span class="tip-title">the loop</span><span class="tip-body">reading over 400 books will definitely put you in a never ending one.</span></span></span> — the curiosity, the building, the breaking, the studying, a point of view formed. <span class="tip-trigger">brand isn't aesthetics. it's a compounding commercial system.<span class="tip-popup"><span class="tip-title">why people hire me</span><span class="tip-body">this is the one thing i know how to fix — and it's the thing most companies get wrong.</span></span></span> positioning, pricing, trust, values — they're not separate decisions. they're one decision, made many times, badly or well.</p>
+    <section class="statement-strip reveal">
+      <div class="statement-copy">
+        <p class="label">why people hire me</p>
+        <h2>brand isn't aesthetics. it is a <span class="script">compounding</span> commercial system.</h2>
+        <p>positioning, pricing, trust, values - they are not separate decisions. they are one decision, made many times, badly or well. this is the one thing i know how to fix, and it is the thing most companies get wrong.</p>
+      </div>
+      <div class="statement-visual" aria-hidden="true">
+        <div class="system-card system-card--one">positioning</div>
+        <div class="system-card system-card--two">pricing</div>
+        <div class="system-card system-card--three">trust</div>
+        <div class="system-card system-card--four">values</div>
+      </div>
+    </section>
 
-    <p class="fade">that's what i work on. for my own ventures and for a handful of companies where i work as a <a href="/cbo" class="link-trigger">fractional cbo<span class="tip-popup"><span class="tip-title">fractional cbo</span><span class="tip-body">part-time chief brand officer. i work with 3–5 companies at a time — strategic oversight, not execution.</span></span></a> — close enough to matter, senior enough to actually move things. and combined, this has made me a <span class="li-trigger">linkedin top voice<span class="li-popup"><span class="li-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="26" height="26" rx="5" fill="#2d64bc"/><path d="M7 10.5H9.5V19H7V10.5ZM8.25 9.25C7.42 9.25 6.75 8.58 6.75 7.75C6.75 6.92 7.42 6.25 8.25 6.25C9.08 6.25 9.75 6.92 9.75 7.75C9.75 8.58 9.08 9.25 8.25 9.25ZM11.5 10.5H13.9V11.6H13.93C14.27 10.96 15.09 10.28 16.31 10.28C18.84 10.28 19.3 11.97 19.3 14.13V19H16.8V14.63C16.8 13.68 16.78 12.46 15.47 12.46C14.14 12.46 13.94 13.5 13.94 14.56V19H11.44V10.5H11.5Z" fill="#dce6f2"/></svg>Top Voice</span></span></span> in the branding space.</p>
+    <section class="editorial-grid">
+      <article class="panel reveal">
+        <p class="label">what i actually work on</p>
+        <h2>build the sentence your market can carry.</h2>
+        <p>most teams do not have a content problem. they have a compression problem. the company knows too much, says too much, and leaves the buyer to assemble the meaning.</p>
+      </article>
 
-    <p class="fade">i got mainstream fame when the <span class="nl-trigger">stupidpreneur newsletter<span class="nl-popup"><span class="nl-row"><span class="nl-stat"><span class="nl-badge">↗ 716.5%</span><span class="nl-label">active subscribers</span><span class="nl-num">22,961</span></span><span class="nl-divider"></span><span class="nl-stat"><span class="nl-badge">↗ 13.9%</span><span class="nl-label">open rate</span><span class="nl-num">42.38%</span></span></span></span></span> became the world's biggest newsletter in the brand space and it led me to co-found <a href="https://sayabout.us" class="link-trigger" target="_blank" rel="noopener">sayabout.us<span class="tip-popup"><span class="tip-title">sayabout.us</span><span class="tip-body">testimonial infrastructure for the internet. collect, manage, and display social proof — automatically.</span></span></a>. i'm building <a href="https://holdyourvoice.com" class="link-trigger" target="_blank" rel="noopener">hold your voice<span class="tip-popup"><span class="tip-title">holdyourvoice.com</span><span class="tip-body">brand consistency for teams who keep going off-script. making sure everyone sounds like the same company.</span></span></a>, and i'm still figuring out three other things i probably shouldn't be doing simultaneously.</p>
+      <article class="panel panel--dark reveal">
+        <div class="signal-illustration" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ol class="numbered-list">
+          <li><span>01</span>positioning that makes the category obvious</li>
+          <li><span>02</span>trust signals that reduce buyer doubt</li>
+          <li><span>03</span>founder voice that carries original judgment</li>
+          <li><span>04</span>sales language that stops over-explaining</li>
+        </ol>
+      </article>
+    </section>
 
-    <p class="fade">the idiot part is real. so is the savant part. most days i can't tell which one is running the show.</p>
+    <section class="editorial-grid">
+      <article class="panel reveal">
+        <p class="label">proof field</p>
+        <div class="spec-row"><strong>150+</strong><p>companies advised on positioning, brand strategy, and go-to-market clarity.</p></div>
+        <div class="spec-row"><strong>top voice</strong><p>linkedin top voice in branding.</p></div>
+        <div class="spec-row"><strong>record</strong><p>guinness world record campaign at guvi.</p></div>
+        <div class="spec-row"><strong>100+ talks</strong><p>talks delivered across brand, entrepreneurship, marketing, and company-building.</p></div>
+      </article>
+      <article class="panel reveal">
+        <p class="label">fractional cbo context</p>
+        <h2>close enough to matter. senior enough to move things.</h2>
+        <p>i work with a handful of companies as a fractional cbo: part-time chief brand officer, usually 3-5 companies at a time, strategic oversight rather than execution.</p>
+      </article>
+    </section>
 
-    <p class="fade sig">— shashank</p>
+    <section class="metric-grid" aria-label="audience and ventures">
+      <article class="metric-panel metric-panel--wide reveal">
+        <p class="label">stupidpreneur newsletter</p>
+        <h2>built the world's biggest newsletter in the brand space.</h2>
+        <p>that mainstream attention eventually led me to co-found say about us.</p>
+        <div class="newsletter-graph" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </article>
+      <article class="metric-panel reveal">
+        <span class="metric-badge">+716.5%</span>
+        <strong>22,961</strong>
+        <p>active subscribers</p>
+      </article>
+      <article class="metric-panel reveal">
+        <span class="metric-badge">+13.9%</span>
+        <strong>42.38%</strong>
+        <p>open rate</p>
+      </article>
+    </section>
 
-    <div class="connect fade">
-      <a href="https://x.com/istupidpreneur" target="_blank" rel="noopener">x</a>
-      <a href="https://www.linkedin.com/in/thestupidpreneur/" target="_blank" rel="noopener">linkedin</a>
-      <a href="mailto:emailshashanksn@gmail.com">email</a>
-    </div>
+    <section class="venture-grid" aria-label="current ventures">
+      <a class="venture-card reveal" href="https://sayabout.us" target="_blank" rel="noopener">
+        <div class="venture-mark venture-mark--proof" aria-hidden="true"></div>
+        <p class="label">say about us</p>
+        <h3>testimonial infrastructure for the internet.</h3>
+        <p>collect, manage, and display social proof automatically.</p>
+      </a>
+      <a class="venture-card reveal" href="https://holdyourvoice.com" target="_blank" rel="noopener">
+        <div class="venture-mark venture-mark--voice" aria-hidden="true"></div>
+        <p class="label">hold your voice</p>
+        <h3>brand consistency for teams who keep going off-script.</h3>
+        <p>making sure everyone still sounds like the same company.</p>
+      </a>
+      <article class="venture-card reveal">
+        <div class="venture-mark venture-mark--unknown" aria-hidden="true"></div>
+        <p class="label">still in progress</p>
+        <h3>three other things i probably should not be doing simultaneously.</h3>
+        <p>most days i cannot tell whether the idiot part or the savant part is running the show.</p>
+      </article>
+    </section>
 
-  </div>
+    <section class="sales-cta reveal">
+      <div class="sales-cta__copy">
+        <p class="label">work with me</p>
+        <h2>if the market does not understand you fast enough, start here.</h2>
+      </div>
+      <div class="sales-cta__action">
+        <p class="sales-note">i work best when the problem is strategic, commercial, and slightly uncomfortable to name.</p>
+        <a class="button button--green" href="mailto:emailshashanksn@gmail.com?subject=Working%20with%20Shashank">email me</a>
+      </div>
+      <div class="moved-field moved-field--cta" aria-hidden="true">
+        <div class="visual-field visual-field--dark">
+          <div class="code-field" aria-hidden="true">
+            <span>positioning9af20b8812c7d03e11fa8c2bb99 trust0ff2a71c3e8b11f90c2d4410 voicea02b4d8813e91ac0bc8e category7a8b22ff2198ac49f3b2</span>
+            <span>signal0af2818c8e31ff04c1d7a8b22ff21 marketea884d9910ff2a71c3e8b11f90c clarityd88e4a0b1cff29e4418a2c8</span>
+          </div>
+          <div class="petal petal--one"></div>
+          <div class="petal petal--two"></div>
+          <svg class="scribble" viewBox="0 0 600 360" aria-hidden="true">
+            <path d="m24 230 c116 -166 268 -166 354 -42 c78 114 140 112 200 -4" />
+            <path d="m114 330 c34 -80 122 -82 188 -8" />
+          </svg>
+          <div class="field-logo">sn</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer class="page-footer">
+    <a href="https://x.com/istupidpreneur" target="_blank" rel="noopener">x</a>
+    <span>/</span>
+    <a href="https://www.linkedin.com/in/thestupidpreneur/" target="_blank" rel="noopener">linkedin</a>
+    <span>/</span>
+    <a href="mailto:emailshashanksn@gmail.com">email</a>
+  </footer>
 
   <script>
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade').forEach(el => io.observe(el));
-  </script>
-
-  <script src="posthog-config.js"></script>
-  <script src="posthog-init.js"></script>
-  <script>
-    // nav hire CTA
-    var navCta = document.querySelector('a.nav-cta');
-    if (navCta) {
-      navCta.addEventListener('click', function() {
-        posthog.capture('nav_hire_cta_clicked', { destination: navCta.href });
-      });
-    }
-
-    // social links (X, LinkedIn, email)
-    document.querySelectorAll('.connect a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        posthog.capture('social_link_clicked', { platform: link.textContent.trim(), url: link.href });
-      });
-    });
-
-    // external project links (sayabout.us, holdyourvoice.com)
-    document.querySelectorAll('a.link-trigger[target="_blank"]').forEach(function(link) {
-      link.addEventListener('click', function() {
-        posthog.capture('external_project_link_clicked', { project: link.textContent.trim().replace(/\s+/g, ' '), url: link.href });
-      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      el.style.setProperty('--delay', `${Math.min(index * 90, 450)}ms`);
+      observer.observe(el);
     });
   </script>
-
 </body>
 </html>
