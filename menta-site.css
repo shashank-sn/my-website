@@ -1081,6 +1081,23 @@ p {
   color: rgba(24, 233, 120, 0.13);
 }
 
+.not-found-hero h1 {
+  max-width: 10ch;
+}
+
+.not-found-field {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.not-found-field .field-logo::before {
+  display: none;
+}
+
+.not-found-field .field-logo {
+  z-index: 2;
+}
+
 .visual-field {
   position: relative;
   width: 100%;
@@ -1781,11 +1798,13 @@ p {
 
   .hero__copy,
   .portrait-field,
+  .not-found-field,
   .visual-field {
     min-height: 0;
   }
 
   .portrait-field,
+  .not-found-field,
   .visual-field {
     height: clamp(330px, 44vh, 430px);
   }
@@ -1796,6 +1815,7 @@ p {
   }
 
   .portrait-field,
+  .not-found-field,
   .visual-field,
   .panel,
   .work-shot {
@@ -2034,6 +2054,11 @@ p {
   }
 
   .portrait-field {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .not-found-field {
     aspect-ratio: 1 / 1;
     height: auto;
   }

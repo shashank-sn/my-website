@@ -1,29 +1,45 @@
 import { cpSync, existsSync, mkdirSync, rmSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 
 const outputDir = "cloudflare/dist";
 const publicPaths = [
   ".well-known",
+  "404.html",
   "_headers",
   "_redirects",
   "brand-arsenal",
+  "brand-arsenal.md",
   "brand-engine",
+  "brand-engine.md",
   "cbo",
+  "cbo.md",
   "ghost.html",
+  "ghost.md",
   "home.html",
   "hold your voice.png",
+  "humans.txt",
+  "ai.txt",
   "index.html",
+  "index.md",
   "just nai.png",
+  "llms.txt",
+  "llms-full.txt",
   "menta-site.css",
   "newsletter-engine",
+  "newsletter-engine.md",
   "robots.txt",
   "say about us.png",
   "security.txt",
   "shashank-cutout.png",
   "signal-engine",
+  "signal-engine.md",
   "sitemap.xml",
   "websites-and-apps",
+  "websites-and-apps.md",
 ];
+
+execFileSync(process.execPath, ["scripts/generate-discovery.mjs"], { stdio: "inherit" });
 
 rmSync(outputDir, { recursive: true, force: true });
 mkdirSync(outputDir, { recursive: true });

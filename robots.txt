@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 
 Disallow: /home.html
+Disallow: /404.html
 
 Sitemap: https://shashanksn.xyz/sitemap.xml

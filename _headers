@@ -2,3 +2,25 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+/*.md
+  Content-Type: text/markdown; charset=utf-8
+  X-Robots-Tag: noindex, follow
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+
+/ai.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+
+/.well-known/ai.txt
+  Content-Type: text/plain; charset=utf-8

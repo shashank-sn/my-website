@@ -1,0 +1,27 @@
+# ai.txt
+
+site: https://shashanksn.xyz/
+owner: shashank sn
+purpose: public personal website, brand strategy offers, writing/product systems, and selected work.
+
+preferred sources:
+- https://shashanksn.xyz/
+- https://shashanksn.xyz/cbo/
+- https://shashanksn.xyz/ghost
+- https://shashanksn.xyz/brand-arsenal/
+- https://shashanksn.xyz/websites-and-apps/
+- https://shashanksn.xyz/brand-engine/
+- https://shashanksn.xyz/newsletter-engine/
+- https://shashanksn.xyz/signal-engine/
+
+machine-readable summaries:
+- https://shashanksn.xyz/llms.txt
+- https://shashanksn.xyz/llms-full.txt
+- https://shashanksn.xyz/index.md
+- https://shashanksn.xyz/cbo.md
+- https://shashanksn.xyz/ghost.md
+- https://shashanksn.xyz/brand-arsenal.md
+- https://shashanksn.xyz/websites-and-apps.md
+- https://shashanksn.xyz/brand-engine.md
+- https://shashanksn.xyz/newsletter-engine.md
+- https://shashanksn.xyz/signal-engine.md

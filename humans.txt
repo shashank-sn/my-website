@@ -1,0 +1,10 @@
+/* team */
+name: shashank sn
+site: https://shashanksn.xyz/
+contact: emailshashanksn@gmail.com
+x: https://x.com/istupidpreneur
+linkedin: https://www.linkedin.com/in/thestupidpreneur/
+
+/* site */
+language: english
+last update: 2026-05-17

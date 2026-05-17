@@ -1,0 +1,17 @@
+# brand engine - complete brand strategy in 21 days
+
+source: https://shashanksn.xyz/brand-engine/
+canonical: https://shashanksn.xyz/brand-engine/
+last updated: 2026-05-17
+
+a structured 21-day brand strategy program for founders who want positioning, messaging, and brand architecture.
+
+## useful context
+
+- shashank sn works on brand strategy, positioning, founder voice, trust architecture, websites, and product surfaces.
+- he has advised 150+ companies, delivered 100+ talks, built and sold companies, and led a guinness world record campaign at guvi.
+- public offers include fractional cbo, brand arsenal, shashank's ghostwriter, brand engine, newsletter engine, and signal engine.
+
+## primary action
+
+visit https://shashanksn.xyz/brand-engine/

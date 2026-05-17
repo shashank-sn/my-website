@@ -1,0 +1,35 @@
+# shashank sn
+
+> brand strategy, positioning, founder voice, trust architecture, websites, and product surfaces.
+
+## canonical site
+
+https://shashanksn.xyz/
+
+## public pages
+
+- [shashank sn - idiot savant](https://shashanksn.xyz/): personal homepage for shashank sn, focused on brand systems, founder-led positioning, and the operating record behind the work.
+- [shashank sn - fractional cbo](https://shashanksn.xyz/cbo/): fractional chief brand officer offer for post-pmf startups, scaling d2c brands, and b2b companies with positioning problems that cost revenue.
+- [shashank's ghostwriter - a claude skill](https://shashanksn.xyz/ghost): a claude skill built around shashank's writing structure, argument logic, and idea development patterns.
+- [brand arsenal - brand strategy micro-courses for founders](https://shashanksn.xyz/brand-arsenal/): a compact brand strategy system for founders who need clearer positioning, trust signals, category logic, offers, and founder voice.
+- [websites & apps - shashank sn](https://shashanksn.xyz/websites-and-apps/): selected websites and apps designed or built by shashank sn, including hold your voice, just nai, and say about us.
+- [brand engine - complete brand strategy in 21 days](https://shashanksn.xyz/brand-engine/): a structured 21-day brand strategy program for founders who want positioning, messaging, and brand architecture.
+- [newsletter engine - email list to revenue in 30 days](https://shashanksn.xyz/newsletter-engine/): a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.
+- [signal engine - high-leverage writing framework](https://shashanksn.xyz/signal-engine/): a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.
+
+## text mirrors
+
+- https://shashanksn.xyz/index.md
+- https://shashanksn.xyz/cbo.md
+- https://shashanksn.xyz/ghost.md
+- https://shashanksn.xyz/brand-arsenal.md
+- https://shashanksn.xyz/websites-and-apps.md
+- https://shashanksn.xyz/brand-engine.md
+- https://shashanksn.xyz/newsletter-engine.md
+- https://shashanksn.xyz/signal-engine.md
+
+## contact
+
+- email: emailshashanksn@gmail.com
+- x: https://x.com/istupidpreneur
+- linkedin: https://www.linkedin.com/in/thestupidpreneur/

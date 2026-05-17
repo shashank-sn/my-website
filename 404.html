@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - page not found</title>
+  <link rel="canonical" href="https://shashanksn.xyz/404.html" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="the page you were looking for is not here anymore. return to shashank sn's public website." />
+  <meta property="og:title" content="404 - page not found" />
+  <meta property="og:description" content="the page you were looking for is not here anymore. return to shashank sn's public website." />
+  <meta property="og:url" content="https://shashanksn.xyz/404.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="shashank sn" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="404 - page not found" />
+  <meta name="twitter:description" content="the page you were looking for is not here anymore. return to shashank sn's public website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/menta-site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">skip to content</a>
+  <header class="site-nav">
+    <a class="site-mark" href="/index.html">shashank sn</a>
+    <nav class="site-nav__links" aria-label="primary navigation">
+      <a href="/cbo/index.html">cbo</a>
+      <a href="/ghost.html">ghost</a>
+      <a href="/brand-arsenal/index.html">arsenal</a>
+      <a href="/websites-and-apps/index.html">work</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-shell hero not-found-hero reveal">
+      <div class="hero__copy">
+        <p class="label">404 / missing route / dead link</p>
+        <h1>this page got <span class="script">deleted</span>.</h1>
+        <p class="lead">probably intentionally. some old blog, course, deck, or tracking page no longer belongs on the public site.</p>
+        <div class="actions">
+          <a class="button button--green" href="/index.html">go home</a>
+          <a class="button" href="/websites-and-apps/index.html">see the work</a>
+        </div>
+      </div>
+
+      <div class="visual-field visual-field--dark not-found-field" aria-label="missing page illustration">
+        <div class="code-field" aria-hidden="true">
+          <span>route9af20b8812c7d03e11fa8c2bb99 missing0ff2a71c3e8b11f90c2d4410 deleteda02b4d8813e91ac0bc8e</span>
+        </div>
+        <div class="field-logo">404</div>
+        <div class="petal petal--one"></div>
+        <div class="petal petal--two"></div>
+        <svg class="scribble" viewBox="0 0 600 360" aria-hidden="true">
+          <path d="m44 244 c86 -138 206 -138 286 -20 c56 82 120 102 222 10" />
+          <path d="m134 108 l330 154" />
+        </svg>
+      </div>
+    </section>
+
+    <section class="offer-router" aria-label="available routes">
+      <a class="offer-card reveal" href="/cbo/index.html">
+        <span class="label">01 / fractional cbo</span>
+        <h3>start with the strategic problem.</h3>
+        <p>monthly brand oversight for teams that need sharper positioning, trust, and market language.</p>
+      </a>
+      <a class="offer-card reveal" href="/brand-arsenal/index.html">
+        <span class="label">02 / brand arsenal</span>
+        <h3>use the tools instead.</h3>
+        <p>a compact brand strategy system for founders who want clearer categories, offers, and voice.</p>
+      </a>
+      <a class="offer-card reveal" href="/websites-and-apps/index.html">
+        <span class="label">03 / work</span>
+        <h3>look at live surfaces.</h3>
+        <p>websites and apps where the page has to explain the product before a sales call does.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <a href="https://x.com/istupidpreneur" target="_blank" rel="noopener">x</a>
+    <span>/</span>
+    <a href="https://www.linkedin.com/in/thestupidpreneur/" target="_blank" rel="noopener">linkedin</a>
+    <span>/</span>
+    <a href="mailto:emailshashanksn@gmail.com">email</a>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      el.style.setProperty('--delay', `${Math.min(index * 90, 450)}ms`);
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
