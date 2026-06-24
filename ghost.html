@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>shashank's ghostwriter - a claude skill</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="canonical" href="https://shashanksn.xyz/ghost" />
   <link rel="alternate" type="text/markdown" href="https://shashanksn.xyz/ghost.md" />
   <meta name="description" content="a claude skill trained on how shashank actually thinks and writes. not tone mimicry, structural logic. turn a half-formed idea into writing that earns its ending." />
@@ -11,11 +13,13 @@
   <meta property="og:description" content="a claude skill trained on how shashank actually thinks and writes. turn a half-formed idea into writing that earns its ending." />
   <meta property="og:url" content="https://shashanksn.xyz/ghost" />
   <meta property="og:type" content="product" />
+  <meta property="og:image" content="https://shashanksn.xyz/thumbnail.png" />
   <meta property="og:site_name" content="shashank sn" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@istupidpreneur" />
   <meta name="twitter:title" content="shashank's ghostwriter - a claude skill" />
   <meta name="twitter:description" content="a claude skill trained on how shashank actually thinks and writes. turn a half-formed idea into writing that earns its ending." />
+  <meta name="twitter:image" content="https://shashanksn.xyz/thumbnail.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -34,107 +38,338 @@
     }
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="menta-site.css" />
+  <style>
+    @font-face {
+      font-family: 'Google Sans';
+      font-style: normal;
+      font-display: swap;
+      font-weight: 400 700;
+      src: url(https://cdn.jsdelivr.net/fontsource/fonts/google-sans:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+    }
+    :root{
+      --bg:#08090a;
+      --surface:#0d0e10;
+      --surface-2:#111215;
+      --surface-3:#17181c;
+      --border:rgba(255,255,255,.08);
+      --border-strong:rgba(255,255,255,.14);
+      --text:#f7f8f8;
+      --muted:#8a8f98;
+      --dim:#62666d;
+      --radius:12px;
+      --maxw:820px;
+      --sans:'Google Sans','Helvetica Neue',Arial,sans-serif;
+      --card-shadow:0 0 0 1px rgba(255,255,255,.06);
+      --card-shadow-hover:0 0 0 1px rgba(255,255,255,.1);
+      --accent-amber:#f0a54a;
+      --accent-sky:#6ba4d1;
+      --accent-mint:#6db89a;
+      --accent-plum:#b48ead;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      font-size:16px;
+      line-height:1.6;
+      font-weight:400;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    ::selection{background:rgba(255,255,255,.16)}
+    a{color:inherit;text-decoration:none}
+    .skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:12px 16px;z-index:100;border-radius:8px}
+    .skip-link:focus{left:8px;top:8px}
+
+    /* ---------- nav ---------- */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px clamp(20px,5vw,48px);
+      background:rgba(8,9,10,.72);
+      backdrop-filter:saturate(140%) blur(12px);
+      -webkit-backdrop-filter:saturate(140%) blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .mark{font-weight:600;font-size:15px;letter-spacing:-.01em;line-height:0}
+    .nav-logo{height:22px;width:auto;display:block}
+    .mark b{color:var(--muted);font-weight:600}
+    .nav-links{display:flex;gap:24px;font-size:14px;color:var(--muted)}
+    .nav-links a{transition-property:color;transition-duration:.18s;transition-timing-function:ease}
+    .nav-links a:hover,.nav-links a.active{color:var(--text)}
+    .burger-btn{display:none;background:none;border:0;cursor:pointer;padding:8px;min-width:40px;min-height:40px;position:relative;z-index:60}
+    .burger-btn span{display:block;width:18px;height:1.5px;background:var(--muted);transition-property:transform,opacity;transition-duration:.2s;transition-timing-function:ease}
+    .burger-btn span+span{margin-top:5px}
+    .burger-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .burger-btn.open span:nth-child(2){opacity:0}
+    .burger-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:55;background:rgba(8,9,10,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);flex-direction:column;align-items:center;justify-content:center;gap:32px}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:18px;color:var(--muted);font-weight:500;transition-property:color;transition-duration:.18s;transition-timing-function:ease}
+    .mobile-menu a:hover{color:var(--text)}
+    .mobile-close{position:absolute;top:20px;right:24px;background:none;border:0;color:var(--muted);font-size:28px;cursor:pointer;min-width:44px;min-height:44px;line-height:1;transition-property:color;transition-duration:.18s;transition-timing-function:ease}
+    .mobile-close:hover{color:var(--text)}
+
+    /* ---------- shell ---------- */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+
+    /* ---------- hero ---------- */
+    .hero{
+      padding:clamp(48px,8vw,88px) 0 clamp(32px,4vw,48px);
+    }
+    .hero .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:500;margin-bottom:22px}
+    h1.hero-title{font-weight:600;font-size:clamp(28px,5.6vw,50px);line-height:1.06;letter-spacing:-.025em;max-width:18ch;text-wrap:balance}
+    h1.hero-title em{color:var(--muted);font-style:normal}
+    .hero-lead{margin-top:18px;max-width:54ch;font-size:clamp(15.5px,1.7vw,17.5px);line-height:1.58;color:var(--muted);text-wrap:pretty}
+    .actions{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      font-family:var(--sans);font-weight:500;font-size:14px;
+      padding:11px 18px;border-radius:9px;border:0;
+      box-shadow:0 0 0 1px rgba(255,255,255,.12);
+      transition-property:background,transform,box-shadow;
+      transition-duration:.18s;
+      transition-timing-function:ease;
+      min-height:44px;
+      cursor:pointer;
+    }
+    .btn--solid{background:var(--text);color:var(--bg);box-shadow:none}
+    .btn--solid:hover{background:#e4e6e7;transform:translateY(-1px)}
+    .btn--ghost{background:var(--surface);color:var(--text)}
+    .btn--ghost:hover{box-shadow:0 0 0 1px rgba(255,255,255,.16);transform:translateY(-1px)}
+    .btn:active{scale:.96}
+    .btn .arrow{transition-property:transform;transition-duration:.18s;transition-timing-function:ease}
+    .btn:hover .arrow{transform:translateX(2px)}
+
+    /* ---------- cards ---------- */
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:clamp(32px,4vw,48px) 0}
+    .card{
+      background:var(--surface);
+      box-shadow:var(--card-shadow);
+      border-radius:var(--radius);
+      padding:28px 26px 26px;
+      transition-property:box-shadow,background;
+      transition-duration:.2s;
+      transition-timing-function:ease;
+    }
+    .card:hover{box-shadow:var(--card-shadow-hover)}
+    .card-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:500;margin-bottom:12px}
+    .card h2{font-weight:600;font-size:clamp(17px,2vw,20px);line-height:1.3;letter-spacing:-.015em;text-wrap:balance}
+    .card h3{font-weight:600;font-size:15px;line-height:1.4;letter-spacing:-.01em}
+    .card p{font-size:15px;line-height:1.6;color:var(--muted);margin-top:10px;text-wrap:pretty}
+    .card+.card{gap:0}
+
+    .specs{display:grid;gap:0;margin-top:16px}
+    .specs .r{
+      display:grid;grid-template-columns:110px 1fr;gap:12px;
+      padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .specs .r:last-child{border-bottom:0}
+    .specs .r strong{font-weight:600;color:var(--text);font-size:14px}
+    .specs .r:nth-child(1) strong{color:var(--accent-amber)}
+    .specs .r:nth-child(2) strong{color:var(--accent-sky)}
+    .specs .r:nth-child(3) strong{color:var(--accent-mint)}
+    .specs .r:nth-child(4) strong{color:var(--accent-plum)}
+
+    .steps{list-style:none;margin:16px 0 0;display:grid;gap:0}
+    .steps li{
+      display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:baseline;
+      padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:15px;color:var(--muted);
+    }
+    .steps li:last-child{border-bottom:0}
+    .steps span{font-size:12px;color:var(--dim);font-weight:500}
+    .steps li:nth-child(1) span{color:var(--accent-amber)}
+    .steps li:nth-child(2) span{color:var(--accent-sky)}
+    .steps li:nth-child(3) span{color:var(--accent-mint)}
+    .steps li:nth-child(4) span{color:var(--accent-plum)}
+
+    .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+    .pill{
+      font-size:12px;padding:4px 10px;
+      box-shadow:0 0 0 1px rgba(255,255,255,.06);
+      border-radius:999px;background:var(--surface-3);font-weight:500;line-height:1.4;
+    }
+    .pill--amber{color:var(--accent-amber)}
+    .pill--sky{color:var(--accent-sky)}
+    .pill--mint{color:var(--accent-mint)}
+    .pill--plum{color:var(--accent-plum)}
+    .pill--rose{color:#e87a90}
+    .example-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:500;margin-bottom:8px}
+    .example-q{
+      padding:12px 14px;box-shadow:0 0 0 1px rgba(255,255,255,.06);
+      border-radius:8px;background:var(--surface-3);font-size:14.5px;line-height:1.55;color:var(--muted);
+    }
+    .example-a{margin-top:10px;font-size:15px;line-height:1.55;color:var(--text)}
+    .example-a strong{font-weight:600}
+
+    /* ---------- cta ---------- */
+    .cta{
+      padding:clamp(36px,5vw,56px) 0 clamp(40px,5vw,56px);
+      border-top:1px solid var(--border);
+    }
+    .cta-row{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+    .cta-row h2{font-weight:600;font-size:clamp(20px,2.6vw,26px);line-height:1.25;letter-spacing:-.018em;text-wrap:balance}
+    .cta-row .cta-right{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+    .cta-row .note{font-size:13.5px;color:var(--dim);line-height:1.5}
+
+    /* ---------- footer ---------- */
+    footer{
+      border-top:1px solid var(--border);
+      padding:clamp(28px,4vw,40px) 0;
+    }
+    .footer-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+    .footer-in .fl{font-size:14px;color:var(--muted);font-weight:500}
+    .footer-in .fr{display:flex;gap:20px;font-size:14px}
+    .footer-in .fr a{color:var(--dim);transition-property:color;transition-duration:.18s;transition-timing-function:ease}
+    .footer-in .fr a:hover{color:var(--text)}
+
+    .reveal{
+      opacity:0;transform:translateY(14px);
+      transition-property:opacity,transform;
+      transition-duration:.6s;
+      transition-timing-function:cubic-bezier(.2,.6,.2,1);
+      will-change:transform,opacity;
+    }
+    .reveal.in{opacity:1;transform:none}
+    .reveal-card:nth-child(1){transition-delay:.02s}
+    .reveal-card:nth-child(2){transition-delay:.06s}
+    .reveal-card:nth-child(3){transition-delay:.1s}
+    .reveal-card:nth-child(4){transition-delay:.14s}
+
+    @media (max-width:680px){
+      .nav-links{display:none}
+      .burger-btn{display:block}
+    @media (prefers-reduced-motion:reduce){
+      *{transition:none!important;animation:none!important}
+      .reveal,.reveal-card{opacity:1;transform:none;transition-delay:0s!important}
+      html{scroll-behavior:auto}
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">skip to content</a>
-  <header class="site-nav">
-    <a class="site-mark" href="index.html">shashank sn</a>
-    <nav class="site-nav__links" aria-label="primary navigation">
+  <header class="nav">
+    <a class="mark" href="index.html"><img src="favicon.png" alt="shashank sn" class="nav-logo" /></a>
+    <nav class="nav-links" aria-label="primary navigation">
       <a href="cbo/index.html">cbo</a>
-      <a href="brand-arsenal/index.html">arsenal</a>
       <a href="websites-and-apps/index.html">work</a>
+      <a href="opensource/index.html">open source</a>
     </nav>
+    <button class="burger-btn" aria-label="open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="mobile-close" aria-label="close menu">&times;</button>
+    <a href="index.html">home</a>
+    <a href="cbo/index.html">cbo</a>
+    <a href="websites-and-apps/index.html">work</a>
+    <a href="opensource/index.html">open source</a>
+  </div>
 
-  <main id="main" class="page">
-    <section class="page-shell hero reveal">
-      <div class="hero__copy">
-        <p class="label">claude skill / writing system / instant access</p>
-        <h1>a ghostwriter for your <span class="script">thinking</span>, not your tone.</h1>
-        <p class="lead">it turns rough fragments into writing with a spine: opening, turn, proof, compression, and an ending that feels earned.</p>
+  <main id="main">
+    <div class="wrap">
+      <section class="hero reveal">
+        <p class="eyebrow">claude skill / structural logic / not tone mimicry</p>
+        <h1 class="hero-title">a ghostwriter for your <em>thinking</em>, not your tone.</h1>
+        <p class="hero-lead">it turns rough fragments into writing with a spine: opening, turn, proof, compression, and an ending that feels earned.</p>
         <div class="actions">
-          <a class="button button--green" href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" target="_blank" rel="noopener">get the ghostwriter</a>
-          <a class="button" href="brand-arsenal/index.html">see brand arsenal</a>
+          <a class="btn btn--solid" href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" target="_blank" rel="noopener">get the ghostwriter <span class="arrow">→</span></a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card reveal-card">
+          <p class="card-label">the problem</p>
+          <h2>the blank page is usually a logic problem.</h2>
+          <p>most ai writing tools imitate surface style. the useful part is deeper: how the idea moves, where the argument turns, and what should be deleted because it weakens the point.</p>
+          <div class="pills">
+            <span class="pill pill--amber">tone mimicry</span>
+            <span class="pill pill--sky">surface style</span>
+            <span class="pill pill--rose">no structure</span>
+          </div>
+        </div>
+        <div class="card reveal-card">
+          <p class="card-label">what's inside</p>
+          <ol class="steps">
+            <li><span>01</span>founder voice patterns</li>
+            <li><span>02</span>argument structure and compression</li>
+            <li><span>03</span>hook, turn, proof, ending logic</li>
+            <li><span>04</span>claude-ready install instructions</li>
+          </ol>
+        </div>
+        <div class="card reveal-card">
+          <p class="card-label">input</p>
+          <h3>i have a half-thought about why brands sound fake when they outsource voice.</h3>
+          <div class="pills">
+            <span class="pill pill--mint">fragments</span>
+            <span class="pill pill--plum">messy notes</span>
+            <span class="pill pill--sky">strong opinion</span>
+          </div>
+        </div>
+        <div class="card reveal-card">
+          <p class="card-label">output direction</p>
+          <h2>your brand voice is the decision-making pattern your company repeats in public.</h2>
+          <p>use it for posts, essays, founder notes, launch arguments, and raw thoughts that need structure before polish.</p>
+        </div>
+      </section>
+
+      <section class="cta reveal">
+        <div class="cta-row">
+          <div>
+            <p class="card-label" style="margin-bottom:12px">one-time purchase</p>
+            <h2>install the ghostwriter when the idea is there but the shape is missing.</h2>
+          </div>
+          <div class="cta-right">
+            <a class="btn btn--solid" href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" target="_blank" rel="noopener">buy the ghostwriter skill <span class="arrow">→</span></a>
+            <p class="note">best for founders who want their thinking sharpened, not a generic ai writing voice.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap footer-in">
+        <div class="fl">say something obvious. then build it.</div>
+        <div class="fr">
+          <a href="index.html">home</a>
+          <a href="https://github.com/shashank-sn" target="_blank" rel="noopener">github</a>
+          <a href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" target="_blank" rel="noopener">gumroad</a>
         </div>
       </div>
-
-      <div class="visual-field visual-field--light" aria-label="voice system field">
-        <div class="code-field" aria-hidden="true">
-          <span>hook7a8b22ff2198ac49f3b2a1c7d88e4a0b1cff29e4418a2c8 turn0ff2a71c3e8b11f90c2d4410 endinga02b4d8813e91ac0bc8e</span>
-          <span>voicee31ff04c1d7a8b22ff2198ac49f3b2 structurea884d9910ff2a71c3e8b11f90c2d4410bbcc9910af2818c8</span>
-        </div>
-        <div class="petal petal--one"></div>
-        <div class="petal petal--three"></div>
-        <svg class="scribble" viewBox="0 0 600 360" aria-hidden="true">
-          <path d="M36 290 C94 138 184 128 238 214 C298 310 370 330 562 80" />
-        </svg>
-      </div>
-    </section>
-
-    <section class="editorial-grid">
-      <article class="panel reveal">
-        <p class="label">the problem</p>
-        <h2>the blank page is usually a logic problem.</h2>
-        <p>most ai writing tools imitate surface style. the useful part is deeper: how the idea moves, where the argument turns, and what should be deleted because it weakens the point.</p>
-      </article>
-      <article class="panel panel--dark reveal">
-        <ol class="numbered-list">
-          <li><span>01</span>founder voice patterns</li>
-          <li><span>02</span>argument structure and compression</li>
-          <li><span>03</span>hook, turn, proof, ending logic</li>
-          <li><span>04</span>claude-ready install instructions</li>
-        </ol>
-      </article>
-    </section>
-
-    <section class="editorial-grid">
-      <article class="panel panel--dark reveal">
-        <p class="label">input</p>
-        <h3>i have a half-thought about why brands sound fake when they outsource voice.</h3>
-      </article>
-      <article class="panel reveal">
-        <p class="label">output direction</p>
-        <h2>your brand voice is the decision-making pattern your company repeats in public.</h2>
-        <p>use it for posts, essays, founder notes, launch arguments, and raw thoughts that need structure before polish.</p>
-      </article>
-    </section>
-
-    <section class="sales-cta reveal" aria-label="buy shashank's ghostwriter">
-      <div class="sales-cta__copy">
-        <p class="label">one-time purchase</p>
-        <h2>install the ghostwriter when the idea is there but the shape is missing.</h2>
-        <p class="lead">use it when you have fragments, messy notes, or a strong opinion that still needs structure before it becomes publishable.</p>
-      </div>
-      <div class="sales-cta__action">
-        <a class="button button--green" href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" target="_blank" rel="noopener">buy the ghostwriter skill</a>
-        <a class="button" href="mailto:emailshashanksn@gmail.com?subject=Ghostwriter%20Skill%20Question">ask a question first</a>
-        <p class="sales-note">best for founders who want their thinking sharpened, not a generic ai writing voice.</p>
-      </div>
-    </section>
+    </footer>
   </main>
 
-  <footer class="page-footer">
-    <a href="index.html">home</a>
-    <span>/</span>
-    <a href="https://stupidpreneur.gumroad.com/l/ghostwriter?wanted=true" target="_blank" rel="noopener">gumroad</a>
-  </footer>
-
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.14 });
-    document.querySelectorAll('.reveal').forEach((el, index) => {
-      el.style.setProperty('--delay', `${Math.min(index * 90, 450)}ms`);
-      observer.observe(el);
+    const burgerBtn = document.querySelector('.burger-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileClose = mobileMenu.querySelector('.mobile-close');
+    function closeMenu() {
+      burgerBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      burgerBtn.setAttribute('aria-label', 'open menu');
+    }
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = burgerBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      burgerBtn.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+      burgerBtn.setAttribute('aria-label', isOpen ? 'close menu' : 'open menu');
     });
+    mobileClose.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal,.reveal-card').forEach((el) => io.observe(el));
   </script>
 </body>
 </html>
