@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hyv — roach mafia dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Google Sans', 'Helvetica Neue', sans-serif;
+    background: #F7F5F0;
+    color: #0A0A0A;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* --- hero --- */
+  .hero {
+    padding: 120px 0 80px;
+  }
+  .hero .badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #C4441A;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    text-transform: lowercase;
+    text-wrap: balance;
+  }
+  .hero .tagline {
+    font-size: 20px;
+    color: #6B6560;
+    font-weight: 500;
+    text-transform: lowercase;
+    text-wrap: balance;
+  }
+
+  /* --- section header --- */
+  .section { margin-bottom: 80px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .section-header svg {
+    width: 20px;
+    height: 20px;
+    stroke: #C4441A;
+    stroke-width: 1.8;
+    fill: none;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #0A0A0A;
+    text-transform: lowercase;
+  }
+
+  /* --- what it is card --- */
+  .hero-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  }
+  .hero-card .desc {
+    font-size: 16px;
+    color: #3A3530;
+    line-height: 1.8;
+    max-width: 640px;
+    text-wrap: pretty;
+    margin-bottom: 24px;
+  }
+  .hero-card .desc code {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 14px;
+    background: #F0EDE8;
+    padding: 1px 8px;
+    border-radius: 5px;
+    color: #C4441A;
+    font-weight: 600;
+  }
+  .chat-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .chat-bubble {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.05),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 200ms ease-out, translate 150ms ease-out;
+  }
+  .chat-bubble:active { translate: 0 1px; }
+  .chat-bubble .chat-dot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .chat-bubble .chat-dot.d1 { background: #C4441A; }
+  .chat-bubble .chat-dot.d2 { background: #4A7C59; }
+  .chat-bubble .chat-dot.d3 { background: #6B6560; }
+  .chat-bubble .chat-num {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    color: #0A0A0A;
+    min-width: 48px;
+  }
+  .chat-bubble .chat-lbl {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5A5550;
+    line-height: 1.35;
+    text-wrap: pretty;
+  }
+  .chat-bubble.apps { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .chat-bubble.apps .chat-bubble-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .apps-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .apps-pills a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border: 1px solid #E5E0D8;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color .2s, transform .2s;
+  }
+  .apps-pills a:hover { border-color: #B0AAA5; transform: translateY(-1px); }
+  .apps-pills a img, .apps-pills a svg { width: 20px; height: 20px; object-fit: contain; display: block; }
+
+  /* --- stat cards --- */
+  .stat-grid { display: grid; gap: 16px; }
+  .stat-grid.c3 { grid-template-columns: 1fr 1fr 1fr; }
+  .stat-grid.c2 { grid-template-columns: 1fr 1fr; }
+
+  .stat-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 200ms ease-out, scale 150ms ease-out;
+  }
+  .stat-card:active { scale: 0.98; }
+
+  .stat-card .stat-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+  .stat-card .stat-tag.rev   { background: #F0F5F0; color: #4A7C59; }
+  .stat-card .stat-tag.growth { background: #FEF2EE; color: #C4441A; }
+  .stat-card .stat-tag.meta   { background: #F0EDE8; color: #6B6560; }
+
+  .stat-card .num {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-card .lbl {
+    font-size: 12px;
+    color: #5A5550;
+    margin-top: 8px;
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 700px) {
+    .stat-grid.c3, .stat-grid.c2 { grid-template-columns: 1fr; }
+  }
+
+  /* --- icp --- */
+  .icp-grid { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  .icp-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 200ms ease-out, scale 150ms ease-out;
+  }
+  .icp-card:active { scale: 0.98; }
+  .icp-card .icp-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    background: #FEF2EE;
+    color: #C4441A;
+  }
+  .icp-card h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0A0A0A;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+  }
+  .icp-card ul { list-style: none; }
+  .icp-card ul li {
+    font-size: 13.5px;
+    color: #5A5550;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    text-wrap: pretty;
+  }
+  .icp-card ul li::before { content: ">"; position: absolute; left: 0; color: #C4441A; font-weight: 600; }
+  .icp-card .icp-plan {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #4A7C59;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #F0EDE8;
+  }
+  @media (max-width: 700px) { .icp-grid { grid-template-columns: 1fr; } }
+
+  /* --- pain points --- */
+  .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pain-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 200ms ease-out, scale 150ms ease-out;
+  }
+  .pain-card:active { scale: 0.98; }
+  .pain-card .pain-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+  .pain-card .pain-tag.high { background: #FEF2EE; color: #C4441A; }
+  .pain-card .pain-tag.med  { background: #FFF8E5; color: #B8860B; }
+  .pain-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0A0A0A;
+    margin-bottom: 10px;
+    text-transform: lowercase;
+    text-wrap: balance;
+    letter-spacing: -0.3px;
+  }
+  .pain-card p { font-size: 14px; color: #5A5550; line-height: 1.75; text-wrap: pretty; }
+  @media (max-width: 700px) { .pain-grid { grid-template-columns: 1fr; } }
+
+  /* --- competitive map (redesigned) --- */
+  .comp-stack { display: grid; gap: 10px; }
+  .comp-card {
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 200ms ease-out, scale 150ms ease-out;
+  }
+  .comp-card:active { scale: 0.98; }
+  .comp-card:hover { box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 1px 3px -1px rgba(0, 0, 0, 0.08), 0px 3px 6px 0px rgba(0, 0, 0, 0.06); }
+
+  .comp-badge {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: #F0EDE8;
+    color: #6B6560;
+    min-width: 100px;
+    text-align: center;
+  }
+  .comp-verdict {
+    font-size: 14px;
+    color: #5A5550;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+  .comp-verdict strong { color: #C4441A; font-weight: 600; }
+  .comp-verdict .vs { color: #9A9590; font-weight: 500; }
+
+  @media (max-width: 650px) {
+    .comp-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .comp-badge { min-width: auto; }
+  }
+
+  /* --- why-not --- */
+  .why-not {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 16px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    background: #FFFFFF;
+  }
+  .why-not-side { padding: 36px 32px; }
+  .why-not-side:first-child { border-right: 1px solid #F0EDE8; }
+  .why-not-side .side-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .why-not-side .side-label.problem { color: #9A9590; }
+  .why-not-side .side-label.solution { color: #C4441A; }
+  .why-not-side h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0A0A0A;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  .why-not-side ul { list-style: none; }
+  .why-not-side ul li {
+    font-size: 13.5px;
+    color: #5A5550;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    text-wrap: pretty;
+  }
+  .why-not-side:first-child ul li::before { content: "x"; position: absolute; left: 0; color: #C4441A; font-weight: 700; }
+  .why-not-side:last-child ul li::before  { content: "+"; position: absolute; left: 0; color: #22C55E; font-weight: 700; }
+  .why-not-stat {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #F0EDE8;
+  }
+  .why-not-stat .sg { text-align: center; }
+  .why-not-stat .sg .num {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .why-not-stat .sg .lbl {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #8A8580;
+    margin-top: 4px;
+  }
+  .why-not-stat .arrow { font-size: 20px; color: #9A9590; }
+
+  @media (max-width: 700px) {
+    .why-not { grid-template-columns: 1fr; }
+    .why-not-side:first-child { border-right: none; border-bottom: 1px solid #F0EDE8; }
+  }
+
+  /* --- plan breakdown --- */
+  .plan-table {
+    border-radius: 16px;
+    box-shadow:
+      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    background: #FFFFFF;
+  }
+  .plan-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .plan-table thead th {
+    background: #F7F5F0;
+    text-align: left;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #6B6560;
+    text-transform: lowercase;
+  }
+  .plan-table thead th:first-child { color: #9A9590; font-weight: 500; }
+  .plan-table td {
+    padding: 14px 20px;
+    color: #5A5550;
+    background: #FFFFFF;
+    text-transform: lowercase;
+    text-wrap: pretty;
+    border-bottom: 1px solid #F5F3EF;
+  }
+  .plan-table tr:last-child td { border-bottom: none; }
+  .plan-table td:first-child { font-weight: 600; color: #3A3530; background: #FCFAF7; }
+  .plan-table td.yes { color: #22C55E; font-weight: 600; }
+  .plan-table td.no { color: #C4441A; }
+  .plan-table td.sub { color: #8A8580; }
+
+  /* --- footer --- */
+  .footer {
+    text-align: center;
+    padding: 48px 0 80px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #9A9590;
+    text-transform: uppercase;
+  }
+
+  /* --- scroll reveal --- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(2px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0, 0, 1), transform 0.6s cubic-bezier(0.2, 0, 0, 1), filter 0.6s cubic-bezier(0.2, 0, 0, 1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+  .reveal-d1 { transition-delay: 0.04s; }
+  .reveal-d2 { transition-delay: 0.08s; }
+  .reveal-d3 { transition-delay: 0.12s; }
+  .reveal-d4 { transition-delay: 0.16s; }
+  .reveal-d5 { transition-delay: 0.2s; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="container">
+    <div class="badge">roach mafia · roast session</div>
+    <h1>hold your voice</h1>
+    <div class="tagline">make any ai write like you.</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 01: what it is -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg>
+      <span class="section-title">what it is</span>
+    </div>
+    <div class="hero-card">
+      <p class="desc">an npm package that adds a voice layer to your ai writing workflow. install it globally with <code>npm i -g @holdyourvoice/hyv</code>, then scan any draft offline for ai drift like "delve", "leverage", or "it's worth noting". mcp auto-setup for claude desktop and chatgpt. agent rules for cursor, codex, and windsurf. runs entirely locally for scanning at zero api cost.</p>
+      <div class="chat-strip">
+        <div class="chat-bubble"><div class="chat-dot d1"></div><div class="chat-num">220+</div><div class="chat-lbl">ai patterns caught — no api cost</div></div>
+        <div class="chat-bubble apps">
+          <div class="chat-bubble-head"><div class="chat-dot d2"></div><div class="chat-num">9+</div></div>
+          <div class="chat-lbl">apps supported</div>
+          <div class="apps-pills">
+            <a title="claude"><img src="../hyv-roast-images/apps/claude.webp" alt="" width="20" height="20"></a>
+            <a title="claude code"><img src="../hyv-roast-images/apps/claudecode.webp" alt="" width="20" height="20"></a>
+            <a title="chatgpt"><img src="../hyv-roast-images/apps/chatgpt-black.webp" alt="" width="20" height="20"></a>
+            <a title="codex"><img src="../hyv-roast-images/apps/codex.webp" alt="" width="20" height="20"></a>
+            <a title="cursor"><img src="../hyv-roast-images/apps/cursor.webp" alt="" width="20" height="20"></a>
+            <a title="windsurf"><img src="../hyv-roast-images/apps/windsurf-black.webp" alt="" width="20" height="20"></a>
+            <a title="antigravity"><img src="../hyv-roast-images/apps/antigravity.webp" alt="" width="20" height="20"></a>
+            <a title="opencode"><img src="../hyv-roast-images/apps/opencode.svg" alt="" width="20" height="20"></a>
+            <a title="terminal"><svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="#6B6560" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4l3 3-3 3M8 11h5"/></svg></a>
+          </div>
+        </div>
+        <div class="chat-bubble"><div class="chat-dot d3"></div><div class="chat-num">~20</div><div class="chat-lbl">paying users in 30 days</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03: npm package -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4L7.55 4.24"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg>
+      <span class="section-title">npm package</span>
+    </div>
+    <div class="stat-grid c3">
+      <div class="stat-card reveal reveal-d1">
+        <span class="stat-tag growth">downloads</span>
+        <div class="num">13,824</div>
+        <div class="lbl">downloads in the last 30 days</div>
+      </div>
+      <div class="stat-card reveal reveal-d2">
+        <span class="stat-tag meta">launch</span>
+        <div class="num">26 may</div>
+        <div class="lbl">first published on npm</div>
+      </div>
+      <div class="stat-card reveal reveal-d3">
+        <span class="stat-tag meta">velocity</span>
+        <div class="num">~460</div>
+        <div class="lbl">avg downloads per day</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04: icp -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <span class="section-title">ideal customer profile</span>
+    </div>
+    <div class="icp-grid">
+      <div class="icp-card reveal reveal-d1">
+        <span class="icp-tag">solo</span>
+        <h4>founders &amp; creators</h4>
+        <ul>
+          <li>write newsletters, blogs, and social posts with ai</li>
+          <li>one voice profile with unlimited scans</li>
+          <li>want their writing to sound like them, not chatgpt</li>
+        </ul>
+        <div class="icp-plan">best plan: individual at $9/mo</div>
+      </div>
+      <div class="icp-card reveal reveal-d2">
+        <span class="icp-tag">team</span>
+        <h4>agencies &amp; content teams</h4>
+        <ul>
+          <li>multiple writers producing under one brand voice</li>
+          <li>unlimited profiles with team sharing and dashboard</li>
+          <li>byok for zero margin cost at scale</li>
+        </ul>
+        <div class="icp-plan">best plan: multiple at $29/mo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05: pain points -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span class="section-title">pain points</span>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal reveal-d1">
+        <span class="pain-tag high">critical</span>
+        <h4>ai voice drift</h4>
+        <p>every ai tool outputs the same generic cadence. your readers can smell "delve", "leverage", and "in today's digital landscape" from a mile away. the problem is not the model. every model defaults to the average voice of the internet.</p>
+      </div>
+      <div class="pain-card reveal reveal-d2">
+        <span class="pain-tag high">critical</span>
+        <h4>no real-time signal</h4>
+        <p>writers drift not because they do not know the rules. they get zero feedback in the moment of writing. by the time you notice the slop, it has already shipped. voice consistency is a feedback loop problem, not a documentation problem.</p>
+      </div>
+      <div class="pain-card reveal reveal-d3">
+        <span class="pain-tag med">advisory</span>
+        <h4>team inconsistency</h4>
+        <p>three writers produce three different sounding outputs. brand voice fractures. onboarding new writers means re-explaining tone from scratch every single time. there is no centralized signal or shared standard.</p>
+      </div>
+      <div class="pain-card reveal reveal-d4">
+        <span class="pain-tag med">advisory</span>
+        <h4>static prompts degrade</h4>
+        <p>system prompts fade over time. week 1 your voice match is strong. by week 8 it has dropped 19%. you re-prompt and it drifts again. hyv does the opposite. it learns from every accept or reject and compounds over time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06: competitive map -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      <span class="section-title">competitive map</span>
+    </div>
+    <div class="comp-stack">
+      <div class="comp-card reveal reveal-d1">
+        <span class="comp-badge">grammarly</span>
+        <div class="comp-verdict"><span class="vs">vs</span> grammarly fixes grammar. <strong>hyv keeps your writing sounding like you</strong> with voice consistency scoring grammarly does not have.</div>
+      </div>
+      <div class="comp-card reveal reveal-d2">
+        <span class="comp-badge">hemingway</span>
+        <div class="comp-verdict"><span class="vs">vs</span> hemingway scores readability. <strong>hyv scores whether drafts sound like a specific person</strong>. different axis entirely.</div>
+      </div>
+      <div class="comp-card reveal reveal-d3">
+        <span class="comp-badge">jasper / copy.ai</span>
+        <div class="comp-verdict"><span class="vs">vs</span> they generate content. <strong>hyv is the defense layer</strong> that checks if what you generated still sounds like you. complement, not replacement.</div>
+      </div>
+      <div class="comp-card reveal reveal-d4">
+        <span class="comp-badge">writer.com</span>
+        <div class="comp-verdict"><span class="vs">vs</span> writer is enterprise governance for big teams. <strong>hyv is voice consistency for solo creators</strong> that takes minutes to set up, not weeks.</div>
+      </div>
+      <div class="comp-card reveal reveal-d5">
+        <span class="comp-badge">static prompts</span>
+        <div class="comp-verdict"><span class="vs">vs</span> prompts drift and fade. <strong>hyv profiles learn from every accept and reject</strong> and compound over time instead of decaying.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07: why not just claude/chatgpt -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <span class="section-title">why not just claude or chatgpt?</span>
+    </div>
+    <div class="why-not">
+      <div class="why-not-side reveal reveal-d1">
+        <div class="side-label problem">what they cannot solve</div>
+        <h4>llms generate. they do not gate.</h4>
+        <ul>
+          <li>no concept of your specific voice. they output the average of the internet</li>
+          <li>system prompts are static. they degrade and never learn from your edits</li>
+          <li>no real-time signal. you only notice the slop after it ships</li>
+          <li>every model sounds different. claude is not gpt which is not gemini. your profile needs to be portable</li>
+        </ul>
+      </div>
+      <div class="why-not-side reveal reveal-d2">
+        <div class="side-label solution">what hyv adds</div>
+        <h4>a voice layer that compounds.</h4>
+        <ul>
+          <li>220+ ai pattern detection that catches "delve" before it reaches readers</li>
+          <li>voice profile that learns from every accept and reject. gets sharper, not stale</li>
+          <li>one profile across every model. claude, chatgpt, cursor, codex all use the same voice</li>
+          <li>zero api cost for scanning. ci integration blocks slop before merge</li>
+        </ul>
+        <div class="why-not-stat">
+          <div class="sg">
+            <div class="num" style="color:#9A9590;">19%</div>
+            <div class="lbl">prompt match at week 8</div>
+          </div>
+          <span class="arrow">></span>
+          <div class="sg">
+            <div class="num" style="color:#22C55E;">93%</div>
+            <div class="lbl">hyv profile match at week 8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08: plan breakdown -->
+  <div class="section reveal">
+    <div class="section-header">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span class="section-title">plan breakdown</span>
+    </div>
+    <div class="plan-table">
+      <table>
+        <thead><tr><th></th><th>free</th><th>individual at $9/mo</th><th>multiple at $29/mo</th></tr></thead>
+        <tbody>
+          <tr><td>local scan (offline, zero api cost)</td><td class="yes">unlimited</td><td class="yes">unlimited</td><td class="yes">unlimited</td></tr>
+          <tr><td>hyv fix / check / score / batch</td><td class="yes">all</td><td class="yes">all</td><td class="yes">all</td></tr>
+          <tr><td>mcp for claude desktop + chatgpt</td><td class="sub">scan + clean</td><td>plus analyze</td><td class="yes">full toolset</td></tr>
+          <tr><td>agent rules for cursor, codex, windsurf</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td></tr>
+          <tr><td>30+ free web tools</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td></tr>
+          <tr><td>voice profiles</td><td class="no">local only</td><td>1 synced profile</td><td class="yes">unlimited</td></tr>
+          <tr><td>profile-aware rewrites</td><td class="no">no</td><td class="yes">yes</td><td class="yes">yes</td></tr>
+          <tr><td>learning loop</td><td class="no">no</td><td class="yes">learns from edits</td><td class="yes">yes</td></tr>
+          <tr><td>team sharing + dashboard</td><td class="no">no</td><td class="no">no</td><td class="yes">yes</td></tr>
+          <tr><td>ci integration</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">roach mafia · june 2026</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

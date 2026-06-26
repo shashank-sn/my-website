@@ -8,8 +8,6 @@ const publicPaths = [
   "404.html",
   "_headers",
   "_redirects",
-  "brand-arsenal",
-  "brand-arsenal.md",
   "brand-engine",
   "brand-engine.md",
   "cbo",
@@ -37,6 +35,9 @@ const publicPaths = [
   "sitemap.xml",
   "websites-and-apps",
   "websites-and-apps.md",
+  "roast",
+  "roast-nr",
+  "hyv-roast-images",
 ];
 
 execFileSync(process.execPath, ["scripts/generate-discovery.mjs"], { stdio: "inherit" });

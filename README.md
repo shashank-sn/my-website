@@ -1,54 +1,83 @@
-# shashank sn — personal website
+# shashanksn.xyz
 
-Minimal dark-themed personal website for [shashanksn.xyz](https://shashanksn.xyz). Five pages, one design system, built with vanilla HTML/CSS/JS.
+personal website and portfolio of [shashank sn](https://shashanksn.xyz). built with vanilla html/css/js, deployed on cloudflare pages + workers.
 
 ## pages
 
-- **/** — hero logo with FAQ cards (idiot savant, brand, cbo, newsletter, ventures, contact)
-- **/cbo/** — fractional chief brand officer offering (4-quadrant layout)
-- **/ghost** — claude ghostwriter skill product page
-- **/websites-and-apps/** — shipped product portfolio
-- **/opensource/** — open source projects from github
-- **/404** — custom 404 page
+| path | description |
+|---|---|
+| `/` | home — hero logo + faq accordion |
+| `/cbo/` | fractional chief brand officer offer |
+| `/ghost` | claude ghostwriter skill product |
+| `/websites-and-apps/` | shipped product portfolio |
+| `/opensource/` | open source projects |
+| `/roast/` | hyv roast deck (noindex) |
+| `/roast-nr/` | hyv roast deck nr (noindex) |
 
 ## tech
 
-- vanilla HTML + CSS + JS, zero frameworks
-- Google Sans via Fontsource CDN
-- dark theme with accent colours (amber, sky, mint, plum, rose)
-- responsive with burger menu on mobile
-- shadow-based borders, scale-on-press, staggered reveals
-- Cloudflare Pages+Workers for SSR/hosting
+- **zero frameworks.** vanilla html/css/js. no build step for local dev.
+- **google sans** via fontsource cdn (variable weight 400–700).
+- **dark theme** with accent colors (amber, sky, mint, plum, rose).
+- **scroll-reveal** via intersection observer.
+- **responsive** with a single breakpoint at 680px.
+- **hosting** cloudflare pages + workers (wrangler).
 
-## local development
+## local dev
 
-```
+open any `.html` file directly in a browser — no server needed.
+
+```bash
 open index.html
+open websites-and-apps/index.html
 ```
-
-No build step. Open directly in a browser.
 
 ## deploy
 
-```
+```bash
 npx wrangler deploy
 ```
 
-The `cloudflare/worker.mjs` handles HTTPS redirects and security headers. Assets served via Cloudflare Pages under `cloudflare/dist/`.
+the build script copies the public directory to `cloudflare/dist/` and deploys via wrangler. a cloudflare worker handles https redirects and security headers.
 
 ## structure
 
 ```
-├── index.html
-├── ghost.html
-├── 404.html
-├── cbo/index.html
-├── websites-and-apps/index.html
-├── opensource/index.html
-├── cloudflare/worker.mjs
-├── wrangler.jsonc
-├── sitemap.xml
-├── favicon.png / favicon.svg
-├── hero-thumbnail.svg / hero-cropped.svg
-└── *.png (images)
+.
+├── index.html               # homepage
+├── 404.html                 # custom 404
+├── ghost.html               # ghostwriter service page
+├── menta-site.css           # global design system
+├── _headers                 # security + content-type headers
+├── _redirects               # http→https 301s
+├── sitemap.xml              # search index
+├── websites-and-apps/       # portfolio page
+│   ├── index.html
+│   ├── just-nai.png
+│   └── happy-beginnings.png
+├── roast/                   # hyv roast deck (noindex)
+│   └── index.html
+├── roast-nr/                # hyv roast deck nr (noindex)
+│   └── index.html
+├── cbo/                     # fractional cbo offer page
+│   └── index.html
+├── opensource/              # open source projects
+│   └── index.html
+├── brand-arsenal/           # brand arsenal offer
+├── brand-engine/            # brand engine offer
+├── newsletter-engine/       # newsletter engine offer
+├── signal-engine/           # signal engine offer
+├── hyv-roast-images/        # shared roast deck assets
+│   └── apps/
+├── cloudflare/
+│   ├── worker.mjs           # cf worker: https + security headers
+│   └── dist/                # build output (gitignored)
+├── scripts/
+│   ├── build-cloudflare-assets.mjs
+│   └── generate-discovery.mjs
+└── wrangler.jsonc           # cloudflare config
 ```
+
+## license
+
+mit — see [license](license) (if applicable).
