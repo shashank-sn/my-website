@@ -1,10 +1,18 @@
-# shashank sn
+# Shashank SN
 
-> brand strategy, positioning, founder voice, trust architecture, websites, and product surfaces.
+> Fractional Chief Brand Officer. Brand strategist, LinkedIn Top Voice in branding. Built and sold companies, won a Guinness World Record, advised 150+ companies on positioning. Based in Chennai, India.
 
 ## canonical site
 
 https://shashanksn.xyz/
+
+## entity profiles
+
+- x: https://x.com/istupidpreneur
+- linkedin: https://www.linkedin.com/in/thestupidpreneur/
+- github: https://github.com/shashank-sn
+- youtube: https://www.youtube.com/@thestupidpreneur
+- medium: https://medium.com/@shashanksn
 
 ## public pages
 
@@ -16,6 +24,12 @@ https://shashanksn.xyz/
 - [brand engine - complete brand strategy in 21 days](https://shashanksn.xyz/brand-engine/): a structured 21-day brand strategy program for founders who want positioning, messaging, and brand architecture.
 - [newsletter engine - email list to revenue in 30 days](https://shashanksn.xyz/newsletter-engine/): a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.
 - [signal engine - high-leverage writing framework](https://shashanksn.xyz/signal-engine/): a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.
+
+## products
+
+- brandeey: https://brandeey.com
+- hold your voice: https://holdyourvoice.com
+- say about us: https://sayabout.us
 
 ## text mirrors
 
@@ -31,5 +45,3 @@ https://shashanksn.xyz/
 ## contact
 
 - email: emailshashanksn@gmail.com
-- x: https://x.com/istupidpreneur
-- linkedin: https://www.linkedin.com/in/thestupidpreneur/

@@ -23,31 +23,127 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shashank SN",
-    "url": "https://shashanksn.xyz",
-    "jobTitle": "Fractional Chief Brand Officer",
-    "description": "Brand strategist, LinkedIn Top Voice in branding, and founder. Built and sold companies, won a Guinness World Record, and advised 150+ companies on positioning.",
-    "sameAs": ["https://x.com/istupidpreneur","https://www.linkedin.com/in/thestupidpreneur/"],
-    "knowsAbout": ["Brand Strategy","Positioning","Brand Architecture","D2C Branding","B2B Positioning"],
-    "award": "Guinness World Record, LinkedIn Top Voice in Branding"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"What do you do?","acceptedAnswer":{"@type":"Answer","text":"I get paid to think about brand, build products, and occasionally explain things in a way that makes people uncomfortable because it sounds too obvious after the fact."}},
-      {"@type":"Question","name":"What does 'idiot savant' actually mean?","acceptedAnswer":{"@type":"Answer","text":"A person who is extremely unworldly but displays natural wisdom and insight. The idiot part is real. So is the savant part."}},
-      {"@type":"Question","name":"What's the operating record?","acceptedAnswer":{"@type":"Answer","text":"Built companies, sold one, co-founded a few more, delivered 100+ talks, won a Guinness World Record, became one of the youngest heads of brand in India."}},
-      {"@type":"Question","name":"What is brand, really?","acceptedAnswer":{"@type":"Answer","text":"Brand isn't aesthetics. It is a compounding commercial system. Positioning, pricing, trust, values are one decision, made many times."}},
-      {"@type":"Question","name":"What do you actually work on?","acceptedAnswer":{"@type":"Answer","text":"Positioning that makes the category obvious, trust signals that reduce buyer doubt, founder voice that carries original judgment, sales language that stops over-explaining."}},
-      {"@type":"Question","name":"Who has trusted the work?","acceptedAnswer":{"@type":"Answer","text":"150+ companies advised, LinkedIn Top Voice in branding, Guinness World Record campaign at Guvi, 100+ talks delivered."}},
-      {"@type":"Question","name":"What's the fractional CBO arrangement?","acceptedAnswer":{"@type":"Answer","text":"Part-time chief brand officer, usually 3-5 companies at a time, strategic oversight rather than execution."}},
-      {"@type":"Question","name":"What about the newsletter?","acceptedAnswer":{"@type":"Answer","text":"Built the Stupidpreneur newsletter with 22,961 active subscribers and a 42.38% open rate."}},
-      {"@type":"Question","name":"What are you building now?","acceptedAnswer":{"@type":"Answer","text":"Say About Us, Hold Your Voice, and open source tools — CLI utilities, macOS apps, and MCP servers built in public."}},
-      {"@type":"Question","name":"How do I work with you?","acceptedAnswer":{"@type":"Answer","text":"If the market does not understand you fast enough, start here. Email emailshashanksn@gmail.com."}}
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://shashanksn.xyz/#shashanksn",
+        "name": "Shashank SN",
+        "alternateName": ["Shashank", "Stupidpreneur"],
+        "url": "https://shashanksn.xyz/",
+        "image": "https://shashanksn.xyz/thumbnail.png",
+        "description": "Brand strategist, LinkedIn Top Voice in branding, and founder. Built and sold companies, won a Guinness World Record, and advised 150+ companies on positioning.",
+        "jobTitle": "Fractional Chief Brand Officer",
+        "gender": "Male",
+        "nationality": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          }
+        },
+        "knowsAbout": ["Brand Strategy", "Positioning", "Brand Architecture", "D2C Branding", "B2B Positioning", "Founder Voice", "Trust Architecture", "Brand Systems"],
+        "sameAs": [
+          "https://www.linkedin.com/in/thestupidpreneur/",
+          "https://x.com/istupidpreneur",
+          "https://github.com/shashank-sn",
+          "https://www.youtube.com/@thestupidpreneur",
+          "https://medium.com/@shashanksn"
+        ],
+        "affiliation": [
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Founder",
+            "memberOf": {
+              "@type": "Organization",
+              "@id": "https://brandeey.com/#org",
+              "name": "Brandeey",
+              "url": "https://brandeey.com",
+              "founder": {"@id": "https://shashanksn.xyz/#shashanksn"}
+            }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Founder",
+            "memberOf": {
+              "@type": "Organization",
+              "@id": "https://holdyourvoice.com/#org",
+              "name": "Hold Your Voice",
+              "url": "https://holdyourvoice.com",
+              "founder": {"@id": "https://shashanksn.xyz/#shashanksn"}
+            }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Co-Founder",
+            "memberOf": {
+              "@type": "Organization",
+              "@id": "https://sayabout.us/#org",
+              "name": "Say About Us",
+              "url": "https://sayabout.us",
+              "founder": {"@id": "https://shashanksn.xyz/#shashanksn"}
+            }
+          }
+        ],
+        "award": ["Guinness World Record", "LinkedIn Top Voice in Branding"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://holdyourvoice.com/#app",
+        "name": "Hold Your Voice",
+        "url": "https://holdyourvoice.com",
+        "description": "Score, highlight, rewrite — catch AI voice-flattening before it ships. Brand consistency for teams who keep going off-script.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Claude Code Plugin",
+        "creator": {"@id": "https://shashanksn.xyz/#shashanksn"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://sayabout.us/#app",
+        "name": "Say About Us",
+        "url": "https://sayabout.us",
+        "description": "Testimonial infrastructure for the internet. Collect, manage, and display social proof from customers.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "creator": {"@id": "https://shashanksn.xyz/#shashanksn"}
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://brandeey.com/#app",
+        "name": "Brandeey",
+        "url": "https://brandeey.com",
+        "description": "The brand engine course, free tools, and microcourses — seven years and 150+ companies compressed into a form anyone can use.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "creator": {"@id": "https://shashanksn.xyz/#shashanksn"}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shashanksn.xyz/#website",
+        "url": "https://shashanksn.xyz/",
+        "name": "Shashank SN",
+        "author": {"@type": "Person", "@id": "https://shashanksn.xyz/#shashanksn"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"What do you do?","acceptedAnswer":{"@type":"Answer","text":"I get paid to think about brand, build products, and occasionally explain things in a way that makes people uncomfortable because it sounds too obvious after the fact."}},
+          {"@type":"Question","name":"What does 'idiot savant' actually mean?","acceptedAnswer":{"@type":"Answer","text":"A person who is extremely unworldly but displays natural wisdom and insight. The idiot part is real. So is the savant part."}},
+          {"@type":"Question","name":"What's the operating record?","acceptedAnswer":{"@type":"Answer","text":"Built companies, sold one, co-founded a few more, delivered 100+ talks, won a Guinness World Record, became one of the youngest heads of brand in India."}},
+          {"@type":"Question","name":"What is brand, really?","acceptedAnswer":{"@type":"Answer","text":"Brand isn't aesthetics. It is a compounding commercial system. Positioning, pricing, trust, values are one decision, made many times."}},
+          {"@type":"Question","name":"What do you actually work on?","acceptedAnswer":{"@type":"Answer","text":"Positioning that makes the category obvious, trust signals that reduce buyer doubt, founder voice that carries original judgment, sales language that stops over-explaining."}},
+          {"@type":"Question","name":"Who has trusted the work?","acceptedAnswer":{"@type":"Answer","text":"150+ companies advised, LinkedIn Top Voice in branding, Guinness World Record campaign at Guvi, 100+ talks delivered."}},
+          {"@type":"Question","name":"What's the fractional CBO arrangement?","acceptedAnswer":{"@type":"Answer","text":"Part-time chief brand officer, usually 3-5 companies at a time, strategic oversight rather than execution."}},
+          {"@type":"Question","name":"What about the newsletter?","acceptedAnswer":{"@type":"Answer","text":"Built the Stupidpreneur newsletter with 22,961 active subscribers and a 42.38% open rate."}},
+          {"@type":"Question","name":"What are you building now?","acceptedAnswer":{"@type":"Answer","text":"Say About Us, Hold Your Voice, and open source tools — CLI utilities, macOS apps, and MCP servers built in public."}},
+          {"@type":"Question","name":"How do I work with you?","acceptedAnswer":{"@type":"Answer","text":"If the market does not understand you fast enough, start here. Email emailshashanksn@gmail.com."}}
+        ]
+      }
     ]
   }
   </script>

@@ -1,10 +1,24 @@
-# shashank sn - full ai discovery file
+# Shashank SN - full AI discovery file
 
 ## site identity
 
-- shashank sn works on brand strategy, positioning, founder voice, trust architecture, websites, and product surfaces.
-- he has advised 150+ companies, delivered 100+ talks, built and sold companies, and led a guinness world record campaign at guvi.
-- public offers include fractional cbo, brand arsenal, shashank's ghostwriter, brand engine, newsletter engine, and signal engine.
+- Shashank SN is a Fractional Chief Brand Officer, brand strategist, LinkedIn Top Voice in branding, and founder. He has built and sold companies, won a Guinness World Record at GUVI HCL, and advised 150+ companies on positioning. Based in Chennai, Tamil Nadu, India.
+- Also known as: Shashank, Stupidpreneur
+- Public offers include fractional CBO, Brand Arsenal, Shashank's Ghostwriter, Brand Engine, Newsletter Engine, and Signal Engine.
+
+## entity profiles (sameAs)
+
+- LinkedIn: https://www.linkedin.com/in/thestupidpreneur/
+- X: https://x.com/istupidpreneur
+- GitHub: https://github.com/shashank-sn
+- YouTube: https://www.youtube.com/@thestupidpreneur (channel ID: UCRFL9VL0kdfuqTJDQeuwzdQ)
+- Medium: https://medium.com/@shashanksn
+
+## products
+
+- Brandeey: https://brandeey.com — brand engine course, free tools, microcourses
+- Hold Your Voice: https://holdyourvoice.com — AI voice-consistency tool for teams
+- Say About Us: https://sayabout.us — testimonial infrastructure platform
 
 ## canonical public route inventory
 
