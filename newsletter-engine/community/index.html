@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>newsletter builders community — most newsletters suck; yours doesn't have to.</title>
+  <meta name="description" content="a free community for newsletter operators, freelancers, and founders. get a free 7-day email course: build a newsletter that actually makes money. application-only.">
+  <link rel="canonical" href="https://shashanksn.xyz/newsletter-engine/community/" />
+  <meta property="og:title" content="newsletter builders community — most newsletters suck; yours doesn't have to." />
+  <meta property="og:description" content="a free community for newsletter operators, freelancers, and founders. free 7-day email course included." />
+  <meta property="og:url" content="https://shashanksn.xyz/newsletter-engine/community/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="shashank sn" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@istupidpreneur" />
+  <meta name="twitter:title" content="newsletter builders community" />
+  <meta name="twitter:description" content="a free community for newsletter operators, freelancers, and founders. most newsletters suck; yours doesn't have to." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF4500' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 4h16v16H4z'/><path d='M4 9l8 5 8-5'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #FFFFFF;
+      --ink:          #0A0A0A;
+      --gray:         #5A5A5A;
+      --light:        #FFF8F5;
+      --accent:       #FF4500;
+      --accent-dark:  #CC3700;
+      --accent-light: #FFF0EB;
+      --rule:         #E8E8E8;
+      --hh:           64px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      border-top: 4px solid var(--accent);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: fixed;
+      top: 4px; left: 0; right: 0;
+      height: var(--hh);
+      z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    header.on {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    }
+    .hd {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .logo-name span { color: var(--accent); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+      letter-spacing: -0.01em;
+    }
+    .btn:active { transform: scale(0.98); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 4px 20px rgba(255,69,0,0.35);
+    }
+
+    .btn-xl {
+      padding: 18px 40px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+    }
+
+    .btn-full {
+      width: 100%;
+      text-align: center;
+    }
+
+    section { padding: 96px 0; }
+    section.light { background: var(--light); }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: lowercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    p.lead {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.7;
+    }
+
+    strong { color: var(--ink); }
+
+    /* HERO */
+    #hero {
+      padding-top: calc(var(--hh) + 80px);
+      padding-bottom: 96px;
+      text-align: center;
+    }
+    #hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-sub {
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+    .hero-cta { margin-bottom: 56px; }
+
+    .trust-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-badge { text-align: center; }
+    .trust-badge-num {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.04em;
+    }
+    .trust-badge-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray);
+      text-transform: lowercase;
+      letter-spacing: 0.08em;
+    }
+    .trust-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--rule);
+    }
+
+    /* WHY COMMUNITY */
+    .reason-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 48px 0;
+    }
+    .reason-card {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .reason-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px rgba(255,69,0,0.1);
+    }
+    .reason-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .reason-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .reason-card p { font-size: 0.9rem; margin: 0; }
+
+    /* GUIDE STATS */
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .guide-photo {
+      width: 190px;
+      height: 190px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .guide-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+    .guide-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .guide-stat {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .guide-stat-num {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .guide-stat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: lowercase;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+    }
+
+    /* COURSE PHASES */
+    .phase-list {
+      display: flex;
+      flex-direction: column;
+      margin: 48px 0;
+    }
+    .phase-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .phase-item:last-child { border-bottom: none; }
+    .phase-label { text-align: center; }
+    .phase-num {
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin: 0 auto 8px;
+    }
+    .phase-days {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: lowercase;
+      letter-spacing: 0.08em;
+      color: var(--gray);
+    }
+    .phase-content h3 { margin-bottom: 6px; }
+    .phase-content p { font-size: 0.95rem; margin: 0; }
+
+    /* WHO IT'S FOR */
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 48px 0;
+    }
+    .filter-col {
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .filter-col.yes {
+      background: #F0FFF4;
+      border: 1px solid #86EFAC;
+    }
+    .filter-col.no {
+      background: #FFF5F5;
+      border: 1px solid #FCA5A5;
+    }
+    .filter-col-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .filter-col.yes .filter-col-title { color: #15803D; }
+    .filter-col.no .filter-col-title { color: #DC2626; }
+    .filter-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      font-size: 0.93rem;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .filter-item:last-child { border-bottom: none; }
+    .filter-icon { flex-shrink: 0; margin-top: 1px; }
+
+    /* COMMUNITY VALUE */
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin: 48px 0;
+    }
+    .value-card {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .value-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 24px rgba(255,69,0,0.1);
+    }
+    .value-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .value-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .value-card p { font-size: 0.85rem; margin: 0; }
+
+    /* OBJECTIONS */
+    .objection-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .objection-card {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 30px 32px;
+    }
+    .obj-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+    .obj-label.q { color: var(--gray); }
+    .obj-label.a { color: var(--accent); margin-top: 20px; }
+    .obj-q {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+    .obj-a {
+      font-size: 0.93rem;
+      color: var(--gray);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+    .faq-list {
+      margin-top: 48px;
+    }
+    details {
+      border-bottom: 1px solid var(--rule);
+    }
+    details:first-child { border-top: 1px solid var(--rule); }
+    summary {
+      padding: 22px 0;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--accent);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    .faq-answer {
+      padding-bottom: 22px;
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .modal-overlay.hidden { display: none; }
+    .modal {
+      background: var(--bg);
+      border-radius: 16px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--gray);
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--ink); }
+    .modal h2 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .modal .progress-bar {
+      height: 4px;
+      background: var(--rule);
+      border-radius: 2px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .modal .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .modal-step { display: none; }
+    .modal-step.active { display: block; }
+    .modal-step .step-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .modal-step label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .modal-step input[type="text"],
+    .modal-step input[type="email"],
+    .modal-step textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--bg);
+      transition: border-color 0.15s;
+    }
+    .modal-step input:focus,
+    .modal-step textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .modal-step textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .modal-step .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .modal-step .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      font-size: 0.93rem;
+    }
+    .modal-step .radio-option:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .modal-step .radio-option.selected {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .modal-step .radio-option input { display: none; }
+    .modal-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 28px;
+      gap: 12px;
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--rule);
+      background: var(--bg);
+      color: var(--ink);
+      transition: background 0.15s;
+    }
+    .btn-secondary:hover { background: var(--light); }
+    .modal-success {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .modal-success .success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .modal-success h2 { margin-bottom: 12px; }
+    .modal-success p { font-size: 1rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      padding: 36px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--accent); }
+
+    /* FADE IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      h1 br, h2 br { display: none; }
+      section { padding: 80px 0; }
+    }
+    @media (min-width: 641px) and (max-width: 1024px) {
+      h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); }
+      h2 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); }
+      .guide-layout { gap: 36px; }
+      .guide-stat-num { font-size: 1.4rem; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      section { padding: 56px 0; }
+      h1 { font-size: clamp(1.85rem, 8vw, 2.4rem); }
+      h2 { font-size: clamp(1.5rem, 6vw, 1.9rem); }
+      .logo-name { font-size: 0.85rem; }
+      header .btn { padding: 8px 14px; font-size: 0.8rem; }
+      #hero { padding-top: calc(var(--hh) + 40px); padding-bottom: 56px; }
+      .hero-cta { margin-bottom: 36px; }
+      .trust-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; }
+      .trust-divider { display: none; }
+      .filter-grid { grid-template-columns: 1fr; }
+      .filter-col { padding: 22px 20px; }
+      .reason-grid { grid-template-columns: 1fr; }
+      .value-grid { grid-template-columns: 1fr; }
+      .guide-layout { grid-template-columns: 1fr; gap: 24px; }
+      .guide-photo { width: 100px; height: 100px; }
+      .guide-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .guide-stat { padding: 12px 8px; }
+      .guide-stat-num { font-size: 1.2rem; }
+      .guide-stat-label { font-size: 0.65rem; }
+      .phase-item { grid-template-columns: 52px 1fr; gap: 16px; padding: 22px 0; }
+      .phase-num { width: 38px; height: 38px; font-size: 0.95rem; }
+      .objection-card { padding: 22px 20px; }
+      .modal { padding: 24px; }
+      .btn-xl { padding: 16px 20px; font-size: 1rem; width: 100%; display: flex; }
+    }
+    @media (max-width: 390px) {
+      .wrap { padding: 0 16px; }
+      .hd { padding: 0 16px; }
+      h1 { font-size: 1.7rem; }
+      h2 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="hd">
+      <a href="#" class="logo-name">newsletter builders <span>community</span></a>
+      <a href="#apply" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.88rem;">apply to join →</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="wrap">
+      <span class="eyebrow fade-in">free community · application-only</span>
+      <h1 class="fade-in">most newsletters suck;<br>yours doesn't have to.</h1>
+      <div class="hero-sub fade-in">
+        <p class="lead">a private space for newsletter operators, freelancers, and founders who are serious about building a newsletter that actually makes money. no fluff. no "hustle culture." just operators sharing what works.</p>
+      </div>
+      <div class="hero-cta fade-in">
+        <a href="#apply" class="btn btn-primary btn-xl">apply to join — it's free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THIS COMMUNITY MATTERS -->
+  <section class="light">
+    <div class="wrap">
+      <span class="eyebrow fade-in">why this exists</span>
+      <h2 class="fade-in">building a newsletter<br>is lonely. and expensive.</h2>
+      <p class="lead fade-in">consultants charge $5,000/month. courses promise results but leave you executing alone. most communities are dead channels full of people "thinking about starting." this is different.</p>
+      <div class="reason-grid fade-in">
+        <div class="reason-card">
+          <div class="reason-num">01</div>
+          <h3>real operators only</h3>
+          <p>everyone in here is actively building. no lurkers. no "someday" founders. just people shipping editions, growing lists, and making money from email.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">02</div>
+          <h3>no algorithm dependency</h3>
+          <p>we don't obsess over social media hacks. email is the only channel that you actually own. we focus on what compounds — open rates, reply rates, and revenue per subscriber.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">03</div>
+          <h3>shared playbooks</h3>
+          <p>members share real numbers, real subject lines, real welcome sequences. no theory. no "i think this works." just what's actually converting right now.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-num">04</div>
+          <h3>accountability that works</h3>
+          <p>weekly check-ins. monthly deep dives. a structure that keeps you shipping — without the guilt trips and hustle-porn of traditional masterminds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow fade-in">your guide</span>
+      <div class="guide-layout fade-in">
+        <div class="guide-photo">
+          <img src="../shashank.jpg" alt="shashank sn">
+        </div>
+        <div>
+          <h2 style="margin-bottom: 14px;">led by shashank sn.</h2>
+          <p class="lead">fractional chief brand officer. 150+ companies advised. but my secret weapon has always been email.</p>
+          <p>over 7 years, i've built newsletters like <strong>the stupidpreneur</strong> and <strong>two paise club</strong> from zero. i've written 1,000+ editions, generated 450k+ subscribers, and maintained a 47% career open rate.</p>
+          <p>i built this community because i kept getting the same dms: <em>"how do you actually make money from a newsletter?"</em> — from people who were already writing but had zero revenue to show for it.</p>
+          <div class="guide-stats">
+            <div class="guide-stat">
+              <span class="guide-stat-num">1,000+</span>
+              <span class="guide-stat-label">editions written</span>
+            </div>
+            <div class="guide-stat">
+              <span class="guide-stat-num">450k+</span>
+              <span class="guide-stat-label">subscribers generated</span>
+            </div>
+            <div class="guide-stat">
+              <span class="guide-stat-num">47%</span>
+              <span class="guide-stat-label">career open rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FREE COURSE -->
+  <section class="light">
+    <div class="wrap">
+      <span class="eyebrow fade-in">free when you join</span>
+      <h2 class="fade-in">the 7-day email course:<br>"build a newsletter that<br>actually makes money"</h2>
+      <p class="lead fade-in">no zoom calls. no upsells. just 7 daily emails, 15 minutes each, that take you from "i have an idea" to "i have a revenue plan."</p>
+      <div class="phase-list fade-in">
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">1</div>
+            <div class="phase-days">day 1</div>
+          </div>
+          <div class="phase-content">
+            <h3>the positioning trifecta</h3>
+            <p>stop competing with everyone. define a niche that makes you the obvious choice — and makes subscribers actually open your emails.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">2</div>
+            <div class="phase-days">day 2</div>
+          </div>
+          <div class="phase-content">
+            <h3>the unit economics</h3>
+            <p>understand what each subscriber is worth before you write a single word. know your numbers so you know when to scale.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">3</div>
+            <div class="phase-days">day 3</div>
+          </div>
+          <div class="phase-content">
+            <h3>the content bank</h3>
+            <p>a system to generate infinite ideas so you never stare at a blank page again. frameworks, not willpower.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">4</div>
+            <div class="phase-days">day 4</div>
+          </div>
+          <div class="phase-content">
+            <h3>the tech stack</h3>
+            <p>set up your newsletter infrastructure in one session. landing pages, lead magnets, welcome sequences — the full machine.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">5</div>
+            <div class="phase-days">day 5</div>
+          </div>
+          <div class="phase-content">
+            <h3>the growth architecture</h3>
+            <p>referral systems and partnerships that bring subscribers on autopilot. growth without posting daily on social media.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">6</div>
+            <div class="phase-days">day 6</div>
+          </div>
+          <div class="phase-content">
+            <h3>the revenue playbook</h3>
+            <p>sponsorships, products, services — which model fits your niche. and exactly how to price it so people actually buy.</p>
+          </div>
+        </div>
+        <div class="phase-item">
+          <div class="phase-label">
+            <div class="phase-num">7</div>
+            <div class="phase-days">day 7</div>
+          </div>
+          <div class="phase-content">
+            <h3>the launch</h3>
+            <p>social proof, distribution, and your first paying subscribers. you finish with a real asset, not just notes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET IN THE COMMUNITY -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow fade-in">inside the community</span>
+      <h2 class="fade-in">more than a course.<br>it's an operating system.</h2>
+      <div class="value-grid fade-in">
+        <div class="value-card">
+          <div class="value-icon">📬</div>
+          <h3>weekly operator roundups</h3>
+          <p>members share wins, losses, and real numbers. see what's working across different niches in real time.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔍</div>
+          <h3>monthly deep dives</h3>
+          <p>one newsletter gets torn apart (constructively). positioning, subject lines, monetization — full audit.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>cross-promotion network</h3>
+          <p>matched with operators at a similar stage for genuine list swaps and recommendations. no spam.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">📋</div>
+          <h3>sop library access</h3>
+          <p>the checklists and templates shashank uses to run his own newsletter business. copy, adapt, ship.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤖</div>
+          <h3>ai prompt stack</h3>
+          <p>battle-tested prompts for content ideation, subject line testing, and subscriber analytics.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💬</div>
+          <h3>direct access</h3>
+          <p>shashank is active in the community. real answers, not automated responses. ask anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IS THIS FOR -->
+  <section class="light">
+    <div class="wrap">
+      <span class="eyebrow fade-in">is this for you?</span>
+      <h2 class="fade-in">let's be honest<br>about who belongs here</h2>
+      <div class="filter-grid fade-in">
+        <div class="filter-col yes">
+          <p class="filter-col-title">✅ you belong here</p>
+          <div class="filter-item"><span class="filter-icon">→</span>you're actively building a newsletter — or about to launch one this month.</div>
+          <div class="filter-item"><span class="filter-icon">→</span>you're a freelancer, operator, or founder who wants email to be a revenue channel.</div>
+          <div class="filter-item"><span class="filter-icon">→</span>you're tired of generic advice and want tactical, specific, proven strategies.</div>
+          <div class="filter-item"><span class="filter-icon">→</span>you're willing to share your own learnings, not just take from others.</div>
+        </div>
+        <div class="filter-col no">
+          <p class="filter-col-title">❌ this isn't for you</p>
+          <div class="filter-item"><span class="filter-icon">→</span>you're just "curious" about newsletters with no intention to start.</div>
+          <div class="filter-item"><span class="filter-icon">→</span>you want someone else to do the work for you.</div>
+          <div class="filter-item"><span class="filter-icon">→</span>you're looking for a quick-fix growth hack rather than building a real asset.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIONS -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow fade-in">honest answers</span>
+      <h2 class="fade-in">you might be thinking…</h2>
+      <div class="objection-list fade-in">
+        <div class="objection-card">
+          <div class="obj-label q">objection</div>
+          <p class="obj-q">"why is this free? what's the catch?"</p>
+          <div class="obj-label a">reality</div>
+          <p class="obj-a">no catch. the community is free because i believe newsletter operators need a real space to learn from each other — not another overpriced course. if you later want the full 30-day newsletter engine curriculum, that's available separately. but the community itself? always free.</p>
+        </div>
+        <div class="objection-card">
+          <div class="obj-label q">objection</div>
+          <p class="obj-q">"i'm just starting. do i belong?"</p>
+          <div class="obj-label a">reality</div>
+          <p class="obj-a">yes — if you're serious about starting. the 7-day course is built exactly for beginners who want to go from zero to a real revenue plan. the community is here to support you through it.</p>
+        </div>
+        <div class="objection-card">
+          <div class="obj-label q">objection</div>
+          <p class="obj-q">"i don't have time for another community."</p>
+          <div class="obj-label a">reality</div>
+          <p class="obj-a">this isn't a "community" in the sense of endless scrolling and noise. it's structured. weekly roundups. monthly deep dives. you engage when it's useful — no one's tracking your login count.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="light">
+    <div class="wrap">
+      <span class="eyebrow fade-in">faq</span>
+      <h2 class="fade-in">quick answers</h2>
+      <div class="faq-list fade-in">
+        <details>
+          <summary>is it really free?</summary>
+          <div class="faq-answer">yes. the community and the 7-day email course are completely free. there is an optional paid product (the newsletter engine — a 30-day curriculum) but you are never pressured to buy it.</div>
+        </details>
+        <details>
+          <summary>what platform is the community on?</summary>
+          <div class="faq-answer">we use a private space designed for focused discussion — not a noisy discord server. you'll get access details after your application is approved.</div>
+        </details>
+        <details>
+          <summary>how does the application work?</summary>
+          <div class="faq-answer">fill out 10 quick questions about your newsletter and goals. i review applications personally to make sure everyone in the room is an active operator. most applications are reviewed within 48 hours.</div>
+        </details>
+        <details>
+          <summary>what if i get rejected?</summary>
+          <div class="faq-answer">if your application doesn't fit right now, i'll tell you why and point you to resources that will help. this isn't about exclusion — it's about making sure the community stays valuable for everyone inside.</div>
+        </details>
+        <details>
+          <summary>do i need an existing newsletter to join?</summary>
+          <div class="faq-answer">no. you can be at the idea stage. but you need to be serious about launching. the 7-day course will help you go from idea to launch-ready.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="apply" style="text-align: center;">
+    <div class="wrap">
+      <span class="eyebrow fade-in">ready?</span>
+      <h2 class="fade-in">most newsletters suck.<br>yours doesn't have to.</h2>
+      <p class="lead fade-in">the community is free. the course is free. the only thing you need to bring is the willingness to build something real.</p>
+      <div style="margin-top: 32px;" class="fade-in">
+        <button class="btn btn-primary btn-xl" onclick="openModal()">apply to join the community →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p style="margin-bottom: 8px;"><a href="https://twitter.com/istupidpreneur" target="_blank" rel="noopener">@istupidpreneur</a></p>
+      <p>© 2025 shashank sn · newsletter builders community</p>
+    </div>
+  </footer>
+
+  <!-- APPLICATION MODAL -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+
+      <div id="form-container">
+        <h2>apply to join</h2>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+
+        <form id="app-form">
+          <div class="modal-step active" data-step="0">
+            <p class="step-num">question 1 of 10</p>
+            <label for="q1">what's your name?</label>
+            <input type="text" id="q1" name="name" placeholder="shashank sn" required autocomplete="name">
+          </div>
+
+          <div class="modal-step" data-step="1">
+            <p class="step-num">question 2 of 10</p>
+            <label for="q2">what's your email address?</label>
+            <input type="email" id="q2" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+
+          <div class="modal-step" data-step="2">
+            <p class="step-num">question 3 of 10</p>
+            <label for="q3">what's the name of your newsletter? (or your best idea)</label>
+            <input type="text" id="q3" name="newsletter_name" placeholder="the stupidpreneur" required>
+          </div>
+
+          <div class="modal-step" data-step="3">
+            <p class="step-num">question 4 of 10</p>
+            <label>what stage are you at?</label>
+            <div class="radio-group" data-name="stage">
+              <label class="radio-option"><input type="radio" name="stage" value="just an idea"> just an idea</label>
+              <label class="radio-option"><input type="radio" name="stage" value="less than 2.5k"> less than 2.5k</label>
+              <label class="radio-option"><input type="radio" name="stage" value="less than 10k"> less than 10k</label>
+              <label class="radio-option"><input type="radio" name="stage" value="less than 50k"> less than 50k</label>
+              <label class="radio-option"><input type="radio" name="stage" value="100k+"> 100k+</label>
+            </div>
+          </div>
+
+          <div class="modal-step" data-step="4">
+            <p class="step-num">question 5 of 10</p>
+            <label>are you a freelancer, operator, or founder?</label>
+            <div class="radio-group" data-name="role">
+              <label class="radio-option"><input type="radio" name="role" value="freelancer"> freelancer — i sell my services</label>
+              <label class="radio-option"><input type="radio" name="role" value="operator"> operator — i run a media/newsletter business</label>
+              <label class="radio-option"><input type="radio" name="role" value="founder"> founder — i use my newsletter to support my company</label>
+              <label class="radio-option"><input type="radio" name="role" value="marketer"> marketer — i manage newsletters for a brand or client</label>
+            </div>
+          </div>
+
+          <div class="modal-step" data-step="5">
+            <p class="step-num">question 6 of 10</p>
+            <label for="q6">what's your niche or topic?</label>
+            <input type="text" id="q6" name="niche" placeholder="brand strategy, indie hacking, product design…" required>
+          </div>
+
+          <div class="modal-step" data-step="6">
+            <p class="step-num">question 7 of 10</p>
+            <label>how often do you publish (or plan to)?</label>
+            <div class="radio-group" data-name="frequency">
+              <label class="radio-option"><input type="radio" name="frequency" value="daily"> daily</label>
+              <label class="radio-option"><input type="radio" name="frequency" value="2-3x per week"> 2–3x per week</label>
+              <label class="radio-option"><input type="radio" name="frequency" value="weekly"> weekly</label>
+              <label class="radio-option"><input type="radio" name="frequency" value="bi-weekly"> bi-weekly</label>
+              <label class="radio-option"><input type="radio" name="frequency" value="not sure yet"> not sure yet</label>
+            </div>
+          </div>
+
+          <div class="modal-step" data-step="7">
+            <p class="step-num">question 8 of 10</p>
+            <label for="q8">what's your biggest struggle right now?</label>
+            <textarea id="q8" name="struggle" placeholder="growing subscribers, monetizing, staying consistent, finding my voice…" required></textarea>
+          </div>
+
+          <div class="modal-step" data-step="8">
+            <p class="step-num">question 9 of 10</p>
+            <label for="q9">what do you hope to get from this community?</label>
+            <textarea id="q9" name="goal" placeholder="accountability, growth tactics, monetization playbooks, peer feedback…" required></textarea>
+          </div>
+
+          <div class="modal-step" data-step="9">
+            <p class="step-num">question 10 of 10</p>
+            <label>how did you hear about us?</label>
+            <div class="radio-group" data-name="source">
+              <label class="radio-option"><input type="radio" name="source" value="twitter/x"> twitter / x</label>
+              <label class="radio-option"><input type="radio" name="source" value="the stupidpreneur"> the stupidpreneur newsletter</label>
+              <label class="radio-option"><input type="radio" name="source" value="shashanksn.xyz"> shashanksn.xyz</label>
+              <label class="radio-option"><input type="radio" name="source" value="friend"> a friend referred me</label>
+              <label class="radio-option"><input type="radio" name="source" value="search"> search engine</label>
+              <label class="radio-option"><input type="radio" name="source" value="other"> other</label>
+            </div>
+          </div>
+
+          <div class="modal-nav">
+            <button type="button" class="btn-secondary" id="prev-btn" onclick="prevStep()" style="visibility: hidden;">← back</button>
+            <span id="step-indicator" style="font-size: 0.82rem; color: var(--gray);">1 / 10</span>
+            <button type="button" class="btn btn-primary" id="next-btn" onclick="nextStep()">next →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sticky header
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      hdr.classList.toggle('on', window.scrollY > 20);
+    }, { passive: true });
+
+    // Fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Modal
+    let currentStep = 0;
+    const TOTAL_STEPS = 10;
+
+    function openModal() {
+      setTimeout(() => {
+        document.getElementById('modal-overlay').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        currentStep = 0;
+        showStep(0);
+        document.getElementById('form-container').querySelector('h2').textContent = 'apply to join';
+      }, 350);
+    }
+
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.add('hidden');
+      document.body.style.overflow = '';
+      currentStep = 0;
+    }
+
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    function showStep(step) {
+      document.querySelectorAll('.modal-step').forEach(el => el.classList.remove('active'));
+      const steps = document.querySelectorAll('.modal-step');
+      if (steps[step]) steps[step].classList.add('active');
+
+      const progress = ((step + 1) / TOTAL_STEPS) * 100;
+      document.getElementById('progress-fill').style.width = progress + '%';
+      document.getElementById('step-indicator').textContent = (step + 1) + ' / ' + TOTAL_STEPS;
+
+      const prevBtn = document.getElementById('prev-btn');
+      const nextBtn = document.getElementById('next-btn');
+      prevBtn.style.visibility = step === 0 ? 'hidden' : 'visible';
+      nextBtn.textContent = step === TOTAL_STEPS - 1 ? 'submit →' : 'next →';
+      nextBtn.onclick = step === TOTAL_STEPS - 1 ? submitForm : nextStep;
+    }
+
+    function nextStep() {
+      if (!validateStep(currentStep)) return;
+      if (currentStep < TOTAL_STEPS - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    function validateStep(step) {
+      const stepEl = document.querySelectorAll('.modal-step')[step];
+      const input = stepEl.querySelector('input[type="text"], input[type="email"], textarea');
+      const radios = stepEl.querySelectorAll('input[type="radio"]');
+
+      if (input && !input.value.trim()) {
+        input.focus();
+        input.style.borderColor = '#DC2626';
+        setTimeout(() => { input.style.borderColor = ''; }, 1500);
+        return false;
+      }
+
+      if (radios.length > 0) {
+        const name = radios[0].name;
+        const checked = stepEl.querySelector('input[name="' + name + '"]:checked');
+        if (!checked) {
+          stepEl.querySelector('.radio-group').style.border = '1px solid #DC2626';
+          stepEl.querySelector('.radio-group').style.borderRadius = '8px';
+          stepEl.querySelector('.radio-group').style.padding = '4px';
+          setTimeout(() => {
+            stepEl.querySelector('.radio-group').style.border = '';
+            stepEl.querySelector('.radio-group').style.padding = '';
+          }, 1500);
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    // Radio selection styling
+    document.querySelectorAll('.radio-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const group = this.closest('.radio-group');
+        group.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+        this.classList.add('selected');
+        this.querySelector('input').checked = true;
+      });
+    });
+
+    function submitForm() {
+      if (!validateStep(currentStep)) return;
+
+      const form = document.getElementById('app-form');
+      const data = new FormData(form);
+      const payload = {};
+      for (const [key, value] of data.entries()) {
+        payload[key] = value;
+      }
+
+      // Radio groups
+      document.querySelectorAll('.radio-group').forEach(group => {
+        const name = group.dataset.name;
+        const checked = group.querySelector('input:checked');
+        if (checked && name) payload[name] = checked.value;
+      });
+
+      // Show success
+      const container = document.getElementById('form-container');
+      container.innerHTML = `
+        <div class="modal-success">
+          <div class="success-icon">📬</div>
+          <h2>application submitted!</h2>
+          <p>i review every application personally. you'll hear back within 48 hours. not everyone gets in — i keep this community small and high-signal on purpose.</p>
+          <p style="font-size: 0.85rem; color: var(--gray); margin-top: 16px;">— shashank</p>
+          <button class="btn btn-primary btn-xl" onclick="closeModal()" style="margin-top: 24px;">close</button>
+        </div>
+      `;
+
+      console.log('Application submitted:', payload);
+    }
+  </script>
+
+</body>
+</html>
