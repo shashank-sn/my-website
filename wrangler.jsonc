@@ -20,6 +20,14 @@
     {
       "pattern": "www.shashanksn.xyz/*",
       "zone_name": "shashanksn.xyz"
+    },
+    {
+      "pattern": "shashank.xyz/*",
+      "zone_name": "shashank.xyz"
+    },
+    {
+      "pattern": "www.shashank.xyz/*",
+      "zone_name": "shashank.xyz"
     }
   ]
 }
