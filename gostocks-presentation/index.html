@@ -92,10 +92,6 @@
   .title-slide .meta { font-size: 1rem; color: #aaa; line-height: 1.8; }
   .divider { width: 52px; height: 3px; background: #e05a33; margin: 36px auto; }
   .center-slide { justify-content: center; align-items: center; text-align: center; }
-
-  .spacer { flex: 1; min-height: 0; }
-
-  .slide.has-cols { justify-content: flex-start; }
 </style>
 </head>
 <body>
@@ -238,8 +234,8 @@
           <ul class="ul-compact">
             <li>15 social pieces/month</li>
             <li>Founder collab videos</li>
-            <li>10 posts/founder/mo · 8 posts on company page</li>
-            <li>3 founder LinkedIn pages</li>
+            <li>10 LinkedIn posts/founder/mo</li>
+            <li>8 LinkedIn posts company page/mo</li>
             <li>1 playbook/month</li>
           </ul>
         </div>
@@ -297,8 +293,8 @@
           <ul class="ul-compact">
             <li>15 social pieces/month — carousels, shortform videos, graphics</li>
             <li>Collab videos on 3 founder pages</li>
-            <li>10 posts per founder per month · 8 posts on company LinkedIn</li>
-            <li>3 founder LinkedIn pages + company page managed</li>
+            <li>10 LinkedIn posts per founder per month</li>
+            <li>8 LinkedIn posts for company page per month</li>
             <li>1 playbook/month — high-value giveaway</li>
           </ul>
           <h3 style="margin-top:18px; margin-bottom:12px; font-size:1.05rem; color:#111; text-transform:none; letter-spacing:0;">Monthly Shoot</h3>
@@ -433,18 +429,13 @@
     nextBtn.disabled = current === total - 1;
   }
 
-  prevBtn.addEventListener('click', () => show(current - 1));
-  nextBtn.addEventListener('click', () => show(current + 1));
-  document.addEventListener('keydown', (e) => {
+  prevBtn.addEventListener('click', function() { show(current - 1); });
+  nextBtn.addEventListener('click', function() { show(current + 1); });
+  document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); show(current + 1); }
     if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(current - 1); }
   });
-  show(0);
-</script>
-</body>
-</html>
-') { e.preventDefault(); show(current - 1); }
-  });
+
   show(0);
 </script>
 </body>
