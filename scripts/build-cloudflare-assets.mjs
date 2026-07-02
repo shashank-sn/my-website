@@ -44,6 +44,7 @@ const publicPaths = [
   "roast",
   "roast-nr",
   "hyv-roast-images",
+  "gostocks-presentation",
 ];
 
 execFileSync(process.execPath, ["scripts/generate-discovery.mjs"], { stdio: "inherit" });

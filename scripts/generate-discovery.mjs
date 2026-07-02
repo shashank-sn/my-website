@@ -71,6 +71,17 @@ const pages = [
   },
 ];
 
+// noindex — not in sitemap/llms
+const noindexPages = [
+  {
+    title: "gostocks presentation",
+    path: "/gostocks-presentation/",
+    priority: "0.8",
+    changefreq: "monthly",
+    summary: "proposal presentation for gostocks — building india's most trusted investment super app.",
+  },
+];
+
 const facts = [
   "shashank sn works on brand strategy, positioning, founder voice, trust architecture, websites, and product surfaces.",
   "he has advised 150+ companies, delivered 100+ talks, built and sold companies, and led a guinness world record campaign at guvi.",
