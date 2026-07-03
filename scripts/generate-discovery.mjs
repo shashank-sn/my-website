@@ -80,6 +80,13 @@ const noindexPages = [
     changefreq: "monthly",
     summary: "proposal presentation for gostocks — building india's most trusted investment super app.",
   },
+  {
+    title: "tata aia lead generation proposal",
+    path: "/tata-aia/",
+    priority: "0.8",
+    changefreq: "never",
+    summary: "lead generation proposal deck for tata aia — multi-channel insurance lead acquisition strategy.",
+  },
 ];
 
 const facts = [
@@ -132,6 +139,8 @@ Allow: /
 
 Disallow: /home.html
 Disallow: /404.html
+Disallow: /tata-aia/
+Disallow: /gostocks-presentation/
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;

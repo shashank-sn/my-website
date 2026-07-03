@@ -45,6 +45,7 @@ const publicPaths = [
   "roast-nr",
   "hyv-roast-images",
   "gostocks-presentation",
+  "tata-aia",
 ];
 
 execFileSync(process.execPath, ["scripts/generate-discovery.mjs"], { stdio: "inherit" });
