@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Staffing Partner — SEO, pSEO & AEO Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --canvas: #FFFFFF;
+    --bone: #FBFBFA;
+    --surface: #F9F9F8;
+    --border: #EAEAEA;
+    --text: #2F3437;
+    --text-muted: #787774;
+    --charcoal: #111111;
+    --pale-blue: #E1F3FE;
+    --pale-blue-text: #1F6C9F;
+    --pale-green: #EDF3EC;
+    --pale-green-text: #346538;
+    --pale-yellow: #FBF3DB;
+    --pale-yellow-text: #956400;
+    --pale-red: #FDEBEC;
+    --pale-red-text: #9F2F2D;
+    --max: 880px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'SF Pro Display', 'Helvetica Neue', system-ui, sans-serif;
+    background: var(--canvas);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse 60% 40% at 80% 10%, rgba(225,243,254,0.35) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 35% at 10% 90%, rgba(237,243,236,0.3) 0%, transparent 70%);
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  @media (min-width: 640px) {
+    .page { padding: 72px 32px 96px; }
+  }
+
+  .meta-bar {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 56px;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .hero { margin-bottom: 64px; }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+    max-width: 20ch;
+  }
+
+  .hero-lead {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    color: var(--text-muted);
+    max-width: 52ch;
+    line-height: 1.7;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+
+  .tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: transform 0.2s var(--ease);
+  }
+
+  .tag:hover { transform: translateY(-1px); }
+  .tag--blue { background: var(--pale-blue); color: var(--pale-blue-text); }
+  .tag--green { background: var(--pale-green); color: var(--pale-green-text); }
+  .tag--yellow { background: var(--pale-yellow); color: var(--pale-yellow-text); }
+  .tag--red { background: var(--pale-red); color: var(--pale-red-text); }
+
+  section { margin-bottom: 64px; }
+
+  @media (min-width: 640px) { section { margin-bottom: 72px; } }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+
+  p { margin-bottom: 16px; color: var(--text); }
+  p.muted { color: var(--text-muted); font-size: 0.95rem; }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .icon-lg { width: 28px; height: 28px; }
+
+  .hover-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    background: var(--surface);
+    transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+
+  .hover-card:hover {
+    border-color: #d8d8d8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transform: translateY(-2px);
+  }
+
+  .hover-card p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-icon--blue { background: var(--pale-blue); color: var(--pale-blue-text); }
+  .card-icon--green { background: var(--pale-green); color: var(--pale-green-text); }
+  .card-icon--yellow { background: var(--pale-yellow); color: var(--pale-yellow-text); }
+  .card-icon--red { background: var(--pale-red); color: var(--pale-red-text); }
+
+  .context-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .context-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* SEO scope diagram */
+  .scope-diagram {
+    margin-top: 28px;
+    padding: 28px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bone);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (min-width: 640px) {
+    .scope-diagram { padding: 32px 28px; }
+  }
+
+  .scope-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    min-width: 520px;
+  }
+
+  .scope-node {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 0 6px;
+  }
+
+  .scope-node:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 22px;
+    width: 16px;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .scope-node:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 19px;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid var(--text-muted);
+    border-top: 1.5px solid var(--text-muted);
+    transform: rotate(45deg);
+    opacity: 0.5;
+  }
+
+  .scope-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: var(--charcoal);
+    transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+  }
+
+  .scope-node:hover .scope-circle {
+    border-color: var(--charcoal);
+    transform: scale(1.05);
+  }
+
+  .scope-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .scope-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .seo-pillars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .seo-pillars { grid-template-columns: 1fr 1fr; }
+  }
+
+  .pillar-list {
+    list-style: none;
+    margin-top: 12px;
+  }
+
+  .pillar-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .pillar-list li:last-child { border-bottom: none; }
+  .pillar-list li:hover { color: var(--text); }
+
+  .pillar-list .check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--pale-green);
+    color: var(--pale-green-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .pillar-list .check svg { width: 10px; height: 10px; stroke-width: 2.5; }
+
+  .flex-note {
+    margin-top: 24px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--charcoal);
+    background: var(--bone);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .flex-note p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+  .deliverable-list { list-style: none; margin-top: 8px; }
+
+  .deliverable-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+
+  @media (min-width: 640px) {
+    .deliverable-list li {
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+    }
+  }
+
+  .deliverable-list li:hover { background: rgba(249,249,248,0.6); margin: 0 -12px; padding-left: 12px; padding-right: 12px; border-radius: 6px; }
+  .deliverable-list li:last-child { border-bottom: none; }
+
+  .deliverable-list .item-title { font-weight: 500; color: var(--charcoal); margin-bottom: 4px; font-size: 0.95rem; }
+  .deliverable-list .item-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.55; }
+
+  .freq {
+    font-family: 'SF Mono', 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+    align-self: start;
+  }
+
+  .pricing-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px;
+    background: var(--bone);
+    margin-top: 24px;
+    transition: box-shadow 0.25s var(--ease);
+  }
+
+  @media (min-width: 640px) { .pricing-box { padding: 40px 36px; } }
+
+  .pricing-box:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+
+  .price-main {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(2.4rem, 6vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: var(--charcoal);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .price-main span { font-size: 1rem; color: var(--text-muted); font-family: 'SF Pro Display', sans-serif; letter-spacing: 0; }
+
+  .price-breakdown { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 24px; }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+
+  .price-row:last-child { border-bottom: none; font-weight: 600; color: var(--charcoal); }
+  .price-row .label { color: var(--text-muted); }
+
+  .payment-terms {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .payment-term {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    padding: 12px 16px;
+    background: var(--canvas);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color 0.2s var(--ease);
+  }
+
+  .payment-term:hover { border-color: #d0d0d0; }
+
+  .payment-term strong { color: var(--charcoal); font-weight: 500; display: block; margin-bottom: 2px; }
+
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 20px; }
+
+  .compare-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .compare-table th, .compare-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .compare-table tr { transition: background 0.2s; }
+  .compare-table tbody tr:hover { background: var(--bone); }
+
+  .compare-table th {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .compare-table td:first-child { font-weight: 500; color: var(--charcoal); }
+
+  .mark-yes { color: var(--pale-green-text); font-weight: 600; }
+  .mark-no { color: var(--pale-red-text); }
+
+  .ai-stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  @media (min-width: 480px) { .ai-stack { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 720px) { .ai-stack { grid-template-columns: repeat(3, 1fr); } }
+
+  .ai-card { border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease); }
+  .ai-card:hover { border-color: #d8d8d8; transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .ai-card .step { font-family: 'SF Mono', monospace; font-size: 0.68rem; color: var(--text-muted); margin-bottom: 12px; }
+  .ai-card p { font-size: 0.875rem; color: var(--text-muted); margin: 0; }
+
+  /* 12-month timeline */
+  .year-timeline { margin-top: 28px; position: relative; }
+
+  .year-track {
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  @media (min-width: 640px) {
+    .year-track { left: 50%; transform: translateX(-50%); }
+  }
+
+  .quarter-block {
+    position: relative;
+    margin-bottom: 32px;
+    padding-left: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .quarter-block {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 24px;
+      padding-left: 0;
+      align-items: start;
+    }
+
+    .quarter-block:nth-child(even) .quarter-content { grid-column: 3; }
+    .quarter-block:nth-child(even) .quarter-marker { grid-column: 2; }
+    .quarter-block:nth-child(odd) .quarter-content { grid-column: 1; text-align: right; }
+    .quarter-block:nth-child(odd) .quarter-marker { grid-column: 2; }
+    .quarter-block:nth-child(odd) .quarter-goals { align-items: flex-end; }
+    .quarter-block:nth-child(odd) .goal-chip { text-align: right; }
+  }
+
+  .quarter-marker {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+  }
+
+  @media (min-width: 640px) {
+    .quarter-marker { position: relative; left: auto; margin: 0 auto; }
+  }
+
+  .quarter-block:hover .quarter-marker {
+    border-color: var(--charcoal);
+    background: var(--bone);
+  }
+
+  .quarter-content h3 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .quarter-months {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .quarter-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .quarter-goals {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .goal-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text);
+    padding: 6px 12px;
+    background: var(--pale-green);
+    border-radius: 6px;
+    width: fit-content;
+    transition: transform 0.2s var(--ease);
+  }
+
+  .goal-chip:hover { transform: translateX(2px); }
+
+  .goal-chip svg { width: 12px; height: 12px; stroke: var(--pale-green-text); flex-shrink: 0; }
+
+  .goals-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 480px) {
+    .goals-summary { grid-template-columns: 1fr; }
+  }
+
+  .goal-stat {
+    text-align: center;
+    padding: 20px 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  }
+
+  .goal-stat:hover { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+
+  .goal-stat .num {
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .goal-stat .lbl { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* Website add-on */
+  .addon-box {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px;
+    background: var(--surface);
+    margin-top: 20px;
+    transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  }
+
+  .addon-box:hover { border-color: #d0d0d0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+
+  .addon-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .addon-features { grid-template-columns: 1fr 1fr; }
+  }
+
+  .addon-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--canvas);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+
+  .addon-item:hover { border-color: #d0d0d0; transform: translateY(-1px); }
+
+  .addon-item strong { display: block; color: var(--charcoal); font-weight: 500; margin-bottom: 2px; font-size: 0.9rem; }
+
+  /* Exclusions — redesigned */
+  .exclusion-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .exclusion-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .exclusion-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--canvas);
+    transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+  }
+
+  .exclusion-card:hover {
+    border-color: var(--pale-red-text);
+    background: var(--pale-red);
+  }
+
+  .exclusion-x {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--pale-red);
+    color: var(--pale-red-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  .exclusion-card:hover .exclusion-x {
+    background: var(--pale-red-text);
+    color: #fff;
+  }
+
+  .exclusion-card h3 { margin-bottom: 4px; font-size: 0.95rem; }
+  .exclusion-card p { margin: 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
+  .exclusion-note {
+    margin-top: 20px;
+    padding: 16px 20px;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .cta-block {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 24px;
+    text-align: center;
+    background: var(--surface);
+    transition: box-shadow 0.25s var(--ease);
+  }
+
+  @media (min-width: 640px) { .cta-block { padding: 48px 40px; } }
+
+  .cta-block:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .cta-block h2 { margin-bottom: 12px; }
+  .cta-block p { color: var(--text-muted); margin-bottom: 28px; }
+
+  .btn {
+    display: inline-block;
+    background: var(--charcoal);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn:hover { background: #333; }
+  .btn:active { transform: scale(0.98); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<main class="page">
+
+  <header class="meta-bar">
+    <span>Proposal · July 2026</span>
+  </header>
+
+  <section class="hero reveal">
+    <p class="eyebrow">Prepared for Staffing Partner</p>
+    <h1>Search visibility for staffing, done with intent.</h1>
+    <p class="hero-lead">
+      A 12-month SEO, programmatic SEO, and answer-engine optimisation programme for an end-to-end staffing entity — recruitment, payroll, compliance, organisation development, career counselling, and faculty enhancement — with South India as the primary growth geography.
+    </p>
+    <div class="tags">
+      <span class="tag tag--blue">On-page SEO</span>
+      <span class="tag tag--green">Off-page SEO</span>
+      <span class="tag tag--yellow">pSEO</span>
+      <span class="tag tag--red">AEO</span>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">01 — Context</p>
+    <h2>What you are building</h2>
+    <p class="muted">Your entity covers the full staffing lifecycle — not just placement. That breadth is a search advantage if the site architecture reflects it.</p>
+    <div class="context-grid">
+      <div class="hover-card">
+        <div class="card-head">
+          <div class="card-icon card-icon--blue">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Core services</h3>
+        </div>
+        <p>End-to-end recruitment, payroll processing, statutory compliance, organisation development, career counselling, and faculty enhancement programmes.</p>
+      </div>
+      <div class="hover-card">
+        <div class="card-head">
+          <div class="card-icon card-icon--green">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Industries</h3>
+        </div>
+        <p>Manufacturing, IT &amp; ITES, healthcare, education, retail, logistics, hospitality, and other labour-intensive sectors across South India.</p>
+      </div>
+      <div class="hover-card">
+        <div class="card-head">
+          <div class="card-icon card-icon--yellow">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Geography</h3>
+        </div>
+        <p>Chennai, Bangalore, Hyderabad, Kochi, Coimbatore, and adjacent industrial corridors — city × industry × service page coverage.</p>
+      </div>
+      <div class="hover-card">
+        <div class="card-head">
+          <div class="card-icon card-icon--red">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h3>Search goal</h3>
+        </div>
+        <p>Rank for high-intent queries from HR heads, plant managers, and institution leaders — and appear in AI answer engines when they ask staffing questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">02 — SEO scope</p>
+    <h2>On-page, off-page, and everything between</h2>
+    <p class="muted">A full-stack search programme — not just blog posts. Here is how the layers connect.</p>
+
+    <div class="scope-diagram" role="img" aria-label="SEO flow: Research to On-page to Off-page to pSEO to AEO to Leads">
+      <div class="scope-flow">
+        <div class="scope-node">
+          <div class="scope-circle">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <div class="scope-label">Research</div>
+          <div class="scope-sub">Keywords &amp; intent</div>
+        </div>
+        <div class="scope-node">
+          <div class="scope-circle">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+          </div>
+          <div class="scope-label">On-page</div>
+          <div class="scope-sub">Content &amp; structure</div>
+        </div>
+        <div class="scope-node">
+          <div class="scope-circle">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <div class="scope-label">Off-page</div>
+          <div class="scope-sub">Authority &amp; links</div>
+        </div>
+        <div class="scope-node">
+          <div class="scope-circle">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="scope-label">pSEO</div>
+          <div class="scope-sub">Pages at scale</div>
+        </div>
+        <div class="scope-node">
+          <div class="scope-circle">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a4 4 0 014 4c0 1.95-1.4 3.58-3.25 3.93L12 22l-.75-12.07A4.001 4.001 0 0112 2z"/></svg>
+          </div>
+          <div class="scope-label">AEO</div>
+          <div class="scope-sub">AI answers</div>
+        </div>
+        <div class="scope-node">
+          <div class="scope-circle">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <div class="scope-label">Leads</div>
+          <div class="scope-sub">Inbound pipeline</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="seo-pillars">
+      <div class="hover-card">
+        <div class="card-head">
+          <div class="card-icon card-icon--blue">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          </div>
+          <h3>On-page SEO</h3>
+        </div>
+        <ul class="pillar-list">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Title tags, meta descriptions, and H1–H3 hierarchy</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Keyword-mapped copy for all service and location pages</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Internal linking hub-and-spoke architecture</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Image alt text, URL slugs, and canonical tags</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Schema markup — Organization, Service, FAQ, LocalBusiness</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Core Web Vitals and mobile usability fixes</li>
+        </ul>
+      </div>
+      <div class="hover-card">
+        <div class="card-head">
+          <div class="card-icon card-icon--green">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>Off-page SEO</h3>
+        </div>
+        <ul class="pillar-list">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Backlink outreach to HR, industry, and compliance publications</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Guest posts and digital PR for staffing thought leadership</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Directory and citation building — IndiaMART, Justdial, Sulekha</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Google Business Profile optimisation per South India location</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Competitor backlink gap analysis and link reclamation</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg></span>Brand mention monitoring and unlinked mention outreach</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex-note">
+      <p>Every deliverable below can be re-prioritised based on your requirements — whether you need heavier off-page in quarter one, faster pSEO rollout, or deeper AEO before scaling content. We align the monthly plan to what your business needs, not a fixed template.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">03 — Monthly deliverables</p>
+    <h2>Everything included at 75,000 INR / month</h2>
+    <p class="muted">One retainer. No hidden line items. Scope adjusts once your live site is audited in month one.</p>
+
+    <ul class="deliverable-list">
+      <li>
+        <div>
+          <div class="item-title">Technical SEO audit &amp; remediation</div>
+          <div class="item-desc">Crawl health, indexation, canonicals, sitemap, robots, Core Web Vitals, mobile usability, and redirect chains.</div>
+        </div>
+        <span class="freq">Monthly</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">On-page SEO — service &amp; landing pages</div>
+          <div class="item-desc">Full on-page optimisation for recruitment, payroll, compliance, OD, counselling, and faculty programme pages.</div>
+        </div>
+        <span class="freq">Ongoing</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Off-page SEO — link building &amp; authority</div>
+          <div class="item-desc">Outreach, guest posts, directory submissions, GBP, and competitor backlink gap closure — 4–8 quality links/month target.</div>
+        </div>
+        <span class="freq">Monthly</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Programmatic SEO — location pages</div>
+          <div class="item-desc">City × service pages for South India with local proof points, schema, and unique copy variables.</div>
+        </div>
+        <span class="freq">8–12 / mo</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Programmatic SEO — industry pages</div>
+          <div class="item-desc">Industry × service combinations from a structured data model — manufacturing recruitment, healthcare payroll compliance, etc.</div>
+        </div>
+        <span class="freq">8–12 / mo</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Programmatic SEO — intent pages</div>
+          <div class="item-desc">Long-tail pages: contract staffing for logistics, ESI/PF compliance outsourcing, campus-to-corporate counselling.</div>
+        </div>
+        <span class="freq">6–10 / mo</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Editorial content hub</div>
+          <div class="item-desc">4 long-form articles/month on staffing law, hiring trends, compliance checklists, and OD frameworks.</div>
+        </div>
+        <span class="freq">4 / mo</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">AEO — answer-engine optimisation</div>
+          <div class="item-desc">FAQ blocks, answer paragraphs, and structured data for Google AI Overviews, ChatGPT, Perplexity, and Gemini.</div>
+        </div>
+        <span class="freq">All pages</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Keyword research &amp; opportunity scoring</div>
+          <div class="item-desc">AI-assisted clustering by intent, difficulty, and commercial value — prioritised for South India staffing.</div>
+        </div>
+        <span class="freq">Monthly</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Competitor &amp; SERP monitoring</div>
+          <div class="item-desc">Track agencies, RPOs, and compliance firms. Monthly gap analysis with page-level actions.</div>
+        </div>
+        <span class="freq">Monthly</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Conversion tracking setup</div>
+          <div class="item-desc">GA4 events for form fills, call clicks, and WhatsApp taps with UTM conventions.</div>
+        </div>
+        <span class="freq">Once + audit</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Monthly performance report</div>
+          <div class="item-desc">Rankings, traffic, indexed pages, CWV, organic leads, and ranked next-month priorities.</div>
+        </div>
+        <span class="freq">Monthly</span>
+      </li>
+      <li>
+        <div>
+          <div class="item-title">Strategy call</div>
+          <div class="item-desc">60-minute review to align on hiring seasons, new services, and compliance calendar events.</div>
+        </div>
+        <span class="freq">Monthly</span>
+      </li>
+    </ul>
+
+    <div class="pricing-box">
+      <p class="eyebrow" style="margin-bottom:12px;">Investment</p>
+      <div class="price-main">75,000 <span>INR / month</span></div>
+      <p class="muted" style="margin:0;">One-year contract · 12 monthly cycles</p>
+      <div class="price-breakdown">
+        <div class="price-row"><span class="label">Base retainer</span><span>75,000 INR</span></div>
+        <div class="price-row"><span class="label">GST (18%)</span><span>13,500 INR</span></div>
+        <div class="price-row"><span class="label">Total per month</span><span>88,500 INR</span></div>
+      </div>
+      <div class="payment-terms">
+        <div class="payment-term">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+          <div>
+            <strong>100% advance, month on month</strong>
+            Full retainer due before work begins each month. Invoice raised on the 1st, payment due within 5 working days.
+          </div>
+        </div>
+        <div class="payment-term">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <div>
+            <strong>One-year contract</strong>
+            12-month minimum commitment. Scope and priorities reviewed quarterly; deliverables flex month to month based on your requirements.
+          </div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:20px; margin-bottom:0; font-size:0.82rem;">GST invoice provided. Ad spend, third-party tools, and stock photography billed separately if required.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">04 — 12-month goals &amp; timeline</p>
+    <h2>Where you will be after one year</h2>
+    <p class="muted">Quarterly milestones with measurable targets. Adjusted after month-one audit based on your starting position.</p>
+
+    <div class="goals-summary">
+      <div class="goal-stat">
+        <div class="num">250+</div>
+        <div class="lbl">Indexed pages</div>
+      </div>
+      <div class="goal-stat">
+        <div class="num">Top 10</div>
+        <div class="lbl">Money keywords</div>
+      </div>
+      <div class="goal-stat">
+        <div class="num">40+</div>
+        <div class="lbl">Quality backlinks</div>
+      </div>
+      <div class="goal-stat">
+        <div class="num">3×</div>
+        <div class="lbl">Organic leads</div>
+      </div>
+    </div>
+
+    <div class="year-timeline">
+      <div class="year-track" aria-hidden="true"></div>
+
+      <div class="quarter-block">
+        <div class="quarter-marker">Q1</div>
+        <div class="quarter-content">
+          <h3>Foundation</h3>
+          <div class="quarter-months">Months 1 – 3</div>
+          <p class="quarter-desc">Audit, architecture, and first pages live. Technical debt cleared, keyword map built, pSEO templates deployed.</p>
+          <div class="quarter-goals">
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>30+ pages indexed</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Technical audit complete</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>GBP live for all locations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quarter-block">
+        <div class="quarter-marker">Q2</div>
+        <div class="quarter-content">
+          <h3>Scale</h3>
+          <div class="quarter-months">Months 4 – 6</div>
+          <p class="quarter-desc">Full pSEO cadence running. Off-page link building ramps up. First ranking wins on city and industry terms.</p>
+          <div class="quarter-goals">
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>100+ pages indexed</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>15+ quality backlinks</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Top 20 on 10+ money terms</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quarter-block">
+        <div class="quarter-marker">Q3</div>
+        <div class="quarter-content">
+          <h3>Authority</h3>
+          <div class="quarter-months">Months 7 – 9</div>
+          <p class="quarter-desc">Domain authority builds through off-page and editorial content. AEO presence in AI answer engines. Lead attribution baseline set.</p>
+          <div class="quarter-goals">
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>180+ pages indexed</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>30+ quality backlinks</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>AI engine citations live</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="quarter-block">
+        <div class="quarter-marker">Q4</div>
+        <div class="quarter-content">
+          <h3>Dominance</h3>
+          <div class="quarter-months">Months 10 – 12</div>
+          <p class="quarter-desc">Optimise for conversions, not just traffic. Consolidate rankings, refresh underperforming pages, and scale what works.</p>
+          <div class="quarter-goals">
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>250+ pages indexed</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Top 10 on 15+ money terms</span>
+            <span class="goal-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>3× organic lead baseline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">05 — Why not a typical agency</p>
+    <h2>What most agencies sell vs what you get here</h2>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>Dimension</th><th>Typical SEO agency</th><th>This engagement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Account management</td><td>Junior relays your brief to offshore team</td><td>Direct work with the strategist who reviews every batch</td></tr>
+          <tr><td>On-page SEO</td><td>Title tag tweaks once a quarter</td><td>Continuous on-page optimisation across all live pages</td></tr>
+          <tr><td>Off-page SEO</td><td>Directory spam or nothing at all</td><td>Targeted outreach — 4–8 quality links/month</td></tr>
+          <tr><td>Content</td><td>4 generic blog posts</td><td>22–34 pSEO pages/month plus 4 editorial pieces</td></tr>
+          <tr><td>AI search</td><td class="mark-no">Not in scope</td><td class="mark-yes">AEO on every page — answer blocks, FAQ schema</td></tr>
+          <tr><td>Flexibility</td><td>Fixed package, take it or leave it</td><td>Monthly priorities aligned to your business requirements</td></tr>
+          <tr><td>Reporting</td><td>Traffic screenshots</td><td>Leads, rankings, index velocity, ranked next actions</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">06 — AI-powered workflow</p>
+    <h2>AI is infrastructure, not a shortcut</h2>
+    <p class="muted">AI adds precision and speed. Humans review everything before it ships.</p>
+    <div class="ai-stack">
+      <div class="ai-card"><div class="step">01</div><h3>Keyword intelligence</h3><p>OpenSEO-powered scoring clusters staffing queries by intent and surfaces competitor gaps.</p></div>
+      <div class="ai-card"><div class="step">02</div><h3>pSEO data models</h3><p>City, industry, and service dimensions as structured data — unique pages, not duplicate copy.</p></div>
+      <div class="ai-card"><div class="step">03</div><h3>Brief-to-draft pipelines</h3><p>Intent brief, answer-block outline, and compliance-aware draft — reviewed before publish.</p></div>
+      <div class="ai-card"><div class="step">04</div><h3>Answer-engine formatting</h3><p>Definitional paragraphs and FAQ pairs structured for LLM citation.</p></div>
+      <div class="ai-card"><div class="step">05</div><h3>Schema generation</h3><p>JSON-LD per page type — Service, FAQPage, LocalBusiness — validated on ship.</p></div>
+      <div class="ai-card"><div class="step">06</div><h3>Pre-publish QA</h3><p>Indexability, duplicate risk, broken links, and schema errors caught before go-live.</p></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">07 — Website design add-on</p>
+    <h2>Need a site that converts, not just ranks?</h2>
+    <p class="muted">If you do not have a live website yet — or your current one cannot support pSEO at scale — we can design and build a conversion-focused site alongside this SEO programme.</p>
+
+    <div class="addon-box">
+      <div class="card-head">
+        <div class="card-icon card-icon--blue">
+          <svg class="icon icon-lg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <div>
+          <h3>Conversion-focused website design &amp; build</h3>
+          <p class="muted" style="margin:0;">Separate engagement · Fee varies by scope</p>
+        </div>
+      </div>
+      <div class="addon-features">
+        <div class="addon-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <div><strong>Service &amp; landing pages</strong>Built for enquiry conversion — clear CTAs, trust signals, and mobile-first layouts.</div>
+        </div>
+        <div class="addon-item">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <div><strong>pSEO-ready templates</strong>Scalable page structures for city, industry, and intent pages from day one.</div>
+        </div>
+        <div class="addon-item">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          <div><strong>Forms &amp; lead capture</strong>Enquiry forms, WhatsApp integration, call tracking, and GA4 event wiring.</div>
+        </div>
+        <div class="addon-item">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <div><strong>Custom functionality</strong>Career portals, client dashboards, document uploads — scoped and priced per requirement.</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:20px; margin-bottom:0; font-size:0.875rem;">Fee depends on number of pages, design complexity, integrations, and functionality. Quoted separately after a scoping call — not included in the 75,000 INR/month SEO retainer.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <p class="section-label">08 — Not included</p>
+    <h2>Outside this retainer</h2>
+    <p class="muted">Kept separate so pricing stays transparent. Available as add-ons if you need them.</p>
+
+    <div class="exclusion-grid">
+      <div class="exclusion-card">
+        <div class="exclusion-x">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div>
+          <h3>Paid media</h3>
+          <p>Google Ads, LinkedIn Ads, and Meta campaigns — separate engagement.</p>
+        </div>
+      </div>
+      <div class="exclusion-card">
+        <div class="exclusion-x">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div>
+          <h3>Social media management</h3>
+          <p>Posting, community management, and influencer outreach.</p>
+        </div>
+      </div>
+      <div class="exclusion-card">
+        <div class="exclusion-x">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div>
+          <h3>Recruitment operations</h3>
+          <p>Sourcing, interviewing, and placement — your core business, not ours.</p>
+        </div>
+      </div>
+      <div class="exclusion-card">
+        <div class="exclusion-x">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div>
+          <h3>Website design &amp; build</h3>
+          <p>Quoted separately — see section 07. SEO retainer covers optimisation, not full site builds.</p>
+        </div>
+      </div>
+      <div class="exclusion-card">
+        <div class="exclusion-x">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div>
+          <h3>Enterprise tool licences</h3>
+          <p>Semrush, Ahrefs, etc. billed at cost if you want them beyond our AI stack.</p>
+        </div>
+      </div>
+      <div class="exclusion-card">
+        <div class="exclusion-x">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div>
+          <h3>Stock photography &amp; ad spend</h3>
+          <p>Visual assets and media budgets billed separately when required.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="exclusion-note">Everything in sections 02–06 is included in the monthly retainer. Items above are available on request at separate rates.</p>
+  </section>
+
+  <section class="reveal">
+    <div class="cta-block">
+      <h2>Ready to start the 12-month programme?</h2>
+      <p>Proposal valid for 30 days · One-year contract · 100% advance monthly</p>
+      <a class="btn" href="mailto:emailshashanksn@gmail.com?subject=Staffing%20SEO%20Proposal%20—%20Next%20Steps">Discuss next steps</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Confidential · Not for distribution</span>
+    <span>shashanksn.xyz</span>
+  </footer>
+
+</main>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -32px 0px' });
+  reveals.forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>

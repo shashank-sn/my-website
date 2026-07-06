@@ -87,6 +87,13 @@ const noindexPages = [
     changefreq: "never",
     summary: "lead generation proposal deck for tata aia — multi-channel insurance lead acquisition strategy.",
   },
+  {
+    title: "staffing seo proposal",
+    path: "/proposal/staffing-seo/",
+    priority: "0.8",
+    changefreq: "never",
+    summary: "seo, pseo, and aeo proposal for a south india staffing and recruitment entity — 75,000 inr/month retainer.",
+  },
 ];
 
 const facts = [
