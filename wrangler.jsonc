@@ -3,6 +3,7 @@
   "name": "my-website",
   "main": "cloudflare/worker.mjs",
   "compatibility_date": "2026-05-12",
+  "account_id": "b06965c14ebe19aea1eab07c60bdebba",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "cloudflare/dist",
@@ -19,6 +20,14 @@
     {
       "pattern": "www.shashanksn.xyz/*",
       "zone_name": "shashanksn.xyz"
+    },
+    {
+      "pattern": "shashank.xyz/*",
+      "zone_name": "shashank.xyz"
+    },
+    {
+      "pattern": "www.shashank.xyz/*",
+      "zone_name": "shashank.xyz"
     }
   ]
 }

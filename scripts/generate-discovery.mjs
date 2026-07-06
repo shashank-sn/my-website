@@ -71,6 +71,31 @@ const pages = [
   },
 ];
 
+// noindex — not in sitemap/llms
+const noindexPages = [
+  {
+    title: "gostocks presentation",
+    path: "/gostocks-presentation/",
+    priority: "0.8",
+    changefreq: "monthly",
+    summary: "proposal presentation for gostocks — building india's most trusted investment super app.",
+  },
+  {
+    title: "tata aia lead generation proposal",
+    path: "/tata-aia/",
+    priority: "0.8",
+    changefreq: "never",
+    summary: "lead generation proposal deck for tata aia — multi-channel insurance lead acquisition strategy.",
+  },
+  {
+    title: "staffing seo proposal",
+    path: "/proposal/staffing-seo/",
+    priority: "0.8",
+    changefreq: "never",
+    summary: "seo, pseo, and aeo proposal for a south india staffing and recruitment entity — 75,000 inr/month retainer.",
+  },
+];
+
 const facts = [
   "shashank sn works on brand strategy, positioning, founder voice, trust architecture, websites, and product surfaces.",
   "he has advised 150+ companies, delivered 100+ talks, built and sold companies, and led a guinness world record campaign at guvi.",
@@ -121,6 +146,8 @@ Allow: /
 
 Disallow: /home.html
 Disallow: /404.html
+Disallow: /tata-aia/
+Disallow: /gostocks-presentation/
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;

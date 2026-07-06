@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7f7f7"/>
+      <stop offset="55%" stop-color="#ededed"/>
+      <stop offset="100%" stop-color="#d9d9d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#000"/>
+  <text x="200" y="200" fill="url(#fg)" font-family="'Pixelify Sans','Courier New',monospace" font-weight="700" font-size="82" text-anchor="middle" dominant-baseline="middle" letter-spacing="-1">shashank</text>
+  <text x="200" y="270" fill="url(#fg)" fill-opacity="0.85" font-family="'Pixelify Sans','Courier New',monospace" font-weight="700" font-size="82" text-anchor="middle" dominant-baseline="middle" letter-spacing="-1">sn.</text>
+</svg>

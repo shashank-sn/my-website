@@ -3,5 +3,7 @@ Allow: /
 
 Disallow: /home.html
 Disallow: /404.html
+Disallow: /tata-aia/
+Disallow: /gostocks-presentation/
 
 Sitemap: https://shashanksn.xyz/sitemap.xml
