@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="451" viewBox="0 0 860 451" role="img" aria-label="Shashank SN neofetch profile">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .frame { fill: none; stroke: #30363d; stroke-width: 1; }
+      .titlebar { fill: #161b22; }
+      .title { font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #c9d1d9; }
+      .prompt { font: 600 14px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #58a6ff; }
+      .divider { stroke: #30363d; stroke-width: 1; }
+      .ascii { font: 12px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #8b949e; }
+      .label { font: 600 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #d29922; }
+      .value { font: 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #e6edf3; }
+      .link { font: 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #58a6ff; }
+      a { text-decoration: none; }
+    </style>
+  </defs>
+  <rect class="bg" width="860" height="451" rx="8"/>
+  <rect class="frame" x="0.5" y="0.5" width="859" height="450" rx="8"/>
+  <rect class="titlebar" x="1" y="1" width="858" height="34" rx="8"/>
+  <rect class="titlebar" x="1" y="18" width="858" height="17"/>
+  <text x="16" y="22" class="title">shashank-sn / README.md</text>
+  <text x="24" y="62" class="prompt">shashank@sn</text>
+  <line class="divider" x1="24" y1="72" x2="836" y2="72"/>
+  <text x="24" y="92" class="ascii">          .:==:.</text><text x="24" y="106" class="ascii">         :*%%##*-:</text><text x="24" y="120" class="ascii">        :#%##*=*%+.</text><text x="24" y="134" class="ascii">        :%*+=-..++.</text><text x="24" y="148" class="ascii">        .***++=:++.</text><text x="24" y="162" class="ascii">        .=+*=+*-+=</text><text x="24" y="176" class="ascii">        .++*++=:-.</text><text x="24" y="190" class="ascii">         +#**##+:</text><text x="24" y="204" class="ascii">        .:#++=%+..</text><text x="24" y="218" class="ascii">   .:-=+*####%*-===-:.</text><text x="24" y="232" class="ascii">  :*%%%%%%*++*+++*%#*+-</text><text x="24" y="246" class="ascii"> -%@%%%%%@*=++*+=*%%#*=.</text><text x="24" y="260" class="ascii">-%@%%%%%%%%*****=#%%%#+-</text><text x="24" y="274" class="ascii">%@@%%%%%%%%%**#*=%@%%#+=</text><text x="24" y="288" class="ascii">@@@@%%%%%%%@#*+*=*%@%#*=</text><text x="24" y="302" class="ascii">@@@@%%%%%@@@@%**%#*#%#*+</text><text x="24" y="316" class="ascii">@@%-#@@@@@@@@@@%@%%**##*</text>
+  <text x="250" y="92"><tspan class="label">OS: </tspan><tspan x="500" class="value">macOS, iOS, Linux</tspan></text><text x="250" y="109"><tspan class="label">Uptime: </tspan><tspan x="500" class="value">4 years, 254 days</tspan></text><text x="250" y="126"><tspan class="label">Shell: </tspan><tspan x="500" class="value">Brandeey / Hold Your Voice</tspan></text><text x="250" y="143"><tspan class="label">Kernel: </tspan><tspan x="500" class="value">Brand Strategist &amp; Founder</tspan></text><text x="250" y="160"><tspan class="label">IDE: </tspan><tspan x="500" class="value">Cursor, VS Code</tspan></text><text x="250" y="177"><tspan class="label">Languages (Programming): </tspan><tspan x="500" class="value">TypeScript, JavaScript, Python, Swift</tspan></text><text x="250" y="194"><tspan class="label">Languages (Markup): </tspan><tspan x="500" class="value">HTML, CSS, JSON, YAML, MDX</tspan></text><text x="250" y="211"><tspan class="label">Languages (Human): </tspan><tspan x="500" class="value">English, Tamil</tspan></text><text x="250" y="228"><tspan class="label">Hobbies (Software): </tspan><tspan x="500" class="value">AI tooling, brand systems, vanilla web</tspan></text><text x="250" y="245"><tspan class="label">Hobbies (Business): </tspan><tspan x="500" class="value">positioning, newsletters, product building</tspan></text><text x="250" y="262" class="label">Contact</text><text x="250" y="279"><tspan class="label">  Website: </tspan></text><a href="https://shashanksn.xyz"><text x="500" y="279" class="link">shashanksn.xyz</text></a><text x="250" y="296"><tspan class="label">  LinkedIn: </tspan></text><a href="https://www.linkedin.com/in/thestupidpreneur/"><text x="500" y="296" class="link">thestupidpreneur</text></a><text x="250" y="313"><tspan class="label">  X / Twitter: </tspan></text><a href="https://x.com/istupidpreneur"><text x="500" y="313" class="link">@istupidpreneur</text></a><text x="250" y="330" class="label">GitHub Stats</text><text x="250" y="347"><tspan class="label">  Repos: </tspan><tspan x="500" class="value">32</tspan></text><text x="250" y="364"><tspan class="label">  Stars: </tspan><tspan x="500" class="value">12</tspan></text><text x="250" y="381"><tspan class="label">  Commits: </tspan><tspan x="500" class="value">213</tspan></text><text x="250" y="398"><tspan class="label">  Followers: </tspan><tspan x="500" class="value">6</tspan></text>
+</svg>

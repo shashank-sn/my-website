@@ -1,0 +1,411 @@
+From d607edc2343ce8b2aad4e081b62c7f21daac769f Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Fri, 10 Jul 2026 08:22:27 +0000
+Subject: [PATCH] Add neofetch-style GitHub profile README
+
+Replace the narrative profile README with a terminal/neofetch card
+matching the Andrew Grant layout: ASCII portrait, system info panel,
+and a compact projects table below.
+
+Includes a generator script, live stats JSON, and a daily GitHub Action
+to refresh follower/repo/commit counts.
+---
+ .github/workflows/update-profile-stats.yml |  65 ++++++++
+ README.md                                  |  50 ++----
+ assets/profile-neofetch.svg                |  26 ++++
+ assets/profile-stats.json                  |   7 +
+ assets/shashank-ascii.txt                  |  18 +++
+ scripts/generate-profile-svg.py            | 169 +++++++++++++++++++++
+ 6 files changed, 299 insertions(+), 36 deletions(-)
+ create mode 100644 .github/workflows/update-profile-stats.yml
+ create mode 100644 assets/profile-neofetch.svg
+ create mode 100644 assets/profile-stats.json
+ create mode 100644 assets/shashank-ascii.txt
+ create mode 100755 scripts/generate-profile-svg.py
+
+diff --git a/.github/workflows/update-profile-stats.yml b/.github/workflows/update-profile-stats.yml
+new file mode 100644
+index 0000000..f6b4373
+--- /dev/null
++++ b/.github/workflows/update-profile-stats.yml
+@@ -0,0 +1,65 @@
++name: Update Profile Stats
++
++on:
++  schedule:
++    - cron: "0 6 * * *"
++  workflow_dispatch:
++
++permissions:
++  contents: write
++
++jobs:
++  update-profile:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++
++      - name: Fetch latest GitHub stats
++        env:
++          GH_TOKEN: ${{ github.token }}
++        run: |
++          DATA=$(gh api graphql -f query='
++            query {
++              user(login: "shashank-sn") {
++                followers { totalCount }
++                repositories { totalCount }
++                contributionsCollection { totalCommitContributions }
++                repositories(ownerAffiliations: OWNER, first: 100) {
++                  nodes { stargazerCount }
++                }
++              }
++            }')
++          FOLLOWERS=$(echo "$DATA" | jq '.data.user.followers.totalCount')
++          REPOS=$(echo "$DATA" | jq '.data.user.repositories.totalCount')
++          COMMITS=$(echo "$DATA" | jq '.data.user.contributionsCollection.totalCommitContributions')
++          STARS=$(echo "$DATA" | jq '[.data.user.repositories.nodes[].stargazerCount] | add')
++          CREATED=$(gh api users/shashank-sn --jq .created_at)
++          python3 - <<PY
++          import json
++          from datetime import datetime, timezone
++          from pathlib import Path
++
++          created = datetime.fromisoformat("${CREATED}".replace("Z", "+00:00"))
++          now = datetime.now(timezone.utc)
++          years, days = divmod((now - created).days, 365)
++
++          stats = {
++              "uptime": f"{years} years, {days} days",
++              "repos": "${REPOS}",
++              "stars": "${STARS}",
++              "commits": "${COMMITS}",
++              "followers": "${FOLLOWERS}",
++          }
++          Path("assets/profile-stats.json").write_text(json.dumps(stats, indent=2) + "\n")
++          PY
++
++      - name: Regenerate profile SVG
++        run: python3 scripts/generate-profile-svg.py
++
++      - name: Commit updates
++        run: |
++          git config user.name "github-actions[bot]"
++          git config user.email "github-actions[bot]@users.noreply.github.com"
++          git add assets/profile-neofetch.svg assets/profile-stats.json
++          git diff --staged --quiet || git commit -m "chore: refresh profile neofetch stats"
++          git push
+diff --git a/README.md b/README.md
+index f2948af..572036c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,49 +1,27 @@
+-<h1 align="center">i didn't set out to become a brand strategist...</h1>
+-
+-i actually set out to build things. brands just kept being the thing that determined whether the building worked.
+-
+-spent a year leading the brand at **guvi hcl** — one of the youngest heads of brand in india at that point. guinness record while i was there. interesting context to work in. guvi hcl is not a startup. which means brand decisions had weight, had consequence, had to survive committees and still land with people. that experience taught me that a brand that only works in a deck is not a brand. it's a proposal.
+-
+-after that i went fractional. a few companies at a time. brand decisions, positioning work, the kind of stuff that determines whether your marketing spend compounds or bleeds. still do it.
+-
+-i also built things on the side. **el mejor coffee** — built, scaled, sold. [**happy beginnings**](http://happybeginnings.in), india's first digital wedding invite service. [**sayabout.us**](http://sayabout.us), a testimonial collection platform i'm building with two co-founders toward $10k mrr. none of these are accidental. each one was a test case for ideas i was already using with clients.
+-
+-[**brandeey**](http://brandeey.com) is where i put what i know into a form anyone can use. the brand engine course, free tools, microcourses. seven years and 150+ companies compressed into something that doesn't require you to hire me to benefit from it.
+-
+-[**hold your voice**](http://holdyourvoice.com) came from a different frustration. ai kept flattening everything into the same texture. founders who had real voice were publishing content that sounded like a press release written by a committee. hyv is the tool that catches the problem before it ships — score, highlight, rewrite. your voice, enforced.
+-
+-i've delivered 100+ talks. i used to write a daily newsletter called [**the stupidpreneur**](http://stupidpreneur.in). i also run [**two paise club**](http://twopaiseclub.com) — the underlying philosophy is very simple: to help people read non-fiction books so that they can upskill themselves. i think out loud on [linkedin](https://www.linkedin.com/in/thestupidpreneur/) & [x](http://x.com/istupidpreneur) more than i probably should.
+-
+-the common thread in all of it is the same question of what actually makes people choose you, remember you, come back to you.
+-
+-that's what i work on.
++<picture>
++  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-neofetch.svg">
++  <img alt="shashank sn — neofetch profile" src="assets/profile-neofetch.svg">
++</picture>
+ 
+ ---
+ 
+-<p align="center">
+-<i>the projects</i>
+-</p>
++### projects
+ 
+ | | project | what it is |
+ |---|---|---|
+-| | [**brandeey**](http://brandeey.com) | the brand engine course, free tools, microcourses — seven years and 150+ companies compressed |
+-| | [**hold your voice**](http://holdyourvoice.com) | score, highlight, rewrite — catch AI voice-flattening before it ships |
++| | [**brandeey**](http://brandeey.com) | brand engine course, free tools, microcourses |
++| | [**hold your voice**](http://holdyourvoice.com) | catch AI voice-flattening before it ships |
+ | | [**happy beginnings**](http://happybeginnings.in) | india's first digital wedding invite service |
+-| | [**sayabout.us**](http://sayabout.us) | testimonial collection platform, building toward $10k mrr |
+-| | **el mejor coffee** | built, scaled, sold |
+-| | [**the stupidpreneur**](http://stupidpreneur.in) | daily newsletter (archive) |
+-| | [**two paise club**](http://twopaiseclub.com) | daily non-fiction book newsletter — bite-sized learnings to help people upskill |
+-
+----
++| | [**sayabout.us**](http://sayabout.us) | testimonial collection platform |
++| | [**two paise club**](http://twopaiseclub.com) | daily non-fiction book newsletter |
++| | [**the stupidpreneur**](http://stupidpreneur.in) | daily newsletter archive |
+ 
+ <br>
+ 
+ <p align="center">
+-  <a href="http://brandeey.com"><b>brandeey</b></a> &nbsp; · &nbsp;
+-  <a href="http://holdyourvoice.com"><b>hold your voice</b></a> &nbsp; · &nbsp;
+-  <a href="http://happybeginnings.in"><b>happy beginnings</b></a> &nbsp; · &nbsp;
+-  <a href="http://sayabout.us"><b>sayabout.us</b></a> &nbsp; · &nbsp;
+-  <a href="http://twopaiseclub.com"><b>two paise club</b></a> &nbsp; · &nbsp;
+-  <a href="https://www.linkedin.com/in/thestupidpreneur/"><b>linkedin</b></a> &nbsp; · &nbsp;
++  <a href="https://shashanksn.xyz"><b>website</b></a> &nbsp;·&nbsp;
++  <a href="http://brandeey.com"><b>brandeey</b></a> &nbsp;·&nbsp;
++  <a href="http://holdyourvoice.com"><b>hold your voice</b></a> &nbsp;·&nbsp;
++  <a href="https://www.linkedin.com/in/thestupidpreneur/"><b>linkedin</b></a> &nbsp;·&nbsp;
+   <a href="http://x.com/istupidpreneur"><b>x</b></a>
+ </p>
+diff --git a/assets/profile-neofetch.svg b/assets/profile-neofetch.svg
+new file mode 100644
+index 0000000..7f9064c
+--- /dev/null
++++ b/assets/profile-neofetch.svg
+@@ -0,0 +1,26 @@
++<svg xmlns="http://www.w3.org/2000/svg" width="860" height="451" viewBox="0 0 860 451" role="img" aria-label="Shashank SN neofetch profile">
++  <defs>
++    <style>
++      .bg { fill: #0d1117; }
++      .frame { fill: none; stroke: #30363d; stroke-width: 1; }
++      .titlebar { fill: #161b22; }
++      .title { font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #c9d1d9; }
++      .prompt { font: 600 14px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #58a6ff; }
++      .divider { stroke: #30363d; stroke-width: 1; }
++      .ascii { font: 12px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #8b949e; }
++      .label { font: 600 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #d29922; }
++      .value { font: 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #e6edf3; }
++      .link { font: 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #58a6ff; }
++      a { text-decoration: none; }
++    </style>
++  </defs>
++  <rect class="bg" width="860" height="451" rx="8"/>
++  <rect class="frame" x="0.5" y="0.5" width="859" height="450" rx="8"/>
++  <rect class="titlebar" x="1" y="1" width="858" height="34" rx="8"/>
++  <rect class="titlebar" x="1" y="18" width="858" height="17"/>
++  <text x="16" y="22" class="title">shashank-sn / README.md</text>
++  <text x="24" y="62" class="prompt">shashank@sn</text>
++  <line class="divider" x1="24" y1="72" x2="836" y2="72"/>
++  <text x="24" y="92" class="ascii">          .:==:.</text><text x="24" y="106" class="ascii">         :*%%##*-:</text><text x="24" y="120" class="ascii">        :#%##*=*%+.</text><text x="24" y="134" class="ascii">        :%*+=-..++.</text><text x="24" y="148" class="ascii">        .***++=:++.</text><text x="24" y="162" class="ascii">        .=+*=+*-+=</text><text x="24" y="176" class="ascii">        .++*++=:-.</text><text x="24" y="190" class="ascii">         +#**##+:</text><text x="24" y="204" class="ascii">        .:#++=%+..</text><text x="24" y="218" class="ascii">   .:-=+*####%*-===-:.</text><text x="24" y="232" class="ascii">  :*%%%%%%*++*+++*%#*+-</text><text x="24" y="246" class="ascii"> -%@%%%%%@*=++*+=*%%#*=.</text><text x="24" y="260" class="ascii">-%@%%%%%%%%*****=#%%%#+-</text><text x="24" y="274" class="ascii">%@@%%%%%%%%%**#*=%@%%#+=</text><text x="24" y="288" class="ascii">@@@@%%%%%%%@#*+*=*%@%#*=</text><text x="24" y="302" class="ascii">@@@@%%%%%@@@@%**%#*#%#*+</text><text x="24" y="316" class="ascii">@@%-#@@@@@@@@@@%@%%**##*</text>
++  <text x="250" y="92"><tspan class="label">OS: </tspan><tspan x="500" class="value">macOS, iOS, Linux</tspan></text><text x="250" y="109"><tspan class="label">Uptime: </tspan><tspan x="500" class="value">4 years, 254 days</tspan></text><text x="250" y="126"><tspan class="label">Shell: </tspan><tspan x="500" class="value">Brandeey / Hold Your Voice</tspan></text><text x="250" y="143"><tspan class="label">Kernel: </tspan><tspan x="500" class="value">Brand Strategist &amp; Founder</tspan></text><text x="250" y="160"><tspan class="label">IDE: </tspan><tspan x="500" class="value">Cursor, VS Code</tspan></text><text x="250" y="177"><tspan class="label">Languages (Programming): </tspan><tspan x="500" class="value">TypeScript, JavaScript, Python, Swift</tspan></text><text x="250" y="194"><tspan class="label">Languages (Markup): </tspan><tspan x="500" class="value">HTML, CSS, JSON, YAML, MDX</tspan></text><text x="250" y="211"><tspan class="label">Languages (Human): </tspan><tspan x="500" class="value">English, Tamil</tspan></text><text x="250" y="228"><tspan class="label">Hobbies (Software): </tspan><tspan x="500" class="value">AI tooling, brand systems, vanilla web</tspan></text><text x="250" y="245"><tspan class="label">Hobbies (Business): </tspan><tspan x="500" class="value">positioning, newsletters, product building</tspan></text><text x="250" y="262" class="label">Contact</text><text x="250" y="279"><tspan class="label">  Website: </tspan></text><a href="https://shashanksn.xyz"><text x="500" y="279" class="link">shashanksn.xyz</text></a><text x="250" y="296"><tspan class="label">  LinkedIn: </tspan></text><a href="https://www.linkedin.com/in/thestupidpreneur/"><text x="500" y="296" class="link">thestupidpreneur</text></a><text x="250" y="313"><tspan class="label">  X / Twitter: </tspan></text><a href="https://x.com/istupidpreneur"><text x="500" y="313" class="link">@istupidpreneur</text></a><text x="250" y="330" class="label">GitHub Stats</text><text x="250" y="347"><tspan class="label">  Repos: </tspan><tspan x="500" class="value">32</tspan></text><text x="250" y="364"><tspan class="label">  Stars: </tspan><tspan x="500" class="value">12</tspan></text><text x="250" y="381"><tspan class="label">  Commits: </tspan><tspan x="500" class="value">213</tspan></text><text x="250" y="398"><tspan class="label">  Followers: </tspan><tspan x="500" class="value">6</tspan></text>
++</svg>
+diff --git a/assets/profile-stats.json b/assets/profile-stats.json
+new file mode 100644
+index 0000000..318aa47
+--- /dev/null
++++ b/assets/profile-stats.json
+@@ -0,0 +1,7 @@
++{
++  "uptime": "4 years, 254 days",
++  "repos": "32",
++  "stars": "12",
++  "commits": "213",
++  "followers": "6"
++}
+diff --git a/assets/shashank-ascii.txt b/assets/shashank-ascii.txt
+new file mode 100644
+index 0000000..2fd836f
+--- /dev/null
++++ b/assets/shashank-ascii.txt
+@@ -0,0 +1,18 @@
++                        
++          .:==:.        
++         :*%%##*-:      
++        :#%##*=*%+.     
++        :%*+=-..++.     
++        .***++=:++.     
++        .=+*=+*-+=      
++        .++*++=:-.      
++         +#**##+:       
++        .:#++=%+..      
++   .:-=+*####%*-===-:.  
++  :*%%%%%%*++*+++*%#*+- 
++ -%@%%%%%@*=++*+=*%%#*=.
++-%@%%%%%%%%*****=#%%%#+-
++%@@%%%%%%%%%**#*=%@%%#+=
++@@@@%%%%%%%@#*+*=*%@%#*=
++@@@@%%%%%@@@@%**%#*#%#*+
++@@%-#@@@@@@@@@@%@%%**##*
+diff --git a/scripts/generate-profile-svg.py b/scripts/generate-profile-svg.py
+new file mode 100755
+index 0000000..d5cbf6b
+--- /dev/null
++++ b/scripts/generate-profile-svg.py
+@@ -0,0 +1,169 @@
++#!/usr/bin/env python3
++"""Generate neofetch-style profile SVG for GitHub README."""
++
++from __future__ import annotations
++
++import json
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++ASCII_PATH = ROOT / "assets" / "shashank-ascii.txt"
++STATS_PATH = ROOT / "assets" / "profile-stats.json"
++OUTPUT_PATH = ROOT / "assets" / "profile-neofetch.svg"
++
++DEFAULT_STATS = {
++    "hostname": "shashank@sn",
++    "os": "macOS, iOS, Linux",
++    "uptime": "4 years, 254 days",
++    "shell": "Brandeey / Hold Your Voice",
++    "kernel": "Brand Strategist & Founder",
++    "ide": "Cursor, VS Code",
++    "lang_prog": "TypeScript, JavaScript, Python, Swift",
++    "lang_markup": "HTML, CSS, JSON, YAML, MDX",
++    "lang_human": "English, Tamil",
++    "hobby_software": "AI tooling, brand systems, vanilla web",
++    "hobby_business": "positioning, newsletters, product building",
++    "website": "shashanksn.xyz",
++    "linkedin": "thestupidpreneur",
++    "twitter": "istupidpreneur",
++    "repos": "32",
++    "stars": "12",
++    "commits": "213",
++    "followers": "6",
++}
++
++FIELDS = [
++    ("OS", "os"),
++    ("Uptime", "uptime"),
++    ("Shell", "shell"),
++    ("Kernel", "kernel"),
++    ("IDE", "ide"),
++    ("Languages (Programming)", "lang_prog"),
++    ("Languages (Markup)", "lang_markup"),
++    ("Languages (Human)", "lang_human"),
++    ("Hobbies (Software)", "hobby_software"),
++    ("Hobbies (Business)", "hobby_business"),
++    ("Contact", None),
++    ("  Website", "website"),
++    ("  LinkedIn", "linkedin"),
++    ("  X / Twitter", "twitter"),
++    ("GitHub Stats", None),
++    ("  Repos", "repos"),
++    ("  Stars", "stars"),
++    ("  Commits", "commits"),
++    ("  Followers", "followers"),
++]
++
++
++def esc(text: str) -> str:
++    return (
++        text.replace("&", "&amp;")
++        .replace("<", "&lt;")
++        .replace(">", "&gt;")
++        .replace('"', "&quot;")
++    )
++
++
++def load_stats() -> dict[str, str]:
++    stats = DEFAULT_STATS.copy()
++    if STATS_PATH.exists():
++        stats.update({k: str(v) for k, v in json.loads(STATS_PATH.read_text()).items()})
++    return stats
++
++
++def build_svg(ascii_lines: list[str], profile: dict[str, str]) -> str:
++    ascii_x = 24
++    ascii_y = 92
++    line_h = 14
++    info_x = 250
++    info_y = 92
++    info_line_h = 17
++    value_x = 500
++
++    ascii_blocks = []
++    for i, line in enumerate(ascii_lines):
++        y = ascii_y + i * line_h
++        ascii_blocks.append(
++            f'<text x="{ascii_x}" y="{y}" class="ascii">{esc(line)}</text>'
++        )
++
++    info_blocks = []
++    for i, (label, key) in enumerate(FIELDS):
++        y = info_y + i * info_line_h
++        if key is None:
++            info_blocks.append(
++                f'<text x="{info_x}" y="{y}" class="label">{esc(label)}</text>'
++            )
++            continue
++
++        value = profile[key]
++        label_text = f"{label}:"
++        if label.strip() in {"Website", "LinkedIn", "X / Twitter"}:
++            if "Website" in label:
++                href = f"https://{value}"
++                display = value
++            elif "LinkedIn" in label:
++                href = f"https://www.linkedin.com/in/{value}/"
++                display = value
++            else:
++                href = f"https://x.com/{value}"
++                display = f"@{value}"
++
++            info_blocks.append(
++                f'<text x="{info_x}" y="{y}"><tspan class="label">{esc(label_text)} </tspan></text>'
++                f'<a href="{href}"><text x="{value_x}" y="{y}" class="link">{esc(display)}</text></a>'
++            )
++        else:
++            info_blocks.append(
++                f'<text x="{info_x}" y="{y}"><tspan class="label">{esc(label_text)} </tspan>'
++                f'<tspan x="{value_x}" class="value">{esc(value)}</tspan></text>'
++            )
++
++    content_h = max(
++        ascii_y + len(ascii_lines) * line_h,
++        info_y + len(FIELDS) * info_line_h,
++    )
++    height = content_h + 36
++
++    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="860" height="{height}" viewBox="0 0 860 {height}" role="img" aria-label="Shashank SN neofetch profile">
++  <defs>
++    <style>
++      .bg {{ fill: #0d1117; }}
++      .frame {{ fill: none; stroke: #30363d; stroke-width: 1; }}
++      .titlebar {{ fill: #161b22; }}
++      .title {{ font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; fill: #c9d1d9; }}
++      .prompt {{ font: 600 14px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #58a6ff; }}
++      .divider {{ stroke: #30363d; stroke-width: 1; }}
++      .ascii {{ font: 12px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #8b949e; }}
++      .label {{ font: 600 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #d29922; }}
++      .value {{ font: 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #e6edf3; }}
++      .link {{ font: 13px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; fill: #58a6ff; }}
++      a {{ text-decoration: none; }}
++    </style>
++  </defs>
++  <rect class="bg" width="860" height="{height}" rx="8"/>
++  <rect class="frame" x="0.5" y="0.5" width="859" height="{height - 1}" rx="8"/>
++  <rect class="titlebar" x="1" y="1" width="858" height="34" rx="8"/>
++  <rect class="titlebar" x="1" y="18" width="858" height="17"/>
++  <text x="16" y="22" class="title">shashank-sn / README.md</text>
++  <text x="24" y="62" class="prompt">{esc(profile["hostname"])}</text>
++  <line class="divider" x1="24" y1="72" x2="836" y2="72"/>
++  {''.join(ascii_blocks)}
++  {''.join(info_blocks)}
++</svg>
++'''
++
++
++def main() -> None:
++    ascii_lines = [
++        line.rstrip()
++        for line in ASCII_PATH.read_text(encoding="utf-8").splitlines()
++        if line.strip()
++    ]
++    profile = load_stats()
++    OUTPUT_PATH.write_text(build_svg(ascii_lines, profile), encoding="utf-8")
++    print(f"wrote {OUTPUT_PATH}")
++
++
++if __name__ == "__main__":
++    main()
+-- 
+2.43.0
+
