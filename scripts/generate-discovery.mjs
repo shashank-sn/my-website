@@ -69,6 +69,15 @@ const pages = [
     changefreq: "monthly",
     summary: "a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.",
   },
+  {
+    title: "hold your voice - open-source writing tool",
+    path: "/holdyourvoice/",
+    markdownPath: "/holdyourvoice.md",
+    priority: "0.8",
+    changefreq: "monthly",
+    updated: "2026-08-09",
+    summary: "a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.",
+  },
 ];
 
 // noindex — not in sitemap/llms
@@ -116,7 +125,7 @@ function pageMarkdown(page) {
 
 source: ${siteUrl}${page.path}
 canonical: ${siteUrl}${page.path}
-last updated: ${updated}
+last updated: ${page.updated ?? updated}
 
 ${page.summary}
 
@@ -134,7 +143,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((page) => `  <url>
     <loc>${xmlEscape(siteUrl + page.path)}</loc>
-    <lastmod>${updated}</lastmod>
+    <lastmod>${page.updated ?? updated}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join("\n")}

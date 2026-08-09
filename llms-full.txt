@@ -64,6 +64,13 @@
 - update cadence: monthly
 - summary: a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.
 
+### hold your voice - open-source writing tool
+
+- url: https://shashanksn.xyz/holdyourvoice/
+- markdown: https://shashanksn.xyz/holdyourvoice.md
+- update cadence: monthly
+- summary: a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.
+
 
 ## crawler and agent guidance
 
