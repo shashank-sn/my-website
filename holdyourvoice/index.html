@@ -43,6 +43,14 @@
     section#open-source .open-card p{font-size:17px;max-width:39ch}
     section#open-source .open-meta{display:none}
     @media (max-width:760px){.steps{grid-template-columns:1fr}.step:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-10px;transform:translateX(-50%) rotate(90deg)}section#open-source .open-card::after{position:static;display:block;margin-top:25px;line-height:1.7}}
+    /* workflow cards share one visual baseline */
+    .workflow .card{display:flex;flex-direction:column;min-height:640px}
+    .workflow .workflow-head{min-height:300px}
+    .workflow .mock{margin-top:auto;min-height:284px;padding:22px}
+    .workflow .mock code{display:flex;align-items:center;height:36px;padding:0 11px;border:1px solid var(--border);border-radius:7px;background:rgba(255,255,255,.04)}
+    .workflow .card:first-child .mock{min-height:284px}
+    .workflow .card:first-child .mock::before{height:36px;box-sizing:border-box}
+    @media (max-width:760px){.workflow .card{min-height:0}.workflow .workflow-head{min-height:0}.workflow .mock{min-height:230px}}
   </style>
 </head>
 <body>
