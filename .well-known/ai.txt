@@ -13,6 +13,7 @@ preferred sources:
 - https://shashanksn.xyz/brand-engine/
 - https://shashanksn.xyz/newsletter-engine/
 - https://shashanksn.xyz/signal-engine/
+- https://shashanksn.xyz/holdyourvoice/
 
 machine-readable summaries:
 - https://shashanksn.xyz/llms.txt
@@ -25,3 +26,4 @@ machine-readable summaries:
 - https://shashanksn.xyz/brand-engine.md
 - https://shashanksn.xyz/newsletter-engine.md
 - https://shashanksn.xyz/signal-engine.md
+- https://shashanksn.xyz/holdyourvoice.md
