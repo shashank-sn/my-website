@@ -11,8 +11,6 @@ personal website and portfolio of [shashank sn](https://shashanksn.xyz). built w
 | `/ghost` | claude ghostwriter skill product |
 | `/websites-and-apps/` | shipped product portfolio |
 | `/opensource/` | open source projects |
-| `/roast/` | hyv roast deck (noindex) |
-| `/roast-nr/` | hyv roast deck nr (noindex) |
 
 ## tech
 
@@ -55,10 +53,6 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 │   ├── index.html
 │   ├── just-nai.png
 │   └── happy-beginnings.png
-├── roast/                   # hyv roast deck (noindex)
-│   └── index.html
-├── roast-nr/                # hyv roast deck nr (noindex)
-│   └── index.html
 ├── cbo/                     # fractional cbo offer page
 │   └── index.html
 ├── opensource/              # open source projects
@@ -67,8 +61,6 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 ├── brand-engine/            # brand engine offer
 ├── newsletter-engine/       # newsletter engine offer
 ├── signal-engine/           # signal engine offer
-├── hyv-roast-images/        # shared roast deck assets
-│   └── apps/
 ├── cloudflare/
 │   ├── worker.mjs           # cf worker: https + security headers
 │   └── dist/                # build output (gitignored)
