@@ -51,6 +51,23 @@
     .workflow .card:first-child .mock{min-height:284px}
     .workflow .card:first-child .mock::before{height:36px;box-sizing:border-box}
     @media (max-width:760px){.workflow .card{min-height:0}.workflow .workflow-head{min-height:0}.workflow .mock{min-height:230px}}
+    /* text-led open source section */
+    section#open-source{background:var(--bg)}
+    .open-source-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr);gap:clamp(42px,8vw,110px);padding-top:22px}
+    .open-source-layout .display{max-width:12ch}
+    .open-source-copy{font-size:clamp(21px,2.6vw,31px);line-height:1.35;letter-spacing:-.03em;max-width:21ch;margin-top:22px}
+    .open-source-copy span{display:block;color:var(--muted);font-size:16px;line-height:1.6;letter-spacing:0;max-width:42ch;margin-top:22px}
+    .open-source-link{display:inline-flex;align-items:center;gap:8px;margin-top:30px;color:var(--mint);font-size:14px;font-weight:600}
+    .open-source-link:hover{color:var(--text)}
+    .open-source-notes{align-self:end;border-left:1px solid var(--border);padding-left:26px;display:grid;gap:24px}
+    .open-source-note{font-size:14px;color:var(--muted)}
+    .open-source-note b{display:block;color:var(--text);font-size:14px;font-weight:550;margin-bottom:4px}
+    .final{background:#08090a;color:var(--text);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .final .display{color:var(--text)}
+    .final .lead{color:var(--muted)}
+    .final .button{background:var(--text);color:#08090a}
+    .final .button.ghost{background:transparent;color:var(--text);border-color:var(--border)}
+    @media (max-width:760px){.open-source-layout{grid-template-columns:1fr;gap:38px}.open-source-notes{border-left:0;border-top:1px solid var(--border);padding:23px 0 0;grid-template-columns:repeat(3,1fr);gap:15px}.open-source-note{font-size:12px}.open-source-note b{font-size:13px}}
   </style>
 </head>
 <body>
@@ -72,6 +89,7 @@
   </main>
   <footer><div class="wrap footer-inner"><a class="brand" href="../index.html">shashank <span>sn</span></a><span>hold your voice · mit licensed</span><div class="footer-links"><a href="https://github.com/shashank-sn/holdyourvoice" target="_blank" rel="noopener">github</a><a href="../opensource/index.html">open source</a></div></div></footer>
   <script>
+    document.querySelector('#open-source .wrap').innerHTML=`<div class="open-source-layout reveal"><div><p class="eyebrow">open source</p><h2 class="display">your writing tool should not be a <em>black box.</em></h2><p class="open-source-copy">if it is going to shape your work, you should be able to inspect it.<span>hold your voice is local-first and mit licensed. read the code, run it on your machine, and adapt the workflow to the way you actually write.</span></p><a class="open-source-link" href="https://github.com/shashank-sn/holdyourvoice" target="_blank" rel="noopener">view the source on github <span aria-hidden="true">→</span></a></div><div class="open-source-notes"><div class="open-source-note"><b>local-first</b>drafts stay on your machine during local scans.</div><div class="open-source-note"><b>public by default</b>the code, issues, and changes are visible on github.</div><div class="open-source-note"><b>mit licensed</b>use it, change it, and share what you build.</div></div></div>`;
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
   </script>
 </body>
