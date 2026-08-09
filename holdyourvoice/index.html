@@ -68,6 +68,32 @@
     .final .button{background:var(--text);color:#08090a}
     .final .button.ghost{background:transparent;color:var(--text);border-color:var(--border)}
     @media (max-width:760px){.open-source-layout{grid-template-columns:1fr;gap:38px}.open-source-notes{border-left:0;border-top:1px solid var(--border);padding:23px 0 0;grid-template-columns:repeat(3,1fr);gap:15px}.open-source-note{font-size:12px}.open-source-note b{font-size:13px}}
+    /* writing states: one continuous drafting surface */
+    .writing-flow{margin-top:44px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .writing-flow-cap{display:flex;justify-content:space-between;gap:20px;padding:13px 0;color:var(--dim);font-size:12px}
+    .writing-flow-cap b{font-weight:500;color:var(--text)}
+    .flow-stages{display:grid;grid-template-columns:repeat(3,1fr)}
+    .flow-stage{padding:30px 28px 34px;position:relative;min-height:370px}
+    .flow-stage+ .flow-stage{border-left:1px solid var(--border)}
+    .flow-stage:not(:last-child)::after{content:'→';position:absolute;right:-11px;top:38px;z-index:1;display:grid;place-items:center;width:22px;height:22px;border:1px solid var(--border);border-radius:50%;background:var(--bg);color:var(--amber);font-size:12px}
+    .flow-index{color:var(--amber);font-size:12px;margin-bottom:18px}
+    .flow-stage h3{font-size:22px;letter-spacing:-.03em}
+    .flow-stage > p{color:var(--muted);font-size:14px;line-height:1.55;max-width:25ch;margin-top:8px}
+    .flow-sheet{margin-top:34px;padding-top:17px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+    .flow-file{color:var(--text);font-size:13px;margin-bottom:16px}
+    .flow-line{height:5px;border-radius:99px;background:rgba(255,255,255,.12);margin-top:10px}
+    .flow-line.short{width:68%}.flow-line.mid{width:84%}
+    .flow-issue{display:flex;gap:8px;padding:9px 0;border-top:1px solid var(--border);color:var(--rose)}
+    .flow-issue:first-of-type{border-top:0}.flow-issue span{color:var(--dim);min-width:18px}
+    .flow-rewrite{color:var(--text);font-size:15px;line-height:1.65}.flow-rewrite mark{background:transparent;color:var(--mint)}
+    .flow-score{margin-top:18px;color:var(--mint);font-size:13px}
+    /* source clarity without a product card */
+    .open-source-copy{max-width:26ch}
+    .open-source-copy span{max-width:49ch}
+    .open-source-notes{gap:0}
+    .open-source-note{padding:18px 0;border-top:1px solid var(--border)}
+    .open-source-note:last-child{border-bottom:1px solid var(--border)}
+    @media (max-width:760px){.flow-stages{grid-template-columns:1fr}.flow-stage{min-height:0;padding:28px 0}.flow-stage+ .flow-stage{border-left:0;border-top:1px solid var(--border)}.flow-stage:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-11px;transform:translateX(-50%) rotate(90deg)}.flow-sheet{margin-top:25px}.writing-flow-cap{padding:13px 0}.writing-flow-cap span:last-child{display:none}}
   </style>
 </head>
 <body>
@@ -89,7 +115,8 @@
   </main>
   <footer><div class="wrap footer-inner"><a class="brand" href="../index.html">shashank <span>sn</span></a><span>hold your voice · mit licensed</span><div class="footer-links"><a href="https://github.com/shashank-sn/holdyourvoice" target="_blank" rel="noopener">github</a><a href="../opensource/index.html">open source</a></div></div></footer>
   <script>
-    document.querySelector('#open-source .wrap').innerHTML=`<div class="open-source-layout reveal"><div><p class="eyebrow">open source</p><h2 class="display">your writing tool should not be a <em>black box.</em></h2><p class="open-source-copy">if it is going to shape your work, you should be able to inspect it.<span>hold your voice is local-first and mit licensed. read the code, run it on your machine, and adapt the workflow to the way you actually write.</span></p><a class="open-source-link" href="https://github.com/shashank-sn/holdyourvoice" target="_blank" rel="noopener">view the source on github <span aria-hidden="true">→</span></a></div><div class="open-source-notes"><div class="open-source-note"><b>local-first</b>drafts stay on your machine during local scans.</div><div class="open-source-note"><b>public by default</b>the code, issues, and changes are visible on github.</div><div class="open-source-note"><b>mit licensed</b>use it, change it, and share what you build.</div></div></div>`;
+    document.querySelector('.workflow').outerHTML=`<div class="writing-flow reveal"><div class="writing-flow-cap"><b>draft state</b><span>input → inspect → rewrite</span></div><div class="flow-stages"><article class="flow-stage"><p class="flow-index">01 / input</p><h3>bring the draft</h3><p>paste an output from the ai app you already use, or point hyv at the file.</p><div class="flow-sheet"><p class="flow-file">newsletter-draft.md</p><i class="flow-line"></i><i class="flow-line mid"></i><i class="flow-line short"></i></div></article><article class="flow-stage"><p class="flow-index">02 / inspect</p><h3>see the pattern</h3><p>the scan tells you what sounds generic and where it appears.</p><div class="flow-sheet"><p class="flow-file">6 findings</p><div class="flow-issue"><span>l3</span>ai vocabulary · robust</div><div class="flow-issue"><span>l7</span>connector · moreover</div><div class="flow-issue"><span>l12</span>cadence · too even</div></div></article><article class="flow-stage"><p class="flow-index">03 / rewrite</p><h3>keep the voice</h3><p>use the findings with your profile, then decide what earns a place in the final draft.</p><div class="flow-sheet"><p class="flow-file">after rewrite</p><p class="flow-rewrite">last march i shipped a dashboard for a client. <mark>nobody had logged in since launch.</mark></p><p class="flow-score">score 91 / 100 · clean</p></div></article></div></div>`;
+    document.querySelector('#open-source .wrap').innerHTML=`<div class="open-source-layout reveal"><div><p class="eyebrow">open source</p><h2 class="display">a writing tool should survive <em>inspection.</em></h2><p class="open-source-copy">if hyv flags a line in your work, you should be able to see what it is looking for.<span>the project is public so you can trace the checks, change the workflow, and decide how much authority it gets over your writing. it is a tool you can disagree with and improve.</span></p><a class="open-source-link" href="https://github.com/shashank-sn/holdyourvoice" target="_blank" rel="noopener">read the source on github <span aria-hidden="true">→</span></a></div><div class="open-source-notes"><div class="open-source-note"><b>voice dna</b>a separate view of the habits that make your writing recognisable.</div><div class="open-source-note"><b>ai editor</b>a separate scan for generic patterns and structural tells.</div><div class="open-source-note"><b>mit licensed</b>audit it, adapt it, and share the version that works for you.</div></div></div>`;
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
   </script>
 </body>
