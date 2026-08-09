@@ -11,6 +11,7 @@ personal website and portfolio of [shashank sn](https://shashanksn.xyz). built w
 | `/ghost` | claude ghostwriter skill product |
 | `/websites-and-apps/` | shipped product portfolio |
 | `/opensource/` | open source projects |
+| `/holdyourvoice/` | hold your voice open-source project |
 
 ## tech
 
@@ -56,6 +57,8 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 ├── cbo/                     # fractional cbo offer page
 │   └── index.html
 ├── opensource/              # open source projects
+│   └── index.html
+├── holdyourvoice/            # hold your voice project page
 │   └── index.html
 ├── brand-arsenal/           # brand arsenal offer
 ├── brand-engine/            # brand engine offer

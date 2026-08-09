@@ -21,6 +21,7 @@ const publicPaths = [
   "ghost.md",
   "home.html",
   "hold your voice.png",
+  "holdyourvoice",
   "humans.txt",
   "ai.txt",
   "index.html",
