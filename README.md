@@ -11,7 +11,7 @@ personal website and portfolio of [shashank sn](https://shashanksn.xyz). built w
 | `/ghost` | claude ghostwriter skill product |
 | `/websites-and-apps/` | shipped product portfolio |
 | `/opensource/` | open source projects |
-| `/holdyourvoice/` | hold your voice open-source project |
+| `/holdyourvoice/` | responsive hold your voice open-source landing page |
 
 ## tech
 
