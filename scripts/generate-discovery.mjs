@@ -1,8 +1,10 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const siteUrl = "https://shashanksn.xyz";
 const updated = "2026-05-17";
+const thoughtPosts = JSON.parse(readFileSync("thoughts/posts.json", "utf8"));
+const thoughtsUpdated = thoughtPosts.reduce((latest, post) => post.updated > latest ? post.updated : latest, "");
 
 const pages = [
   {
@@ -84,18 +86,18 @@ const pages = [
     markdownPath: "/thoughts.md",
     priority: "0.8",
     changefreq: "weekly",
-    updated: "2026-08-10",
+    updated: thoughtsUpdated,
     summary: "notes on brand, business, and the work behind the work by shashank sn.",
   },
-  {
-    title: "inside guvi's two guinness world records strategy",
-    path: "/thoughts/inside-guvis-two-guinness-world-records-strategy/",
-    markdownPath: "/thoughts/inside-guvis-two-guinness-world-records-strategy.md",
+  ...thoughtPosts.map((post) => ({
+    title: post.title.replace(/\.$/, ""),
+    path: `/thoughts/${post.slug}/`,
+    markdownPath: `/thoughts/${post.slug}.md`,
     priority: "0.7",
     changefreq: "monthly",
-    updated: "2026-08-10",
-    summary: "a first-hand case study of how guvi used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.",
-  },
+    updated: post.updated,
+    summary: post.summary,
+  })),
 ];
 
 // noindex — not in sitemap/llms

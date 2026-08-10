@@ -16,6 +16,13 @@ preferred sources:
 - https://shashanksn.xyz/holdyourvoice/
 - https://shashanksn.xyz/thoughts/
 - https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy/
+- https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust/
+- https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/
+- https://shashanksn.xyz/thoughts/the-scroll-test/
+- https://shashanksn.xyz/thoughts/the-product-is-the-possibility/
+- https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one/
+- https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets/
+- https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail/
 
 machine-readable summaries:
 - https://shashanksn.xyz/llms.txt
@@ -31,3 +38,10 @@ machine-readable summaries:
 - https://shashanksn.xyz/holdyourvoice.md
 - https://shashanksn.xyz/thoughts.md
 - https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy.md
+- https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust.md
+- https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments.md
+- https://shashanksn.xyz/thoughts/the-scroll-test.md
+- https://shashanksn.xyz/thoughts/the-product-is-the-possibility.md
+- https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one.md
+- https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets.md
+- https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail.md

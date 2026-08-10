@@ -1,10 +1,10 @@
-# inside guvi's two guinness world records strategy
+# inside GUVI’s two guinness world records strategy
 
 source: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy/
 canonical: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy/
 last updated: 2026-08-10
 
-a first-hand case study of how guvi used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.
+a first-hand case study of how GUVI used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.
 
 ## useful context
 
