@@ -1,8 +1,10 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const siteUrl = "https://shashanksn.xyz";
 const updated = "2026-05-17";
+const thoughtPosts = JSON.parse(readFileSync("thoughts/posts.json", "utf8"));
+const thoughtsUpdated = thoughtPosts.reduce((latest, post) => post.updated > latest ? post.updated : latest, "");
 
 const pages = [
   {
@@ -78,6 +80,24 @@ const pages = [
     updated: "2026-08-09",
     summary: "a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.",
   },
+  {
+    title: "thoughts - shashank sn",
+    path: "/thoughts/",
+    markdownPath: "/thoughts.md",
+    priority: "0.8",
+    changefreq: "weekly",
+    updated: thoughtsUpdated,
+    summary: "notes on brand, business, and the work behind the work by shashank sn.",
+  },
+  ...thoughtPosts.map((post) => ({
+    title: post.title.replace(/\.$/, ""),
+    path: `/thoughts/${post.slug}/`,
+    markdownPath: `/thoughts/${post.slug}.md`,
+    priority: "0.7",
+    changefreq: "monthly",
+    updated: post.updated,
+    summary: post.summary,
+  })),
 ];
 
 // noindex — not in sitemap/llms

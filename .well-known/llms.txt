@@ -17,6 +17,15 @@ https://shashanksn.xyz/
 - [newsletter engine - email list to revenue in 30 days](https://shashanksn.xyz/newsletter-engine/): a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.
 - [signal engine - high-leverage writing framework](https://shashanksn.xyz/signal-engine/): a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.
 - [hold your voice - open-source writing tool](https://shashanksn.xyz/holdyourvoice/): a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.
+- [thoughts - shashank sn](https://shashanksn.xyz/thoughts/): notes on brand, business, and the work behind the work by shashank sn.
+- [inside GUVI’s two guinness world records strategy](https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy/): a first-hand case study of how GUVI used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.
+- [what my parents knew about trust](https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust/): thirty-five years inside a family printing press taught shashank what recommendation really costs.
+- [the scar that started dodo payments](https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/): a case study of a payments company built from the revenue its founder could not collect.
+- [the scroll test](https://shashanksn.xyz/thoughts/the-scroll-test/): interview notes on making a company publication worth reading on its own.
+- [the product is the possibility](https://shashanksn.xyz/thoughts/the-product-is-the-possibility/): an essay about the value that lives above the artifact a consultant hands over.
+- [they went with the cheaper one](https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one/): what selling specialty coffee taught shashank about being easier to choose.
+- [the more you explain, the worse it gets](https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets/): a short note about why adding words rarely fixes unsettled positioning.
+- [the five-second test most founders fail](https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail/): a human-first test for finding repeated confusion on a homepage.
 
 ## text mirrors
 
@@ -29,6 +38,15 @@ https://shashanksn.xyz/
 - https://shashanksn.xyz/newsletter-engine.md
 - https://shashanksn.xyz/signal-engine.md
 - https://shashanksn.xyz/holdyourvoice.md
+- https://shashanksn.xyz/thoughts.md
+- https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy.md
+- https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust.md
+- https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments.md
+- https://shashanksn.xyz/thoughts/the-scroll-test.md
+- https://shashanksn.xyz/thoughts/the-product-is-the-possibility.md
+- https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one.md
+- https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets.md
+- https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail.md
 
 ## contact
 

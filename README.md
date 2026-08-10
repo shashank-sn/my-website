@@ -12,6 +12,9 @@ personal website and portfolio of [shashank sn](https://shashanksn.xyz). built w
 | `/websites-and-apps/` | shipped product portfolio |
 | `/opensource/` | open source projects |
 | `/holdyourvoice/` | responsive hold your voice open-source landing page |
+| `/thoughts/` | editorial index for shashank’s writing and case studies |
+| `/thoughts/inside-guvis-two-guinness-world-records-strategy/` | GUVI brand strategy case study |
+| `/thoughts/*/` | eight articles generated into one consistent grid from `thoughts/posts.json` |
 
 ## tech
 
@@ -60,6 +63,9 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 │   └── index.html
 ├── holdyourvoice/            # hold your voice project page
 │   └── index.html
+├── thoughts/                 # manifest, publishing guide, thumbnails, and published posts
+│   ├── index.html
+│   └── inside-guvis-two-guinness-world-records-strategy/
 ├── brand-arsenal/           # brand arsenal offer
 ├── brand-engine/            # brand engine offer
 ├── newsletter-engine/       # newsletter engine offer

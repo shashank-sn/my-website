@@ -40,6 +40,8 @@ const publicPaths = [
   "signal-engine",
   "signal-engine.md",
   "sitemap.xml",
+  "thoughts",
+  "thoughts.md",
   "websites-and-apps",
   "websites-and-apps.md",
   "gostocks-presentation",
@@ -47,6 +49,7 @@ const publicPaths = [
   "proposal",
 ];
 
+execFileSync(process.execPath, ["scripts/generate-thoughts-index.mjs"], { stdio: "inherit" });
 execFileSync(process.execPath, ["scripts/generate-discovery.mjs"], { stdio: "inherit" });
 
 rmSync(outputDir, { recursive: true, force: true });
@@ -61,4 +64,5 @@ for (const path of publicPaths) {
   cpSync(path, target, { recursive: true });
 }
 
+execFileSync(process.execPath, ["scripts/check-thoughts-release.mjs"], { stdio: "inherit" });
 console.log(`Cloudflare assets written to ${outputDir}/ with ${publicPaths.length} public entries.`);

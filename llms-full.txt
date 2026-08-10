@@ -71,6 +71,69 @@
 - update cadence: monthly
 - summary: a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.
 
+### thoughts - shashank sn
+
+- url: https://shashanksn.xyz/thoughts/
+- markdown: https://shashanksn.xyz/thoughts.md
+- update cadence: weekly
+- summary: notes on brand, business, and the work behind the work by shashank sn.
+
+### inside GUVI’s two guinness world records strategy
+
+- url: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy/
+- markdown: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy.md
+- update cadence: monthly
+- summary: a first-hand case study of how GUVI used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.
+
+### what my parents knew about trust
+
+- url: https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust/
+- markdown: https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust.md
+- update cadence: monthly
+- summary: thirty-five years inside a family printing press taught shashank what recommendation really costs.
+
+### the scar that started dodo payments
+
+- url: https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/
+- markdown: https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments.md
+- update cadence: monthly
+- summary: a case study of a payments company built from the revenue its founder could not collect.
+
+### the scroll test
+
+- url: https://shashanksn.xyz/thoughts/the-scroll-test/
+- markdown: https://shashanksn.xyz/thoughts/the-scroll-test.md
+- update cadence: monthly
+- summary: interview notes on making a company publication worth reading on its own.
+
+### the product is the possibility
+
+- url: https://shashanksn.xyz/thoughts/the-product-is-the-possibility/
+- markdown: https://shashanksn.xyz/thoughts/the-product-is-the-possibility.md
+- update cadence: monthly
+- summary: an essay about the value that lives above the artifact a consultant hands over.
+
+### they went with the cheaper one
+
+- url: https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one/
+- markdown: https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one.md
+- update cadence: monthly
+- summary: what selling specialty coffee taught shashank about being easier to choose.
+
+### the more you explain, the worse it gets
+
+- url: https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets/
+- markdown: https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets.md
+- update cadence: monthly
+- summary: a short note about why adding words rarely fixes unsettled positioning.
+
+### the five-second test most founders fail
+
+- url: https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail/
+- markdown: https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail.md
+- update cadence: monthly
+- summary: a human-first test for finding repeated confusion on a homepage.
+
 
 ## crawler and agent guidance
 
