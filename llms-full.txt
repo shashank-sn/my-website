@@ -71,6 +71,20 @@
 - update cadence: monthly
 - summary: a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.
 
+### thoughts - shashank sn
+
+- url: https://shashanksn.xyz/thoughts/
+- markdown: https://shashanksn.xyz/thoughts.md
+- update cadence: weekly
+- summary: notes on brand, business, and the work behind the work by shashank sn.
+
+### inside guvi's two guinness world records strategy
+
+- url: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy/
+- markdown: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy.md
+- update cadence: monthly
+- summary: a first-hand case study of how guvi used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.
+
 
 ## crawler and agent guidance
 

@@ -78,6 +78,24 @@ const pages = [
     updated: "2026-08-09",
     summary: "a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.",
   },
+  {
+    title: "thoughts - shashank sn",
+    path: "/thoughts/",
+    markdownPath: "/thoughts.md",
+    priority: "0.8",
+    changefreq: "weekly",
+    updated: "2026-08-10",
+    summary: "notes on brand, business, and the work behind the work by shashank sn.",
+  },
+  {
+    title: "inside guvi's two guinness world records strategy",
+    path: "/thoughts/inside-guvis-two-guinness-world-records-strategy/",
+    markdownPath: "/thoughts/inside-guvis-two-guinness-world-records-strategy.md",
+    priority: "0.7",
+    changefreq: "monthly",
+    updated: "2026-08-10",
+    summary: "a first-hand case study of how guvi used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.",
+  },
 ];
 
 // noindex — not in sitemap/llms

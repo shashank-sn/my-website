@@ -40,6 +40,7 @@ const publicPaths = [
   "signal-engine",
   "signal-engine.md",
   "sitemap.xml",
+  "thoughts",
   "websites-and-apps",
   "websites-and-apps.md",
   "gostocks-presentation",
