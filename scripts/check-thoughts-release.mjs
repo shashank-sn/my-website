@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 
 const posts = JSON.parse(readFileSync("thoughts/posts.json", "utf8"));
 const index = readFileSync("thoughts/index.html", "utf8");
@@ -44,8 +44,11 @@ for (const post of posts) {
   assert(article.includes(`${imageStem}-480.webp 480w`), `Article is missing the 480w source for ${post.slug}`);
   assert(article.includes(`${imageStem}-960.webp 960w`), `Article is missing the 960w source for ${post.slug}`);
   assert(article.includes("collection.css?v=20260810-3"), `Article stylesheet version drifted for ${post.slug}`);
-  assert(sitemap.includes(`<loc>${publicUrl}</loc>`), `Sitemap is missing ${post.slug}`);
-  assert(sitemap.includes(`<lastmod>${post.updated}</lastmod>`), `Sitemap is missing update date ${post.updated}`);
+  const sitemapBlock = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)]
+    .map((match) => match[1])
+    .find((block) => block.includes(`<loc>${publicUrl}</loc>`));
+  assert(sitemapBlock, `Sitemap is missing ${post.slug}`);
+  assert(sitemapBlock.includes(`<lastmod>${post.updated}</lastmod>`), `Sitemap has the wrong update date for ${post.slug}`);
   assert(llms.includes(publicUrl), `llms.txt is missing ${post.slug}`);
   assert(llms.includes(`${publicUrl.slice(0, -1)}.md`), `llms.txt is missing the text mirror for ${post.slug}`);
 }
@@ -53,5 +56,35 @@ for (const post of posts) {
 assert((index.match(/class="story-card"/g) ?? []).length === posts.length, "Thoughts card count does not match the manifest");
 assert(existsSync("thoughts.md"), "Generated thoughts.md is missing");
 assert(existsSync("cloudflare/dist/thoughts.md"), "Cloudflare bundle is missing thoughts.md");
+
+const sitemapUrls = [...sitemap.matchAll(/<loc>https:\/\/shashanksn\.xyz([^<]+)<\/loc>/g)].map((match) => match[1]);
+for (const publicPath of sitemapUrls) {
+  const markdownPath = publicPath === "/"
+    ? "index.md"
+    : publicPath.startsWith("/thoughts/") && publicPath !== "/thoughts/"
+      ? `${publicPath.slice(1, -1)}.md`
+      : `${publicPath.slice(1).replace(/\/$/, "")}.md`;
+  assert(existsSync(markdownPath), `Sitemap page is missing Markdown twin: ${markdownPath}`);
+  assert(existsSync(`cloudflare/dist/${markdownPath}`), `Cloudflare bundle is missing Markdown twin: ${markdownPath}`);
+}
+
+function walk(dir) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const path = `${dir}/${entry.name}`;
+    return entry.isDirectory() ? walk(path) : [path];
+  });
+}
+
+for (const htmlPath of walk("cloudflare/dist").filter((path) => path.endsWith(".html"))) {
+  const relative = htmlPath.slice("cloudflare/dist/".length);
+  const markdownRelative = relative === "index.html"
+    ? "index.md"
+    : relative.endsWith("/index.html")
+      ? `${relative.slice(0, -"/index.html".length)}.md`
+      : relative.replace(/\.html$/, ".md");
+  const markdownPath = `cloudflare/dist/${markdownRelative}`;
+  assert(existsSync(markdownPath), `Deployed HTML is missing Markdown twin: ${markdownRelative}`);
+  assert(readFileSync(markdownPath, "utf8").trim().split(/\s+/).length >= 3, `Markdown twin is empty: ${markdownRelative}`);
+}
 
 console.log(`Thoughts release checks passed for ${posts.length} posts.`);

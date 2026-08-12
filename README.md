@@ -14,7 +14,7 @@ personal website and portfolio of [shashank sn](https://shashanksn.xyz). built w
 | `/holdyourvoice/` | responsive hold your voice open-source landing page |
 | `/thoughts/` | editorial index for shashank’s writing and case studies |
 | `/thoughts/inside-guvis-two-guinness-world-records-strategy/` | GUVI brand strategy case study |
-| `/thoughts/*/` | eight articles generated into one consistent grid from `thoughts/posts.json` |
+| `/thoughts/*/` | fourteen articles generated into one consistent grid from `thoughts/posts.json` |
 
 ## tech
 
@@ -34,6 +34,18 @@ open index.html
 open websites-and-apps/index.html
 ```
 
+## publishing thoughts
+
+`thoughts/posts.json` is the source of truth for the grid, discovery metadata, and release inventory. each thought ships with one article page, one markdown twin for agents, and three responsive image sizes.
+
+the current collection includes the GUVI case study, seven earlier essays, and six rewritten newsletter editions: the trust ladder, scissors and feedback, naming your company, the day a client fired me politely, the death of storytelling, and best practices are a trap.
+
+```bash
+node scripts/build-cloudflare-assets.mjs
+```
+
+the build regenerates the thoughts grid, sitemap, `llms.txt`, agent-readable `.md` pages, and `cloudflare/dist`. it fails when a public route, markdown twin, or responsive thought image is missing.
+
 ## deploy
 
 ```bash
@@ -52,7 +64,8 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 ├── menta-site.css           # global design system
 ├── _headers                 # security + content-type headers
 ├── _redirects               # http→https 301s
-├── sitemap.xml              # search index
+├── sitemap.xml              # generated search index
+├── *.md                     # agent-readable twins of public pages
 ├── websites-and-apps/       # portfolio page
 │   ├── index.html
 │   ├── just-nai.png
@@ -64,9 +77,11 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 ├── holdyourvoice/            # hold your voice project page
 │   └── index.html
 ├── thoughts/                 # manifest, publishing guide, thumbnails, and published posts
-│   ├── index.html
-│   └── inside-guvis-two-guinness-world-records-strategy/
-├── brand-arsenal/           # brand arsenal offer
+│   ├── posts.json           # source of truth for the collection
+│   ├── README.md            # publishing and image contract
+│   ├── index.html           # generated fourteen-card grid
+│   ├── *.md                 # agent-readable article twins
+│   └── */index.html         # article pages
 ├── brand-engine/            # brand engine offer
 ├── newsletter-engine/       # newsletter engine offer
 ├── signal-engine/           # signal engine offer
@@ -75,6 +90,8 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 │   └── dist/                # build output (gitignored)
 ├── scripts/
 │   ├── build-cloudflare-assets.mjs
+│   ├── check-thoughts-release.mjs
+│   ├── generate-thoughts-index.mjs
 │   └── generate-discovery.mjs
 └── wrangler.jsonc           # cloudflare config
 ```

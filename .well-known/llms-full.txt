@@ -29,19 +29,19 @@
 - update cadence: monthly
 - summary: a claude skill built around shashank's writing structure, argument logic, and idea development patterns.
 
-### brand arsenal - brand strategy micro-courses for founders
-
-- url: https://shashanksn.xyz/brand-arsenal/
-- markdown: https://shashanksn.xyz/brand-arsenal.md
-- update cadence: monthly
-- summary: a compact brand strategy system for founders who need clearer positioning, trust signals, category logic, offers, and founder voice.
-
 ### websites & apps - shashank sn
 
 - url: https://shashanksn.xyz/websites-and-apps/
 - markdown: https://shashanksn.xyz/websites-and-apps.md
 - update cadence: monthly
 - summary: selected websites and apps designed or built by shashank sn, including hold your voice, just nai, and say about us.
+
+### open source - shashank sn
+
+- url: https://shashanksn.xyz/opensource/
+- markdown: https://shashanksn.xyz/opensource.md
+- update cadence: monthly
+- summary: open-source projects by shashank sn, led by hold your voice and other public tools.
 
 ### brand engine - complete brand strategy in 21 days
 
@@ -84,6 +84,48 @@
 - markdown: https://shashanksn.xyz/thoughts/inside-guvis-two-guinness-world-records-strategy.md
 - update cadence: monthly
 - summary: a first-hand case study of how GUVI used vernacular education, proof, and two guinness world records to make its brand position hard to argue with.
+
+### the trust ladder
+
+- url: https://shashanksn.xyz/thoughts/the-trust-ladder/
+- markdown: https://shashanksn.xyz/thoughts/the-trust-ladder.md
+- update cadence: monthly
+- summary: a three-rung model for understanding the evidence that moves customers from purchase to return to referral.
+
+### how scissors and feedback built our brand
+
+- url: https://shashanksn.xyz/thoughts/how-scissors-and-feedback-built-our-brand/
+- markdown: https://shashanksn.xyz/thoughts/how-scissors-and-feedback-built-our-brand.md
+- update cadence: monthly
+- summary: how rough paper prototypes helped happy beginnings replace expensive guesses with useful customer reactions.
+
+### simple guide to naming your company
+
+- url: https://shashanksn.xyz/thoughts/simple-guide-to-naming-your-company/
+- markdown: https://shashanksn.xyz/thoughts/simple-guide-to-naming-your-company.md
+- update cadence: monthly
+- summary: a short naming process built from the imperfect names of el mejor coffee, happy beginnings, and stupidpreneur.
+
+### the day a client fired me politely
+
+- url: https://shashanksn.xyz/thoughts/the-day-a-client-fired-me-politely/
+- markdown: https://shashanksn.xyz/thoughts/the-day-a-client-fired-me-politely.md
+- update cadence: monthly
+- summary: what a polite firing taught shashank about the judgment clients expect from an outside expert.
+
+### the death of storytelling
+
+- url: https://shashanksn.xyz/thoughts/the-death-of-storytelling/
+- markdown: https://shashanksn.xyz/thoughts/the-death-of-storytelling.md
+- update cadence: monthly
+- summary: an essay about the difference between a story that transfers experience and content that only manufactures anticipation.
+
+### best practices are a trap
+
+- url: https://shashanksn.xyz/thoughts/best-practices-are-a-trap/
+- markdown: https://shashanksn.xyz/thoughts/best-practices-are-a-trap.md
+- update cadence: monthly
+- summary: a practical way to question category defaults without turning pointless rebellion into a strategy.
 
 ### what my parents knew about trust
 

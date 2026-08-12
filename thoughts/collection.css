@@ -17,7 +17,7 @@
 .story-card:hover .card-read span{transform:translateX(5px)}
 
 .story-cover{position:relative;width:min(calc(100% - 112px),960px);aspect-ratio:16/9;margin:24px auto 0;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#15171b}
-.story-source{margin-top:64px;padding:24px 0 0;border-top:1px solid var(--line);color:var(--dim);font-size:13px;line-height:1.6}
+.story-source{margin-top:64px;padding:24px 0 0;border-top:1px solid var(--line);color:#92969e;font-size:13px;line-height:1.6}
 .story-source a{color:var(--muted);border-bottom:1px solid var(--dim)}
 
 @media(min-width:721px) and (max-width:980px){.story-card{height:650px}.story-cover{width:calc(100% - 96px)}}
