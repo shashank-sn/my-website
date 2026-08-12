@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const siteUrl = "https://shashanksn.xyz";
@@ -32,20 +32,21 @@ const pages = [
     summary: "a claude skill built around shashank's writing structure, argument logic, and idea development patterns.",
   },
   {
-    title: "brand arsenal - brand strategy micro-courses for founders",
-    path: "/brand-arsenal/",
-    markdownPath: "/brand-arsenal.md",
-    priority: "0.8",
-    changefreq: "monthly",
-    summary: "a compact brand strategy system for founders who need clearer positioning, trust signals, category logic, offers, and founder voice.",
-  },
-  {
     title: "websites & apps - shashank sn",
     path: "/websites-and-apps/",
     markdownPath: "/websites-and-apps.md",
     priority: "0.8",
     changefreq: "monthly",
     summary: "selected websites and apps designed or built by shashank sn, including hold your voice, just nai, and say about us.",
+  },
+  {
+    title: "open source - shashank sn",
+    path: "/opensource/",
+    markdownPath: "/opensource.md",
+    priority: "0.8",
+    changefreq: "monthly",
+    updated: "2026-08-12",
+    summary: "open-source projects by shashank sn, led by hold your voice and other public tools.",
   },
   {
     title: "brand engine - complete brand strategy in 21 days",
@@ -140,7 +141,53 @@ function xmlEscape(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
+function htmlPathForPage(page) {
+  if (page.path === "/") return "index.html";
+  if (page.path === "/ghost") return "ghost.html";
+  return `${page.path.slice(1)}index.html`;
+}
+
+function decodeHtml(value) {
+  return value
+    .replaceAll("&nbsp;", " ")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#39;", "'")
+    .replaceAll("&rsquo;", "’")
+    .replaceAll("&lsquo;", "‘")
+    .replaceAll("&ldquo;", "“")
+    .replaceAll("&rdquo;", "”")
+    .replaceAll("&mdash;", "—")
+    .replaceAll("&ndash;", "–")
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)));
+}
+
+function htmlToMarkdown(html, baseUrl) {
+  return decodeHtml(html)
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<(head|style|script|svg|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, "")
+    .replace(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi, (_, href, label) => {
+      const resolved = href.startsWith("#") ? href : new URL(href, baseUrl).href;
+      return `[${label.replace(/<[^>]+>/g, "").trim()}](${resolved})`;
+    })
+    .replace(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi, "\n# $1\n")
+    .replace(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi, "\n## $1\n")
+    .replace(/<h3\b[^>]*>([\s\S]*?)<\/h3>/gi, "\n### $1\n")
+    .replace(/<li\b[^>]*>([\s\S]*?)<\/li>/gi, "\n- $1")
+    .replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/gi, "\n> $1\n")
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(p|div|section|article|header|footer|figure|ul|ol)>/gi, "\n")
+    .replace(/<[^>]+>/g, "")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n[ \t]+/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function pageMarkdown(page) {
+  const pageContent = htmlToMarkdown(readFileSync(htmlPathForPage(page), "utf8"), `${siteUrl}${page.path}`);
   return `# ${page.title}
 
 source: ${siteUrl}${page.path}
@@ -149,13 +196,9 @@ last updated: ${page.updated ?? updated}
 
 ${page.summary}
 
-## useful context
+## page content
 
-${facts.map((fact) => `- ${fact}`).join("\n")}
-
-## primary action
-
-visit ${siteUrl}${page.path}
+${pageContent}
 `;
 }
 
@@ -266,6 +309,13 @@ write(".well-known/ai.txt", ai);
 
 for (const page of pages) {
   write(page.markdownPath.slice(1), pageMarkdown(page));
+}
+
+for (const page of pages) {
+  const htmlPath = htmlPathForPage(page);
+  const markdownPath = page.markdownPath.slice(1);
+  if (!existsSync(htmlPath)) throw new Error(`Public page is missing HTML: ${htmlPath}`);
+  if (!existsSync(markdownPath)) throw new Error(`Public page is missing Markdown twin: ${markdownPath}`);
 }
 
 console.log(`Discovery files generated for ${pages.length} public pages.`);
