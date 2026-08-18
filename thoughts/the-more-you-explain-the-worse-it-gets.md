@@ -49,11 +49,11 @@ copy cannot settle those choices by sounding better. it can only hide the disagr
 
 remove the page and answer three questions in plain language.
 
-- 01who arrives with the problem? name a recognisable person or company.
+01. who arrives with the problem? name a recognisable person or company.
 
-- 02what are they unable to do? describe the stuck moment without your solution.
+02. what are they unable to do? describe the stuck moment without your solution.
 
-- 03what changes after the work? use an outcome they would notice.
+03. what changes after the work? use an outcome they would notice.
 
 once those answers are stable, the writing usually gets shorter on its own.
 

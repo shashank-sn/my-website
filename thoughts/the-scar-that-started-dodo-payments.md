@@ -129,14 +129,14 @@ the lesson is useful whether you sell software, coffee, or strategy. find the sc
 
 ### a short audit for your own company
 
-- 01did you personally experience the problem, or did you only notice a market gap?
-- 02does the name match the customer’s emotional state?
-- 03can the mission be said in one plain sentence?
-- 04does the homepage describe outcomes instead of machinery?
-- 05does the product experience prove the promise?
-- 06have you defined a game where the giants’ advantages matter less?
-- 07are your fees, policies, and changes easy to audit?
-- 08are you building a community, or only collecting a customer list?
+01. did you personally experience the problem, or did you only notice a market gap?
+02. does the name match the customer’s emotional state?
+03. can the mission be said in one plain sentence?
+04. does the homepage describe outcomes instead of machinery?
+05. does the product experience prove the promise?
+06. have you defined a game where the giants’ advantages matter less?
+07. are your fees, policies, and changes easy to audit?
+08. are you building a community, or only collecting a customer list?
 
 dodo payments is interesting because the answers line up. the origin, name, audience, language, product, and trust system are all pointing in the same direction. that is what a brand looks like when it is built as a system.
 

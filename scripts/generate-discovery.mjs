@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 const siteUrl = "https://shashanksn.xyz";
-const updated = "2026-05-17";
+const updated = "2026-08-18";
 const thoughtPosts = JSON.parse(readFileSync("thoughts/posts.json", "utf8"));
 const thoughtsUpdated = thoughtPosts.reduce((latest, post) => post.updated > latest ? post.updated : latest, "");
 
@@ -63,6 +63,15 @@ const pages = [
     priority: "0.8",
     changefreq: "monthly",
     summary: "a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.",
+  },
+  {
+    title: "newsletter engine community - build a newsletter people return to",
+    path: "/newsletter-engine/community/",
+    markdownPath: "/newsletter-engine/community.md",
+    priority: "0.7",
+    changefreq: "monthly",
+    updated: "2026-08-18",
+    summary: "the community companion to newsletter engine, with practical notes for building a newsletter readers return to.",
   },
   {
     title: "signal engine - high-leverage writing framework",
@@ -175,6 +184,7 @@ function htmlToMarkdown(html, baseUrl) {
     .replace(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi, "\n# $1\n")
     .replace(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi, "\n## $1\n")
     .replace(/<h3\b[^>]*>([\s\S]*?)<\/h3>/gi, "\n### $1\n")
+    .replace(/<li\b[^>]*>\s*<b>(\d+)<\/b>\s*<span>([\s\S]*?)<\/span>\s*<\/li>/gi, "\n$1. $2")
     .replace(/<li\b[^>]*>([\s\S]*?)<\/li>/gi, "\n- $1")
     .replace(/<blockquote\b[^>]*>([\s\S]*?)<\/blockquote>/gi, "\n> $1\n")
     .replace(/<br\s*\/?>/gi, "\n")
@@ -205,8 +215,7 @@ ${pageContent}
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((page) => `  <url>
-    <loc>${xmlEscape(siteUrl + page.path)}</loc>
-    <lastmod>${page.updated ?? updated}</lastmod>
+    <loc>${xmlEscape(siteUrl + page.path)}</loc>${page.updated ? `\n    <lastmod>${page.updated}</lastmod>` : ""}
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`).join("\n")}
@@ -216,7 +225,6 @@ ${pages.map((page) => `  <url>
 const robots = `User-agent: *
 Allow: /
 
-Disallow: /home.html
 Disallow: /404.html
 Disallow: /tata-aia/
 Disallow: /gostocks-presentation/

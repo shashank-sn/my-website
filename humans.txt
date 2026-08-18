@@ -7,4 +7,4 @@ linkedin: https://www.linkedin.com/in/thestupidpreneur/
 
 /* site */
 language: english
-last update: 2026-05-17
+last update: 2026-08-18

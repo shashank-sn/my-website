@@ -63,11 +63,11 @@ specific memories create tension without announcing it. they let the reader noti
 
 before writing the hook, ask what stayed with you after the event ended.
 
-- 01what did you believe before the moment?
+01. what did you believe before the moment?
 
-- 02which concrete detail made that belief harder to keep?
+02. which concrete detail made that belief harder to keep?
 
-- 03what do you do differently now?
+03. what do you do differently now?
 
 if those answers are weak, a stronger hook will make the disappointment arrive faster.
 
@@ -81,6 +81,6 @@ story-shaped content transfers anticipation and then asks for a click.
 
 both can produce attention. only one leaves the reader with something after the tab closes.
 
-adapted from [a newsletter first published on december 22, 2025](https://stupidpreneur.beehiiv.com/p/the-death-of-storytelling). the original was prompted by [reporting in the wall street journal](https://www.wsj.com/articles/companies-are-desperately-seeking-storytellers-7b79f54e).
+adapted from a newsletter first published on december 22, 2025. the original was prompted by reporting in the wall street journal.
 
 say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

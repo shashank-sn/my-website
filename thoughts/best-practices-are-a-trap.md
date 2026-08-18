@@ -51,13 +51,13 @@ write down five things your company does because that is how the category works.
 
 take one of them through four questions:
 
-- 01which original problem made this practice sensible?
+01. which original problem made this practice sensible?
 
-- 02what has changed since the practice became common?
+02. what has changed since the practice became common?
 
-- 03what would the opposite decision make easier?
+03. what would the opposite decision make easier?
 
-- 04which new risk would the opposite decision create?
+04. which new risk would the opposite decision create?
 
 most inversions will be bad. the exercise only needs to reveal the assumption.
 
@@ -79,6 +79,6 @@ save the difficult thinking for the assumptions that determine who the company s
 
 follow the playbook where sameness keeps people safe. question it where sameness makes you disappear.
 
-adapted from [a newsletter first published on march 31, 2026](https://stupidpreneur.beehiiv.com/p/best-practices-are-a-trap).
+adapted from a newsletter first published on march 31, 2026.
 
 say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/cbo/
 canonical: https://shashanksn.xyz/cbo/
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 fractional chief brand officer offer for post-pmf startups, scaling d2c brands, and b2b companies with positioning problems that cost revenue.
 

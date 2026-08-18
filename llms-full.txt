@@ -57,6 +57,13 @@
 - update cadence: monthly
 - summary: a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.
 
+### newsletter engine community - build a newsletter people return to
+
+- url: https://shashanksn.xyz/newsletter-engine/community/
+- markdown: https://shashanksn.xyz/newsletter-engine/community.md
+- update cadence: monthly
+- summary: the community companion to newsletter engine, with practical notes for building a newsletter readers return to.
+
 ### signal engine - high-leverage writing framework
 
 - url: https://shashanksn.xyz/signal-engine/

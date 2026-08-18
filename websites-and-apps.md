@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/websites-and-apps/
 canonical: https://shashanksn.xyz/websites-and-apps/
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 selected websites and apps designed or built by shashank sn, including hold your voice, just nai, and say about us.
 

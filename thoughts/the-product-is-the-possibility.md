@@ -67,9 +67,9 @@ the artifact matters. it carries the thinking. the highest-value part sits above
 
 ask three questions before you write the offer:
 
-- 01what will the customer be able to do after this?
-- 02what decision becomes easier?
-- 03what possibility was unavailable before?
+01. what will the customer be able to do after this?
+02. what decision becomes easier?
+03. what possibility was unavailable before?
 
 if the answer is only a file, the offer is still sitting at the surface.
 
