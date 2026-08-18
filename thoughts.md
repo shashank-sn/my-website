@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/thoughts/
 canonical: https://shashanksn.xyz/thoughts/
-last updated: 2026-08-12
+last updated: 2026-08-18
 
 notes on brand, business, and the work behind the work by shashank sn.
 
@@ -50,18 +50,34 @@ read the essay →](https://shashanksn.xyz/thoughts/best-practices-are-a-trap/)
 what my parents knew about trust.
 thirty-five years inside a printing press taught me what recommendation really costs.
 read the essay →](https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust/)
-[december 16, 2025·case study·7 min
+[december 16, 2025·case study·12 min
 the scar that started dodo payments.
 a payments company built from the revenue its founder could not collect.
 read the case study →](https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/)
-[january 24, 2026·interview notes·6 min
+[january 24, 2026·interview notes·10 min
 the scroll test.
 what francis zierer taught me about making a company publication worth reading.
 read the notes →](https://shashanksn.xyz/thoughts/the-scroll-test/)
-[january 6, 2026·strategy·6 min
-the product is the possibility.
-the strategy document was forgotten. the confidence it created was the real work.
+[december 15, 2025·product strategy·8 min read
+amazon gives $1b away every year.
+the free thing is often only the wedge. the real product is what it lets people become.
 read the essay →](https://shashanksn.xyz/thoughts/the-product-is-the-possibility/)
+[december 22, 2025·brand principles·9 min read
+the naval doctrine.
+ten ideas from naval ravikant about building a brand nobody can copy.
+read the principles →](https://shashanksn.xyz/thoughts/the-naval-doctrine/)
+[december 10, 2025·field notes·8 min read
+twenty-five lessons.
+twenty-five things that changed how i think about business, personal work, and brand.
+read the notes →](https://shashanksn.xyz/thoughts/twenty-five-lessons/)
+[january 2, 2026·positioning·8 min read
+you don’t know your real competition.
+the thing stealing the decision is usually not another company.
+read the essay →](https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition/)
+[january 6, 2026·trust notes·8 min read
+trust is the new currency.
+imperfection is not a brand strategy. it is what makes the promise believable.
+read the essay →](https://shashanksn.xyz/thoughts/trust-is-the-new-currency/)
 [august 10, 2026·personal essay·4 min
 they went with the cheaper one.
 what selling specialty coffee taught me about being easier to choose.
