@@ -1,24 +1,14 @@
-# the scroll test
-
-source: https://shashanksn.xyz/thoughts/the-scroll-test/
-canonical: https://shashanksn.xyz/thoughts/the-scroll-test/
-last updated: 2026-08-18
-
-interview notes on making a company publication worth reading on its own.
-
-## page content
-
-[skip to article](#article)
-[shashank sn](https://shashanksn.xyz/index.html)[← thoughts](https://shashanksn.xyz/thoughts/index.html)
-
-interview notes
-
-# the scroll test.
-
-what francis zierer taught me about making a company publication worth reading.
-
-january 23, 2026by shashank sn·10 min read
-
+---
+slug: the-scroll-test
+title: the scroll test.
+date: 2026-01-23
+dateLabel: january 23, 2026
+type: interview notes
+readTime: 10 min read
+dek: what francis zierer taught me about making a company publication worth reading.
+image: scroll-test.webp
+imageAlt: a hand scrolling through a paper-like publication on a phone
+---
 so many newsletters are a slow-motion car crash. they start with high hopes, hit a wall around issue seven, and disappear before issue ten.
 
 francis zierer was about to ship his 150th issue of creator spotlight, beehiiv’s publication about the people building businesses around content. the part of the conversation i kept returning to had little to do with software.
@@ -97,16 +87,12 @@ consistency is an arrangement that gives everyone a reason to keep showing up.
 
 ## questions worth asking before you publish
 
-- 01what does this publication help a reader understand?
-- 02which parts would still be useful if the product disappeared from the sentence?
-- 03where does the page make the eye stop?
-- 04what does the welcome email teach the reader to expect?
-- 05can the writer keep finding subjects after issue fifty?
+1. what does this publication help a reader understand?
+2. which parts would still be useful if the product disappeared from the sentence?
+3. where does the page make the eye stop?
+4. what does the welcome email teach the reader to expect?
+5. can the writer keep finding subjects after issue fifty?
 
 these questions do more than improve a newsletter. they prevent a company from building a content machine that nobody wants to enter.
 
 a company can own distribution. it still has to earn readership.
-
-adapted from a newsletter first published on january 23, 2026. promotional material and unsupported claims were removed; the argument and reported details were rebuilt for this site.
-
-say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

@@ -1,24 +1,14 @@
-# amazon gives $1b away every year
-
-source: https://shashanksn.xyz/thoughts/the-product-is-the-possibility/
-canonical: https://shashanksn.xyz/thoughts/the-product-is-the-possibility/
-last updated: 2026-08-18
-
-why the deliverable, free credit, or template is often only the wedge for a larger customer possibility.
-
-## page content
-
-[skip to article](#article)
-[shashank sn](https://shashanksn.xyz/index.html)[← thoughts](https://shashanksn.xyz/thoughts/index.html)
-
-product strategy
-
-# amazon gives $1b away every year.
-
-the free thing is often only the wedge. the real product is what it lets people become.
-
-december 15, 2025by shashank sn·8 min read
-
+---
+slug: the-product-is-the-possibility
+title: amazon gives $1b away every year.
+date: 2025-12-15
+dateLabel: december 15, 2025
+type: product strategy
+readTime: 8 min read
+dek: the free thing is often only the wedge. the real product is what it lets people become.
+image: product-possibility.webp
+imageAlt: an open door beyond a small folded paper receipt
+---
 every business thinks it is selling a product. most of the time, it is selling a future.
 
 the product is the artifact. the receipt. the thing that sits in a folder somewhere while the real value compounds in the customer’s life.
@@ -67,9 +57,9 @@ the artifact matters. it carries the thinking. the highest-value part sits above
 
 ask three questions before you write the offer:
 
-- 01what will the customer be able to do after this?
-- 02what decision becomes easier?
-- 03what possibility was unavailable before?
+1. what will the customer be able to do after this?
+2. what decision becomes easier?
+3. what possibility was unavailable before?
 
 if the answer is only a file, the offer is still sitting at the surface.
 
@@ -90,7 +80,3 @@ that question changes the positioning, the onboarding, the pricing, and the proo
 the strategy document can be forgotten. the confidence it creates cannot be. the cloud credits can expire. the company built with them keeps paying.
 
 the product is the possibility.
-
-adapted from a newsletter first published on december 15, 2025. promotional material and unsupported claims were removed; the argument and reported details were rebuilt for this site.
-
-say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

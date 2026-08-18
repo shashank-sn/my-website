@@ -1,24 +1,14 @@
-# the scar that started dodo payments
-
-source: https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/
-canonical: https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/
-last updated: 2026-08-18
-
-a case study of a payments company built from the revenue its founder could not collect.
-
-## page content
-
-[skip to article](#article)
-[shashank sn](https://shashanksn.xyz/index.html)[← thoughts](https://shashanksn.xyz/thoughts/index.html)
-
-case study
-
-# the scar that started dodo payments.
-
-a payments company built from the revenue its founder was unable to collect.
-
-december 9, 2025by shashank sn·12 min read
-
+---
+slug: the-scar-that-started-dodo-payments
+title: the scar that started dodo payments.
+date: 2025-12-09
+dateLabel: december 9, 2025
+type: case study
+readTime: 12 min read
+dek: a payments company built from the revenue its founder was unable to collect.
+image: dodo-payments-scar.webp
+imageAlt: a torn payment receipt crossing a broken global route
+---
 ayush agarwal had a million users on his gaming platform, tournafest. forty percent were outside india. none of that demand could become revenue.
 
 users in bangladesh, europe, and the middle east had cards in hand. gaming was a restricted category in several of those markets. the gateways said no. the tax and compliance work was too much for a small team.
@@ -129,17 +119,13 @@ the lesson is useful whether you sell software, coffee, or strategy. find the sc
 
 ### a short audit for your own company
 
-- 01did you personally experience the problem, or did you only notice a market gap?
-- 02does the name match the customer’s emotional state?
-- 03can the mission be said in one plain sentence?
-- 04does the homepage describe outcomes instead of machinery?
-- 05does the product experience prove the promise?
-- 06have you defined a game where the giants’ advantages matter less?
-- 07are your fees, policies, and changes easy to audit?
-- 08are you building a community, or only collecting a customer list?
+1. did you personally experience the problem, or did you only notice a market gap?
+2. does the name match the customer’s emotional state?
+3. can the mission be said in one plain sentence?
+4. does the homepage describe outcomes instead of machinery?
+5. does the product experience prove the promise?
+6. have you defined a game where the giants’ advantages matter less?
+7. are your fees, policies, and changes easy to audit?
+8. are you building a community, or only collecting a customer list?
 
 dodo payments is interesting because the answers line up. the origin, name, audience, language, product, and trust system are all pointing in the same direction. that is what a brand looks like when it is built as a system.
-
-adapted from a newsletter first published on december 9, 2025. promotional material and unsupported claims were removed; the argument and reported details were rebuilt for this site.
-
-say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

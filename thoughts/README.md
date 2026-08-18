@@ -4,10 +4,18 @@
 
 ## add a thought
 
-1. create `thoughts/<slug>/index.html` using an existing article as the structural reference.
-2. add one 3:2 thumbnail to `thoughts/images/<descriptive-name>.webp`.
+1. create `thoughts/drafts/<slug>.md` with the frontmatter and body contract below.
+2. add one 3:2 thumbnail family to `thoughts/images/<descriptive-name>.webp`.
 3. add the post to `thoughts/posts.json` in the order it should appear.
 4. run `node scripts/build-cloudflare-assets.mjs`.
+
+`scripts/generate-essay-pages.mjs` turns draft markdown into the shared article
+shell. `scripts/generate-discovery.mjs` then creates the full-content `.md`
+mirror at the public route, so agents and people read the same page.
+
+Draft frontmatter fields are `slug`, `title`, `date`, `dateLabel`, `type`,
+`readTime`, `dek`, `image`, and `imageAlt`. Use `##` headings, paragraphs,
+`>` pull quotes, and numbered principles for the body.
 
 The build stops when an article, required field, or thumbnail is missing. It generates the text mirror, thoughts index, sitemap, llms files, and Cloudflare bundle.
 

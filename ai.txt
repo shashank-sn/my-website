@@ -26,6 +26,10 @@ preferred sources:
 - https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/
 - https://shashanksn.xyz/thoughts/the-scroll-test/
 - https://shashanksn.xyz/thoughts/the-product-is-the-possibility/
+- https://shashanksn.xyz/thoughts/the-naval-doctrine/
+- https://shashanksn.xyz/thoughts/twenty-five-lessons/
+- https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition/
+- https://shashanksn.xyz/thoughts/trust-is-the-new-currency/
 - https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one/
 - https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets/
 - https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail/
@@ -54,6 +58,10 @@ machine-readable summaries:
 - https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments.md
 - https://shashanksn.xyz/thoughts/the-scroll-test.md
 - https://shashanksn.xyz/thoughts/the-product-is-the-possibility.md
+- https://shashanksn.xyz/thoughts/the-naval-doctrine.md
+- https://shashanksn.xyz/thoughts/twenty-five-lessons.md
+- https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition.md
+- https://shashanksn.xyz/thoughts/trust-is-the-new-currency.md
 - https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one.md
 - https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets.md
 - https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail.md

@@ -14,7 +14,7 @@ personal website and portfolio of [shashank sn](https://shashanksn.xyz). built w
 | `/holdyourvoice/` | responsive hold your voice open-source landing page |
 | `/thoughts/` | editorial index for shashank’s writing and case studies |
 | `/thoughts/inside-guvis-two-guinness-world-records-strategy/` | GUVI brand strategy case study |
-| `/thoughts/*/` | fourteen articles generated into one consistent grid from `thoughts/posts.json` |
+| `/thoughts/*/` | eighteen articles generated into one consistent grid from `thoughts/posts.json` |
 
 ## tech
 
@@ -38,7 +38,7 @@ open websites-and-apps/index.html
 
 `thoughts/posts.json` is the source of truth for the grid, discovery metadata, and release inventory. each thought ships with one article page, one markdown twin for agents, and three responsive image sizes.
 
-the current collection includes the GUVI case study, seven earlier essays, and six rewritten newsletter editions: the trust ladder, scissors and feedback, naming your company, the day a client fired me politely, the death of storytelling, and best practices are a trap.
+the current collection includes the GUVI case study, the earlier trust and product essays, and rewritten editions on the naval doctrine, amazon’s free wedge, twenty-five lessons, the scroll test, real competition, trust, and dodo payments.
 
 ```bash
 node scripts/build-cloudflare-assets.mjs
@@ -79,7 +79,7 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 ├── thoughts/                 # manifest, publishing guide, thumbnails, and published posts
 │   ├── posts.json           # source of truth for the collection
 │   ├── README.md            # publishing and image contract
-│   ├── index.html           # generated fourteen-card grid
+│   ├── index.html           # generated eighteen-card grid
 │   ├── *.md                 # agent-readable article twins
 │   └── */index.html         # article pages
 ├── brand-engine/            # brand engine offer
@@ -92,6 +92,7 @@ the build script copies the public directory to `cloudflare/dist/` and deploys v
 │   ├── build-cloudflare-assets.mjs
 │   ├── check-thoughts-release.mjs
 │   ├── generate-thoughts-index.mjs
+│   ├── generate-essay-pages.mjs
 │   └── generate-discovery.mjs
 └── wrangler.jsonc           # cloudflare config
 ```

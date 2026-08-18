@@ -148,12 +148,40 @@
 - update cadence: monthly
 - summary: interview notes on making a company publication worth reading on its own.
 
-### the product is the possibility
+### amazon gives $1b away every year
 
 - url: https://shashanksn.xyz/thoughts/the-product-is-the-possibility/
 - markdown: https://shashanksn.xyz/thoughts/the-product-is-the-possibility.md
 - update cadence: monthly
-- summary: an essay about the value that lives above the artifact a consultant hands over.
+- summary: why the deliverable, free credit, or template is often only the wedge for a larger customer possibility.
+
+### the naval doctrine
+
+- url: https://shashanksn.xyz/thoughts/the-naval-doctrine/
+- markdown: https://shashanksn.xyz/thoughts/the-naval-doctrine.md
+- update cadence: monthly
+- summary: ten principles from naval ravikant reframed as practical advice for building a brand from specific knowledge, accountability, and long-term work.
+
+### twenty-five lessons
+
+- url: https://shashanksn.xyz/thoughts/twenty-five-lessons/
+- markdown: https://shashanksn.xyz/thoughts/twenty-five-lessons.md
+- update cadence: monthly
+- summary: twenty-five practical lessons from building companies, working with founders, and learning what brand actually earns.
+
+### you don’t know your real competition
+
+- url: https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition/
+- markdown: https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition.md
+- update cadence: monthly
+- summary: why inertia, confusion, internal approval, and fear are often the real competitors in a buying decision.
+
+### trust is the new currency
+
+- url: https://shashanksn.xyz/thoughts/trust-is-the-new-currency/
+- markdown: https://shashanksn.xyz/thoughts/trust-is-the-new-currency.md
+- update cadence: monthly
+- summary: why trust is earned in small decisions, spent through referrals, and protected by operating defaults rather than campaigns.
 
 ### they went with the cheaper one
 

@@ -28,7 +28,11 @@ https://shashanksn.xyz/
 - [what my parents knew about trust](https://shashanksn.xyz/thoughts/what-my-parents-knew-about-trust/): thirty-five years inside a family printing press taught shashank what recommendation really costs.
 - [the scar that started dodo payments](https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments/): a case study of a payments company built from the revenue its founder could not collect.
 - [the scroll test](https://shashanksn.xyz/thoughts/the-scroll-test/): interview notes on making a company publication worth reading on its own.
-- [the product is the possibility](https://shashanksn.xyz/thoughts/the-product-is-the-possibility/): an essay about the value that lives above the artifact a consultant hands over.
+- [amazon gives $1b away every year](https://shashanksn.xyz/thoughts/the-product-is-the-possibility/): why the deliverable, free credit, or template is often only the wedge for a larger customer possibility.
+- [the naval doctrine](https://shashanksn.xyz/thoughts/the-naval-doctrine/): ten principles from naval ravikant reframed as practical advice for building a brand from specific knowledge, accountability, and long-term work.
+- [twenty-five lessons](https://shashanksn.xyz/thoughts/twenty-five-lessons/): twenty-five practical lessons from building companies, working with founders, and learning what brand actually earns.
+- [you don’t know your real competition](https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition/): why inertia, confusion, internal approval, and fear are often the real competitors in a buying decision.
+- [trust is the new currency](https://shashanksn.xyz/thoughts/trust-is-the-new-currency/): why trust is earned in small decisions, spent through referrals, and protected by operating defaults rather than campaigns.
 - [they went with the cheaper one](https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one/): what selling specialty coffee taught shashank about being easier to choose.
 - [the more you explain, the worse it gets](https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets/): a short note about why adding words rarely fixes unsettled positioning.
 - [the five-second test most founders fail](https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail/): a human-first test for finding repeated confusion on a homepage.
@@ -56,6 +60,10 @@ https://shashanksn.xyz/
 - https://shashanksn.xyz/thoughts/the-scar-that-started-dodo-payments.md
 - https://shashanksn.xyz/thoughts/the-scroll-test.md
 - https://shashanksn.xyz/thoughts/the-product-is-the-possibility.md
+- https://shashanksn.xyz/thoughts/the-naval-doctrine.md
+- https://shashanksn.xyz/thoughts/twenty-five-lessons.md
+- https://shashanksn.xyz/thoughts/you-dont-know-your-real-competition.md
+- https://shashanksn.xyz/thoughts/trust-is-the-new-currency.md
 - https://shashanksn.xyz/thoughts/they-went-with-the-cheaper-one.md
 - https://shashanksn.xyz/thoughts/the-more-you-explain-the-worse-it-gets.md
 - https://shashanksn.xyz/thoughts/the-five-second-test-most-founders-fail.md
