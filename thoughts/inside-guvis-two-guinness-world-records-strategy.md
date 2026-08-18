@@ -161,21 +161,21 @@ that changed the follow-up. the sales team spoke with people who had already exp
 
 ## what founders can steal
 
-- 01find the accepted assumption. “tech must be taught in english” was an industry habit.
+01. find the accepted assumption. “tech must be taught in english” was an industry habit.
 
-- 02prove, don’t claim. if
+02. prove, don’t claim. if
 perception needs to move, build an experience people can
 point at.
 
-- 03build structural
+03. build structural
 advantages. a real moat has to be harder to copy
 than a landing page.
 
-- 04make marketing a product
+04. make marketing a product
 sample. let the work demonstrate the value before
 the pitch starts.
 
-- 05let scale do your
+05. let scale do your
 arguing. when the action is big enough, the story
 travels without help.
 

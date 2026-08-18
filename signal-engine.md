@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/signal-engine/
 canonical: https://shashanksn.xyz/signal-engine/
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.
 

@@ -12,6 +12,7 @@ preferred sources:
 - https://shashanksn.xyz/opensource/
 - https://shashanksn.xyz/brand-engine/
 - https://shashanksn.xyz/newsletter-engine/
+- https://shashanksn.xyz/newsletter-engine/community/
 - https://shashanksn.xyz/signal-engine/
 - https://shashanksn.xyz/holdyourvoice/
 - https://shashanksn.xyz/thoughts/
@@ -44,6 +45,7 @@ machine-readable summaries:
 - https://shashanksn.xyz/opensource.md
 - https://shashanksn.xyz/brand-engine.md
 - https://shashanksn.xyz/newsletter-engine.md
+- https://shashanksn.xyz/newsletter-engine/community.md
 - https://shashanksn.xyz/signal-engine.md
 - https://shashanksn.xyz/holdyourvoice.md
 - https://shashanksn.xyz/thoughts.md

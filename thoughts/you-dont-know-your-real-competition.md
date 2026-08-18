@@ -59,10 +59,10 @@ specificity is evidence that you understand the situation.
 
 hide your logo and read the page like someone who has never heard of you. can you answer four questions in one minute?
 
-- 01what changed for the customer?
-- 02who is this clearly for?
-- 03what did they do before?
-- 04why is this a safer decision now?
+01. what changed for the customer?
+02. who is this clearly for?
+03. what did they do before?
+04. why is this a safer decision now?
 
 if the answer is “we are new” or “we offer end-to-end solutions,” the real competitor is still winning. it is the fog.
 

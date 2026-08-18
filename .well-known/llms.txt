@@ -15,6 +15,7 @@ https://shashanksn.xyz/
 - [open source - shashank sn](https://shashanksn.xyz/opensource/): open-source projects by shashank sn, led by hold your voice and other public tools.
 - [brand engine - complete brand strategy in 21 days](https://shashanksn.xyz/brand-engine/): a structured 21-day brand strategy program for founders who want positioning, messaging, and brand architecture.
 - [newsletter engine - email list to revenue in 30 days](https://shashanksn.xyz/newsletter-engine/): a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.
+- [newsletter engine community - build a newsletter people return to](https://shashanksn.xyz/newsletter-engine/community/): the community companion to newsletter engine, with practical notes for building a newsletter readers return to.
 - [signal engine - high-leverage writing framework](https://shashanksn.xyz/signal-engine/): a high-leverage writing framework for creators and founders who want sharper, more specific public ideas.
 - [hold your voice - open-source writing tool](https://shashanksn.xyz/holdyourvoice/): a local-first, mit-licensed writing tool that helps writers keep their voice when they work with ai.
 - [thoughts - shashank sn](https://shashanksn.xyz/thoughts/): notes on brand, business, and the work behind the work by shashank sn.
@@ -46,6 +47,7 @@ https://shashanksn.xyz/
 - https://shashanksn.xyz/opensource.md
 - https://shashanksn.xyz/brand-engine.md
 - https://shashanksn.xyz/newsletter-engine.md
+- https://shashanksn.xyz/newsletter-engine/community.md
 - https://shashanksn.xyz/signal-engine.md
 - https://shashanksn.xyz/holdyourvoice.md
 - https://shashanksn.xyz/thoughts.md

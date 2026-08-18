@@ -39,11 +39,11 @@ talking to a customer is less comfortable. shipping a rough product is worse. so
 
 ## three checks are enough to move
 
-- 01can you say it without apologising or explaining for five minutes?
+01. can you say it without apologising or explaining for five minutes?
 
-- 02can another person hear it, repeat it, and find you with reasonable effort?
+02. can another person hear it, repeat it, and find you with reasonable effort?
 
-- 03does a basic company, domain, and trademark search reveal an obvious conflict?
+03. does a basic company, domain, and trademark search reveal an obvious conflict?
 
 the third check deserves actual care. a naming decision should survive legal and market checks in the places where you plan to operate. this is different from expecting the exact dot-com to be cheap and available on day one.
 
@@ -59,16 +59,16 @@ clarity around the product can carry a less obvious name. a perfect name cannot 
 
 my process is deliberately short:
 
-- 01write a large, bad list before trying to be clever.
+01. write a large, bad list before trying to be clever.
 
-- 02remove conflicts, awkward explanations, and names you cannot say naturally.
+02. remove conflicts, awkward explanations, and names you cannot say naturally.
 
-- 03choose the strongest survivor and put it in front of a customer.
+03. choose the strongest survivor and put it in front of a customer.
 
 you may rename the company later. that costs time, money, memory, and paperwork, so avoid treating it as the plan. the possibility simply proves that this decision is survivable.
 
 if you have spent longer naming the company than speaking to the people it is meant to serve, the name is no longer the problem.
 
-adapted from [a newsletter first published on december 29, 2025](https://stupidpreneur.beehiiv.com/p/simple-guide-to-naming-your-company).
+adapted from a newsletter first published on december 29, 2025.
 
 say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

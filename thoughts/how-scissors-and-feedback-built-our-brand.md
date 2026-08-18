@@ -59,16 +59,16 @@ the product needs this feature. the packaging must use this material. customers 
 
 find the assumption that becomes costly once it leaves the room. build the cheapest version somebody can react to. put it in front of the people who will eventually pay for it.
 
-- 01show the shape of the idea before building its finish.
+01. show the shape of the idea before building its finish.
 
-- 02ask for a choice or a reaction. general feedback tells you very little.
+02. ask for a choice or a reaction. general feedback tells you very little.
 
-- 03spend only after the same signal appears more than once.
+03. spend only after the same signal appears more than once.
 
 happy beginnings became clearer when we stopped trying to look finished.
 
 the scissors gave us a way to separate what customers wanted from what i wanted them to want.
 
-adapted from [a newsletter first published on june 25, 2025](https://stupidpreneur.beehiiv.com/p/how-scissors-and-feedback-built-our-brand).
+adapted from a newsletter first published on june 25, 2025.
 
 say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

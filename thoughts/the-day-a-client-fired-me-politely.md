@@ -61,16 +61,16 @@ after losing that client, i made a rule for my work: if i see something importan
 
 arrive with a point of view, a reason, and a path forward. you can do that without taking over the room.
 
-- 01separate what the client requested from the outcome they need.
+01. separate what the client requested from the outcome they need.
 
-- 02name the risk before presenting another direction.
+02. name the risk before presenting another direction.
 
-- 03put your recommendation in writing so it can be examined properly.
+03. put your recommendation in writing so it can be examined properly.
 
 the polite firing hurt because the client was right. we had shipped the work and withheld the thing they were actually paying us to bring.
 
 judgment can make a meeting uncomfortable. its absence makes the whole engagement replaceable.
 
-adapted from [a newsletter first published on june 13, 2025](https://stupidpreneur.beehiiv.com/p/the-day-a-client-fired-me-politely).
+adapted from a newsletter first published on june 13, 2025.
 
 say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)

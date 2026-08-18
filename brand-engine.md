@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/brand-engine/
 canonical: https://shashanksn.xyz/brand-engine/
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 a structured 21-day brand strategy program for founders who want positioning, messaging, and brand architecture.
 

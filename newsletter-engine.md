@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/newsletter-engine/
 canonical: https://shashanksn.xyz/newsletter-engine/
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 a 30-day email course for founders and marketers who want to turn a newsletter into a business asset.
 

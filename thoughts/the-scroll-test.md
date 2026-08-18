@@ -97,11 +97,11 @@ consistency is an arrangement that gives everyone a reason to keep showing up.
 
 ## questions worth asking before you publish
 
-- 01what does this publication help a reader understand?
-- 02which parts would still be useful if the product disappeared from the sentence?
-- 03where does the page make the eye stop?
-- 04what does the welcome email teach the reader to expect?
-- 05can the writer keep finding subjects after issue fifty?
+01. what does this publication help a reader understand?
+02. which parts would still be useful if the product disappeared from the sentence?
+03. where does the page make the eye stop?
+04. what does the welcome email teach the reader to expect?
+05. can the writer keep finding subjects after issue fifty?
 
 these questions do more than improve a newsletter. they prevent a company from building a content machine that nobody wants to enter.
 

@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/
 canonical: https://shashanksn.xyz/
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 personal homepage for shashank sn, focused on brand systems, founder-led positioning, and the operating record behind the work.
 

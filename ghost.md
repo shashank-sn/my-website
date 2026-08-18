@@ -2,7 +2,7 @@
 
 source: https://shashanksn.xyz/ghost
 canonical: https://shashanksn.xyz/ghost
-last updated: 2026-05-17
+last updated: 2026-08-18
 
 a claude skill built around shashank's writing structure, argument logic, and idea development patterns.
 

@@ -43,13 +43,13 @@ take a screenshot of the first screen of your homepage, show it to somebody unfa
 
 ask four questions:
 
-- 01ask them to explain what the business does in one sentence.
+01. ask them to explain what the business does in one sentence.
 
-- 02ask who they believe it is meant for and listen for specificity.
+02. ask who they believe it is meant for and listen for specificity.
 
-- 03ask what seems different from the alternatives they already know.
+03. ask what seems different from the alternatives they already know.
 
-- 04ask what they would do next if the problem were theirs.
+04. ask what they would do next if the problem were theirs.
 
 ask for their first answer and stay quiet while they respond. the urge to help is part of the test.
 

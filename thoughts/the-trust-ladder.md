@@ -61,11 +61,11 @@ most customer systems are built around the first rung. sales is paid for closing
 
 start with three questions:
 
-- 01when did we last tell a customer to keep their money?
+01. when did we last tell a customer to keep their money?
 
-- 02what did we fix before the customer had to complain?
+02. what did we fix before the customer had to complain?
 
-- 03which customers would put their own name behind our work today?
+03. which customers would put their own name behind our work today?
 
 those answers show the distance between satisfaction and trust. they also reveal whether the company is depositing anything into the relationship between invoices.
 
@@ -79,6 +79,6 @@ the ladder is simple: purchase proves the promise. return proves the motive. ref
 
 most businesses keep asking for more people at the bottom. the better question is whether anyone is moving up.
 
-adapted from [a newsletter first published on december 23, 2025](https://stupidpreneur.beehiiv.com/p/the-trust-ladder).
+adapted from a newsletter first published on december 23, 2025.
 
 say something obvious. then build it.[all thoughts →](https://shashanksn.xyz/thoughts/index.html)
