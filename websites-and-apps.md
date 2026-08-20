@@ -23,7 +23,7 @@ selected websites and apps designed or built by shashank sn, including hold your
 [work](https://shashanksn.xyz/websites-and-apps/index.html)
 [open source](https://shashanksn.xyz/opensource/index.html)
 
-four products. designed and built.
+six products. designed and built.
 
 # interfaces that make the argument visible.
 
@@ -39,13 +39,21 @@ founder voice infrastructure. turns rough ideas into writing that still sounds l
 say about us
 a testimonial workflow and public proof surface. for companies that need trust to show up before the sales call even happens.](https://sayabout.us/)
 
-[03 / wedding invites ecommerce
-happy beginnings
-india's first wedding invitation ecommerce store. a full catalog surface for couples who want invites that don't look like everyone else's.](https://happybeginnings.in/)
+[03 / personal website
+sudharsan anganapathy
+a personal site for a facilitator and storyteller. the page makes his work, point of view, and next conversation easy to find.](https://sudharsananganapathy.com/)
 
 [04 / indoor dog park
 just nai
 wisconsin's first indoor dog park. climate-controlled, off-leash, open year-round. built for the reality of midwest winters — not just fair-weather dogs.](https://justnai.co/)
+
+[05 / brand strategy course
+brandeey
+a practical brand strategy course for founders, marketers, and designers who want to turn positioning into decisions.](https://brandeey.com/)
+
+[06 / wedding invites ecommerce
+happy beginnings
+india's first wedding invitation ecommerce store. a full catalog surface for couples who want invites that don't look like everyone else's.](https://happybeginnings.in/)
 
 build with me
 
